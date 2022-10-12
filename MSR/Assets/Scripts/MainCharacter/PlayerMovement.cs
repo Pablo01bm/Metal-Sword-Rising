@@ -29,15 +29,20 @@ public class PlayerMovement : MonoBehaviour
     float horizontalInput;
     float verticalInput;
 
+    private Animator animator;
+
+
     Vector3 moveDirection;
 
     Rigidbody rb;
+    GameObject Orient;
 
 
     // Start is called before the first frame update
     void Start()
     {
-       rb =  GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
+        rb =  GameObject.Find("Player").GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
         
@@ -47,26 +52,51 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+        Orient = GameObject.Find("Orientation");
+        grounded = Physics.Raycast(  Orient.transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 
-       // Debug.DrawLine(new Vector3(200, 200, 200), Vector3.zero, Color.green, 2, false);
-
-
+        //Debug.DrawLine(new Vector3(200, 200, 200), Vector3.zero, Color.green, 2, false);
+        //print("position: " + Orient.transform.position);
+        //print("playerHeight: " + playerHeight);
+        //print("vector del raycast: " + (playerHeight * 0.5f + 0.2f));
+         // print("ESTA EN EL SUELO: " + grounded);
         Myinput();
         SpeedControl();
 
+        if (moveDirection != Vector3.zero && grounded)
+        {
+            animator.SetBool("IsMoving", true);
+        }
+        else {
+            animator.SetBool("IsMoving", false);
+        }
+
         // handle drag
         if (grounded)
+        {
+            animator.SetBool("IsGrounded", true);
             rb.drag = groundDrag;
-        else
+            animator.SetBool("IsJumping", false);
+            animator.SetBool("IsFalling", false);
+        }else {
+            
             rb.drag = 0;
+            animator.SetBool("IsGrounded", false);
+
+            if (rb.velocity.y < 0) {
+                animator.SetBool("IsJumping", false);
+                animator.SetBool("IsFalling", true);
+            }
+        }
+
+        
     }
 
     private void FixedUpdate()
     {
         MovePlayer();
 
-        Debug.DrawLine(transform.position, Vector3.down , Color.green);
+       // Debug.DrawLine(Orient.transform.position, Vector3.down , Color.green);
     }
 
     private void Myinput()
@@ -77,6 +107,8 @@ public class PlayerMovement : MonoBehaviour
         // when to jump 
         if ((Input.GetKey(jumpKey) || Input.GetKey(jumpJoystick)) && readyToJump && grounded)
         {
+            animator.SetBool("IsJumping", true);
+            grounded = false;
             readyToJump = false;
 
             Jump();
@@ -97,7 +129,8 @@ public class PlayerMovement : MonoBehaviour
         { 
             rb.AddForce(moveDirection.normalized * MoveSpeed * 10f, ForceMode.Force);
 
-        }else if (!grounded) // in air
+        }
+        else if (!grounded) // in air
             rb.AddForce(moveDirection.normalized * MoveSpeed * 10f * airMultiplier, ForceMode.Force);
 
     }
@@ -106,6 +139,8 @@ public class PlayerMovement : MonoBehaviour
     private void SpeedControl()
     {
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+         
 
         // limit velocity if needed
         if (flatVel.magnitude > MoveSpeed)
@@ -117,10 +152,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+
+        
         //reset y velocity
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+       
     }
 
     private void resetJump()
