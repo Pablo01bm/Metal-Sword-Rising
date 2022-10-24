@@ -12,12 +12,16 @@ public class PlayerMovement : MonoBehaviour
 
     public float jumpForce;
     public float jumpCooldown;
+    public float attackCooldown;
     public float airMultiplier;
     bool readyToJump = true;
+    bool readyToAttack = true;
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode jumpJoystick = KeyCode.Joystick1Button0;
+    public KeyCode attackMouse = KeyCode.Mouse0;
+    public KeyCode attackJoystick = KeyCode.Joystick1Button2;
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -59,35 +63,44 @@ public class PlayerMovement : MonoBehaviour
         //print("position: " + Orient.transform.position);
         //print("playerHeight: " + playerHeight);
         //print("vector del raycast: " + (playerHeight * 0.5f + 0.2f));
-         // print("ESTA EN EL SUELO: " + grounded);
+        //print("ESTA EN EL SUELO: " + grounded);
+
+
+
         Myinput();
         SpeedControl();
+        
 
-        if (moveDirection != Vector3.zero && grounded)
-        {
-            animator.SetBool("IsMoving", true);
-        }
-        else {
-            animator.SetBool("IsMoving", false);
-        }
-
-        // handle drag
-        if (grounded)
-        {
-            animator.SetBool("IsGrounded", true);
-            rb.drag = groundDrag;
-            animator.SetBool("IsJumping", false);
-            animator.SetBool("IsFalling", false);
-        }else {
-            
-            rb.drag = 0;
-            animator.SetBool("IsGrounded", false);
-
-            if (rb.velocity.y < 0) {
-                animator.SetBool("IsJumping", false);
-                animator.SetBool("IsFalling", true);
+            if (moveDirection != Vector3.zero )
+            {
+                animator.SetBool("IsMoving", true);
             }
-        }
+            else
+            {
+                animator.SetBool("IsMoving", false);
+            }
+
+            // handle drag
+            if (grounded)
+            {
+                animator.SetBool("IsGrounded", true);
+                rb.drag = groundDrag;
+                animator.SetBool("IsJumping", false);
+                animator.SetBool("IsFalling", false);
+            }
+            else
+            {
+
+                rb.drag = 0;
+                animator.SetBool("IsGrounded", false);
+                animator.SetBool("IsJumping", true);
+                if (rb.velocity.y < 0)
+                {
+                    animator.SetBool("IsJumping", false);
+                    animator.SetBool("IsFalling", true);
+                }
+            }
+        
 
         
     }
@@ -114,6 +127,16 @@ public class PlayerMovement : MonoBehaviour
             Jump();
 
             Invoke(nameof(resetJump), jumpCooldown);
+        }
+
+        //when to attack
+        if ((Input.GetKey(attackMouse) || Input.GetKey(attackJoystick)) && grounded && readyToAttack)
+        {   
+
+            readyToAttack = false;
+            attack();
+
+            Invoke(nameof(resetAttack), attackCooldown);
         }
 
     }
@@ -164,5 +187,16 @@ public class PlayerMovement : MonoBehaviour
     private void resetJump()
     {
         readyToJump = true;
+    }
+
+    private void attack()
+    {
+        animator.SetBool("IsAttackingM1", true);
+    }
+
+    private void resetAttack()
+    {
+        readyToAttack = true;
+        animator.SetBool("IsAttackingM1", false);
     }
 }
