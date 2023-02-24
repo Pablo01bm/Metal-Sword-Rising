@@ -353,6 +353,11 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/Scripts/CutScripts/CutMetadata.cs"
+"Assets/Scripts/CutScripts/Cuttable.cs"
+"Assets/Scripts/CutScripts/Cutter.cs"
+"Assets/Scripts/CutScripts/MyCuttable.cs"
+"Assets/Scripts/CutScripts/SwordCut.cs"
 "Assets/Scripts/MainCharacter/PlayerMovement.cs"
 "Assets/Scripts/MainCharacter/ThirdPersonCam.cs"
 -langversion:9.0
