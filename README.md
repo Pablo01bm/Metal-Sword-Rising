@@ -1,6 +1,12 @@
 # Metal-Sword-Rising
 
-This is the repo for The Final Project of my career. Please, use this code just for educational purpouses. 
+This is the repo for The Final Project of my career. Please, use this code just for educational purpouses. Link to download: https://drive.google.com/drive/folders/1YuIDrEIXIX3GmUMwM-Wue6XuNii7KJ-Y?usp=sharing
+
+# V0.0.0(1)
+
+Errors solved:
+
+[MSR-23] Fixed mouse camera control issue
 
 # V0.0.0 
  Release notes: 
