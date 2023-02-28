@@ -360,6 +360,7 @@
 "Assets/Scripts/CutScripts/SwordCut.cs"
 "Assets/Scripts/MainCharacter/PlayerMovement.cs"
 "Assets/Scripts/MainCharacter/ThirdPersonCam.cs"
+"Assets/Scripts/MenusScripts/PauseMenu.cs"
 -langversion:9.0
 
 /deterministic
