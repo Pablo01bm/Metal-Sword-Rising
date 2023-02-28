@@ -8,6 +8,8 @@ Errors solved:
 
 [MSR-23] Fixed mouse camera control issue
 
+[MSR-27] Added pause menu & quit game feature
+
 # V0.0.0 
  Release notes: 
  
