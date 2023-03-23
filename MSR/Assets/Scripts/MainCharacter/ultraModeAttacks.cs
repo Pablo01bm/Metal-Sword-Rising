@@ -12,11 +12,15 @@ public class ultraModeAttacks : MonoBehaviour
     float lastClickedTime = 0;
     float maxComboDelay = 1;
 
+    public GameObject sparksParticles;
+    ParticleSystem[] particles; 
+
     public CinemachineVirtualCamera cinemachineVirtualCamera;
     private float shakeTimer;
 
     private void Start()
     {
+        particles = sparksParticles.GetComponentsInChildren<ParticleSystem>(true);
         anim = GetComponent<Animator>();
     }
     void Update()
@@ -32,14 +36,24 @@ public class ultraModeAttacks : MonoBehaviour
             }
         }
         
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Melee1"))
         {
+            sparksParticles.SetActive(true);
+            particles[0].Play();
+            particles[1].Play();
             OnClick();
 
         }
 
+        if (Time.time - lastClickedTime > 0.5) {
+            sparksParticles.SetActive(false);
+            //particles[0].Pause();
+            //particles[1].Pause();
+        }
+
         if (Time.time - lastClickedTime > maxComboDelay)
         {
+            
             noOfClicks = 0;
         }
 
@@ -53,6 +67,7 @@ public class ultraModeAttacks : MonoBehaviour
 
         //}
         //}
+       
     }
 
     void OnClick()
@@ -62,9 +77,10 @@ public class ultraModeAttacks : MonoBehaviour
         noOfClicks++;
         if (noOfClicks == 1)
         {
-            print("Buenas");
+
+            anim.SetBool("ultraModeAttack2", false);
             anim.SetBool("ultraModeAttack1", true);
-            ShakeCamera(4f, .01f);
+            ShakeCamera(2f, .01f);
         }
         noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
 
@@ -72,17 +88,18 @@ public class ultraModeAttacks : MonoBehaviour
         {
             anim.SetBool("ultraModeAttack1", false);
             anim.SetBool("ultraModeAttack2", true);
-            ShakeCamera(4f, .01f);
-
-        }
-        if (noOfClicks >= 3)
-        {
-            anim.SetBool("ultraModeAttack2", false);
-            anim.SetBool("ultraModeAttack1", true);
-            ShakeCamera(4f, .01f);
+            ShakeCamera(2f, .01f);
             noOfClicks = 0;
 
         }
+        //if (noOfClicks >= 3)
+        //{
+        //    anim.SetBool("ultraModeAttack2", false);
+        //    anim.SetBool("ultraModeAttack1", true);
+        //    ShakeCamera(4f, .01f);
+        //    noOfClicks = 0;
+
+        //}
     }
 
     public void ShakeCamera(float intensity, float time) { 

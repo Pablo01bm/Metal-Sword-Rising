@@ -19,6 +19,7 @@ public class ThirdPersonCam : MonoBehaviour
     public GameObject ultraModeCam;
     public GameObject plane;
     public GameObject pauseMenu;
+    public GameObject ultraModeEffects;
 
     public KeyCode attackMouse = KeyCode.Mouse0;
     public KeyCode attackJoystick = KeyCode.Joystick1Button2;
@@ -60,10 +61,11 @@ public class ThirdPersonCam : MonoBehaviour
             animator.SetBool("ultraModeOn", true);
             
             plane.SetActive(true);
+            ultraModeEffects.SetActive(true);
 
             //rotate the plane 
             rotatePlane();
-            if (Time.timeScale > 0.4f) 
+            if (Time.timeScale > 0.3f) 
             {
                 Time.timeScale -= 0.01f;
             }
@@ -95,6 +97,7 @@ public class ThirdPersonCam : MonoBehaviour
         else 
         {
             animator.SetBool("ultraModeOn", false);
+            ultraModeEffects.SetActive(false);
             if (Time.timeScale < 1f && !pauseMenu.GetComponent<PauseMenu>().GameIsPaused)
             {
                 Time.timeScale += 0.01f;
@@ -154,7 +157,7 @@ public class ThirdPersonCam : MonoBehaviour
         MeshCollider collider = go.AddComponent<MeshCollider>();
         collider.convex = true;
         go.layer = 8;
-
+        go.AddComponent<destroyEnemies>();
         rb.AddExplosionForce(100, go.transform.position, 20);
     }
 
