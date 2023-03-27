@@ -9,9 +9,9 @@ public class SwordCut : MonoBehaviour
     private const int NUM_VERTEX = 12;
 
 
-    [SerializeField]
-    [Tooltip("The sword object")]
-    private GameObject _sword = null;
+    //[SerializeField]
+    //[Tooltip("The sword object")]
+  //  private GameObject _sword = null;
 
     [SerializeField]
     [Tooltip("Empty GameObject at the tip of the sword")]
@@ -20,11 +20,6 @@ public class SwordCut : MonoBehaviour
     [SerializeField]
     [Tooltip("Empty GameObject at the base of the sword")]
     private GameObject _base = null;
-
-
-    [SerializeField]
-    [Tooltip("The number of frame that the trail should be rendered for")]
-    private int _trailFrameLength = 3;
 
     [SerializeField]
     [ColorUsage(true, true)]
