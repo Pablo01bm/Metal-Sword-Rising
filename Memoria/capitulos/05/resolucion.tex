@@ -1,0 +1,241 @@
+\chapter{Resolución del trabajo}
+
+
+En este apartado se expondrán tanto los métodos utilizados para la planificación del 
+desarrollo del videojuego como la implementación del mismo.  
+
+\section{Planificación y presupuesto}
+WIP (AQUI PONER LAS HORAS ESTIMADAS)
+
+\subsection{Planificación inicial}
+WIP
+
+\subsection{Presupuesto}
+WIP
+
+\section{Análisis y diseño}
+
+A continuación se va a tratar el análisis del proyecto planteado y su respectivo diseño.
+
+\subsection{Especificación de requisitos}
+
+\subsubsection{Requisitos funcionales}
+
+%Lista de requisitos funcionales
+\begin{enumerate}
+    \item[\textbf{RF-1}] Control del personaje.
+    \begin{enumerate}
+        \item[\textbf{RF-1.1}] El personaje tendrá un set de movimientos y acciones básicos.
+        \begin{enumerate}
+            \item[\textbf{RF-1.1.1}] El personaje podrá caminar hacia cualquier dirección para poder desplazarse por el entorno.
+            \item[\textbf{RF-1.1.2}] El personaje tendrá una serie de  movimientos de ataque para derrotar a los enemigos que encuentre.
+            \item[\textbf{RF-1.1.3}] El personaje tendrá la capacidad de poder cortar elementos del entorno.
+        \end{enumerate}
+        \item[\textbf{RF-1.2}] El jugador deberá poder controlar los movimientos del personaje.
+        \item[\textbf{RF-1.3}] El jugador tiene que poder controlar las acciones del personaje.
+        \item[\textbf{RF-1.4}] El videojuego se deberá poder controlar tanto con mando como teclado y ratón.
+    \end{enumerate}
+    \item[\textbf{RF-2}] Comportamiento del entorno.
+    \begin{enumerate}
+        \item[\textbf{RF-2.1}] El sistema generará una partida completamente nueva y distinta a la anterior cada vez que se inicie un nuevo juego.
+        \begin{enumerate}
+            \item[\textbf{RF-2.1.1}] Las mazmorras se generarán de manera aleatoria para evitar que el videojuego se vuelva repetitivo.
+            \item[\textbf{RF-2.1.2}] Los enemigos de las mazmorras se generarán en patrones distintos y en salas distintas.
+            \item[\textbf{RF-2.1.3}] Las recompensas o mejoras para el jugador aparecerán en situaciones aleatorias.
+        \end{enumerate}
+        \item[\textbf{RF-2.2}] El sistema generará a los enemigos serán controlados por una IA.
+        \item[\textbf{RF-2.3}] El sistema generará a los enemigos serán de distintos tipos y cada tipo tendrá su propio comportamiento.
+        \item[\textbf{RF-2.4}] El sistema generará recompensas y mejoras para el jugador. 
+        \begin{enumerate}
+            \item[\textbf{RF-2.4.1}] Las recompensas serán de varios tipos.
+            \begin{enumerate}
+                \item[\textbf{RF-2.4.1.1}] El sistema generará recompensas que mejoren el daño provocado a los enemigos.
+                \item[\textbf{RF-2.4.1.2}] El sistema generará recompensas que mejoren la resistencia del jugador.
+                \item[\textbf{RF-2.4.1.3}] El sistema generará recompensas que aumenten la velocidad de movimiento del jugador.
+            \end{enumerate}
+        \end{enumerate}
+        \item[\textbf{RF-2.5}]El sistema generará mazmorras que tendrán distintos tipos de salas.
+        \begin{enumerate}
+            \item[\textbf{RF-2.5.1}] El sistema generará salas con enemigos las cuales no se desbloquearán hasta derrotar a todos.
+            \item[\textbf{RF-2.5.2}] El sistema generará salas con recompensas. 
+            \item[\textbf{RF-2.5.3}] El sistema generará salas con un enemigo tipo jefe que presentará un mayor desafío para el jugador. 
+        \end{enumerate}
+        \item[\textbf{RF-2.6}] El sistema será capaz de reproducir sonidos acordes a lo sucedido en el videojuego.
+    \end{enumerate}
+    \item[\textbf{RF-3}] Control sobre el sistema
+    \begin{enumerate}
+        \item[\textbf{RF-3.1}] El jugador podrá empezar una partida.
+        \item[\textbf{RF-3.2}] El jugador podrá guardar una partida.
+        \item[\textbf{RF-3.3}] El jugador podrá abandonar una partida.
+        \item[\textbf{RF-3.4}] El jugador podrá pausar la partida.
+        \item[\textbf{RF-3.5}] El jugador deberá ser capaz de cambiar distintos parámetros del sistema.
+        \begin{enumerate}
+            \item[\textbf{RF-3.5}]  El jugador deberá ser capaz de ajustar el nivel de sonido.
+            \item[\textbf{RF-3.6}]  El jugador deberá ser capaz de ajustar la resolución de pantalla.
+        \end{enumerate} 
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{Requisitos no funcionales}
+
+
+\subsection{Material importado}
+
+Como en este proyecto la intención ha sido desde el principio centrarse en la parte técnica del desarrollo
+del videojuego, los diseños y modelos utilizados en su mayoría han sido importados de webs las cuales
+ofrecen modelos con licencia \textit{Creative Commons} para uso libre. A continuación se mostraran los modelos utilizados 
+y de donde se han obtenido.\\
+Para este proyecto serán necesarios bastantes elementos los cuales son:
+%Aqui tengo que poner también ademásd del personaje, los muebles, enemigos, armas y decorados que use.
+
+\subsubsection{Personaje principal}
+Este modelo ha sido importado desde la web de \textit{Adobe Mixamo} la cual ofrece una gran cantidad de modelos 3D
+y animaciones, la gran mayoría compatibles con \textit{Unity}. Debido a el contexto en el que se quiere situar
+el videojuego, el modelo elegido es una especie de androide humanoide futurista. Dado que es algo que no se va a tener en cuenta a la hora de
+jugar, el personaje principal no será personalizable, siempre tendrá este aspecto. \\
+A continuación imagen del modelo elegido: 
+
+\begin{center}
+\includegraphics[width=8cm, height=8cm]{characterModel.jpg}
+%\caption{Modelo Alien Soldier}
+\end{center}
+
+Un aspecto bastante interesante de este modelo es que es \textit{rigged}, es decir, que incluye
+un esqueleto con el que a la hora de añadir las distintas animaciones al personaje, se va a facilitar bastante dicha tarea. \\
+
+Para animar este modelo se han importado también una serie de animaciones, también de la web
+\textit{Mixamo}. Dichas animaciones abarcan movimientos como caminar, correr, saltar y atacar.
+
+\subsubsection{Armas}
+En esta sección se mostraran los modelos de armas utilizados por el personaje principal y enemigos del videojuego
+
+La espada del personaje principal, es una \textit{katana} la cual se importó desde la web de 
+\textit{Sketchfab} que ofrece gran cantidad de Assets y modelos 3D tanto gratis como de pago.
+Este modelo seleccionado es gratuito y fue creado por el usuario "shor.riot". \\
+
+Se eligió este tipo de arma ya que es bien conocido
+que las katanas japonesas tienen fama de ser muy afiladas y por tanto, para un aspecto importante del videojuego 
+(el modo Ultra en el que el personaje será capaz de cortar con su katana a los enemigos y elementos que tenga delante) es ideal que sea esta arma, y se
+ha escogido este modelo en concreto ya que con la luz neón verde que incluye la textura del modelo,
+da la sensación de ser una katana más futurista y así adaptarse mejor al contexto del videojuego. A continuación se muestra el modelo
+de dicha katana: 
+
+\begin{center}
+    \includegraphics[width=8cm, height=8cm]{phaseKatana.jpg}
+    %\caption{Modelo Alien Soldier}
+    \end{center}
+
+\subsubsection{Enemigos}
+
+\subsubsection{Decoración}
+
+\subsubsection{Sonidos}
+
+\subsection{Elementos del proyecto }
+
+A la hora de hablar del desarrollo del proyecto, es posible realizar una distinción entre
+ distintas partes del proyecto y pasar a su explicación de forma separada, ya que cada una de estas 
+ partes abarca herramientas y enfoques distintos. 
+
+\subsubsection{Cámara del personaje principal} 
+
+Quizás este es uno de los aspectos más importantes de los videojuegos, la \textbf{cámara} es algo
+que puede marcar la diferencia entre un videojuego y otro y por supuesto influye en aspectos como
+el tipo de videojuego que se va a realizar o la experiencia del jugador/usuario.\\
+
+Antes de hablar de cómo se ha desarrollado la cámara, se va a explicar muy brevemente los distintos tipos de cámara más usados en los videojuegos a día de hoy: 
+\begin{enumerate}
+    \item[\textbf{1º persona}] Este tipo de cámara es de los más usados actualmente, consiste en recrear con la cámara 
+    que el jugador está viendo lo mismo que el personaje que controla dentro del mismo. Este tipo de cámara sobre todo se plantea en videojuegos realizados en entornos 3D .Esta cámara se suele usar sobretodo en 
+    videojuegos tipo \textit{shooter} o de miedo, para conseguir esta inmmersion para el jugador. A continuación un ejemplo de dicho tipo de cámara:
+    \begin{center}
+        \includegraphics[width=10cm, height=5cm]{doomEjemplo.jpg}
+        %\caption{Videojuego Doom}
+    \end{center}
+    \item[\textbf{3º persona}] Este tipo de cámara pretende dar la sensación al jugador de que está presenciando
+    en forma de espectador lo que le ocurre al personaje del videojuego, consiguiendo de esa manera que el usuario
+    al jugar lo que está haciendo es interferir en la historia o acciones del personaje que controla. Ejemplo a continuación:
+    \begin{center}
+        \includegraphics[width=10cm, height=5cm]{BOTWejemplo.jpg}
+        %\caption{Videojuego Doom}
+    \end{center}
+    \item[\textbf{Perspectiva Isométrica}] Este tipo de cámara, como su nombre indica, se situa en perspectiva 
+    Isométrica con respecto a la escena de forma que se ve como si el usuario estuviera situado en el cielo de la escena presenciandola.
+    Este tipo de cámara puede ser parecida a la de 3º persona pero con ella se pueden realizar videojuegos totalmente distintos como por ejemplo videojuegos de estrategia o de construcción de ciudades.
+    Ejemplo : 
+    \begin{center}
+        \includegraphics[width=10cm, height=5cm]{AOE2ejemplo.jpg}
+        %\caption{Videojuego Doom}
+    \end{center}
+\end{enumerate}
+
+Una vez vistos los principales tipos de cámara que se usan a día de hoy en los videojuegos, proseguiremos con la explicación
+del desarrollo de la cámara de el videojuego que se está tratando.
+
+Para la cámara se ha decidido importar un paquete de \textit{Unity} llamado \textit{Cinemachine} %Referenciar
+el cual proporciona una serie de herramientas para facilitar la creación, la lógica y los parámetros de la cámara 
+que se va a usar.
+\textit{Cinemachine} facilita el uso de la cámara en \textit{Unity} en comparación con la cámara básica de \textit{Unity}, ya que proporciona una forma más intuitiva y fácil de crear y gestionar la cámara. También permite la creación de efectos de cámara avanzados sin necesidad de escribir código, lo que ahorra tiempo y esfuerzo en el desarrollo del juego o aplicación.
+
+Entre las funcionalidades más destacadas de \textit{Cinemachine} se encuentran:
+
+\begin{enumerate}
+\item Seguimiento de objetos: \textit{Cinemachine} permite configurar la cámara para seguir automáticamente un objeto determinado, como un personaje, un vehículo, etc. Además, es posible definir el tipo de seguimiento que se desea (por ejemplo, seguir al objeto en todo momento, o solo cuando se mueve) y ajustar la velocidad y otros parámetros.
+
+\item Composición de cámaras: \textit{Cinemachine} permite crear composiciones de cámaras complejas, que pueden incluir varias cámaras configuradas de diferentes maneras. Esto permite crear efectos interesantes, como transiciones entre cámaras o cambios de perspectiva.
+
+\item Efectos de cámara: \textit{Cinemachine} incluye varios efectos de cámara preconfigurados, como la profundidad de campo, la corrección de color, la desenfoque de movimiento, etc. Estos efectos pueden aplicarse fácilmente a la cámara y ajustarse según las necesidades del juego o aplicación.
+
+\item Curvas de animación: \textit{Cinemachine} permite crear curvas de animación para la cámara y otros elementos del juego, lo que permite crear movimientos suaves y naturales. Además, estas curvas pueden ser editadas de manera visual, lo que facilita su ajuste.
+
+\item Integración con otros sistemas: \textit{Cinemachine} se integra bien con otros sistemas de \textit{Unity}, como el sistema de animación o el sistema de física. Esto permite crear efectos más realistas y dinámicos, como movimientos de cámara que se ajustan automáticamente a la física del juego.
+
+\end{enumerate}
+
+En general, \textit{Cinemachine} es una herramienta muy útil para cualquier desarrollador que quiera crear un sistema de cámara avanzado y dinámico para su juego o aplicación. Ofrece una interfaz gráfica intuitiva, una amplia variedad de funcionalidades y efectos de cámara, y se integra bien con otros sistemas de \textit{Unity}. Si estás desarrollando un juego o aplicación que requiera un sistema de cámara avanzado, definitivamente vale la pena explorar las posibilidades que ofrece \textit{Cinemachine}.
+
+De acuerdo pues una vez repasados los aspectos principales de \textit{Cinemachine}, la configuración que se ha hecho en el proyecto ha sido, 
+seleccionar un tipo de cámara llamada \textit{FreeLook camera}. Esta cámara permite 
+\begin{itemize}    
+    \item \textbf{Control de tres ejes:} La cámara FreeLook permite controlar la posición y rotación de la cámara en tres ejes: horizontal, vertical y de profundidad. Esto permite crear movimientos de cámara complejos y precisos.
+   
+    \item \textbf{Modo de seguimiento suave:} La cámara FreeLook puede seguir objetos en movimiento con un modo de seguimiento suave que evita movimientos bruscos y mejora la sensación de realismo.
+
+    \item \textbf{Zonas de enfoque:} Es posible definir zonas de enfoque que indican a la cámara qué objetos o áreas deben mantenerse en foco en todo momento. Esto es especialmente útil en juegos de acción o deportes donde los objetos en movimiento pueden desaparecer de la vista rápidamente.
+
+    \item \textbf{Configuración de prioridades:} La cámara FreeLook permite establecer prioridades entre diferentes objetivos de seguimiento. Esto significa que se pueden definir qué objetos tienen más importancia en la escena y la cámara se enfocará en ellos en caso de conflicto.
+
+    \item \textbf{Distancia de seguimiento ajustable:} Es posible ajustar la distancia de seguimiento de la cámara, lo que permite acercar o alejar la cámara del objeto en movimiento para crear diferentes efectos visuales.
+
+    \item \textbf{Modos de enfoque:} La cámara FreeLook tiene diferentes modos de enfoque que permiten controlar cómo se enfoca la cámara en los objetos de la escena. Por ejemplo, se pueden usar modos de enfoque basados en la distancia o en el ángulo de la cámara.
+\end{itemize}
+
+Además de esta cámara se ha configurado otro tipo, pero se va a explicar en el siguiente apartado. El Script en Unity
+que controla ésta cámara se llama \textit{ThirdPersonCam.cs}, más adelante se verá en detalle el código de dicho script. 
+Una vez explicada la cámara y la herramienta utilizada para su desarrollo se procederá a la explicación del siguiente elemento del proyecto.
+
+\subsubsection{Movimiento del personaje principal}
+
+A la hora de definir los distintos movimientos del personaje principal se han seleccionado una serie 
+de animaciones las cuales están sincronizadas con el desplazamiento del personaje, pero vamos a entrar más en detalle para hablar de como se 
+ha planteado y desarrollado. \\
+
+Lo primero es que se ha hecho es elegir de la web \textit{Mixamo} animaciones para el movimiento del personaje, las cuales 
+son de uso libre para cualquier proyecto. Antes de ver qué animaciones se han escogido vamos a explicar cómo funcionan las animaciones 
+en Unity. 
+
+Una animación en Unity es una representación visual en tiempo real de un modelo tridimensional (3D) que se mueve y cambia de forma según una serie de instrucciones previamente establecidas.
+
+El elemento  ''Animator'' de Unity es una herramienta que permite controlar y programar animaciones en un objeto 3D. Funciona mediante la creación de ''animators controllers'', que son conjuntos de reglas y estados que controlan la reproducción de animaciones.
+
+En cuanto a la división de secciones de un modelo ''rigged'' para que haya animaciones distintas y concurrentes en distintas partes del cuerpo, se puede lograr mediante la creación de ''mecanim animations''. Este proceso implica la creación de varios animators controllers que controlan diferentes partes del modelo, y luego combinarlos para crear una animación completa y coherente.
+
+Para dividir un modelo rigged en secciones para animaciones distintas, primero debemos asegurarnos de que el modelo tenga una rig adecuada, con huesos (bones) que correspondan a las partes que deseamos animar. Luego, podemos crear una serie de ''animators controllers'' para cada sección del modelo que deseamos animar.
+
+Por ejemplo, si deseamos animar la pierna de un personaje, podemos crear un ''animators controller'' que controle la animación de la pierna. Dentro de este controller, podemos agregar una serie de estados y transiciones que controlen la animación de la pierna. Podemos hacer lo mismo para otras partes del modelo, como los brazos, la cabeza, etc.
+
+Una vez que hemos creado los diferentes ''animators controllers'' para las diferentes secciones del modelo, podemos combinarlos para crear una animación completa y coherente. Esto se logra mediante la creación de un''Blend Tree'' o ''StateMachine'' en el Animator Controller principal, que controlará la reproducción de las diferentes animaciones de cada sección del modelo.
+\subsubsection{Modo Ultrasónico}
+
+ 
+
