@@ -13,7 +13,7 @@ public class ultraModeAttacks : MonoBehaviour
     float maxComboDelay = 1;
 
     public GameObject sparksParticles;
-    ParticleSystem[] particles; 
+    ParticleSystem[] particles;
 
     public CinemachineVirtualCamera cinemachineVirtualCamera;
     private float shakeTimer;
@@ -25,17 +25,18 @@ public class ultraModeAttacks : MonoBehaviour
     }
     void Update()
     {
-        if(shakeTimer > 0)
+        if (shakeTimer > 0)
         {
             shakeTimer -= Time.deltaTime;
-            if (shakeTimer <= 0f) { 
+            if (shakeTimer <= 0f)
+            {
                 //when the time is over
                 CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
                 cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0f;
             }
         }
-        
+
         if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Melee1"))
         {
             sparksParticles.SetActive(true);
@@ -45,7 +46,8 @@ public class ultraModeAttacks : MonoBehaviour
 
         }
 
-        if (Time.time - lastClickedTime > 0.5) {
+        if (Time.time - lastClickedTime > 0.5)
+        {
             sparksParticles.SetActive(false);
             //particles[0].Pause();
             //particles[1].Pause();
@@ -53,7 +55,7 @@ public class ultraModeAttacks : MonoBehaviour
 
         if (Time.time - lastClickedTime > maxComboDelay)
         {
-            
+
             noOfClicks = 0;
         }
 
@@ -67,7 +69,7 @@ public class ultraModeAttacks : MonoBehaviour
 
         //}
         //}
-       
+
     }
 
     void OnClick()
@@ -84,7 +86,7 @@ public class ultraModeAttacks : MonoBehaviour
         }
         noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
 
-        if (noOfClicks >= 2 )
+        if (noOfClicks >= 2)
         {
             anim.SetBool("ultraModeAttack1", false);
             anim.SetBool("ultraModeAttack2", true);
@@ -102,7 +104,8 @@ public class ultraModeAttacks : MonoBehaviour
         //}
     }
 
-    public void ShakeCamera(float intensity, float time) { 
+    public void ShakeCamera(float intensity, float time)
+    {
 
         CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 

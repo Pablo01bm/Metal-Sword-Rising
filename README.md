@@ -2,6 +2,22 @@
 
 This is the repo for The Final Project of my career. Please, use this code just for educational purpouses. Link to download: https://drive.google.com/drive/folders/1YuIDrEIXIX3GmUMwM-Wue6XuNii7KJ-Y?usp=sharing
 
+# V4.0.0 [NEW]
+
+New Features:
+
+- Procedural Generation of Maps added. For the moment there is no build to test this. With V0.5.0 will be a new build.
+
+# V2.0.0 
+
+New Features:
+
+- Ultra Mode added. The ultra mode allows the player to cut into several pieces objects of the environment.
+
+Bugs fixed:
+
+- The sub model parts of the cutted models dissapeared after a few time, increasing the game perfomance.
+
 # V0.0.0(1)
 
 Errors solved:
