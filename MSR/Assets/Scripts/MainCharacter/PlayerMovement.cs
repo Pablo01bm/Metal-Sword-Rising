@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        rb =  GameObject.Find("Player").GetComponent<Rigidbody>();
+        rb =  GameObject.Find("PlayerTest").GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
         

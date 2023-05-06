@@ -411,6 +411,7 @@
 "Assets/Scripts/DungeonCreator/RoomGenerator.cs"
 "Assets/Scripts/DungeonCreator/RoomNode.cs"
 "Assets/Scripts/DungeonCreator/StructureHelper.cs"
+"Assets/Scripts/GameLogic/PlayerRespawn.cs"
 "Assets/Scripts/MainCharacter/PlayerMovement.cs"
 "Assets/Scripts/MainCharacter/ThirdPersonCam.cs"
 "Assets/Scripts/MainCharacter/ultraModeAttacks.cs"
