@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class DungeonCreator : MonoBehaviour
 {
@@ -17,10 +18,12 @@ public class DungeonCreator : MonoBehaviour
     [Range(0, 2)]
     public int roomOffset;
     public GameObject wallVertical, wallHorizontal;
+    public GameObject playerPrefab;
     List<Vector3Int> possibleDoorVerticalPosition;
     List<Vector3Int> possibleDoorHorizontalPosition;
     List<Vector3Int> possibleWallHorizontalPosition;
     List<Vector3Int> possibleWallVerticalPosition;
+    bool firstRoom = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,20 +60,20 @@ public class DungeonCreator : MonoBehaviour
     {
         foreach (var wallPosition in possibleWallHorizontalPosition)
         {
-            createWallH(wallParent, wallPosition, wallHorizontal);
+            createWallH(wallParent, wallPosition, ref wallHorizontal);
         }
         foreach (var wallPosition in possibleWallVerticalPosition)
         {
-            createWallV(wallParent, wallPosition, wallVertical);
+            createWallV(wallParent, wallPosition, ref wallVertical);
         }
     }
 
-    private void createWallH(GameObject wallParent, Vector3Int wallPosition, GameObject wallPrefab)
+    private void createWallH(GameObject wallParent, Vector3Int wallPosition, ref GameObject wallPrefab)
     {
         Instantiate(wallPrefab, wallPosition, Quaternion.Euler(0, 90, 0), wallParent.transform);
     }
 
-    private void createWallV(GameObject wallParent, Vector3Int wallPosition, GameObject wallPrefab)
+    private void createWallV(GameObject wallParent, Vector3Int wallPosition, ref GameObject wallPrefab)
     {
         Instantiate(wallPrefab, wallPosition, Quaternion.identity, wallParent.transform);
     }
@@ -117,6 +120,8 @@ public class DungeonCreator : MonoBehaviour
         dungeonFloor.transform.localScale = Vector3.one;
         dungeonFloor.GetComponent<MeshFilter>().mesh = mesh;
         dungeonFloor.GetComponent<MeshRenderer>().material = material;
+        dungeonFloor.layer = LayerMask.NameToLayer("whatIsGround"); //Own
+        dungeonFloor.AddComponent<MeshCollider>().sharedMesh = mesh; //Own
         dungeonFloor.transform.parent = transform;
 
         for (int row = (int)bottomLeftV.x ; row < (int)bottomRightV.x; row++)
@@ -141,6 +146,39 @@ public class DungeonCreator : MonoBehaviour
             AddWallPositionToList(wallPosition, possibleWallVerticalPosition, possibleDoorVerticalPosition);
         }
 
+        //Own Code, we place in the first room the player spawn point
+        if (firstRoom)
+        {
+            firstRoom = false;  
+            Vector3 roomCenter = new Vector3((bottomLeftCorner.x + topRightCorner.x) / 2f, 0f, (bottomLeftCorner.y + topRightCorner.y) / 2f);
+            Vector3 roomSize = new Vector3(topRightCorner.x - bottomLeftCorner.x, 0f, topRightCorner.y - bottomLeftCorner.y);
+            Bounds roomBounds = new Bounds(roomCenter, roomSize);
+
+            PlaceRespawnPoint(roomBounds);
+        }
+
+    }
+
+    //Own Code, method which place the respawn point
+    private void PlaceRespawnPoint(Bounds roomBounds)
+    {
+        // Generate a random position within the room bounds
+        Vector3 respawnPosition = new Vector3(
+            Random.Range(roomBounds.min.x, roomBounds.max.x),
+            0f,
+            Random.Range(roomBounds.min.z, roomBounds.max.z)
+        );
+
+        // Instantiate the respawn point object
+        GameObject respawnPoint = new GameObject("Respawn Point");
+        respawnPoint.transform.position = respawnPosition;
+        
+
+        // Add any necessary components to the respawn point object
+        // For example, you might want to add a script to handle respawning the player
+        PlayerRespawn respawnScript = respawnPoint.AddComponent<PlayerRespawn>();
+        respawnScript.respawnPoint = respawnPoint.transform;
+        respawnScript.playerPrefab = playerPrefab;
     }
 
     private void AddWallPositionToList(Vector3 wallPosition, List<Vector3Int> wallList, List<Vector3Int> doorList)
