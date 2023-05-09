@@ -2,11 +2,19 @@
 
 This is the repo for The Final Project of my career. Please, use this code just for educational purpouses. Link to download: https://drive.google.com/drive/folders/1YuIDrEIXIX3GmUMwM-Wue6XuNii7KJ-Y?usp=sharing
 
-# V0.5.1 [NEW]
+
+# V0.6.0 [NEW]
 
 New Features:
 
-- Added palyer respawn point in the first room of the map.
+- Added basic melee enemy. It have a patrol behaviour, when the player is close enough to the enemy, It begins running towards the player and starts attacking.
+
+
+# V0.5.1 
+
+New Features:
+
+- Added player respawn point in the first room of the map.
 
 Bugs Fixed:
 
