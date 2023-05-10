@@ -24,6 +24,8 @@ public class DungeonCreator : MonoBehaviour
     List<Vector3Int> possibleWallHorizontalPosition;
     List<Vector3Int> possibleWallVerticalPosition;
     bool firstRoom = true;
+
+    public GameObject MeleeEnemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -149,12 +151,20 @@ public class DungeonCreator : MonoBehaviour
         //Own Code, we place in the first room the player spawn point
         if (firstRoom)
         {
-            firstRoom = false;  
+            firstRoom = false;
             Vector3 roomCenter = new Vector3((bottomLeftCorner.x + topRightCorner.x) / 2f, 0f, (bottomLeftCorner.y + topRightCorner.y) / 2f);
             Vector3 roomSize = new Vector3(topRightCorner.x - bottomLeftCorner.x, 0f, topRightCorner.y - bottomLeftCorner.y);
             Bounds roomBounds = new Bounds(roomCenter, roomSize);
 
             PlaceRespawnPoint(roomBounds);
+        }
+        else 
+        {
+            Vector3 roomCenter = new Vector3((bottomLeftCorner.x + topRightCorner.x) / 2f, 0f, (bottomLeftCorner.y + topRightCorner.y) / 2f);
+            Vector3 roomSize = new Vector3(topRightCorner.x - bottomLeftCorner.x, 0f, topRightCorner.y - bottomLeftCorner.y);
+            Bounds roomBounds = new Bounds(roomCenter, roomSize);
+
+            SpawnEnemies(MeleeEnemy, roomBounds, 5f, Random.Range(1, 5));
         }
 
     }
@@ -180,6 +190,50 @@ public class DungeonCreator : MonoBehaviour
         respawnScript.respawnPoint = respawnPoint.transform;
         respawnScript.playerPrefab = playerPrefab;
     }
+
+    //Own code. Function which place enemies inside the room
+    private void SpawnEnemies(GameObject enemyPrefab, Bounds roomBounds, float minDistanceBetweenEnemies, int numEnemies)
+    {
+        // Loop through the number of enemies to spawn
+        for (int i = 0; i < numEnemies; i++)
+        {
+            // Generate a random position within the room bounds
+            Vector3 enemyPosition = new Vector3(
+                Random.Range(roomBounds.min.x, roomBounds.max.x),
+                enemyPrefab.transform.position.y,
+                Random.Range(roomBounds.min.z, roomBounds.max.z)
+            );
+
+            // Check if the enemy is too close to any previously spawned enemies
+            bool isTooClose = false;
+            foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+            {
+                if (Vector3.Distance(enemy.transform.position, enemyPosition) < minDistanceBetweenEnemies)
+                {
+                    isTooClose = true;
+                    break;
+                }
+            }
+
+            // If the enemy is too close to any previously spawned enemies, skip this iteration
+            if (isTooClose)
+            {
+                continue;
+            }
+
+            // Instantiate the enemy object
+            GameObject enemyObject = Instantiate(enemyPrefab, enemyPosition, Quaternion.identity);
+
+            // Add any necessary components to the enemy object
+            // For example, you might want to add an enemy AI script
+            // or set its health and damage values
+            // ...
+
+            // Tag the enemy object with the "Enemy" tag
+            enemyObject.tag = "Enemy";
+        }
+    }
+
 
     private void AddWallPositionToList(Vector3 wallPosition, List<Vector3Int> wallList, List<Vector3Int> doorList)
     {
