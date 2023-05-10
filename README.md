@@ -2,8 +2,14 @@
 
 This is the repo for The Final Project of my career. Please, use this code just for educational purpouses. Link to download: https://drive.google.com/drive/folders/1YuIDrEIXIX3GmUMwM-Wue6XuNii7KJ-Y?usp=sharing
 
+# V0.6.1 [NEW]
 
-# V0.6.0 [NEW]
+New Features:
+
+- Added random enemy spawn in the differents rooms of the map. The number of enemies for each room is random between 1 & 5 
+
+
+# V0.6.0 
 
 New Features:
 
