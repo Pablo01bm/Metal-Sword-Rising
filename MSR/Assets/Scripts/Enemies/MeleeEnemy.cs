@@ -15,11 +15,19 @@ public class MeleeEnemy : MonoBehaviour
     public GameObject target;
     public bool atacando;
 
+    public float health;
+    public float damage;
+
+    public HealthBar healthBar;
+
+    private bool oneTime;
+
 
     // Start is called before the first frame update
     void Start()
     {
         ani = GetComponent<Animator>();
+        healthBar.setMaxHealth(health);
 
 
     }
@@ -27,9 +35,18 @@ public class MeleeEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemyBehaviour();
-    }
+        if (health > 0)
+        { 
+            enemyBehaviour();
+        }
 
+
+        if (health <= 0 && !oneTime)
+        {
+            ani.SetBool("Dead", true);
+            oneTime = true;
+        }
+    }
 
     public void enemyBehaviour()
     {
@@ -94,4 +111,15 @@ public class MeleeEnemy : MonoBehaviour
         ani.SetBool("attack", false);
         atacando = false;
     }
+
+    private void OnTriggerEnter(Collider coll)
+    {
+        if (coll.CompareTag("Sword"))
+        {
+            health = health - 30f;
+            healthBar.setHealth(health);
+        }
+
+    }
+
 }
