@@ -41,15 +41,6 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
     GameObject Orient;
 
-    private void OnTriggerEnter(Collider coll)
-    {
-        if (coll.CompareTag("weapon"))
-        {
-            print("Damage");
-        }
-
-    }
-
 
     // Start is called before the first frame update
     void Start()
