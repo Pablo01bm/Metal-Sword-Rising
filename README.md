@@ -2,7 +2,23 @@
 
 This is the repo for The Final Project of my career. Please, use this code just for educational purpouses. Link to download: https://drive.google.com/drive/folders/1YuIDrEIXIX3GmUMwM-Wue6XuNii7KJ-Y?usp=sharing
 
-# V0.6.1 [NEW]
+# V0.7.0 [NEW]
+
+New Features:
+
+- Battle basic logic added. 
+
+- Player run animation changed.
+
+- Player health Bar UI added.
+
+- Enemy health bar added.
+
+- Player dead animation added.
+
+- Enemy dead animation added.
+
+# V0.6.1 
 
 New Features:
 
