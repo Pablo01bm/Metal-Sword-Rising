@@ -45,6 +45,7 @@ public class MeleeEnemy : MonoBehaviour
         {
             ani.SetBool("Dead", true);
             oneTime = true;
+            Destroy(gameObject, 3f);
         }
     }
 
