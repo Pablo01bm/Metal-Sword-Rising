@@ -404,7 +404,6 @@
 "Assets/Scripts/DungeonCreator/CorridorNode.cs"
 "Assets/Scripts/DungeonCreator/CorridorsGenerator.cs"
 "Assets/Scripts/DungeonCreator/DungeonCreator.cs"
-"Assets/Scripts/DungeonCreator/DungeonCreatorEditor.cs"
 "Assets/Scripts/DungeonCreator/DungeonGenerator.cs"
 "Assets/Scripts/DungeonCreator/Line.cs"
 "Assets/Scripts/DungeonCreator/Node.cs"
@@ -421,6 +420,7 @@
 "Assets/Scripts/MainCharacter/Ragdoll.cs"
 "Assets/Scripts/MainCharacter/ThirdPersonCam.cs"
 "Assets/Scripts/MainCharacter/ultraModeAttacks.cs"
+"Assets/Scripts/MenusScripts/MainMenu.cs"
 "Assets/Scripts/MenusScripts/PauseMenu.cs"
 "Assets/Scripts/TimeManager.cs"
 -langversion:9.0
