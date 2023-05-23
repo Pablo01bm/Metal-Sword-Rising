@@ -2,7 +2,15 @@
 
 This is the repo for The Final Project of my career. Please, use this code just for educational purpouses. Link to download: https://drive.google.com/drive/folders/1YuIDrEIXIX3GmUMwM-Wue6XuNii7KJ-Y?usp=sharing
 
-# V0.7.0 [NEW]
+# V0.7.2 [NEW]
+
+New Features:
+
+- Death enemies dissapeared after a few seconds. This clean the map and help to the game performance.
+
+- Added main menu when the game starts. The Options button is currently disabled due to the lack of options for the moment.
+
+# V0.7.0 
 
 New Features:
 
