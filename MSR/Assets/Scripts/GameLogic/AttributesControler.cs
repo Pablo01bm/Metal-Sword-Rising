@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class AttributesControler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float playerDamage;
+    public float playerDamageMultiplier=1;
+    public float playerHealth;
+    public float playerSpeed = 1;
+    public float meleeEnemyDamage = 1f;
+    public float meleeEnemyDamageMultiplier = 1f;
+    
+
+    public void damagePowerUp()
     {
-        
+        playerDamageMultiplier = playerDamageMultiplier + 0.1f;
+        playerDamage = 10f * playerDamageMultiplier;
+        Debug.Log("Current Player Damage: " + playerDamage);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void healPowerUp()
     {
-        
+        playerHealth = playerHealth + 20;
+        if (playerHealth > 100) 
+        {
+            playerHealth = 100;
+        }
+        Debug.Log("Current Player Health: " + playerHealth);
     }
+
+
+
 }

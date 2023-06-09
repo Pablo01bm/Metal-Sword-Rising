@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerAttributes : MonoBehaviour
 {
-    public float health = 100f ;
+    public float health ;
     public float damage = 40f;
     public GameObject ragdollGameObject;
     public GameObject camera;
     private bool oneTime = false;
+    private AttributesControler atributesScript;
 
 
     public HealthBar healthBar;
@@ -16,12 +17,18 @@ public class PlayerAttributes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject aux = GameObject.Find("GameManager");
+        atributesScript = aux.GetComponent<AttributesControler>();
+        health = atributesScript.playerHealth;
         healthBar.setMaxHealth(health);
     }
 
     // Update is called once per frame
     void Update()
     {
+        health = atributesScript.playerHealth;
+        healthBar.setHealth(health);
+
         if (health <= 0 && !oneTime ) 
         {
             oneTime = true;
@@ -44,7 +51,8 @@ public class PlayerAttributes : MonoBehaviour
     {
         if (coll.CompareTag("weapon"))
         {
-            health = health - 20f;
+            atributesScript.playerHealth = atributesScript.playerHealth - 20f;
+            health = atributesScript.playerHealth;
             healthBar.setHealth(health);
             print("Damage");
         }
