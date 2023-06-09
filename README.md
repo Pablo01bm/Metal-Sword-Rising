@@ -2,7 +2,17 @@
 
 This is the repo for The Final Project of my career. Please, use this code just for educational purpouses. Link to download: https://drive.google.com/drive/folders/1YuIDrEIXIX3GmUMwM-Wue6XuNii7KJ-Y?usp=sharing
 
-# V0.7.2 [NEW]
+# V0.8.0 [NEW]
+
+New Features: 
+
+- Damage up power up added.
+
+- Heal player power up added.
+
+- Furniture to the map added. The furniture spawns always randomly  and never spawns inside another object.
+
+# V0.7.2 
 
 New Features:
 
