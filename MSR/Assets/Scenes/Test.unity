@@ -1232,7 +1232,7 @@ MonoBehaviour:
   roomOffset: 1
   wallVertical: {fileID: 6371273464043798283, guid: 765670dc3c6042b4c8dd98c6579700b9, type: 3}
   wallHorizontal: {fileID: 5619086036228260161}
-  playerPrefab: {fileID: 5243252695171528514, guid: 99ce836f67675d24d9ccbf27f8be6204, type: 3}
+  playerPrefab: {fileID: 2547045865529250574, guid: 99ce836f67675d24d9ccbf27f8be6204, type: 3}
   maxObjectsPerRoom: 10
   MeleeEnemy: {fileID: 8684231380373590035, guid: f672c4d6317ddf04b826fd93536e52a6, type: 3}
   dungeonObjects:
@@ -1275,6 +1275,8 @@ MonoBehaviour:
   playerSpeed: 1
   meleeEnemyDamage: 10
   meleeEnemyDamageMultiplier: 1
+  score: 0
+  highscore: 0
 --- !u!4 &1511228393
 Transform:
   m_ObjectHideFlags: 0

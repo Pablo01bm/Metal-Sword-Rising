@@ -49,6 +49,7 @@ public class MeleeEnemy : MonoBehaviour
             oneTime = true;
             Destroy(gameObject, 3f);
             InstantiatePowerUp();
+            atributesScript.AddPoint();
         }
     }
 
