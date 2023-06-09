@@ -11,6 +11,7 @@ public class MeleeEnemy : MonoBehaviour
     public Quaternion angle;
     public float grade;
 
+    private AttributesControler atributesScript;
 
     public GameObject target;
     public bool atacando;
@@ -28,7 +29,8 @@ public class MeleeEnemy : MonoBehaviour
     {
         ani = GetComponent<Animator>();
         healthBar.setMaxHealth(health);
-
+        GameObject aux = GameObject.Find("GameManager");
+        atributesScript = aux.GetComponent<AttributesControler>();
 
     }
 
@@ -46,6 +48,7 @@ public class MeleeEnemy : MonoBehaviour
             ani.SetBool("Dead", true);
             oneTime = true;
             Destroy(gameObject, 3f);
+            InstantiatePowerUp();
         }
     }
 
@@ -117,10 +120,31 @@ public class MeleeEnemy : MonoBehaviour
     {
         if (coll.CompareTag("Sword"))
         {
-            health = health - 30f;
+            health = health - atributesScript.playerDamage;
             healthBar.setHealth(health);
         }
 
+    }
+
+    private void InstantiatePowerUp()
+    {
+        float chance = Random.Range(0f, 1f);
+        if (chance <= 0.5f)
+        {
+            GameObject damagePowerUp = GameObject.Find("damagePwUp");// Reference to the GameObject you want to instantiate
+            Vector3 position = transform.position + new Vector3(0, 1f, 0);
+            Quaternion rotation = Quaternion.identity; // Use global rotation
+
+            Instantiate(damagePowerUp, position, rotation);
+
+        }
+        else if (chance > 0.5f) { 
+            GameObject damagePowerUp = GameObject.Find("healPlayer");// Reference to the GameObject you want to instantiate
+            Vector3 position = transform.position + new Vector3(0, 1f, 0);
+            Quaternion rotation = Quaternion.identity; // Use global rotation
+
+            Instantiate(damagePowerUp, position, rotation);
+        }
     }
 
 }

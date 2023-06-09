@@ -24,8 +24,12 @@ public class DungeonCreator : MonoBehaviour
     List<Vector3Int> possibleWallHorizontalPosition;
     List<Vector3Int> possibleWallVerticalPosition;
     bool firstRoom = true;
+    public int maxObjectsPerRoom;
 
     public GameObject MeleeEnemy;
+
+    //Furniture
+    public GameObject[] dungeonObjects;
     // Start is called before the first frame update
     void Start()
     {
@@ -167,6 +171,72 @@ public class DungeonCreator : MonoBehaviour
             SpawnEnemies(MeleeEnemy, roomBounds, 5f, Random.Range(1, 5));
         }
 
+        int instantiatedObjects = 0;
+
+        for (int i = 0; i < dungeonObjects.Length; i++)
+        {
+            if (instantiatedObjects >= maxObjectsPerRoom)
+            {
+                break; // Limit reached, exit the loop
+            }
+
+            Vector3 objectPosition = GetRandomPosition(bottomLeftCorner, topRightCorner);
+
+            // Check if the object position is valid
+            if (IsValidPosition(objectPosition))
+            {
+                Vector3 spawnPosition = objectPosition + new Vector3(0f, 2f, 0f); // Offset the position by 2 units above
+                GameObject instantiatedObject = Instantiate(dungeonObjects[i], spawnPosition, Quaternion.identity);
+                instantiatedObject.transform.parent = dungeonFloor.transform;
+                instantiatedObjects++;
+
+            }
+        }
+
+
+
+    }
+    //Own
+    private Vector3 GetRandomPosition(Vector2 bottomLeftCorner, Vector2 topRightCorner)
+    {
+        float x = Random.Range(bottomLeftCorner.x, topRightCorner.x);
+        float z = Random.Range(bottomLeftCorner.y, topRightCorner.y);
+        return new Vector3(x, 0f, z);
+    }
+    //Own
+    private bool IsValidPosition(Vector3 position)
+    {
+        // Check if position is inside another object
+        Collider[] colliders = Physics.OverlapSphere(position, 1f); // Adjust the radius as needed
+
+        foreach (var collider in colliders)
+        {
+            // Skip if the collider belongs to an object on the "whatIsGround" layer
+            if (collider.gameObject.layer == LayerMask.NameToLayer("whatIsGround"))
+            {
+                continue;
+            }
+
+            // Position is invalid if any collider overlaps
+            return false;
+        }
+
+        // Check if position is at least 2 units away from other objects
+        Collider[] nearbyColliders = Physics.OverlapSphere(position, 2f); // Adjust the radius as needed
+
+        foreach (var collider in nearbyColliders)
+        {
+            // Skip if the collider belongs to an object on the "whatIsGround" layer
+            if (collider.gameObject.layer == LayerMask.NameToLayer("whatIsGround"))
+            {
+                continue;
+            }
+
+            // Position is invalid if any collider is within the specified radius
+            return false;
+        }
+
+        return true;
     }
 
     //Own Code, method which place the respawn point
