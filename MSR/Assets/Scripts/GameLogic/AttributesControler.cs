@@ -10,7 +10,15 @@ public class AttributesControler : MonoBehaviour
     public float playerSpeed = 1;
     public float meleeEnemyDamage = 1f;
     public float meleeEnemyDamageMultiplier = 1f;
-    
+
+    public int score = 0;
+    public int highscore;
+
+
+    private void Start()
+    {
+        highscore = PlayerPrefs.GetInt("highscore", 0);
+    }
 
     public void damagePowerUp()
     {
@@ -27,6 +35,16 @@ public class AttributesControler : MonoBehaviour
             playerHealth = 100;
         }
         Debug.Log("Current Player Health: " + playerHealth);
+    }
+
+    public void AddPoint() 
+    {
+        print("CURRENT SCORE: " + score);
+        score += 100;
+        if (highscore < score) 
+        {
+            PlayerPrefs.SetInt("highscore", score);
+        }
     }
 
 
