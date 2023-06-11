@@ -2,7 +2,13 @@
 
 This is the repo for The Final Project of my career. Please, use this code just for educational purpouses. Link to download: https://drive.google.com/drive/folders/1YuIDrEIXIX3GmUMwM-Wue6XuNii7KJ-Y?usp=sharing
 
-# V0.8.2 [NEW]
+# V0.9.0 [NEW]
+
+New Features: 
+
+- Added neon futuristic Skybox.
+
+# V0.8.2 
 
 New Features: 
 
