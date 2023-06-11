@@ -2,7 +2,18 @@
 
 This is the repo for The Final Project of my career. Please, use this code just for educational purpouses. Link to download: https://drive.google.com/drive/folders/1YuIDrEIXIX3GmUMwM-Wue6XuNii7KJ-Y?usp=sharing
 
-# V0.8.0 [NEW]
+# V0.8.2 [NEW]
+
+New Features: 
+
+- Score system added. Also the highScore is saved internally.
+
+- Game over screen added when the player dies.
+
+- You win screen added when the player collects the final game Star.
+
+
+# V0.8.0 
 
 New Features: 
 
