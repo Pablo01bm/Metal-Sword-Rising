@@ -19,12 +19,17 @@ public class DungeonCreator : MonoBehaviour
     public int roomOffset;
     public GameObject wallVertical, wallHorizontal;
     public GameObject playerPrefab;
+    public GameObject FinishGameObj;
     List<Vector3Int> possibleDoorVerticalPosition;
     List<Vector3Int> possibleDoorHorizontalPosition;
     List<Vector3Int> possibleWallHorizontalPosition;
     List<Vector3Int> possibleWallVerticalPosition;
     bool firstRoom = true;
+    bool lastRoom = false;
     public int maxObjectsPerRoom;
+
+    Vector3 playerPosition; 
+    Vector3 farPositionFromPlayer;
 
     public GameObject MeleeEnemy;
 
@@ -59,6 +64,7 @@ public class DungeonCreator : MonoBehaviour
         {
             CreateMesh(listOfRooms[i].BottomLeftAreaCorner, listOfRooms[i].TopRightAreaCorner);
         }
+        Instantiate(FinishGameObj, farPositionFromPlayer + new Vector3(0, 1f, 0), Quaternion.identity);
         createWalls(wallParent);
     }
 
@@ -168,6 +174,18 @@ public class DungeonCreator : MonoBehaviour
             Vector3 roomSize = new Vector3(topRightCorner.x - bottomLeftCorner.x, 0f, topRightCorner.y - bottomLeftCorner.y);
             Bounds roomBounds = new Bounds(roomCenter, roomSize);
 
+            // Calculate the distance vector between playerPosition and roomCenter
+            Vector3 distanceVector = playerPosition - roomCenter;
+
+            // Calculate the magnitude (distance) of the distance vector
+            float distance = distanceVector.magnitude;
+
+            // Check if the distance is greater than the magnitude of farPositionFromPlayer
+            if (distance > farPositionFromPlayer.magnitude)
+            {
+                farPositionFromPlayer = roomCenter;
+            }
+
             SpawnEnemies(MeleeEnemy, roomBounds, 5f, Random.Range(1, 5));
         }
 
@@ -258,6 +276,8 @@ public class DungeonCreator : MonoBehaviour
         // For example, you might want to add a script to handle respawning the player
         PlayerRespawn respawnScript = respawnPoint.AddComponent<PlayerRespawn>();
         respawnScript.respawnPoint = respawnPoint.transform;
+        playerPosition = respawnPoint.transform.position;
+        farPositionFromPlayer = playerPosition;
         respawnScript.playerPrefab = playerPrefab;
     }
 
