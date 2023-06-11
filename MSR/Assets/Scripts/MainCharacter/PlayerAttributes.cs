@@ -41,7 +41,7 @@ public class PlayerAttributes : MonoBehaviour
 
             ThirdPersonCam camScript = camera.GetComponent<ThirdPersonCam>();
             camScript.enabled = false;
-
+            atributesScript.GameOver();
 
         }
     }
