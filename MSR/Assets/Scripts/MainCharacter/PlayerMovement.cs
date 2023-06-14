@@ -41,6 +41,14 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
     GameObject Orient;
 
+    public GameObject speedParticles;
+
+    public float comboResetTime = 3f;
+    private float lastAttackTime;
+    private int currentAttackIndex;
+    private bool ultraMode = false;
+    private AttributesControler atributesScript;
+
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +56,9 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         rb =  GameObject.Find("PlayerTest").GetComponent<Rigidbody>();
         rb.freezeRotation = true;
-
+        currentAttackIndex = 0;
+        GameObject aux = GameObject.Find("GameManager");
+        atributesScript = aux.GetComponent<AttributesControler>();
         
     }
 
@@ -56,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ultraMode = atributesScript.ultraMode;
         Orient = GameObject.Find("Orientation");
         grounded = Physics.Raycast(  Orient.transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 
@@ -74,10 +85,12 @@ public class PlayerMovement : MonoBehaviour
             if (moveDirection != Vector3.zero )
             {
                 animator.SetBool("IsMoving", true);
+                speedParticles.SetActive(true);
             }
             else
             {
                 animator.SetBool("IsMoving", false);
+                speedParticles.SetActive(false);
             }
 
             // handle drag
@@ -130,13 +143,17 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //when to attack
-        if ((Input.GetKey(attackMouse) || Input.GetKey(attackJoystick)) && grounded && readyToAttack)
-        {   
+        if ((Input.GetKeyDown(attackMouse) || Input.GetKeyDown(attackJoystick)) && grounded && readyToAttack && !ultraMode)
+        {
 
-            readyToAttack = false;
+            if (Time.time - lastAttackTime > comboResetTime)
+            {
+                // Reset combo if the time between attacks exceeds the combo reset time
+                currentAttackIndex = 0;
+            }
+
+            lastAttackTime = Time.time;
             attack();
-
-            Invoke(nameof(resetAttack), attackCooldown);
         }
 
     }
@@ -189,14 +206,39 @@ public class PlayerMovement : MonoBehaviour
         readyToJump = true;
     }
 
-    private void attack()
-    {
-        animator.SetBool("IsAttackingM1", true);
+   private void attack()
+{
+        // Increment the attack index
+        currentAttackIndex++;
+
+        // Reset attack index if it exceeds the maximum combo attacks
+        if (currentAttackIndex > 4)
+        {
+            currentAttackIndex = 1;
+        }
+
+        // Set the corresponding attack bool in the animator
+        animator.SetBool("IsAttackingM" + currentAttackIndex, true);
+
+        // Reset attack bools immediately if it's the final attack combo
+        if (currentAttackIndex > 4)
+        {
+            resetAttack();
+        }
+        else
+        {
+            // Delay the reset of attack bools after the attack animation finishes
+            float delay = animator.GetCurrentAnimatorStateInfo(0).length;
+            Invoke("resetAttack", delay);
+        }
     }
 
-    private void resetAttack()
-    {
-        readyToAttack = true;
-        animator.SetBool("IsAttackingM1", false);
+private void resetAttack()
+{
+        // Reset all attack bools to false
+        for (int i = 1; i <= 4; i++)
+        {
+            animator.SetBool("IsAttackingM" + i, false);
+        }
     }
 }

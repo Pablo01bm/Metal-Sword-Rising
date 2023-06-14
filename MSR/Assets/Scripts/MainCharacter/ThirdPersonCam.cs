@@ -33,13 +33,16 @@ public class ThirdPersonCam : MonoBehaviour
 
     public Animator animator;
 
+    private AttributesControler atributesScript;
+
     private void Start()
     {
         animator = GameObject.Find("MainPlayer").GetComponent<Animator>();    
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        GameObject aux = GameObject.Find("GameManager");
+        atributesScript = aux.GetComponent<AttributesControler>();
 
-        
     }
 
     // Update is called once per frame
@@ -49,11 +52,13 @@ public class ThirdPersonCam : MonoBehaviour
         if (Input.GetButton("UltraMode") || Input.GetAxis("UltraMode") == 1f)
         {
             ultraMode = true;
+            atributesScript.ultraMode = true;
         }
         else 
         {
             plane.transform.localEulerAngles = Vector3.zero;
             ultraMode = false;
+            atributesScript.ultraMode = false;
         }
 
         if (ultraMode)

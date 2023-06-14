@@ -17,6 +17,7 @@ public class AttributesControler : MonoBehaviour
 
     public int score = 0;
     public int highscore;
+    public bool ultraMode = false;
     private bool gameFinished = false;
 
 
@@ -84,6 +85,11 @@ public class AttributesControler : MonoBehaviour
         gameFinished = true;
         FinishScreen.Setup();
 
+    }
+
+    public void SetUltraMode() 
+    {
+        ultraMode = !ultraMode;
     }
 
 
