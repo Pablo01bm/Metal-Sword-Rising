@@ -17,6 +17,7 @@ public class ultraModeAttacks : MonoBehaviour
 
     public CinemachineVirtualCamera cinemachineVirtualCamera;
     private float shakeTimer;
+    private bool timerStarted = false;
 
     private void Start()
     {
@@ -43,7 +44,15 @@ public class ultraModeAttacks : MonoBehaviour
             particles[0].Play();
             particles[1].Play();
             OnClick();
+            timerStarted = true;
+        }
 
+        if (timerStarted && Time.time - lastClickedTime > 2f)
+        {
+            // Call your custom method here
+            ResetBools();
+
+            timerStarted = false;
         }
 
         if (Time.time - lastClickedTime > 0.5)
@@ -102,6 +111,12 @@ public class ultraModeAttacks : MonoBehaviour
         //    noOfClicks = 0;
 
         //}
+    }
+
+    void ResetBools()
+    {
+        anim.SetBool("ultraModeAttack1", false);
+        anim.SetBool("ultraModeAttack2", false);
     }
 
     public void ShakeCamera(float intensity, float time)
