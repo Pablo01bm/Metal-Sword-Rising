@@ -20,6 +20,7 @@ public class DmgPowerUp : MonoBehaviour
         {
             player = other.gameObject;
             Pickup();
+            FindObjectOfType<AudioManager>().Play("PowerUp");
         }
     }
 

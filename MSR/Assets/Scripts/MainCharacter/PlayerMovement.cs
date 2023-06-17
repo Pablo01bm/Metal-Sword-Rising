@@ -43,11 +43,12 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject speedParticles;
 
-    public float comboResetTime = 3f;
+    public float comboResetTime = 1.5f;
     private float lastAttackTime;
     private int currentAttackIndex;
     private bool ultraMode = false;
     private AttributesControler atributesScript;
+    private float AttackCooldown = 1.0f;
 
 
     // Start is called before the first frame update
@@ -127,8 +128,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Myinput()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
+        if (animator.GetBool("IsAttackingM1") == false && animator.GetBool("IsAttackingM2") == false && animator.GetBool("IsAttackingM3") == false && animator.GetBool("IsAttackingM4") == false)
+        { 
+            horizontalInput = Input.GetAxisRaw("Horizontal");
+            verticalInput = Input.GetAxisRaw("Vertical");
+        }
 
         // when to jump 
         if ((Input.GetKey(jumpKey) || Input.GetKey(jumpJoystick)) && readyToJump && grounded)
@@ -143,17 +147,21 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //when to attack
-        if ((Input.GetKeyDown(attackMouse) || Input.GetKeyDown(attackJoystick)) && grounded && readyToAttack && !ultraMode)
+        if ((Input.GetKeyDown(attackMouse) || Input.GetKeyDown(attackJoystick)) && grounded && readyToAttack && !ultraMode && animator.GetBool("IsMoving") == false)
         {
 
-            if (Time.time - lastAttackTime > comboResetTime)
+            if (Time.time - lastAttackTime >= attackCooldown)
             {
-                // Reset combo if the time between attacks exceeds the combo reset time
-                currentAttackIndex = 0;
+                if (Time.time - lastAttackTime > comboResetTime)
+                {
+                    // Reset combo if the time between attacks exceeds the combo reset time
+                    currentAttackIndex = 0;
+                }
+
+                lastAttackTime = Time.time;
+                attack();
             }
 
-            lastAttackTime = Time.time;
-            attack();
         }
 
     }
@@ -210,6 +218,7 @@ public class PlayerMovement : MonoBehaviour
 {
         // Increment the attack index
         currentAttackIndex++;
+        FindObjectOfType<AudioManager>().Play("AttackAir");
 
         // Reset attack index if it exceeds the maximum combo attacks
         if (currentAttackIndex > 4)
