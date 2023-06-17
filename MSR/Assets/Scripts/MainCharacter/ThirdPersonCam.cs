@@ -51,11 +51,16 @@ public class ThirdPersonCam : MonoBehaviour
 
         if (Input.GetButton("UltraMode") || Input.GetAxis("UltraMode") == 1f)
         {
+            //Slow Motion Sound
+            FindObjectOfType<AudioManager>().Play("SlowMotionFinish");
             ultraMode = true;
             atributesScript.ultraMode = true;
+
         }
         else 
         {
+            //Slow Motion Sound
+            FindObjectOfType<AudioManager>().Play("SlowMotionStart");
             plane.transform.localEulerAngles = Vector3.zero;
             ultraMode = false;
             atributesScript.ultraMode = false;
@@ -72,6 +77,7 @@ public class ThirdPersonCam : MonoBehaviour
             rotatePlane();
             if (Time.timeScale > 0.3f) 
             {
+                
                 Time.timeScale -= 0.01f;
             }
             mainPlayerCam.SetActive(false);
@@ -135,6 +141,8 @@ public class ThirdPersonCam : MonoBehaviour
 
     public void Slice()
     {
+        FindObjectOfType<AudioManager>().Play("KatanaSlice");
+
         Collider[] hits = Physics.OverlapBox(plane.transform.position, new Vector3(3, 0.1f, 3), plane.transform.rotation, layerMask);
 
         if (hits.Length <= 0)

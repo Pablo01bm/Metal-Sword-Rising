@@ -21,6 +21,8 @@ public class FinishGame : MonoBehaviour
         {
             player = other.gameObject;
             Pickup();
+            FindObjectOfType<AudioManager>().Stop();
+            FindObjectOfType<AudioManager>().Play("WinMusic");
         }
     }
 

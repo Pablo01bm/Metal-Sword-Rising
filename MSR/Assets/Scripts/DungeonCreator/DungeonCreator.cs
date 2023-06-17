@@ -167,9 +167,11 @@ public class DungeonCreator : MonoBehaviour
             Bounds roomBounds = new Bounds(roomCenter, roomSize);
 
             PlaceRespawnPoint(roomBounds);
+            farPositionFromPlayer = roomCenter;
         }
         else 
         {
+
             Vector3 roomCenter = new Vector3((bottomLeftCorner.x + topRightCorner.x) / 2f, 0f, (bottomLeftCorner.y + topRightCorner.y) / 2f);
             Vector3 roomSize = new Vector3(topRightCorner.x - bottomLeftCorner.x, 0f, topRightCorner.y - bottomLeftCorner.y);
             Bounds roomBounds = new Bounds(roomCenter, roomSize);
@@ -183,6 +185,7 @@ public class DungeonCreator : MonoBehaviour
             // Check if the distance is greater than the magnitude of farPositionFromPlayer
             if (distance > farPositionFromPlayer.magnitude)
             {
+                print("Distance: " + distance);
                 farPositionFromPlayer = roomCenter;
             }
 
@@ -277,7 +280,6 @@ public class DungeonCreator : MonoBehaviour
         PlayerRespawn respawnScript = respawnPoint.AddComponent<PlayerRespawn>();
         respawnScript.respawnPoint = respawnPoint.transform;
         playerPosition = respawnPoint.transform.position;
-        farPositionFromPlayer = playerPosition;
         respawnScript.playerPrefab = playerPrefab;
     }
 
