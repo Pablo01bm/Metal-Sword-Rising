@@ -5,6 +5,9 @@
 \usepackage[spanish]{babel}
 \usepackage{graphicx}
 \usepackage{caption}
+\usepackage[font=it,labelfont=bf]{caption}
+\usepackage{natbib}
+\usepackage{float}
 
 
 \graphicspath{ {./images/} }
@@ -71,9 +74,9 @@ pdfproducer = {pdflatex}
 \usepackage[stable]{footmisc}
 %\usepackage{index}
 
-%\makeindex
-%\usepackage[style=long, cols=2,border=plain,toc=true,number=none]{glossary}
-% \makeglossary
+\makeindex
+\usepackage[style=long, cols=2,border=plain,toc=true,number=none]{glossary}
+\makeglossary
 
 % Definición de comandos que me son tiles:
 %\renewcommand{\indexname}{Índice alfabético}
@@ -181,7 +184,7 @@ pdfproducer = {pdflatex}
 \input{prefacios/prefacio}
 \frontmatter
 \tableofcontents
-% \listoffigures
+\listoffigures
 % \listoftables
 
 \mainmatter
@@ -215,11 +218,11 @@ pdfproducer = {pdflatex}
 
 
 %\nocite{*}
-% \bibliography{bibliografia/bibliografia}\addcontentsline{toc}{chapter}{Bibliografía}
-% \bibliographystyle{miunsrturl}
+\bibliography{bibliografia/bibliografia.bib}\addcontentsline{toc}{chapter}{Bibliografía}
+\bibliographystyle{plain}
 
 % \appendix
-% \input{apendices/manual_usuario/manual_usuario}
+%\input{apendices/manual_usuario/manual_usuario}
 % %\input{apendices/paper/paper}
 % \input{glosario/entradas_glosario}
 % \addcontentsline{toc}{chapter}{Glosario}

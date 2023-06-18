@@ -43,7 +43,7 @@ A continuación se va a tratar el análisis del proyecto planteado y su respecti
             \item[\textbf{RF-2.1.2}] Los enemigos de las mazmorras se generarán en patrones distintos y en salas distintas.
             \item[\textbf{RF-2.1.3}] Las recompensas o mejoras para el jugador aparecerán en situaciones aleatorias.
         \end{enumerate}
-        \item[\textbf{RF-2.2}] El sistema generará a los enemigos serán controlados por una IA.
+        \item[\textbf{RF-2.2}] El sistema generará a los enemigos que serán agentes reactivos.
         \item[\textbf{RF-2.3}] El sistema generará a los enemigos serán de distintos tipos y cada tipo tendrá su propio comportamiento.
         \item[\textbf{RF-2.4}] El sistema generará recompensas y mejoras para el jugador. 
         \begin{enumerate}
@@ -51,7 +51,6 @@ A continuación se va a tratar el análisis del proyecto planteado y su respecti
             \begin{enumerate}
                 \item[\textbf{RF-2.4.1.1}] El sistema generará recompensas que mejoren el daño provocado a los enemigos.
                 \item[\textbf{RF-2.4.1.2}] El sistema generará recompensas que mejoren la resistencia del jugador.
-                \item[\textbf{RF-2.4.1.3}] El sistema generará recompensas que aumenten la velocidad de movimiento del jugador.
             \end{enumerate}
         \end{enumerate}
         \item[\textbf{RF-2.5}]El sistema generará mazmorras que tendrán distintos tipos de salas.
@@ -89,16 +88,17 @@ Para este proyecto serán necesarios bastantes elementos los cuales son:
 %Aqui tengo que poner también ademásd del personaje, los muebles, enemigos, armas y decorados que use.
 
 \subsubsection{Personaje principal}
-Este modelo ha sido importado desde la web de \textit{Adobe Mixamo} la cual ofrece una gran cantidad de modelos 3D
+Este modelo ha sido importado desde la web de \textit{Adobe Mixamo} \cite{Mixamo} la cual ofrece una gran cantidad de modelos 3D
 y animaciones, la gran mayoría compatibles con \textit{Unity}. Debido a el contexto en el que se quiere situar
 el videojuego, el modelo elegido es una especie de androide humanoide futurista. Dado que es algo que no se va a tener en cuenta a la hora de
 jugar, el personaje principal no será personalizable, siempre tendrá este aspecto. \\
 A continuación imagen del modelo elegido: 
 
-\begin{center}
+\begin{figure}[htbp]
+\centering
 \includegraphics[width=8cm, height=8cm]{characterModel.jpg}
-%\caption{Modelo Alien Soldier}
-\end{center}
+\caption{Modelo Alien Soldier}
+\end{figure}
 
 Un aspecto bastante interesante de este modelo es que es \textit{rigged}, es decir, que incluye
 un esqueleto con el que a la hora de añadir las distintas animaciones al personaje, se va a facilitar bastante dicha tarea. \\
@@ -110,8 +110,8 @@ Para animar este modelo se han importado también una serie de animaciones, tamb
 En esta sección se mostraran los modelos de armas utilizados por el personaje principal y enemigos del videojuego
 
 La espada del personaje principal, es una \textit{katana} la cual se importó desde la web de 
-\textit{Sketchfab} que ofrece gran cantidad de Assets y modelos 3D tanto gratis como de pago.
-Este modelo seleccionado es gratuito y fue creado por el usuario "shor.riot". \\
+\textit{Sketchfab} \cite{Sketchfab} que ofrece gran cantidad de Assets y modelos 3D tanto gratis como de pago.
+Este modelo seleccionado es gratuito y fue creado por el usuario shor.riot. \\
 
 Se eligió este tipo de arma ya que es bien conocido
 que las katanas japonesas tienen fama de ser muy afiladas y por tanto, para un aspecto importante del videojuego 
@@ -120,16 +120,111 @@ ha escogido este modelo en concreto ya que con la luz neón verde que incluye la
 da la sensación de ser una katana más futurista y así adaptarse mejor al contexto del videojuego. A continuación se muestra el modelo
 de dicha katana: 
 
-\begin{center}
+\begin{figure}[H]
+    \centering
     \includegraphics[width=8cm, height=8cm]{phaseKatana.jpg}
-    %\caption{Modelo Alien Soldier}
-    \end{center}
+    \caption{Modelo 3D Phase Katana}
+\end{figure}
 
 \subsubsection{Enemigos}
 
+Los modelos de los enemigos han sido importados desde una página web la cual es la que más elementos ha proporcionado al proyecto, dicha página es \textit{Unity Asset Store} \cite{UnityAssetStore}. Según la propia página de documentación oficial proporcionada por Unity, la \textit{Unity Documentation} \cite{UnityDocumentation} este servicio es una plataforma en línea donde los desarrolladores de videojuegos pueden encontrar y adquirir una amplia variedad de activos, recursos y herramientas para usar en sus proyectos de Unity. Estos activos pueden incluir modelos 3D, texturas, scripts, paquetes de efectos visuales, música, sonidos, plantillas de interfaz de usuario y mucho más.
+
+Unity Asset Store proporciona a los desarrolladores una forma conveniente de expandir y mejorar sus juegos al ofrecer una amplia selección de contenido creado por otros desarrolladores. Los activos se pueden comprar o descargar de forma gratuita, dependiendo de las preferencias del creador del activo. Además, también existe la opción de adquirir paquetes completos que contienen varios activos relacionados, en este caso, este paquete es gratuito e incluye todo lo necesario para la funcionalidad que se quiere hacer.
+
+El paquete de modelos 3D, texturas y animaciones de los enemigos es \textit{SciFi Enemies and Vehicles} del usuario \textit{Popup Asylum}. Dicho paquete fue de gran utilidad y calidad pese a ser gratuito. El modelo 3D usado para el enemigo de tipo \textit{Melee} o ataque a corta distancia, es una especie de escorpión robótico, llamado por el autor como \textit{Warrior}. A continuación imagen de dicho modelo.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=8cm]{MeleeEnemy.jpg}
+    \caption{Modelo 3D enemigo Melee Warrior}
+\end{figure}
+
+Las animaciones de este enemigo también están incluidas en el paquete. Las que se han usado han sido animaciones de patrullar, correr, observar y atacar.
+
 \subsubsection{Decoración}
 
+Otro aspecto importante de los videojuegos es el propio mapa y los elementos que lo decoran, esto sirve para poder acercar lo máximo posible al usuario 
+el entorno o historia que se quiere transmitir. Para ello hay que diferenciar entre los distintos elementos que conforman el concepto de decoración.
+
+Lo primero de lo que hablaremos será de la \textbf{Skybox} del entorno. De acuerdo con la \textit{Unity Documentation} una skybox es una envoltura alrededor de la escena que muestra cómo se ve el mundo más allá de su geometría. Es decir, es el paisaje de fondo que existe en el videojuego, además de los elementos 3D, es necesario una skybox para conseguir la sensación de estar dentro de un mundo inventado por el creador del videojuego.\\
+
+Para las skybox normalmente se usan  \textit{Cubemap} \cite{Cubemaps} las cuales son una representación especial de una textura en forma de cubo en tres dimensiones. Consiste en seis texturas 2D separadas que se unen para formar un cubo completo. Cada una de las seis caras del cubo representa una vista diferente del entorno y además cada una de las caras tienen las mismas dimensiones. A continuación un ejemplo de dicho tipo de imágenes.\\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm, height=8cm]{cubemapExample.png}
+    \caption{Ejemplo de Cubemap usado para una Skybox}
+\end{figure}
+
+Sin embargo en mi caso se ha utilizado otra variante también muy usada, la cual se trata de las \textit{Equirectangular Images} \cite{EquirectangularImages}. Se trata una imagen 2D que se envuelve alrededor de una esfera, proporcionando un campo de visión horizontal de 360 grados y un campo de visión vertical de 180 grados. Este tipo de proyección se utiliza comúnmente para imágenes panorámicas y ofrece una forma conveniente de capturar y mostrar una vista de gran angular de un entorno, como por ejemplo el típico mapa de La Tierra.
+Una vez explicado este concepto, pasamos a explicar la creación de la Skybox usada en el proyecto, puesto que es una imagen única producida por una inteligencia artifical generativa. Esta herramienta se encuentra en la web y está en desarrollo, se trata de \textit{Blockade Labs} \cite{BlockadeLabs}, una web que ofrece de forma gratuita una IA generativa, la cual, a partir de inputs de texto y opciones seleccionables, es capaz de generar Skyboxes ciñendose a dichos inputs. Pues de esta manera se generó la skybox para el proyecto, a continuación se muestra dicha imagen equirectangular.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=8cm]{skybox.jpg}
+    \caption{Skybox generada por IA y usada en el proyecto}
+\end{figure}
+
+Como se puede observar, se eligió un concepto futurista y en entorno nocturno para generar dicha imagen, ya que se ajusta bien a el objetivo y contexto del videojuego.\\
+
+Siguiendo con el decorado de los escenarios, se buscaron elementos que pudieran encajar en la temática. Se decidió buscar en la ya mencionada \textit{Unity Asset Store} y se encontró un paquete con una gran cantidad de modelos de decorado 3D, y que además encajaban con la temática un mínimo, ya que los paquetes que encajaban a la perfección eran de pago. Este paquete es \textbf{RPG/FPS Game Assets for PC/Mobile (Industrial Set v3.0)} del usuario \textbf{Dmitrii Kutsenko}. De este paquete se han usado 4 elementos de decoración, como son barriles y montones de sacos de cemento. Estos elementos están escogidos para que además el jugador pueda cortarlos con la mecánica del \textbf{Modo Ultrasónico} ya que a veces estos elementos bloquearán el camino y el jugador deberá abrirse paso cortándolos.
+Estos elementos se muestran a continuación.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=8cm]{barrilesMarron.jpg}
+    \caption{Modelo 3D barril de combustible marrón}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=8cm]{barrilesAzul.jpg}
+    \caption{Modelo 3D barriles de combustible azul}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=8cm]{SacosCemento.jpg}
+    \caption{Modelo 3D palés de sacos de cemento de distintas texturas}
+\end{figure}
+
+Por último, también se ha añadido decorado para el propio personaje, se trata de otro modelo de katana distinto al mencionado anteriormente, y se va a incluir en esta sección ya que su uso va a ser puramente estético, no va a ser un arma funcional dentro del videojuego. Este modelo también ha sido descargado e importado desde \textit{Unity Assets Store}, se trata de un modelo de katana 3D junto con la funda de la misma. El paquete se llama \textbf{Free Katana and Scabbard} de el usuario \textbf{Hideout Studio}.\\
+
+Dicha funda y katana se han añadido en la cintura del personaje, el proceso seguido para conseguir que la katana esté ceñida a la cintura del personaje será explicado más adelante en la sección de Implementacion. A continuación el modelo mencionado:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=8cm]{modeloKatana2.jpg}
+    \caption{Katana y funda 3D importada para mejorar el aspecto del personaje principal}
+\end{figure}
+
+\subsubsection{Coleccionables}
+
+Para los objetos coleccionables que el jugador podrá recoger por el escenario, se han importado también de \textit{Unity Asset Store}. El paquete es \textbf{Ten Power-Ups} del usuario \textbf{TeKniKo}, y dicho paquete incluye numerosos iconos y modelos prefabricados de coleccionables, además de un Script que produce el efecto de flotar en el aire. Los coleccionables usados de dicho paquete han sido, una estrella la cual al recogerla se acaba la partida y el jugador gana, unas flechas verdes apuntando hacia arriba indicando mejora de daño, y un icono de una cruz roja para curar la salud del jugador.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=8cm]{powerUps.jpg}
+    \caption{Coleccionables usados en el proyecto, estrella, flechas verdes y cruz roja}
+\end{figure}
+
+
 \subsubsection{Sonidos}
+
+Los sonidos usados en el proyecto, han sido obtenidos de la plataforma \textit{YouTube} \cite{YouTube}. Todos los sonidos y la música obtenida es de uso libre y no tienen licencias de \textit{Copyright}.\\
+
+De sonidos de efectos especiales se han importado los siguientes: 
+\begin{itemize}
+    \item[\textbf{Correr}] Este sonido se ha obtenido del vídeo llamado \textbf{RUN / RUNNING SOUND EFFECT | FOOTSTEPS SOUND [High Quality]} del usuario \textbf{LISTEN}, y este sonido se ha usado para el efecto especial del personaje cuando realiza la acción de correr.
+    \item[\textbf{Corte de Katana}] Sonido conseguido del vídeo \textbf{Katana Swing Cut - Sound Effect for editing} del usuario textbf{Sound library}, usado cuando el jugador realiza un corte con la katana a un objeto.
+    \item[\textbf{Espadazo}] El vídeo de donde se ha sacado se llama \textbf{sword slash (sound effects) || mani creation ||} del usuario \textbf{Become a better you}. Para este sonido he tenido que recortarlo ya que en la misma pista de audio había muchos más efectos.
+    \item[\textbf{Cámara lenta}] Sonido usado para indicar al jugador, además de forma visual, de forma auditiva que ha entrado en \textit{Modo Ultrasónico}. El vídeo de donde se ha obtenido el efecto es \textbf{Slow Motion Sound Effect} del usuario \textbf{SFX Sounds}. Este efecto también ha habido que recortarlo ya que vienen juntos en la misma pista varios efectos.
+    \item[\textbf{Power Up}] Efecto de recoger un power up o coleccionable. Vídeo \textbf{Power-Up - Sound Effect (HD)} del usuario \textbf{House Of Sound Effects}.
+    \item[\textbf{Música partida}] Esta canción suena de fondo mientras transcurre la partida, como ya se ha mencionado antes es música sin licencias de \textit{Copyright}. \textbf{Sci Fi Cyberpunk - VHS [Synthwave/Electro]} del usuario \textbf{The Neon World}.
+    \item[\textbf{Música Menú }] Canción que suena durante el tiempo que el jugador esté en el menú principal, se ha obtenido del vídeo \textbf{Synthwave Game Boy by Infraction [No Copyright Music] / Cassette} y el usuario que lo proporciona es \textbf{Infraction - No Copyright Music}
+    \item[\textbf{Música victoria}] Esta música sonará cuando el jugador recoja el coleccionable con el que se acaba la partida, se ha descargado desde el vídeo \textbf{Edge of Tomorrow - Synthwave - Royalty Free Music} del usuario \textbf{TeknoAXE's Royalty Free Music}.  
+\end{itemize}
 
 \subsection{Elementos del proyecto }
 
@@ -148,31 +243,33 @@ Antes de hablar de cómo se ha desarrollado la cámara, se va a explicar muy bre
     \item[\textbf{1º persona}] Este tipo de cámara es de los más usados actualmente, consiste en recrear con la cámara 
     que el jugador está viendo lo mismo que el personaje que controla dentro del mismo. Este tipo de cámara sobre todo se plantea en videojuegos realizados en entornos 3D .Esta cámara se suele usar sobretodo en 
     videojuegos tipo \textit{shooter} o de miedo, para conseguir esta inmmersion para el jugador. A continuación un ejemplo de dicho tipo de cámara:
-    \begin{center}
+    \begin{figure}[H]
+        \centering
         \includegraphics[width=10cm, height=5cm]{doomEjemplo.jpg}
-        %\caption{Videojuego Doom}
-    \end{center}
+        \caption{Videojuego Doom}
+    \end{figure}
     \item[\textbf{3º persona}] Este tipo de cámara pretende dar la sensación al jugador de que está presenciando
     en forma de espectador lo que le ocurre al personaje del videojuego, consiguiendo de esa manera que el usuario
     al jugar lo que está haciendo es interferir en la historia o acciones del personaje que controla. Ejemplo a continuación:
-    \begin{center}
+    \begin{figure}[H]
         \includegraphics[width=10cm, height=5cm]{BOTWejemplo.jpg}
-        %\caption{Videojuego Doom}
-    \end{center}
+        \caption{Videojuego The Legend Of Zelda: Breath of the Wild}
+    \end{figure}
     \item[\textbf{Perspectiva Isométrica}] Este tipo de cámara, como su nombre indica, se situa en perspectiva 
     Isométrica con respecto a la escena de forma que se ve como si el usuario estuviera situado en el cielo de la escena presenciandola.
     Este tipo de cámara puede ser parecida a la de 3º persona pero con ella se pueden realizar videojuegos totalmente distintos como por ejemplo videojuegos de estrategia o de construcción de ciudades.
     Ejemplo : 
-    \begin{center}
+    \begin{figure}[H]
+        \centering
         \includegraphics[width=10cm, height=5cm]{AOE2ejemplo.jpg}
-        %\caption{Videojuego Doom}
-    \end{center}
+        \caption{Videojuego Age Of Empires II}
+    \end{figure}
 \end{enumerate}
 
 Una vez vistos los principales tipos de cámara que se usan a día de hoy en los videojuegos, proseguiremos con la explicación
 del desarrollo de la cámara de el videojuego que se está tratando.
 
-Para la cámara se ha decidido importar un paquete de \textit{Unity} llamado \textit{Cinemachine} %Referenciar
+Para la cámara se ha decidido importar un paquete de \textit{Unity} llamado \textit{Cinemachine} \cite{UnityCinemachine} %Referenciar
 el cual proporciona una serie de herramientas para facilitar la creación, la lógica y los parámetros de la cámara 
 que se va a usar.
 \textit{Cinemachine} facilita el uso de la cámara en \textit{Unity} en comparación con la cámara básica de \textit{Unity}, ya que proporciona una forma más intuitiva y fácil de crear y gestionar la cámara. También permite la creación de efectos de cámara avanzados sin necesidad de escribir código, lo que ahorra tiempo y esfuerzo en el desarrollo del juego o aplicación.
