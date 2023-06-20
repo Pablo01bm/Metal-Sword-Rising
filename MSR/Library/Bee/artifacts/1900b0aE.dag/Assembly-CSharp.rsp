@@ -396,6 +396,8 @@
 "Assets/ezy-slice-master/ezy-slice-master/EzySlice/SlicedHull.cs"
 "Assets/ezy-slice-master/ezy-slice-master/EzySlice/Slicer.cs"
 "Assets/ezy-slice-master/ezy-slice-master/EzySlice/SlicerExtensions.cs"
+"Assets/Low Poly Flat Sci Fi Assets/Demo/Scripts/DoubleSlidingDoorController.cs"
+"Assets/Low Poly Flat Sci Fi Assets/Demo/Scripts/FlickeringLight.cs"
 "Assets/PowerUp/Scripts/CustomizablePowerUp.cs"
 "Assets/PowerUp/Scripts/PowerUpManager.cs"
 "Assets/PowerUp/Scripts/PowerUpRotation.cs"

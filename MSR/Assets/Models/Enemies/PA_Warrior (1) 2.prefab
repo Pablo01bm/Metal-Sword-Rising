@@ -166,6 +166,7 @@ MonoBehaviour:
   health: 100
   damage: 10
   healthBar: {fileID: 1719169680696132408}
+  sparks: {fileID: 5425802738861363379, guid: 397110af8384f9f4da14b147b52f3ecb, type: 3}
 --- !u!65 &3197909803297157703
 BoxCollider:
   m_ObjectHideFlags: 0

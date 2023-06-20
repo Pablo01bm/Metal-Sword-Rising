@@ -168,25 +168,53 @@ Una vez explicado este concepto, pasamos a explicar la creación de la Skybox us
 
 Como se puede observar, se eligió un concepto futurista y en entorno nocturno para generar dicha imagen, ya que se ajusta bien a el objetivo y contexto del videojuego.\\
 
-Siguiendo con el decorado de los escenarios, se buscaron elementos que pudieran encajar en la temática. Se decidió buscar en la ya mencionada \textit{Unity Asset Store} y se encontró un paquete con una gran cantidad de modelos de decorado 3D, y que además encajaban con la temática un mínimo, ya que los paquetes que encajaban a la perfección eran de pago. Este paquete es \textbf{RPG/FPS Game Assets for PC/Mobile (Industrial Set v3.0)} del usuario \textbf{Dmitrii Kutsenko}. De este paquete se han usado 4 elementos de decoración, como son barriles y montones de sacos de cemento. Estos elementos están escogidos para que además el jugador pueda cortarlos con la mecánica del \textbf{Modo Ultrasónico} ya que a veces estos elementos bloquearán el camino y el jugador deberá abrirse paso cortándolos.
+Siguiendo con el decorado de los escenarios, se buscaron elementos que pudieran encajar en la temática. Se decidió buscar en la ya mencionada \textit{Unity Asset Store} y se encontró un paquete con una gran cantidad de modelos de decorado 3D, y que además encajaban con la temática \textit{SciFi}. Este paquete es \textbf{Low Poly Sci Fi Set} del usuario \textbf{Walter Palladino}. De este paquete se han usado 6 elementos de decoración, como son cajas de distinto tamaño y forma, así como de 2 cápsulas de cristal, una rota y otra en buen estado. Estos elementos están escogidos para que además el jugador pueda cortarlos con la mecánica del \textbf{Modo Ultrasónico} ya que a veces estos elementos bloquearán el camino y el jugador deberá abrirse paso cortándolos.
 Estos elementos se muestran a continuación.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=12cm, height=8cm]{barrilesMarron.jpg}
-    \caption{Modelo 3D barril de combustible marrón}
+    \includegraphics[width=12cm, height=8cm]{caja1.jpg}
+    \caption{Modelo 3D caja con una línea en medio color verde}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=12cm, height=8cm]{barrilesAzul.jpg}
-    \caption{Modelo 3D barriles de combustible azul}
+    \includegraphics[width=12cm, height=8cm]{caja2.jpg}
+    \caption{Modelo 3D de cubo simple}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=12cm, height=8cm]{SacosCemento.jpg}
-    \caption{Modelo 3D palés de sacos de cemento de distintas texturas}
+    \includegraphics[width=12cm, height=8cm]{caja3.jpg}
+    \caption{Modelo 3D de caja con 3 líneas de decoración color verde}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=8cm]{caja5.jpg}
+    \caption{Modelo 3D de caja rectangular con una línea de color verde}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=8cm]{capsulas.jpg}
+    \caption{Modelos 3D de capsulas de cristal, una rota y otra en buen estado}
+\end{figure}
+
+Se importaron de otro paquete otros 2 elementos más de decoración, ampliando hasta 8, el total de elementos que conforman el decorado del videojuego. El paquete se llama \textbf{LowPoly Server Room Props} del usuario \textbf{iPoly3D}.
+
+A continuación imagenes de los 2 modelos seleccionados.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=8cm]{caja4.jpg}
+    \caption{Modelo 3D de caja rectangular con adornos en la parte delantera}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=8cm]{panel.jpg}
+    \caption{Modelo 3D de panel de mandos}
 \end{figure}
 
 Por último, también se ha añadido decorado para el propio personaje, se trata de otro modelo de katana distinto al mencionado anteriormente, y se va a incluir en esta sección ya que su uso va a ser puramente estético, no va a ser un arma funcional dentro del videojuego. Este modelo también ha sido descargado e importado desde \textit{Unity Assets Store}, se trata de un modelo de katana 3D junto con la funda de la misma. El paquete se llama \textbf{Free Katana and Scabbard} de el usuario \textbf{Hideout Studio}.\\
@@ -226,11 +254,27 @@ De sonidos de efectos especiales se han importado los siguientes:
     \item[\textbf{Música victoria}] Esta música sonará cuando el jugador recoja el coleccionable con el que se acaba la partida, se ha descargado desde el vídeo \textbf{Edge of Tomorrow - Synthwave - Royalty Free Music} del usuario \textbf{TeknoAXE's Royalty Free Music}.  
 \end{itemize}
 
-\subsection{Elementos del proyecto }
+\subsection{Descripción detallada del proyecto }
 
 A la hora de hablar del desarrollo del proyecto, es posible realizar una distinción entre
  distintas partes del proyecto y pasar a su explicación de forma separada, ya que cada una de estas 
- partes abarca herramientas y enfoques distintos. 
+ partes abarca herramientas y enfoques distintos. Más adelante en la sección de implementación se abarcarán los detalles técnicos de cada sección.
+
+\subsubsection{Aspectos generales del proyecto}
+
+El proyecto ha sido desarrollado en la versión 2021.3.2f1 \cite{UnityLTS} del editor de Unity, que además es una versión \textit{Long Time Support}, por lo que este ha sido el motivo de usar esta versión.\\
+
+Para el estilo visual que se ha implementado en el proyecto, ha sido necesario utilizar el \textit{Universal Render Pipeline} \cite{URP}. Un \textit{Render Pipeline} \cite{RenderPipeline} o tubería de renderizado, es un conjunto de etapas o procesos que se utilizan en los motores gráficos para convertir datos de geometría y texturas en imágenes visuales finales en tiempo real. En Unity existen 3 render pipelines distintas, prefabricadas, además de que se da la posibilidad al usuario de crear su propia render pipeline si así se prefiere.
+
+En Unity, existen dos sistemas principales de renderizado: el sistema de renderizado incorporado (Built-in Render) y el sistema de renderizado universal (Universal Render Pipeline).
+
+El \textbf{Built-in Render} es el predeterminado en Unity. Proporciona una amplia compatibilidad con diferentes dispositivos y plataformas. Permite utilizar características avanzadas como reflejos en tiempo real, sombras en tiempo real y efectos de postprocesamiento. Sin embargo, puede tener un rendimiento inferior en comparación con los sistemas más optimizados.
+
+El sistema \textbf{URP} (Universal Render Pipeline), está diseñado para ofrecer un rendimiento eficiente en dispositivos móviles y de gama baja. Utiliza un enfoque de sombreado simplificado y un conjunto de características restringido en comparación con el sistema Built-in. A pesar de esto, el URP permite utilizar shaders personalizados, lo cual se ha realizado en este proyecto, efectos de postprocesamiento y efectos visuales de alta calidad mediante su propio sistema de efectos. También incluye herramientas adicionales de optimización, como el culling (desaparición) de objetos, para mejorar el rendimiento. Como ya se ha mencionado, este es el sistema que se ha usado en este proyeto.
+
+Además de estos sistemas principales, Unity también ofrece el \textbf{High Definition Render Pipeline} (HDRP) como una opción avanzada para obtener gráficos de alta calidad en dispositivos de gama alta. El HDRP proporciona características de renderizado fotorrealistas, iluminación global avanzada, sombras de alta calidad y efectos visuales realistas. Lógicamente, esta render pipeline no era conveniente para este proyecto por lo que ni se valoró su uso.
+
+Finalmente, debido a las facilidades y la alta capacidad de personalización y rendimiento que ofrece el URP, se valoró como el más adecuado para el proyecto, sobre todo en el aspecto de diseño de un estilo visual diferenciado.
 
 \subsubsection{Cámara del personaje principal} 
 
@@ -255,7 +299,7 @@ Antes de hablar de cómo se ha desarrollado la cámara, se va a explicar muy bre
         \includegraphics[width=10cm, height=5cm]{BOTWejemplo.jpg}
         \caption{Videojuego The Legend Of Zelda: Breath of the Wild}
     \end{figure}
-    \item[\textbf{Perspectiva Isométrica}] Este tipo de cámara, como su nombre indica, se situa en perspectiva 
+    \item[\textbf{Isométrica}] Este tipo de cámara, como su nombre indica, se situa en perspectiva 
     Isométrica con respecto a la escena de forma que se ve como si el usuario estuviera situado en el cielo de la escena presenciandola.
     Este tipo de cámara puede ser parecida a la de 3º persona pero con ella se pueden realizar videojuegos totalmente distintos como por ejemplo videojuegos de estrategia o de construcción de ciudades.
     Ejemplo : 
@@ -266,7 +310,7 @@ Antes de hablar de cómo se ha desarrollado la cámara, se va a explicar muy bre
     \end{figure}
 \end{enumerate}
 
-Una vez vistos los principales tipos de cámara que se usan a día de hoy en los videojuegos, proseguiremos con la explicación
+En el proyecto, se va a implementar una cámara en \textbf{tercera persona}. Una vez vistos los principales tipos de cámara que se usan a día de hoy en los videojuegos, proseguiremos con la explicación
 del desarrollo de la cámara de el videojuego que se está tratando.
 
 Para la cámara se ha decidido importar un paquete de \textit{Unity} llamado \textit{Cinemachine} \cite{UnityCinemachine} %Referenciar
@@ -289,10 +333,10 @@ Entre las funcionalidades más destacadas de \textit{Cinemachine} se encuentran:
 
 \end{enumerate}
 
-En general, \textit{Cinemachine} es una herramienta muy útil para cualquier desarrollador que quiera crear un sistema de cámara avanzado y dinámico para su juego o aplicación. Ofrece una interfaz gráfica intuitiva, una amplia variedad de funcionalidades y efectos de cámara, y se integra bien con otros sistemas de \textit{Unity}. Si estás desarrollando un juego o aplicación que requiera un sistema de cámara avanzado, definitivamente vale la pena explorar las posibilidades que ofrece \textit{Cinemachine}.
+En general, \textit{Cinemachine} es una herramienta muy útil para cualquier desarrollador que quiera crear un sistema de cámara avanzado y dinámico para su juego o aplicación. Ofrece una interfaz gráfica intuitiva, una amplia variedad de funcionalidades y efectos de cámara, y se integra bien con otros sistemas de \textit{Unity}.
 
 De acuerdo pues una vez repasados los aspectos principales de \textit{Cinemachine}, la configuración que se ha hecho en el proyecto ha sido, 
-seleccionar un tipo de cámara llamada \textit{FreeLook camera}. Esta cámara permite 
+seleccionar un tipo de cámara llamada \textit{FreeLook camera} \cite{CinemachineFreelook}. Esta cámara permite 
 \begin{itemize}    
     \item \textbf{Control de tres ejes:} La cámara FreeLook permite controlar la posición y rotación de la cámara en tres ejes: horizontal, vertical y de profundidad. Esto permite crear movimientos de cámara complejos y precisos.
    
@@ -307,32 +351,122 @@ seleccionar un tipo de cámara llamada \textit{FreeLook camera}. Esta cámara pe
     \item \textbf{Modos de enfoque:} La cámara FreeLook tiene diferentes modos de enfoque que permiten controlar cómo se enfoca la cámara en los objetos de la escena. Por ejemplo, se pueden usar modos de enfoque basados en la distancia o en el ángulo de la cámara.
 \end{itemize}
 
-Además de esta cámara se ha configurado otro tipo, pero se va a explicar en el siguiente apartado. El Script en Unity
+Además de esta cámara se ha configurado otro tipo que incluye el paquete \textit{Cinemachine}, que es \textit{Virtual Camera} \cite{CinemachineVirtualCamera}. Esta cámara se parece a la anterior mencionada \textit{FreeLook} pero tiene algunas diferencias por las cuales se ha elegido dicho tipo para cuando el jugador entre en \textbf{Modo Ultrasónico}. Podemos destacar de las propiedades, de las cuales comparte muchas con la cámara \textit{FreeLook} como puede ser el modo de seguimiento (Follow) o LookAt, además ésta permite crear transiciones suaves de una cámara a otra, evitando cambios bruscos y molestos en el jugador. 
+
+Podemos concluir que la diferencia entre ambas es que la Cinemachine FreeLook camera se especializa en proporcionar un movimiento de cámara más complejo y cinematográfico (movimientos de cámara similares a los de películas de cine). Mientras que la VirtualCamera se centra en el seguimiento y la orientación automática de objetivos además de mayor personalización en el ajuste de la cámara como el ángulo o campo de visión. A continuación imagenes con cada tipo de cámara para compararlas.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=8cm]{FreeLookCamera.jpg}
+    \caption{Ejemplo de FreeLook camera realizando un plano contrapicado al personaje}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=8cm]{VirtualCamera.jpg}
+    \caption{Ejemplo de Virtual camera configurada para simular que tanto el jugador como el personaje estén mirando al centro de la pantalla}
+\end{figure}
+
+El Script en Unity
 que controla ésta cámara se llama \textit{ThirdPersonCam.cs}, más adelante se verá en detalle el código de dicho script. 
 Una vez explicada la cámara y la herramienta utilizada para su desarrollo se procederá a la explicación del siguiente elemento del proyecto.
 
-\subsubsection{Movimiento del personaje principal}
+\subsubsection{Personaje principal}
 
 A la hora de definir los distintos movimientos del personaje principal se han seleccionado una serie 
 de animaciones las cuales están sincronizadas con el desplazamiento del personaje, pero vamos a entrar más en detalle para hablar de como se 
-ha planteado y desarrollado. \\
+ha planteado y desarrollado. Hay que recalcar que las animaciones son un aspecto clave en el desarrollo de videojuegos, pese a que no es el objetivo de este proyecto, se ha cuidado este aspecto todo lo posible durante el desarrollo del proyecto.\\
 
-Lo primero es que se ha hecho es elegir de la web \textit{Mixamo} animaciones para el movimiento del personaje, las cuales 
-son de uso libre para cualquier proyecto. Antes de ver qué animaciones se han escogido vamos a explicar cómo funcionan las animaciones 
-en Unity. 
+Lo primero es que se ha hecho es elegir de la web \textit{Unity Asset Store} animaciones de \textit{samurai} japonés, ya que encajaban perfectamente con el planteamiento y las inspiraciones para realizar el proyecto.
 
-Una animación en Unity es una representación visual en tiempo real de un modelo tridimensional (3D) que se mueve y cambia de forma según una serie de instrucciones previamente establecidas.
+ Antes de seguir vamos a definir de forma breve algunos conceptos como el de animación y explicaremos las herramientas con las que se ha realizado este apartado del proyecto. La animación es el proceso de crear la ilusión de movimiento a partir de una secuencia de imágenes estáticas. Se logra mostrando una serie de imágenes en rápida sucesión, cada una ligeramente diferente de la anterior, lo que crea la ilusión de movimiento continuo. Pueden ser dibujos, imágenes generadas por computadora o incluso objetos reales que se mueven cuadro a cuadro. 
 
-El elemento  ''Animator'' de Unity es una herramienta que permite controlar y programar animaciones en un objeto 3D. Funciona mediante la creación de ''animators controllers'', que son conjuntos de reglas y estados que controlan la reproducción de animaciones.
+ La animación \cite{Animacion} tal y como la conocemos hoy día comenzó cuando los animadores de \textbf{Disney}, \textbf{Ollie Johnston} y \textbf{Frank Thomas}, recogieron en su libro \textit{The Illusion of life} los "Doce principios básicos de la animación" \cite{TheIllusionOfLife}. El objetivo de estos principios era intentar crear la ilusión de que los personajes se apegaban a las leyes de la física aunque se abarcaron también temas como el tiempo emocional y atractivo de los personajes. 
 
-En cuanto a la división de secciones de un modelo ''rigged'' para que haya animaciones distintas y concurrentes en distintas partes del cuerpo, se puede lograr mediante la creación de ''mecanim animations''. Este proceso implica la creación de varios animators controllers que controlan diferentes partes del modelo, y luego combinarlos para crear una animación completa y coherente.
+ \begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm, height=8cm]{pelotaRebotando.png}
+    \caption{Bola roja rebotando desglosada en 6 fotogramas. Extraido de https://es.wikipedia.org/wiki/Archivo:Animexample3edit.png }
+\end{figure}
 
-Para dividir un modelo rigged en secciones para animaciones distintas, primero debemos asegurarnos de que el modelo tenga una rig adecuada, con huesos (bones) que correspondan a las partes que deseamos animar. Luego, podemos crear una serie de ''animators controllers'' para cada sección del modelo que deseamos animar.
+ Aunque inicialmente se pretendía que estos principios se aplicaran principalmente a la animación tradicional o animación dibujada a mano, siguen siendo de gran relevancia en la actualidad, especialmente en el contexto de la animación por ordenador que prevalece hoy en día.
 
-Por ejemplo, si deseamos animar la pierna de un personaje, podemos crear un ''animators controller'' que controle la animación de la pierna. Dentro de este controller, podemos agregar una serie de estados y transiciones que controlen la animación de la pierna. Podemos hacer lo mismo para otras partes del modelo, como los brazos, la cabeza, etc.
+Una vez repasado el concepto de animación, ahora se da paso a cómo se puede trabajar con las animaciones en Unity. Recalcar que ninguna de las animaciones usadas ha sido creada de cero para este proyecto, todas han sido creadas por otros usuarios. Lo que sí se ha hecho ha sido modificar la velocidas o algunos fotogramas de determinadas animaciones. 
 
-Una vez que hemos creado los diferentes ''animators controllers'' para las diferentes secciones del modelo, podemos combinarlos para crear una animación completa y coherente. Esto se logra mediante la creación de un''Blend Tree'' o ''StateMachine'' en el Animator Controller principal, que controlará la reproducción de las diferentes animaciones de cada sección del modelo.
+Para aplicar animaciones en Unity es necesario usar el elemento ''Animator'' \cite{AnimatorUnity} el cual es una herramienta que permite controlar y programar animaciones en un objeto 3D. Funciona mediante la creación de ''animators controllers'', que son conjuntos de reglas y estados que controlan la reproducción de animaciones.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=8cm]{AnimatorControllerExample.png}
+    \caption{Ejemplo de Animator formando un esquema de animator controllers junto a las reglas que los confroman. Imagen extraida de https://docs.unity3d.com/es/530/Manual/class-AnimatorController.html }
+\end{figure}
+
+Primero hablaremos de las animaciones del personaje principal, dicho personaje es de tipo ''rigged''. Cuando se habla de un modelo rigged en el contexto de elementos 3D, se refiere a un modelo tridimensional que ha sido equipado con un esqueleto virtual, también conocido como rig. El rig es una estructura interna compuesta por huesos, articulaciones y controladores que simula el sistema musculoesquelético de un personaje o modelo.
+
+Para que haya animaciones distintas y concurrentes en distintas partes del cuerpo, se puede lograr mediante la creación de ''mecanim animations'' \cite{MecanimAnimation}. Este proceso implica la creación de varios animators controllers que controlan diferentes partes del modelo, y luego combinarlos para crear una animación completa y coherente. En el caso del personaje principal se decidió separar el modelo el tren superior e inferior del cuerpo. A continuación imagen de cada máscara creada para indicar que músculos del modelos responderán a las animaciones. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm, height=8cm]{UpperBodyMask.jpg}
+    \caption{Animator mask correspondiente a el tren superior del cuerpo del personaje, en verde los músculos que se moverán en cada animación}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm, height=8cm]{LowerBodyMask.jpg}
+    \caption{Animator mask correspondiente a el tren inferior del cuerpo del personaje, en verde los músculos que se moverán en cada animación}
+\end{figure}
+
+Para poder acceder a cada una de estas máscaras, dentro del Animator hay que crear tantas ''Layers'' o capas como se deseen, en este caso se crearpn 2 layers, una para cada máscara. En cada layer se presenta un diagrama de estados vacío, de forma que se pueden personalizar cada una de las layers al punto que se desee. En el apartado de la implementación se detallarán los diagramas de estados así como la lógica de transición entre ellos.
+
+El movimiento en sí del personaje está creado vía Script y responde a los inputs del jugador a través de teclas o botones de un controlador.
+
+El personaje principal tiene asociado unos parámetros de Salud y de Daño los cuales se gestionan a través de Scripts según se den las condiciones que los activen o no. Por ejemplo al jugador se le bajará la salud cuando reciba un golpe por parte de un enemigo. Todo esto será posible gracias a los \textit{Colliders} que ofrece Unity, con los cuales se puede gestionar cómo interactúan de forma física los distintos elementos de la escena. Así como se ha dotado al personaje de colliders, a los demás elementos también, ya que sin ellos no se podrá conseguir el comportamiento esperado.
+
+Por último, el personaje también interactuará con una serie de elementos coleccionables los cuales, al colisionar con ellos afectarán a los parámetros de Salud y daño del jugador, incrementándolos. Además de un elemento coleccionable encargado de que cuando el juagdor lo recoja, en ese momento se de por finalizada la partida.
+
+\subsection{Enemigo}
+
+El enemigo que el personaje debe derrotar durante el juego tiene una serie de animaciones asociadas y un comportamiento guiado por una máquina de estados sencilla, la cual contempla 4 estados distintos que son, patrulla, vigilancia, aproximación al jugador y ataque al jugador. La lógica de transición entre animaciones o comportamientos se trata a través de parámetros ''Trigger''. 
+
+Las animaciones de estos enemigos no son de tipo rigged ya que los modelos no son humanoides y por tanto no se tratan igual. Además los enemigos tienen asociados unos parámetros de vida y de daño, los cuales se ven afectados por las acciones del jugador.
+
 \subsubsection{Modo Ultrasónico}
 
- 
+El Modo Ultrasónico consiste en un modo al cual podrá acceder el jugador al mantener pulsada Cierta tecla o botón, y durante el cual, el personaje será capaz de cortar los elementos estáticos del entorno, exceptuando enemicos, paredes y suelo. 
 
+Se ha logrado que solo se corte a cierto tipo de elementos del entorno mediante las 'layers' que ofrece Unity, las cuales se pueden crear para indicar a el editor el layer de cada elemento. Hay muchas layers default, pero se ha creado la layer \textit{Enemy} para esto, y se les ha asociado a cada uno de los elementos cortables esta layer. De esta manera, cuando el script con la lógica de corte interactúa con los colliders de elementos en la capa Enemy, corta dichos elementos.
+
+Para limitar la distancia y la orientación de los cortes, se proporciona al jugador durante este modo, de un plano el cual sólo verá cuando esté activado el modo Ultrasónico, y el cual podrá girar para ajustar los cortes como guste el usuario. 
+
+Durante este modo además se han añadido \textbf{efectos especiales} como son el \textit{Postprocesamiento} y la cámara lenta. Para poder conseguir el efecto de postprocesamiento era necesario aplicar el renderizador URP anteriormente mencionado. Los efectos aplicados son los motrados en la imagen siguiente.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm, height=12cm]{PostProcessingEffectConfig.jpg}
+    \caption{Parámetros de postprocesamiento usados para efectos visuales durante el modo Ultrasónico}
+\end{figure}
+
+Con estos efectos visuales se pretende dar la sensación al jugador de que ha entrado en un modo de comportamiento distinto al normal y de esa forma indicar sin que haya texto que puede ser capaz de realizar la acción de corte.
+
+Para conseguir el efecto de cámara lenta, se realiza mediante Script con la propiedad de Unity \textit{Time} \cite{Time}. Time es una clase incorporada que proporciona información sobre el tiempo transcurrido en el juego. Permite a los desarrolladores acceder y controlar el tiempo en su juego, lo que resulta útil para la animación, la física, las transiciones y otros aspectos relacionados con el tiempo.
+
+Algunas de las propiedades y métodos más utilizados de la clase "Time" son:
+ 
+\begin{itemize}    
+    \item \textbf{Time.deltaTime} Proporciona la duración en segundos del fotograma anterior. Se utiliza para crear movimientos suaves y consistentes, ya que compensa las diferencias de rendimiento en diferentes plataformas.
+   
+    \item \textbf{Time.fixedDeltaTime}  Es similar a Time.deltaTime, pero se utiliza en el contexto de las actualizaciones físicas y es constante en cada fotograma.
+
+    \item \textbf{Time.timeScale}  Permite ajustar la velocidad del tiempo en el juego. Un valor de 1.0 significa tiempo normal, mientras que un valor menor ralentiza el tiempo y un valor mayor lo acelera.
+
+    \item \textbf{Time.time} Representa el tiempo transcurrido en segundos desde que se inició el juego. Se utiliza para realizar cálculos basados en el tiempo, como animaciones o temporizadores.
+\end{itemize}
+
+Por tanto, la propiedad usada para hacer el efecto de cámara lenta es usar \textbf{Time.timeScale} y asignarle un valor menor que 1.
+
+\subsubsection{Generación procedural del mapa y sus elementos}
+
+\subsubsection{ToonShading}
+
+\subsection{Bocetos del diseño del proyecto}

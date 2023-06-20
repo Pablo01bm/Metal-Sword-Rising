@@ -20,6 +20,7 @@ public class MeleeEnemy : MonoBehaviour
     public float damage;
 
     public HealthBar healthBar;
+    public GameObject sparks;
 
     private bool oneTime;
 
@@ -123,6 +124,8 @@ public class MeleeEnemy : MonoBehaviour
         {
             health = health - atributesScript.playerDamage;
             healthBar.setHealth(health);
+            Instantiate(sparks, coll.ClosestPointOnBounds(transform.position), Quaternion.identity);
+            Destroy(sparks, 1f);
         }
 
     }
