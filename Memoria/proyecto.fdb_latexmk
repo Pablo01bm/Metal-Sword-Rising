@@ -1,19 +1,19 @@
 # Fdb version 4
-["bibtex proyecto"] 1687292397 "proyecto.aux" "proyecto.bbl" "proyecto" 1687292401 0
-  "./bibliografia/bibliografia.bib" 1687291114 4910 5d4a57f8297a18dc3282d1fa085f6b6c ""
+["bibtex proyecto"] 1687461119 "proyecto.aux" "proyecto.bbl" "proyecto" 1687464089 0
+  "./bibliografia/bibliografia.bib" 1687365449 5399 b74de0d5037aaefc8d43ff14c90967ea ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291868336 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "proyecto.aux" 1687292400 10557 79de32a739e7f792c53f2a7d96805e87 "pdflatex"
+  "proyecto.aux" 1687464088 13147 981e83bfe1cfab0c06df86bebdc71acd "pdflatex"
   (generated)
   "proyecto.bbl"
   "proyecto.blg"
   (rewritten before read)
-["makeindex proyecto.idx"] 1687287996 "proyecto.idx" "proyecto.ind" "proyecto" 1687292401 0
-  "proyecto.idx" 1687292398 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex proyecto.idx"] 1687372571 "proyecto.idx" "proyecto.ind" "proyecto" 1687464089 0
+  "proyecto.idx" 1687464086 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "proyecto.ilg"
   "proyecto.ind"
   (rewritten before read)
-["pdflatex"] 1687292397 "c:/Users/pablo/Desktop/Pablo/TFG-Metal-Sword-Rising/Metal-Sword-Rising/Memoria/proyecto.tex" "proyecto.pdf" "proyecto" 1687292401 0
+["pdflatex"] 1687464084 "c:/Users/pablo/Desktop/Pablo/TFG-Metal-Sword-Rising/Metal-Sword-Rising/Memoria/proyecto.tex" "proyecto.pdf" "proyecto" 1687464089 0
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1687085386 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx1095.pk" 1681839936 13580 6abe2f17d78e3d3f2378a3dd99321520 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1681841187 12668 0a98e39c4ab4111af1bd63a2e6b40d31 ""
@@ -127,15 +127,25 @@
   "capitulos/02/abstract.tex" 1681227504 193 4de9a285e3be53a253a4e648f59e58ee ""
   "capitulos/03/introduccion.tex" 1681227402 197 527f30873d034fe42aeff8a6812d001f ""
   "capitulos/04/objetivos.tex" 1681228268 194 9c7ae4e32d0d5aa6710426cabf0760f9 ""
-  "capitulos/05/resolucion.tex" 1687292392 41719 040af2aa6be658a552d75988090e4c29 ""
+  "capitulos/05/resolucion.tex" 1687464084 64775 0d4106c4c7b7e8fcf52c23126170fea7 ""
   "imagenes/etsiit_logo.png" 1379672160 15686 96fbb972320ee192b868b64d57775747 ""
   "imagenes/logo_ugr.jpg" 1228354992 85532 25866cc28cc667a1cdd972180571e7be ""
   "images//AOE2ejemplo.jpg" 1681841165 255562 f5cd27b6f20274062dff06fd0b00ce14 ""
   "images//AnimatorControllerExample.png" 1687286744 40658 84320bfa55407f58a89ccd0e07e4cda7 ""
   "images//BOTWejemplo.jpg" 1681840556 79123 73b6fa0e416beb91cfd5720e9731244d ""
+  "images//Bocetoo1.png" 1687372708 46574 33290860237fbfd7248561baace9dec5 ""
+  "images//Bocetoo2.png" 1687372783 75979 50ca2bdbb30e0c64d8b731e22af9b319 ""
+  "images//Bocetoo3.png" 1687372811 62692 fd2a1e57ec23db9bd7e2ddf65ac3736b ""
+  "images//Bocetoo4.png" 1687372843 83018 8726188f0216ff9d532a2bf5d6493658 ""
+  "images//Bocetoo5.png" 1687372888 77594 614b66ecbcb3926235191a268eacc697 ""
+  "images//Bocetoo6.png" 1687372920 52660 f86ae7618da09c579f07af341b85ef9e ""
+  "images//Bocetoo7.png" 1687372955 80434 39928184937b1861e5cab21ecd84823e ""
+  "images//Bocetoo8.png" 1687372988 124808 d5414981c96068f63a3fa412e293f15e ""
+  "images//DiagramaClases1.png" 1687453557 198511 b89e930f20bfcb5bd3e83e5734015f29 ""
   "images//FreeLookCamera.jpg" 1687283571 128276 4bdf12d40ce39a3a06de9b395b1c2672 ""
   "images//LowerBodyMask.jpg" 1687288320 28124 fd1c0402871bdf64fc6f29fc080954e5 ""
   "images//MeleeEnemy.jpg" 1687086722 1066442 4694846d74c9864b212cd4391a1f431a ""
+  "images//OverlapSphere.jpg" 1687361205 26140 7e731d9c63057f1b8040790c0762643b ""
   "images//PostProcessingEffectConfig.jpg" 1687290861 108438 4b2ea6ca36d8417a9fe03fc0a11485f6 ""
   "images//UpperBodyMask.jpg" 1687288252 27688 17d2888807b794fb3a9c2aaaa45cb253 ""
   "images//VirtualCamera.jpg" 1687283713 125381 1068923dc7ad89d907c3794564d7ef21 ""
@@ -148,6 +158,7 @@
   "images//characterModel.jpg" 1681580943 62937 83f96f0d89d820b82051dad936e6b82a ""
   "images//cubemapExample.png" 1687099407 235972 536387064e0e0c77aa2dbe48a99b7ad1 ""
   "images//doomEjemplo.jpg" 1681839891 154295 188ec927496a007de78ad4c2677ad92e ""
+  "images//ejemploShaderGraph.jpg" 1687367817 47130 408da68fccc30762b68a21c8e9293813 ""
   "images//modeloKatana2.jpg" 1687107166 80034 9d7fb56f9d14fb4e3fb3467fe347f6af ""
   "images//panel.jpg" 1687274306 22548 e886aa815ac3a6083527bcb6a2b39f8d ""
   "images//pelotaRebotando.png" 1687286034 1249 f970abc1ed32109cb09d1bf73e7e7ceb ""
@@ -156,13 +167,13 @@
   "images//skybox.jpg" 1686481234 2513397 78ec930e0a1c83617fe100f8d196ab18 ""
   "portada/portada.tex" 1681148510 1062 75bc369473f3b18e1bdd1b48907ab54e ""
   "prefacios/prefacio.tex" 1681148782 2588 cf9cbcefb15b4ffd1492b9986052932f ""
-  "proyecto.aux" 1687292400 10557 79de32a739e7f792c53f2a7d96805e87 "pdflatex"
-  "proyecto.bbl" 1687292397 4232 2148dd95234795c269c886cfe4ed4b8c "bibtex proyecto"
-  "proyecto.ind" 1687287996 0 d41d8cd98f00b204e9800998ecf8427e "makeindex proyecto.idx"
-  "proyecto.lof" 1687292400 3892 5ac39de2d0599f32a9498926c4eb5a84 "pdflatex"
-  "proyecto.out" 1687292400 2207 bce8517e2d0316aa8ae3ed576c4a00e3 "pdflatex"
+  "proyecto.aux" 1687464088 13147 981e83bfe1cfab0c06df86bebdc71acd "pdflatex"
+  "proyecto.bbl" 1687461120 4649 355cff98dae905c419416a4bf0f7a0b3 "bibtex proyecto"
+  "proyecto.ind" 1687372571 0 d41d8cd98f00b204e9800998ecf8427e "makeindex proyecto.idx"
+  "proyecto.lof" 1687464088 5114 78b35edc3158701a2929987b67227d6d "pdflatex"
+  "proyecto.out" 1687464088 2599 b7141d77b3e2ddd749af68798e2ab8a6 "pdflatex"
   "proyecto.tex" 1687277629 5658 a2f3927c2c51b981dcd9f4990c7d6389 ""
-  "proyecto.toc" 1687292400 2205 d1c840808e155093f22e833d3bd39cad "pdflatex"
+  "proyecto.toc" 1687464088 2707 051a2d3a355a0438c2dbf7b42c1101f3 "pdflatex"
   (generated)
   "proyecto.aux"
   "proyecto.glo"

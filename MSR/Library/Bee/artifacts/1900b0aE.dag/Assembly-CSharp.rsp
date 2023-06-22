@@ -434,7 +434,6 @@
 "Assets/Scripts/MainCharacter/Ragdoll.cs"
 "Assets/Scripts/MainCharacter/ThirdPersonCam.cs"
 "Assets/Scripts/MainCharacter/ultraModeAttacks.cs"
-"Assets/Scripts/MainCharacter/WeaponTrail.cs"
 "Assets/Scripts/MenusScripts/FinishGameMenu.cs"
 "Assets/Scripts/MenusScripts/GameOverScreen.cs"
 "Assets/Scripts/MenusScripts/MainMenu.cs"

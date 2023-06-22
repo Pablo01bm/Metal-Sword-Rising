@@ -467,6 +467,195 @@ Por tanto, la propiedad usada para hacer el efecto de cámara lenta es usar \tex
 
 \subsubsection{Generación procedural del mapa y sus elementos}
 
+Como ya se ha mencionado anteriormente en la introducción del proyecto, este videojuego va a tener una particularidad que no suelen tener otros, el cual es la generación procedural de los escenarios y de los elementos que los conforman. Se ha decidido plantear los escenarios a modo de mazmorra con diferentes habitaciones y pasillos que unen unas habitaciones con otras. Las habitaciones, serán rectangulares y los pasillos también.
+
+Para poder realizar este apartado del proyecto ha sido necesario buscar por la web maneras de plantear la generación del mapa. Finalmente se encontraron una serie de vídeos a modo de tutorial de un usuario en los que explicaba con detalle un algoritmo en el cual se iba a basar a la hora de realizar la implementación. Estos vídeos se llaman \textbf{Procedural dungeon in Unity 3D Tutorial} del usuario \textbf{Sunny Valley Studio}. El algoritmo se explicará unas secciones más adelante, por ahora sólo trataremos este especto de forma generalizada.
+
+Una vez se generan las distintas habitaciones y son unidas por los pasillos, tenemos como resultado una mazmorra la cual siempre que se inicie una partida cambiará. Además los elementos de decoración y los enemigos serán generados en puntos aleatorios dentro de cada habitación. Para calcular esto, como se tienen las esquinas de cada habitación, es posible calcular puntos aleatorios dentro de ellas, procurando que no aparezcan elementos atravesados unos con otros. Esto se ha logrado a los ya mencionados \textit{Colliders}. A la hora de instanciar estos objetos se genera un punto aleatorio dentro de la habitación por la que vaya el algoritmo y se llama a una función llamada \textit{IsValidPosition} la cual realiza lo siguiente: 
+
+\begin{itemize}    
+    \item Comprueba que en la posición dada no hay ningún elemento ya emplazado. Esto se realiza mediante una propiedad de la clase \textit{Physics} la cual es generar dado un punto (el que es candidato) una esfera de radio personalizable (en este caso 1) la cual es un \textit{Collider} y comprueba que con esa esfera no haya ninguna colisión, ya que esto indicará que el espacio está libre.
+    \item Comprobueba además de lo anterior que el elemento esté a una distancia razonable de otros elementos para evitar que haya muchos elementos concentrados en un lugar de la habitación y el resto esté muy vacío. Esto se consigue realizando lo mismo que antes pero con una esfera de mayor tamaño y realizando las mismas comprobaciones.
+\end{itemize}
+
+Por supuesto, las colisiones con el suelo no se tienen en cuenta ya que si no, la esfera generada simpre devolvería como punto inválido. A continuación un apoyo visual de como funciona la \textit{OverlapSphere}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=10cm]{OverlapSphere.jpg}
+    \caption{Gráfico donde se muestra el comportamiento de una OverlapSphere}
+\end{figure}
+
+Para los enemigos se ha aplicado exactamente esta misma lógica. Más delante, en la sección de implementación se entrará en detalle de los distintos componentes y la propia implementación de este algoritmo.
+
+\subsection{Efectos especiales de partículas}
+
+En los videojuegos es muy común y un aspecto importante apoyar todos los diseños de los escenarios y personajes con efectos especiales visuales, con el objetivo de mejorar la experiencia del usuario jugador. Esto, la mayoría de las ocasiones, en Unity se consigue mediante el \textit{Particle System} \cite{ParticleSystem} que el editor tiene incluido.
+
+Los efectos que se han creado en este proyecto han sido tres, efectos de chispas cuando la espada del jugador impacta con un enemigo o realiza un corte, efecto de electricidad alrededor de la espada del jugador y efecto de velocidad cuando el personaje se mueve. Todos estos efectos se consiguen mediante la regulación de ciertos parámetros que más adelante se indicarán. Además para los efectos de chispas y de velocidad se ha diseñado una pequeña lógica para regular cuando deben mostarse dichos efectos.
+
+Para conseguir un mayor efecto visual además, a las chispas se las ha dotado de un comportamiento parecido al de la realidad, ya que cuentan con físicas y rebotan contra elementos del entorno, así como la reducción del tamaño y de la velocidad conforme pasa el tiempo así como el cambio del color de las chispas, para simular el ''ciclo de vida'' de una de ellas. Los demás efectos no cuentan con estas propiedades ya que se ha decidido que no es necesario.
+
+Con el conjunto de estos efectos especiales se busca dar feedback al usuario de forma visual e integrada en el propio entorno del videojuego sin necesidad de utilizar cuadros de texto o indicadores, mejorando la experiencia e inmersión del jugador.
+
 \subsubsection{ToonShading}
 
+Dentro de los videojuegos, además de las mecánicas y diseño de mapas, es muy importante tener un estilo visual o gráfico propio de ese videojuego. Los gráficos de los videojuegos hoy día son algo que se tienen muy en cuenta para poder diferenciar claramente unos de otros. En muchas ocasiones los juegos comparten aspectos mecánicos con otros, pero la gente no los asocia como iguales al tener estilos visuales diferentes. 
+
+Existen varios estilos visuales los cuales son muy populares como el estilo realista, pero en este proyecto se ha optado por el estilo visual ''Toon'' el cual da la propiedad a los elementos del entorno de parecer estar sacados directamente de una película de animación o de un cómic. Se ha optado por este estilo ya que además de ser uno de los más gustados por el público general, porque implicaba un estudio de los \textit{Shaders} en los videojuegos y de las técnicas que hay que realizar para lograr estos efectos en las texturas de los objetos del videojuego.
+
+Hay que distinguir entre \textit{Shader}, \textit{Material} y \textit{Textura} para comprender exactamente qué es lo que se ha realizado. De acuerdo con la documentación de Unity:
+
+\begin{itemize}    
+    \item \textbf{Shader} Son Scripts que contienen los cálculos matemáticos y algoritmos para calcular el color de cada pixel renderizado, basándose en el input de iluminación y la configuración del Material, algo clave para poder conseguir el efecto ''Toon''.
+   
+    \item \textbf{Material} Un material es una configuración que se aplica a los objetos 3D para determinar su apariencia visual. Un material define cómo interactúa la luz con la superficie de un objeto y cómo se reflejan, refractan o absorben los diferentes componentes de la luz.
+
+    \item \textbf{Textura}  Las texturas son imágenes que se aplican a la superficie del objeto para darle detalles visuales. Pueden contener información de color, brillo, rugosidad, transparencia, entre otros. Unity admite diferentes tipos de texturas, como texturas albedo (color base), texturas de normales (para simular detalles de superficie), texturas de especularidad (para reflejos especulares) y texturas de emisión (para generar luz desde la superficie del objeto).
+\end{itemize}
+
+Para conseguir el efecto deseado, por tanto era necesario actuar sobre los shaders, y para ello además de usar el URP, hay que configurar un \textit{Shader Graph} \cite{ShaderGraph} de Unity. Un Shader Graph en Unity es una herramienta visual que permite crear shaders de manera interactiva y sin necesidad de programación.
+
+El Shader Graph proporciona una interfaz gráfica de nodos, donde los nodos representan diferentes operaciones y efectos visuales, y las conexiones entre ellos definen cómo se combinan y se aplican esos efectos. Al conectar nodos en el Shader Graph, se crea una representación visual del shader que define cómo se procesa la luz y los materiales en un objeto. A continuación ejemplo de shader graph:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=8cm]{ejemploShaderGraph.jpg}
+    \caption{Nodos usados en el shader graph del proyecto}
+\end{figure}
+
+Los nodos son los distintos rectángulos que se pueden observar en la figura anterior, los cuales se van uniendo las salidas de unos a las entradas de otros para recrear el efecto esperado de dibujo animado.
+
 \subsection{Bocetos del diseño del proyecto}
+
+En este apartado se mostrarán los distintos bocetos que se generaron acerca del diseño del videojuego y los modelos. Además, hay algunos bocetos de la interfaz de usuario y la navegación entre ellos, la cual está marcada con un número que indica al boceto al que se dirige en el caso de accionar o pulsar ese icono.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=8cm]{Bocetoo1.png}
+    \caption{Boceto 1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=8cm]{Bocetoo2.png}
+    \caption{Boceto 2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=8cm]{Bocetoo3.png}
+    \caption{Boceto 3}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=8cm]{Bocetoo4.png}
+    \caption{Boceto 4}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=8cm]{Bocetoo5.png}
+    \caption{Boceto 5}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=8cm]{Bocetoo6.png}
+    \caption{Boceto 6}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=8cm]{Bocetoo7.png}
+    \caption{Boceto 7}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=8cm]{Bocetoo8.png}
+    \caption{Boceto 8}
+\end{figure}
+
+\subsection{Diagrama de clases}
+
+Para poder realizar este proyecto ha sido necesario la implementación de varias clases las cuales no pertenecen a Unity. Hay una gran cantidad de Scripts en el proyecto (casi 40) pero no todos podrían considerarse clases como tal, ya que algunos solo actúan como scripts. A continuación, se van a dividir por apartados cada clase y se explicara la función de cada uno y posteriormente se expondrá un diagrama de clases donde se podrá visualizar de forma gráfica. Se va a explicar cada script siguiendo más o menos el orden en el que se desarrollaron.
+
+Hay que nombrar primero que la gran mayoria de estas clases van a heredar de la clase \textit{MonoBehaviour}, la cual es una clase base que se utiliza para crear scripts que pueden adjuntarse a objetos en la escena de Unity y controlar su comportamiento. Tiene como métodos imprescindibles los métodos:
+
+\begin{itemize}    
+    \item \textbf{Start()} Este método se llama antes de que se actualice el primer fotograma del juego. Se utiliza para inicializar variables y configuraciones adicionales.
+   
+    \item \textbf{Update()} Este método se llama en cada fotograma del juego. Se utiliza para realizar actualizaciones continuas en el objeto de juego, como movimientos, animaciones o lógica del juego.
+
+    \item \textbf{Awake()}  Este método se llama cuando se instancia el objeto que contiene el script. Se utiliza para inicializar cualquier estado o configuración necesaria antes de que comience el juego.
+\end{itemize}
+
+\subsubsection{Cámara y personaje}
+
+Estos Scripts y clases que se explicarán a continuación son aquellos relacionados directamente con el comportamiento del personaje, sus movimientos, acciones y cámara.
+
+\textbf{ThirdPersonCam} es de los ficheros más importates del proyecto, ya que desde él se gestionan gran cantidad de funcionalidades. Desde dicho script se gestiona el movimiento de la cámara del jugador, el cual se realiza mediante los inputs de movimiento de ratón o de Joystick que realiza el usuario. También gestiona la lógica de transición entre modo ''normal'' del jugador y el modo ''Ultrasónico'', además de gestionar el movimiento del plano generado en pantalla para guiar los cortes y la propia gestión de los cortes. Tiene gran cantidad de referencias de los objetos de los que toma propiedades necesarias, por ejemplo para la dirección de la cámara se toman los valores de rotación y posición del objeto del jugador. Además tiene varios atributos de personalización por ejemplo un atributo para asignar un material a los cortes realizados. Este fichero está asignado a un objeto tipo cámara llamado \textit{PlayerCam}.
+
+\textbf{PlayerMovement} como su nombre indica, está encargado de realizar los movimientos del jugador. Tiene gran cantidad de parámetros de ajuste como la fuerza de salto o la velocidad de movimiento, además de parámetros de asignación de teclas y referencias al Animator del personaje, para poder gestionar las animaciones desde él. Este script, va comprobando fotograma a fotograma (método Update()) que input por parte del usuario recibe, y según la tecla pulsada realiza una acción u otra. Algunas de las acciones que realiza es, correr, atacar haciendo hasta un combo de 4 golpes consecutivos y salto. Por supuesto también realiza la lógica de transición de una animación a otra.
+
+\textbf{ultraModeAttacks} es un script auxiliar para ayudar a gestionar el modo Ultrasónico ya que durante este modo algunas de las funcionalidades del jugador quedan deshabilitadas y para evitar problemas, se creó este Script. En este script se gestiona la cámara lenta y los inputs del usuario para que la animación de corte quede lo más precisa posible.
+
+\textbf{Ragdoll} este fichero tiene una función muy específica y que solo puede ocurrir una vez durante la partida, la cual es la ''muerte'' del jugador, durante la cual, el personaje adquiere las propiedades de una muñeca de trapo y se desploma siguiendo las físicas implementadas hasta impactar con el suelo. Pues este fichero se encarga de activar las propiedades que gestionan este comportamiento cuando el personaje se queda sin salud. Para ello, de forma recursiva, activa todos los colliders del personaje y se le despoja del componente Animator.
+
+\textbf{PlayerAttributes} esta clase es de las más importantes ya que gestiona todos los parámetros del jugador, como son la salud y el daño que éste produce. Recibe la información del script más importante llamado \textit{AttributesController}, del que hablaremos más adelante. Este script gestiona cuando el personaje recoje un coleccionable que potencia su daño o su salud, y también cuando el personaje recibe un golpe por parte de un enemigo. Si la salud llega a 0 establece el modo ''Ragdoll''.
+
+\textbf{PowerUpsUI} Script muy sencillo que simplemente se encarga de gestionar el multiplicador del daño en la interfaz de usuario. Este fichero vuelve a leer del script AttributesController.
+
+\textbf{HealthBar} este fichero es muy parecido al anterior y se encarga de gestionar la visualización de la barra de vida del usuario. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=13cm, height=12cm]{DiagramaClases1.png}
+    \caption{Diagrama de clases correspondiente al personaje y la cámara}
+\end{figure}
+
+\subsubsection{Lógica del juego}
+
+A continuación se explicarán los scripts encargados de gestionar la lógica de juego, la cual es, los sonidos, los atributos de enemigos y personaje principal, y la puntuación.
+
+\textbf{AtributesControler} se trata de la clase más importante del proyecto, a pesar de ser más sencilla que otras, ya que casi todas las clases necesitan consultar los atributos de esta clase para realizar acciones determinadas. En esta clase se lleva el seguimiento de parámetros como atributos del jugador y de los enemigos, los multiplicadores de daño, realiza la gestión de la interfaz de usuario, haciendo aparecer o desaparecer pantallas de victoria o derrota y por último, la modificación de parámetros como curación del jugador o aumento del daño producido del mismo. Este fichero esta adjunto a un objeto invisible dentro de la escena, de esta manera es posible que la alteración de los distintos parámetros que posee se realice con el transcurso de la partida. Esta clase además está dotada de varios métodos públicos ya que los demás scripts que necesiten modificar un parámetro, puedan acceder fácilmente a la clase.
+
+\textbf{AudioManager} al igual que la clase anterior, existe también en el proyecto un fichero para gestionar el sonido del videojuego. Este fichero tiene un único atributo el cual es una lista de sonidos. Este fichero también está adjunto a un objeto vacío de la escena. Dicha lista de sonidos ha sido creada a través de la interfaz de Unity a modo de ir añadiendolos uno a uno seleccionando las pistas .mp3 de audio y un nombre. El tipo del array es \textit{Sound} y es una clase creada para tener un tipo con una serie de características que Unity no trae por defecto para los sonidos. El funcionamiento de este fichero es que cuando se invoca a el método \textit{Play(nombre)} busca en la lista de sonidos uno que tenga el nombre proporcionado y crea un componente \textit{AudioSource} el cual emite el sonido que se le adjunte. Este sonido además es 2D por lo que la distancia del personaje no afecta a el volumen del mismo.
+
+\textbf{Sound} es una clase muy sencilla la cual solo contiene atributos como el nombre del sonido, el volument y el pitch, además estos últimos tienen un rango de valores establecido por lo que no será posible asignarles un valor fuera de ese rango (de 0 a 1 por ejemplo).
+
+\textbf{PlayerRespawn} este fichero solo realiza la acción de hacer aparecer el objeto del jugador en el punto que se le pase al método \textit{SpawnPlayer}.
+
+\textbf{ScoreManager} este script realiza la tarea de actualizar visualmente la puntuación del jugador y muestra también el récord actual. Dichos datos son consultados, una vez más, al \textit{AttributesControler}.
+
+\subsubsection{Power Ups}
+
+Los siguientes ficheros van a ser los encargados de gestionar los objetos coleccionables del videojuego.
+
+\textbf{HealPowerUp} realiza la gestión de el coleccionable que cura la salud del personaje principal al recogerlo del escenario. Este método se encarga de llamar al controlador de atributos y realiza la acción de sumar en 20 puntos a la vida que tiene el jugador en ese momento. Para ello comprueba que el objeto que colisiona con el es el tag jugador. Además, instancia un efecto especial de recogida el cual da la sensacion de que el jugador absorbe dicho potenciador.
+
+\textbf{DmgPowerUp} hace lo mismo que el script anterior, pero aumentando el multiplicador de daño del jugador, haciendo que éste inflija más daño a los enemigos con cada ataque. Para conseguir esto se vuelve a llamar al controlador de atributos y también cuenta con efectos especiales de recogida.
+
+\textbf{FinishGame} es algo distinto a los demás, ya que cuando es recogido, debe entrar en modo ''partida finalizada''el cual implica, llamar al gestor de sonidos y quitar toda la música y poner la pista de música de victoria. Las acciones de fin del juego se realizan al llamar a la función \textit{EndGame()} del controlador de atributos. 
+
+\subsubsection{Menús}
+
+Los siguientes scripts son los que gestionan la interacción del usuario con la interfaz gráfica y menús del videojuego.
+
+\textbf{MainMenu} es el encargado de gestionar los 3 botones del menú principal del juego, el que se muestra al iniciarlo. Cuenta con 3 funciones, una para cada acción. Al clickar en el botón de PLAY se carga la escena de juego y de esa forma, comienza el juego. Otra función activa el menú de opciones y la última cierra la aplicación ya que se corresponde con el botón de EXIT.
+
+\textbf{PauseMenu} realiza varias acciones cuando el usuario entra al menú de pausa. Al accionar la tecla ESC se entra en este menú, se hace visible el cursor y se para por completo el tiempo del juego. Si se pulsa en el boton RESUME se quita la vista del menu y se vuelve al tiempo normal. Si se pulsa el boton QUIT, se cierra la aplicación.
+
+\textbf{GameOverScreen} aparece automáticamente cuando el jugador muere, ya que es llamado por el gestor de atributos. Cuenta con 2 botones y 2 funciones. El boton RESTART al ser accionado, recarga la escena actual dando lugar a una partida nueva. El otro botón devuelve al jugador al menú principal. 
+
+\textbf{FinishGameMenu} es muy parecido al script anterior, ya que también aparece automática por orden del controlador de atributos. Éste menú cuenta con un solo botón de salida al menú principal. Como se puede ver, son scripts muy sencillos, sin embargo se ha decidido separar en varios para mejor organización y modulariación.
+
+\subsubsection{Enemigos}
+
+Ficheros de control de los enemigos, así como el control de la vida y barra de vida de los mismos.
+
+\textbf{MeleeEnemy} realiza varias acciones. Lo primero que hace es establecer los atributos del enemigo antes del primer frame de juego, dichos atributos los obtiene de la clase \textit{AttributesControler}. Durante el juego, si el enemigo tiene más de 0 de salud, entrará en la función \textit{enemyBehaviour} la cual definirá el comportamiento del enemigo. Se trata de una máquina de estados la cual va cambiando la rutina del enemigo según el tiempo que se haya establecido con un cronómetro. Si está a mas de 7 unidades de distancia del jugador, el enemigo podrá entrar de forma aleatoria en uno de los 2 estados pasivos, o bien mantener la posición a modo de vigilancia, o bien andar para patrullar. Sin embargo, si el jugador se encuentra a menos de 7 unidades de distancia, entra en modo combate, el cual tiene otros 2 estados. El primero de ellos es correr en direccion al jugador, este estado no para o bien hasta que se aleje el jugador o bien llegue a menos de 1 unidad de distancia al jugador. Si ocurre lo segundo, el estado cambiará a ataque, realizando la animación de ataque al jugador. Si la vida del enemigo llega a menos de 0, morirá y realizará la animación correspondiente. Al morir, se generará un número aleatorio comprendido entre 0 y 1, si el valor está en el rango 0 a 5 incluido, aparecerá en el lugar del enemigo eliminado un potenciador  de daño. Si sale un valor mayor de 0.5 saldrá una curación. De esta manera se ha dotado de un comportamiento autónomo a los enemigos y se ha logrado un sistema de recompensas para el jugadorm en forma de obtención de puntos y potenciadores al eliminar enemigos, motivándolo a seguir adelante.
+
+\textbf{Billboard} hace que un objeto siempre mire hacia la cámara . El objeto tiene una referencia a la cámara principal y a su transformación. En el método \textit{Start()}, se obtiene la referencia a la cámara principal y se guarda su transformación, que tiene parámetros de posición y de rotación. Luego, en el método \textit{LateUpdate()}, se actualiza la rotación del objeto para que siempre esté orientado hacia la dirección de la cámara principal. De esta manera conseguimos que la barra de vida situada encima de los enemigos, siempre sea visible y el jugador pueda ver fácilmente la vida restante de sus oponentes.

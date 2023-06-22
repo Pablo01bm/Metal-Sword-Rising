@@ -78,7 +78,6 @@ public class Ragdoll : MonoBehaviour
 
     public void playerDead() 
     {
-        print("Me wa moril");
         playerIsDead = true;
     }
 }
