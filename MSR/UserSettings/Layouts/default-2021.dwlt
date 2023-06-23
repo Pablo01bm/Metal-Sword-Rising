@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2048
     height: 1068.8
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 72
+  controlID: 19
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -2078,7 +2078,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: fa0b0000
       m_LastClickedID: 0
       m_ExpandedIDs: eafaffff
       m_RenameOverlay:
@@ -2373,9 +2373,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -17.26605, y: 8.323837, z: -260.31555}
+    m_Target: {x: 7.086259, y: -9.031507, z: -237.40242}
     speed: 2
-    m_Value: {x: -17.26605, y: 8.323837, z: -260.31555}
+    m_Value: {x: 7.086259, y: -9.031507, z: -237.40242}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -2422,13 +2422,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.51311463, y: 0.41739956, z: -0.3148843, w: 0.6815213}
+    m_Target: {x: 0.25960946, y: 0.5769374, z: -0.19988823, w: 0.7489548}
     speed: 2
-    m_Value: {x: 0.5128243, y: 0.4171634, z: -0.31470615, w: 0.6811357}
+    m_Value: {x: 0.25960946, y: 0.5769374, z: -0.19988823, w: 0.7489548}
   m_Size:
-    m_Target: 0.8633329
+    m_Target: 12.788379
     speed: 2
-    m_Value: 0.8633329
+    m_Value: 12.788379
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -2494,22 +2494,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/DungeonCreator
+    - Assets/Scripts/PowerUps
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/DungeonCreator
+  - Assets/Scripts/PowerUps
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\pablo\Desktop\Pablo\TFG-Metal-Sword-Rising\Metal-Sword-Rising\MSR
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 420.59998}
-    m_SelectedIDs: b09f0000
-    m_LastClickedID: 40880
-    m_ExpandedIDs: 00000000fe84000000850000028500000485000006850000088500000a8500000c8500000e85000010850000128500001485000016850000188500001a8500001c8500001e85000020850000228500002485000026850000288500002a8500002c8500002e85000030850000328500003485000036850000388500003a8500003c8500003e85000040850000428500004485000046850000488500004a8500004c8500004e85000050850000528500005485000056850000588500005a8500005c8500005e8500002486000000ca9a3b
+    scrollPos: {x: 0, y: 332.59998}
+    m_SelectedIDs: 02860000
+    m_LastClickedID: 34306
+    m_ExpandedIDs: 00000000fa840000fc840000fe84000000850000028500000485000006850000088500000a8500000c8500000e85000010850000128500001485000016850000188500001a8500001c8500001e85000020850000228500002485000026850000288500002a8500002c8500002e85000030850000328500003485000036850000388500003a8500003c8500003e85000040850000428500004485000046850000488500004a8500004c8500004e8500005085000052850000548500005685000058850000c685000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2537,7 +2537,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000fe84000000850000028500000485000006850000088500000a8500000c8500000e85000010850000128500001485000016850000188500001a8500001c8500001e85000020850000228500002485000026850000288500002a8500002c8500002e85000030850000328500003485000036850000388500003a8500003c8500003e85000040850000428500004485000046850000488500004a8500004c8500004e85000050850000528500005485000056850000588500005a8500005c8500005e850000
+    m_ExpandedIDs: 00000000fa840000fc840000fe84000000850000028500000485000006850000088500000a8500000c8500000e85000010850000128500001485000016850000188500001a8500001c8500001e85000020850000228500002485000026850000288500002a8500002c8500002e85000030850000328500003485000036850000388500003a8500003c8500003e85000040850000428500004485000046850000488500004a8500004c8500004e8500005085000052850000548500005685000058850000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2564,7 +2564,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c623000056680000b67500008e840000925d0000b05b0000f25b0000426a0000f45b00009c5f00004a670000b87d000042700000ae5c0200d65c0200c85c0200ac7b0000ae7b0000b07b00001c820000b67b0000b29200007e8700000081000036810000c88300005e5a0100ea700000f89b000000000000162f0100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -2651,7 +2651,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -1590
+  m_LastSelectedObjectID: -8964
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52

@@ -630,6 +630,12 @@ A continuación se explicarán los scripts encargados de gestionar la lógica de
 
 \textbf{ScoreManager} este script realiza la tarea de actualizar visualmente la puntuación del jugador y muestra también el récord actual. Dichos datos son consultados, una vez más, al \textit{AttributesControler}.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=10cm]{DiagramaManager.jpg}
+    \caption{Diagrama de clases correspondiente a los controladores de la lógica del videojuego}
+\end{figure}
+
 \subsubsection{Power Ups}
 
 Los siguientes ficheros van a ser los encargados de gestionar los objetos coleccionables del videojuego.
@@ -639,6 +645,12 @@ Los siguientes ficheros van a ser los encargados de gestionar los objetos colecc
 \textbf{DmgPowerUp} hace lo mismo que el script anterior, pero aumentando el multiplicador de daño del jugador, haciendo que éste inflija más daño a los enemigos con cada ataque. Para conseguir esto se vuelve a llamar al controlador de atributos y también cuenta con efectos especiales de recogida.
 
 \textbf{FinishGame} es algo distinto a los demás, ya que cuando es recogido, debe entrar en modo ''partida finalizada''el cual implica, llamar al gestor de sonidos y quitar toda la música y poner la pista de música de victoria. Las acciones de fin del juego se realizan al llamar a la función \textit{EndGame()} del controlador de atributos. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=10cm]{DiagramaPowerUps.jpg}
+    \caption{Diagrama de clases correspondiente a las clases de los coleccionables}
+\end{figure}
 
 \subsubsection{Menús}
 
@@ -652,10 +664,52 @@ Los siguientes scripts son los que gestionan la interacción del usuario con la 
 
 \textbf{FinishGameMenu} es muy parecido al script anterior, ya que también aparece automática por orden del controlador de atributos. Éste menú cuenta con un solo botón de salida al menú principal. Como se puede ver, son scripts muy sencillos, sin embargo se ha decidido separar en varios para mejor organización y modulariación.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=10cm]{DiagramaMenu.jpg}
+    \caption{Diagrama de clases correspondiente a los menús}
+\end{figure}
+
 \subsubsection{Enemigos}
 
 Ficheros de control de los enemigos, así como el control de la vida y barra de vida de los mismos.
 
-\textbf{MeleeEnemy} realiza varias acciones. Lo primero que hace es establecer los atributos del enemigo antes del primer frame de juego, dichos atributos los obtiene de la clase \textit{AttributesControler}. Durante el juego, si el enemigo tiene más de 0 de salud, entrará en la función \textit{enemyBehaviour} la cual definirá el comportamiento del enemigo. Se trata de una máquina de estados la cual va cambiando la rutina del enemigo según el tiempo que se haya establecido con un cronómetro. Si está a mas de 7 unidades de distancia del jugador, el enemigo podrá entrar de forma aleatoria en uno de los 2 estados pasivos, o bien mantener la posición a modo de vigilancia, o bien andar para patrullar. Sin embargo, si el jugador se encuentra a menos de 7 unidades de distancia, entra en modo combate, el cual tiene otros 2 estados. El primero de ellos es correr en direccion al jugador, este estado no para o bien hasta que se aleje el jugador o bien llegue a menos de 1 unidad de distancia al jugador. Si ocurre lo segundo, el estado cambiará a ataque, realizando la animación de ataque al jugador. Si la vida del enemigo llega a menos de 0, morirá y realizará la animación correspondiente. Al morir, se generará un número aleatorio comprendido entre 0 y 1, si el valor está en el rango 0 a 5 incluido, aparecerá en el lugar del enemigo eliminado un potenciador  de daño. Si sale un valor mayor de 0.5 saldrá una curación. De esta manera se ha dotado de un comportamiento autónomo a los enemigos y se ha logrado un sistema de recompensas para el jugadorm en forma de obtención de puntos y potenciadores al eliminar enemigos, motivándolo a seguir adelante.
+\textbf{MeleeEnemy} realiza varias acciones. Lo primero que hace es establecer los atributos del enemigo antes del primer frame de juego, dichos atributos los obtiene de la clase \textit{AttributesControler}. Durante el juego, si el enemigo tiene más de 0 de salud, entrará en la función \textit{enemyBehaviour} la cual definirá el comportamiento del enemigo. Se trata de una máquina de estados la cual va cambiando la rutina del enemigo según el tiempo que se haya establecido con un cronómetro. Si está a mas de 7 unidades de distancia del jugador, el enemigo podrá entrar de forma aleatoria en uno de los 2 estados pasivos, o bien mantener la posición a modo de vigilancia, o bien andar para patrullar. Sin embargo, si el jugador se encuentra a menos de 7 unidades de distancia, entra en modo combate, el cual tiene otros 2 estados. El primero de ellos es correr en direccion al jugador, este estado no para o bien hasta que se aleje el jugador o bien llegue a menos de 1 unidad de distancia al jugador. Si ocurre lo segundo, el estado cambiará a ataque, realizando la animación de ataque al jugador. Si la vida del enemigo llega a menos de 0, morirá y realizará la animación correspondiente. Al morir, se generará un número aleatorio comprendido entre 0 y 1, si el valor está en el rango 0 a 5 incluido, aparecerá en el lugar del enemigo eliminado un potenciador  de daño. Si sale un valor mayor de 0.5 saldrá una curación. De esta manera se ha dotado de un comportamiento autónomo a los enemigos y se ha logrado un sistema de recompensas para el jugador en forma de obtención de puntos y potenciadores al eliminar enemigos, motivándolo a seguir adelante.
 
 \textbf{Billboard} hace que un objeto siempre mire hacia la cámara . El objeto tiene una referencia a la cámara principal y a su transformación. En el método \textit{Start()}, se obtiene la referencia a la cámara principal y se guarda su transformación, que tiene parámetros de posición y de rotación. Luego, en el método \textit{LateUpdate()}, se actualiza la rotación del objeto para que siempre esté orientado hacia la dirección de la cámara principal. De esta manera conseguimos que la barra de vida situada encima de los enemigos, siempre sea visible y el jugador pueda ver fácilmente la vida restante de sus oponentes.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=10cm]{DiagramaEnemy.jpg}
+    \caption{Diagrama de clases correspondiente a la clase del enemigo}
+\end{figure}
+
+\subsubsection{Mapa}
+
+En esta última sección se explicará sin entrar en demasiado detalle los scripts realizados para la generación procedural del mapa. En el apartado de implementación se explicará con más detenimiento.
+
+\textbf{DungeonCreator} es el script principal de lo que corresponde a la generación del mapa o mazmorra ya que es el script que gestiona todos los parámetros de creación de la mazmorra y la que instancia todas las Mallas y objetos que la conforman. Es el único script que va atado a un objeto de la escena, que es invisible, y además es el único método que hereda de la clase \textit{MonoBehaviour}. En este fichero se gestiona también la lógica ya comentada de comprobación cuando se va a instanciar a un objeto, estar seguros de que no va a instanciarse dentro de otro objeto o muy cerca.
+
+\textbf{DungeonGenerator} es un fichero sencillo que es llamado por el anterior para comenzar a realizar el algoritmo de Partición binaria al llamar a su método \textit{CalculateDungeon} el cual devuelve una lista de nodos correspondientes a las habitaciones y a los pasillos que las unen. Todo el proceso del algoritmo se ha dividido en el resto de ficheros.
+
+\textbf{BinarySpacePartitioner}, la primera clase que es llamada en el método de crear los nodos de la mamorra. Se toman los parámetros de ancho y largo de la mazmorra y el número de iteraciones, y establece un nodo central con dichos parámetros, para que a raíz de él se puedan ir haciendo las divisiones del espacio y creando nodos hijos.
+
+\textbf{StructureHelper}. Una vez obtenida la lista de nodos se llama a StructureHelper para poder obtener los nodos ''hoja'' de la lista obtenida, los cuales corresponden con los posibles nodos de las habitaciones. Además dispone de métodos que calculan las esquinas y el punto medio del nodo dado.
+
+\textbf{Node} es una clase creada para poder recrear lo que es un Nodo de un árbol, ya que en Unity no existe dicha clase por defecto. Tiene gran cantidad de parámetros incluyendo referencia al nodo padre, profundidad del nodo e información del mismo, como las coordenadas. Además cuenta con métodos para añadir los nodos hijos a al nodo padre que represente en ese momento. 
+
+\textbf{RoomNode} clase sencilla que hereda de \textit{Node} y cuenta solamente con un constructor y atributos como el largo y ancho de una habitación, ya que esta clase se ha creado para representar ese tipo de nodos. En el constructor se establecen atributos como el nodo padre, las esquinas de dicha habitación y la profundidad del nodo.
+
+\textbf{RoomGenerator} es la clase encargada de crear los objetos \textit{RoomNode} y devolverlos, cada objeto de ese tipo se crea sí y solo sí, dado el array de espacios libres dados, en cada espacio dado cabe una habitación. Si se da este caso se crea el nodo de habitación y se añade a la lista que se va a devolver.
+
+\textbf{CorridorNode}. Al igual que los nodos de habitación, los nodos de los pasillos también heredan de la clase Node. Cuentan con unos parámetros algo distintos a las habitaciones además de muchos métodos para obtener la relación en el espacio de las habitaciones contiguas, es decir, si una habitación está a la derecha, izquierda, arriba o abajo de otra, y según esa información se puede crear el nodo de pasillo o no.
+
+\textbf{CorridorsGenerator} es muy parecida a \textit{roomGenerator} ya que su única funcion es crear los nodos de pasillo uno a uno y añadirlos al array que se devolverá finalmente tras ese proceso.
+
+\textbf{line} define una clase que representa una línea en un espacio bidimensional. La línea tiene una orientación y coordenadas asociadas y un ENUM que define dos posibles orientaciones de la línea, vertical u horizontal. Esta línea es aquella que divide los espacios en 2 en el algoritmo de partición binaria. Es su único pero muy importante uso.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm, height=15cm]{DiagramaMapa.jpg}
+    \caption{Diagrama de clases correspondiente las clases usadas para la genración procedural del mapa}
+\end{figure}

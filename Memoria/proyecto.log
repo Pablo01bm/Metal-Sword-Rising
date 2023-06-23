@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.3.28)  22 JUN 2023 22:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.3.28)  23 JUN 2023 22:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -644,7 +644,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has 
                    \relax 
 l.68         \item[\textbf{RF-3.3}]
                                     El jugador podrá abandonar una partida. [10]
-<./images//characterModel.jpg, id=305, 493.845pt x 492.6405pt>
+<./images//characterModel.jpg, id=318, 493.845pt x 492.6405pt>
 File: ./images//characterModel.jpg Graphic file (type jpg)
 <use ./images//characterModel.jpg>
 Package pdftex.def Info: ./images//characterModel.jpg  used on input line 99.
@@ -669,7 +669,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--115
 
  []
 
-<./images//phaseKatana.jpg, id=314, 703.428pt x 566.71725pt>
+<./images//phaseKatana.jpg, id=327, 703.428pt x 566.71725pt>
 File: ./images//phaseKatana.jpg Graphic file (type jpg)
 <use ./images//phaseKatana.jpg>
 Package pdftex.def Info: ./images//phaseKatana.jpg  used on input line 125.
@@ -685,7 +685,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has 
                    \relax 
 l.128 
        [12 <./images//characterModel.jpg>]
-<./images//MeleeEnemy.jpg, id=322, 1324.95pt x 744.7825pt>
+<./images//MeleeEnemy.jpg, id=335, 1324.95pt x 744.7825pt>
 File: ./images//MeleeEnemy.jpg Graphic file (type jpg)
 <use ./images//MeleeEnemy.jpg>
 Package pdftex.def Info: ./images//MeleeEnemy.jpg  used on input line 139.
@@ -715,12 +715,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.14}) has 
                    \relax 
 l.153 
        [14 <./images//MeleeEnemy.jpg (PNG copy)>]
-<./images//cubemapExample.png, id=336, 702.625pt x 526.96875pt>
+<./images//cubemapExample.png, id=349, 702.625pt x 526.96875pt>
 File: ./images//cubemapExample.png Graphic file (type png)
 <use ./images//cubemapExample.png>
 Package pdftex.def Info: ./images//cubemapExample.png  used on input line 156.
 (pdftex.def)             Requested size: 227.62137pt x 227.62137pt.
-<./images//skybox.jpg, id=339, 6167.04pt x 3083.52pt>
+<./images//skybox.jpg, id=352, 6167.04pt x 3083.52pt>
 File: ./images//skybox.jpg Graphic file (type jpg)
 <use ./images//skybox.jpg>
 Package pdftex.def Info: ./images//skybox.jpg  used on input line 165.
@@ -735,7 +735,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 169--170
 
  []
 
-<./images//caja1.jpg, id=347, 251.7405pt x 194.52675pt>
+<./images//caja1.jpg, id=360, 251.7405pt x 194.52675pt>
 File: ./images//caja1.jpg Graphic file (type jpg)
 <use ./images//caja1.jpg>
 Package pdftex.def Info: ./images//caja1.jpg  used on input line 176.
@@ -746,12 +746,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 179.
 LaTeX Info: Redefining \% on input line 179.
  [16 <./images//skybox.jpg>]
-<./images//caja2.jpg, id=352, 327.02174pt x 301.125pt>
+<./images//caja2.jpg, id=365, 327.02174pt x 301.125pt>
 File: ./images//caja2.jpg Graphic file (type jpg)
 <use ./images//caja2.jpg>
 Package pdftex.def Info: ./images//caja2.jpg  used on input line 182.
 (pdftex.def)             Requested size: 341.45184pt x 227.63055pt.
-<./images//caja3.jpg, id=353, 419.166pt x 311.9655pt>
+<./images//caja3.jpg, id=366, 419.166pt x 311.9655pt>
 File: ./images//caja3.jpg Graphic file (type jpg)
 <use ./images//caja3.jpg>
 Package pdftex.def Info: ./images//caja3.jpg  used on input line 188.
@@ -762,12 +762,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 191.
 LaTeX Info: Redefining \% on input line 191.
  [17 <./images//caja1.jpg> <./images//caja2.jpg>]
-<./images//caja5.jpg, id=358, 447.47176pt x 326.4195pt>
+<./images//caja5.jpg, id=371, 447.47176pt x 326.4195pt>
 File: ./images//caja5.jpg Graphic file (type jpg)
 <use ./images//caja5.jpg>
 Package pdftex.def Info: ./images//caja5.jpg  used on input line 194.
 (pdftex.def)             Requested size: 341.43398pt x 227.6304pt.
-<./images//capsulas.jpg, id=359, 413.74574pt x 355.92975pt>
+<./images//capsulas.jpg, id=372, 413.74574pt x 355.92975pt>
 File: ./images//capsulas.jpg Graphic file (type jpg)
 <use ./images//capsulas.jpg>
 Package pdftex.def Info: ./images//capsulas.jpg  used on input line 200.
@@ -778,7 +778,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 203.
 LaTeX Info: Redefining \% on input line 203.
  [18 <./images//caja3.jpg> <./images//caja5.jpg>]
-<./images//caja4.jpg, id=364, 429.40425pt x 314.3745pt>
+<./images//caja4.jpg, id=377, 429.40425pt x 314.3745pt>
 File: ./images//caja4.jpg Graphic file (type jpg)
 <use ./images//caja4.jpg>
 Package pdftex.def Info: ./images//caja4.jpg  used on input line 210.
@@ -789,7 +789,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 213.
 LaTeX Info: Redefining \% on input line 213.
  [19 <./images//capsulas.jpg>]
-<./images//panel.jpg, id=370, 266.79675pt x 307.74976pt>
+<./images//panel.jpg, id=383, 266.79675pt x 307.74976pt>
 File: ./images//panel.jpg Graphic file (type jpg)
 <use ./images//panel.jpg>
 Package pdftex.def Info: ./images//panel.jpg  used on input line 216.
@@ -802,12 +802,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 220--221
 LaTeX Info: Redefining \. on input line 221.
 LaTeX Info: Redefining \% on input line 221.
 [20 <./images//caja4.jpg> <./images//panel.jpg>]
-<./images//modeloKatana2.jpg, id=375, 517.935pt x 390.45876pt>
+<./images//modeloKatana2.jpg, id=388, 517.935pt x 390.45876pt>
 File: ./images//modeloKatana2.jpg Graphic file (type jpg)
 <use ./images//modeloKatana2.jpg>
 Package pdftex.def Info: ./images//modeloKatana2.jpg  used on input line 226.
 (pdftex.def)             Requested size: 341.4509pt x 227.62207pt.
-<./images//powerUps.jpg, id=376, 711.8595pt x 353.52075pt>
+<./images//powerUps.jpg, id=389, 711.8595pt x 353.52075pt>
 File: ./images//powerUps.jpg Graphic file (type jpg)
 <use ./images//powerUps.jpg>
 Package pdftex.def Info: ./images//powerUps.jpg  used on input line 236.
@@ -836,7 +836,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 281--284
 
  []
 
-<./images//doomEjemplo.jpg, id=400, 1284.8pt x 722.7pt>
+<./images//doomEjemplo.jpg, id=413, 1284.8pt x 722.7pt>
 File: ./images//doomEjemplo.jpg Graphic file (type jpg)
 <use ./images//doomEjemplo.jpg>
 Package pdftex.def Info: ./images//doomEjemplo.jpg  used on input line 292.
@@ -844,12 +844,12 @@ Package pdftex.def Info: ./images//doomEjemplo.jpg  used on input line 292.
 LaTeX Info: Redefining \. on input line 294.
 LaTeX Info: Redefining \% on input line 294.
 [24]
-<./images//BOTWejemplo.jpg, id=407, 813.0375pt x 457.71pt>
+<./images//BOTWejemplo.jpg, id=420, 813.0375pt x 457.71pt>
 File: ./images//BOTWejemplo.jpg Graphic file (type jpg)
 <use ./images//BOTWejemplo.jpg>
 Package pdftex.def Info: ./images//BOTWejemplo.jpg  used on input line 299.
 (pdftex.def)             Requested size: 284.51776pt x 142.25879pt.
-<./images//AOE2ejemplo.jpg, id=408, 1204.5pt x 602.25pt>
+<./images//AOE2ejemplo.jpg, id=421, 1204.5pt x 602.25pt>
 File: ./images//AOE2ejemplo.jpg Graphic file (type jpg)
 <use ./images//AOE2ejemplo.jpg>
 Package pdftex.def Info: ./images//AOE2ejemplo.jpg  used on input line 308.
@@ -863,12 +863,12 @@ LaTeX Info: Redefining \% on input line 329.
 LaTeX Info: Redefining \. on input line 352.
 LaTeX Info: Redefining \% on input line 352.
  [27]
-<./images//FreeLookCamera.jpg, id=433, 823.27576pt x 458.31226pt>
+<./images//FreeLookCamera.jpg, id=446, 823.27576pt x 458.31226pt>
 File: ./images//FreeLookCamera.jpg Graphic file (type jpg)
 <use ./images//FreeLookCamera.jpg>
 Package pdftex.def Info: ./images//FreeLookCamera.jpg  used on input line 360.
 (pdftex.def)             Requested size: 341.43951pt x 227.62402pt.
-<./images//VirtualCamera.jpg, id=434, 819.66225pt x 447.47176pt>
+<./images//VirtualCamera.jpg, id=447, 819.66225pt x 447.47176pt>
 File: ./images//VirtualCamera.jpg Graphic file (type jpg)
 <use ./images//VirtualCamera.jpg>
 Package pdftex.def Info: ./images//VirtualCamera.jpg  used on input line 366.
@@ -886,7 +886,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 376--379
 LaTeX Info: Redefining \. on input line 383.
 LaTeX Info: Redefining \% on input line 383.
 [29 <./images//VirtualCamera.jpg>]
-<./images//pelotaRebotando.png, id=447, 260.975pt x 236.885pt>
+<./images//pelotaRebotando.png, id=460, 260.975pt x 236.885pt>
 File: ./images//pelotaRebotando.png Graphic file (type png)
 <use ./images//pelotaRebotando.png>
 Package pdftex.def Info: ./images//pelotaRebotando.png  used on input line 388.
@@ -894,12 +894,12 @@ Package pdftex.def Info: ./images//pelotaRebotando.png  used on input line 388.
 LaTeX Info: Redefining \. on input line 397.
 LaTeX Info: Redefining \% on input line 397.
  [30 <./images//pelotaRebotando.png>]
-<./images//AnimatorControllerExample.png, id=457, 741.77126pt x 404.51125pt>
+<./images//AnimatorControllerExample.png, id=470, 741.77126pt x 404.51125pt>
 File: ./images//AnimatorControllerExample.png Graphic file (type png)
 <use ./images//AnimatorControllerExample.png>
 Package pdftex.def Info: ./images//AnimatorControllerExample.png  used on input line 400.
 (pdftex.def)             Requested size: 341.43398pt x 227.62343pt.
-<./images//UpperBodyMask.jpg, id=459, 415.5525pt x 381.22424pt>
+<./images//UpperBodyMask.jpg, id=472, 415.5525pt x 381.22424pt>
 File: ./images//UpperBodyMask.jpg Graphic file (type jpg)
 <use ./images//UpperBodyMask.jpg>
 Package pdftex.def Info: ./images//UpperBodyMask.jpg  used on input line 410.
@@ -910,7 +910,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 413.
 LaTeX Info: Redefining \% on input line 413.
  [31 <./images//AnimatorControllerExample.png>]
-<./images//LowerBodyMask.jpg, id=467, 418.56375pt x 390.258pt>
+<./images//LowerBodyMask.jpg, id=480, 418.56375pt x 390.258pt>
 File: ./images//LowerBodyMask.jpg Graphic file (type jpg)
 <use ./images//LowerBodyMask.jpg>
 Package pdftex.def Info: ./images//LowerBodyMask.jpg  used on input line 416.
@@ -921,7 +921,7 @@ LaTeX Info: Redefining \% on input line 421.
 LaTeX Info: Redefining \. on input line 439.
 LaTeX Info: Redefining \% on input line 439.
  [33]
-<./images//PostProcessingEffectConfig.jpg, id=477, 410.13225pt x 711.25725pt>
+<./images//PostProcessingEffectConfig.jpg, id=490, 410.13225pt x 711.25725pt>
 File: ./images//PostProcessingEffectConfig.jpg Graphic file (type jpg)
 <use ./images//PostProcessingEffectConfig.jpg>
 Package pdftex.def Info: ./images//PostProcessingEffectConfig.jpg  used on input line 446.
@@ -935,7 +935,7 @@ LaTeX Info: Redefining \% on input line 451.
 LaTeX Info: Redefining \. on input line 473.
 LaTeX Info: Redefining \% on input line 473.
  [35]
-<./images//OverlapSphere.jpg, id=489, 703.62875pt x 532.99126pt>
+<./images//OverlapSphere.jpg, id=502, 703.62875pt x 532.99126pt>
 File: ./images//OverlapSphere.jpg Graphic file (type jpg)
 <use ./images//OverlapSphere.jpg>
 Package pdftex.def Info: ./images//OverlapSphere.jpg  used on input line 485.
@@ -952,7 +952,7 @@ LaTeX Info: Redefining \% on input line 498.
 LaTeX Info: Redefining \. on input line 515.
 LaTeX Info: Redefining \% on input line 515.
  [38]
-<./images//ejemploShaderGraph.jpg, id=507, 760.0395pt x 311.36325pt>
+<./images//ejemploShaderGraph.jpg, id=520, 760.0395pt x 311.36325pt>
 File: ./images//ejemploShaderGraph.jpg Graphic file (type jpg)
 <use ./images//ejemploShaderGraph.jpg>
 Package pdftex.def Info: ./images//ejemploShaderGraph.jpg  used on input line 523.
@@ -963,12 +963,12 @@ Underfull \vbox (badness 1817) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 532.
 LaTeX Info: Redefining \% on input line 532.
  [39 <./images//ejemploShaderGraph.jpg>]
-<./images//Bocetoo1.png, id=513, 1043.9pt x 605.26125pt>
+<./images//Bocetoo1.png, id=526, 1043.9pt x 605.26125pt>
 File: ./images//Bocetoo1.png Graphic file (type png)
 <use ./images//Bocetoo1.png>
 Package pdftex.def Info: ./images//Bocetoo1.png  used on input line 535.
 (pdftex.def)             Requested size: 341.42976pt x 227.61888pt.
-<./images//Bocetoo2.png, id=514, 1043.9pt x 605.26125pt>
+<./images//Bocetoo2.png, id=527, 1043.9pt x 605.26125pt>
 File: ./images//Bocetoo2.png Graphic file (type png)
 <use ./images//Bocetoo2.png>
 Package pdftex.def Info: ./images//Bocetoo2.png  used on input line 541.
@@ -979,12 +979,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 544.
 LaTeX Info: Redefining \% on input line 544.
  [40 <./images//Bocetoo1.png>]
-<./images//Bocetoo3.png, id=520, 1043.9pt x 605.26125pt>
+<./images//Bocetoo3.png, id=533, 1043.9pt x 605.26125pt>
 File: ./images//Bocetoo3.png Graphic file (type png)
 <use ./images//Bocetoo3.png>
 Package pdftex.def Info: ./images//Bocetoo3.png  used on input line 547.
 (pdftex.def)             Requested size: 341.42976pt x 227.61888pt.
-<./images//Bocetoo4.png, id=521, 1043.9pt x 605.26125pt>
+<./images//Bocetoo4.png, id=534, 1043.9pt x 605.26125pt>
 File: ./images//Bocetoo4.png Graphic file (type png)
 <use ./images//Bocetoo4.png>
 Package pdftex.def Info: ./images//Bocetoo4.png  used on input line 553.
@@ -995,12 +995,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 556.
 LaTeX Info: Redefining \% on input line 556.
  [41 <./images//Bocetoo2.png> <./images//Bocetoo3.png>]
-<./images//Bocetoo5.png, id=526, 1043.9pt x 605.26125pt>
+<./images//Bocetoo5.png, id=539, 1043.9pt x 605.26125pt>
 File: ./images//Bocetoo5.png Graphic file (type png)
 <use ./images//Bocetoo5.png>
 Package pdftex.def Info: ./images//Bocetoo5.png  used on input line 559.
 (pdftex.def)             Requested size: 341.42976pt x 227.61888pt.
-<./images//Bocetoo6.png, id=527, 1043.9pt x 605.26125pt>
+<./images//Bocetoo6.png, id=540, 1043.9pt x 605.26125pt>
 File: ./images//Bocetoo6.png Graphic file (type png)
 <use ./images//Bocetoo6.png>
 Package pdftex.def Info: ./images//Bocetoo6.png  used on input line 565.
@@ -1011,12 +1011,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 568.
 LaTeX Info: Redefining \% on input line 568.
  [42 <./images//Bocetoo4.png> <./images//Bocetoo5.png>]
-<./images//Bocetoo7.png, id=532, 1043.9pt x 605.26125pt>
+<./images//Bocetoo7.png, id=545, 1043.9pt x 605.26125pt>
 File: ./images//Bocetoo7.png Graphic file (type png)
 <use ./images//Bocetoo7.png>
 Package pdftex.def Info: ./images//Bocetoo7.png  used on input line 571.
 (pdftex.def)             Requested size: 341.42976pt x 227.61888pt.
-<./images//Bocetoo8.png, id=533, 1043.9pt x 605.26125pt>
+<./images//Bocetoo8.png, id=546, 1043.9pt x 605.26125pt>
 File: ./images//Bocetoo8.png Graphic file (type png)
 <use ./images//Bocetoo8.png>
 Package pdftex.def Info: ./images//Bocetoo8.png  used on input line 577.
@@ -1033,7 +1033,7 @@ LaTeX Info: Redefining \% on input line 593.
 LaTeX Info: Redefining \. on input line 606.
 LaTeX Info: Redefining \% on input line 606.
  [45]
-<./images//DiagramaClases1.png, id=548, 1290.8225pt x 1100.11pt>
+<./images//DiagramaClases1.png, id=561, 1290.8225pt x 1100.11pt>
 File: ./images//DiagramaClases1.png Graphic file (type png)
 <use ./images//DiagramaClases1.png>
 Package pdftex.def Info: ./images//DiagramaClases1.png  used on input line 615.
@@ -1046,19 +1046,71 @@ Overfull \hbox (9.87756pt too wide) in paragraph at lines 615--616
 LaTeX Info: Redefining \. on input line 622.
 LaTeX Info: Redefining \% on input line 622.
 [46 <./images//DiagramaClases1.png>]
+<./images//DiagramaManager.jpg, id=567, 640.19176pt x 398.08725pt>
+File: ./images//DiagramaManager.jpg Graphic file (type jpg)
+<use ./images//DiagramaManager.jpg>
+Package pdftex.def Info: ./images//DiagramaManager.jpg  used on input line 635.
+(pdftex.def)             Requested size: 341.42955pt x 284.53911pt.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 637.
-LaTeX Info: Redefining \% on input line 637.
+LaTeX Info: Redefining \. on input line 638.
+LaTeX Info: Redefining \% on input line 638.
  [47]
-LaTeX Info: Redefining \. on input line 654.
-LaTeX Info: Redefining \% on input line 654.
- [48]) (proyecto.bbl
+LaTeX Info: Redefining \. on input line 648.
+LaTeX Info: Redefining \% on input line 648.
+ [48 <./images//DiagramaManager.jpg>]
+<./images//DiagramaPowerUps.jpg, id=578, 681.747pt x 353.52075pt>
+File: ./images//DiagramaPowerUps.jpg Graphic file (type jpg)
+<use ./images//DiagramaPowerUps.jpg>
+Package pdftex.def Info: ./images//DiagramaPowerUps.jpg  used on input line 651.
+(pdftex.def)             Requested size: 284.53212pt x 284.54315pt.
+LaTeX Info: Redefining \. on input line 664.
+LaTeX Info: Redefining \% on input line 664.
+ [49 <./images//DiagramaPowerUps.jpg>]
+<./images//DiagramaMenu.jpg, id=585, 1008.76875pt x 585.387pt>
+File: ./images//DiagramaMenu.jpg Graphic file (type jpg)
+<use ./images//DiagramaMenu.jpg>
+Package pdftex.def Info: ./images//DiagramaMenu.jpg  used on input line 669.
+(pdftex.def)             Requested size: 341.43758pt x 284.52867pt.
+LaTeX Info: Redefining \. on input line 678.
+LaTeX Info: Redefining \% on input line 678.
+ [50 <./images//DiagramaMenu.jpg>]
+<./images//DiagramaEnemy.jpg, id=591, 610.07925pt x 471.56175pt>
+File: ./images//DiagramaEnemy.jpg Graphic file (type jpg)
+<use ./images//DiagramaEnemy.jpg>
+Package pdftex.def Info: ./images//DiagramaEnemy.jpg  used on input line 683.
+(pdftex.def)             Requested size: 341.43726pt x 284.54381pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 686.
+LaTeX Info: Redefining \% on input line 686.
+ [51]
+Underfull \vbox (badness 1533) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 696.
+LaTeX Info: Redefining \% on input line 696.
+ [52 <./images//DiagramaEnemy.jpg>]
+<./images//DiagramaMapa.jpg, id=601, 1181.6145pt x 669.702pt>
+File: ./images//DiagramaMapa.jpg Graphic file (type jpg)
+<use ./images//DiagramaMapa.jpg>
+Package pdftex.def Info: ./images//DiagramaMapa.jpg  used on input line 713.
+(pdftex.def)             Requested size: 426.78723pt x 426.79909pt.
+
+Overfull \hbox (66.78723pt too wide) in paragraph at lines 713--714
+ [][] 
+ []
+
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 202.
+LaTeX Info: Redefining \% on input line 202.
+ [53] (proyecto.bbl
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [49] [50
-
-]
+ [54 <./images//DiagramaMapa.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 34--37
 []\OT1/cmr/m/n/10.95 Equirectangular ima-ges.  []$\OT1/cmtt/m/n/10.95 https : / / en . wikipedia . org / wiki /
  []
@@ -1073,7 +1125,9 @@ Underfull \hbox (badness 1533) in paragraph at lines 51--55
 \OT1/cmtt/m/n/10.95 WhatsNew2021LTS . html$[]\OT1/cmr/m/n/10.95 , 2021.  P^^Sagi-na de la do-cu-men-ta-ci^^Son de
  []
 
-[51]
+[55
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 70--76
 []\OT1/cmr/m/n/10.95 Unity ci-ne-ma-chi-ne.  []$\OT1/cmtt/m/n/10.95 https : / / unity . com / es / unity / features /
  []
@@ -1121,7 +1175,7 @@ Underfull \hbox (badness 2277) in paragraph at lines 125--130
 )
 LaTeX Info: Redefining \. on input line 235.
 LaTeX Info: Redefining \% on input line 235.
- [52] (proyecto.aux
+ [56] (proyecto.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
@@ -1129,20 +1183,20 @@ LaTeX Info: Redefining \% on input line 23.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `proyecto.out' has not changed.
-(rerunfilecheck)             Checksum: B7141D77B3E2DDD749AF68798E2AB8A6;2599.
+(rerunfilecheck)             Checksum: AD6EE0D1AB80C8DB054DA749B3A33B88;2599.
  ) 
 Here is how much of TeX's memory you used:
- 15380 strings out of 475385
- 257477 string characters out of 2776907
- 611500 words of memory out of 3000000
- 36311 multiletter control sequences out of 15000+600000
+ 15435 strings out of 475385
+ 258908 string characters out of 2776907
+ 612500 words of memory out of 3000000
+ 36351 multiletter control sequences out of 15000+600000
  477198 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,13n,77p,1839b,769s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 72i,13n,77p,1838b,769s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcbx1095.pk><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on proyecto.pdf (70 pages, 6420512 bytes).
+Output written on proyecto.pdf (74 pages, 7043408 bytes).
 PDF statistics:
- 694 PDF objects out of 1000 (max. 8388607)
- 165 named destinations out of 1000 (max. 500000)
- 322 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 733 PDF objects out of 1000 (max. 8388607)
+ 175 named destinations out of 1000 (max. 500000)
+ 347 words of extra memory for PDF output out of 10000 (max. 10000000)
 
