@@ -8,6 +8,8 @@
 \usepackage[font=it,labelfont=bf]{caption}
 \usepackage{natbib}
 \usepackage{float}
+\usepackage{subcaption}
+
 
 
 \graphicspath{ {./images/} }
@@ -155,6 +157,22 @@ pdfproducer = {pdflatex}
     frame=single,
     numbers=none
    }
+
+   \lstdefinestyle{customcsharp}{
+    language=[Sharp]C,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{orange},
+    showstringspaces=false,
+    tabsize=4,
+    breaklines=true,
+    breakatwhitespace=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    frame=single,
+    captionpos=b
+}
 
 
 \newcommand{\bigrule}{\titlerule[0.5mm]}

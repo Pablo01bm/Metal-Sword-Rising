@@ -711,5 +711,235 @@ En esta última sección se explicará sin entrar en demasiado detalle los scrip
 \begin{figure}[H]
     \centering
     \includegraphics[width=15cm, height=15cm]{DiagramaMapa.jpg}
-    \caption{Diagrama de clases correspondiente las clases usadas para la genración procedural del mapa}
+    \caption{Diagrama de clases correspondiente a las clases usadas para la generación procedural del mapa}
 \end{figure}
+
+\subsection{Principales algoritmos}
+
+A continuación se van a tratar en detalle los algoritmos utiliados en este proyecto para realizar las mecánicas de corte de mallas y el de generación procedural del mapa. El primer algoritmo del que vamos a hablar va a ser el de la mecánica de corte, el cual ha sido importado a través de un repositorio de libre uso en \textit{Github}. 
+
+El framework \textit{Ezy-Slice} del usuario \textit{David Arayan} es un framework de código abierto desarrollado para facilitar la creación de cortes a mallas en proyectos de Unity. Este framework utiliza varios algoritmos para poder conseguir este resultado. La obtención de las coordenadas de corte para poder realiarlo, se va a realizar gracias a un objeto de tipo ''Plano'' el cual va a colisionar con el objeto a cortar y va a determinar también la coordenada de corte. Para ello, cada ve que se presiona el botón de ataque durante el \textit{Modo Ultrasónico}, se invoca a un método sobreescrito del framework mencionado el cual, dados los datos de posición del plano, construye una caja de colisión con las proporciones del plano y comprueba si ha habido alguna colisión con él. Todas las colisiones detectadas se añaden a una lista de tipo \textit{Collider} llamada \textit{Hits}.
+
+Una vez detectadas colisiones con los objetos de la capa o ''layer'' correspondiente, se pasa a iterar mediante un bucle tipo \textit{for} el array mencionado. Dentro del bucle, se crea una variable de tipo \textit{slicedHull}, que es una clase definida en el framework y se iguala al método \textit{sliceObject}. Éste método llama a un método del framework usado, que es el método \textit{Slice}, el que va a realiar la lógica del corte en sí. Dentro de ese método se comprueba si el objeto proporcionado cuenta con los componentes necesarios para realizar el corte, los cuales son \textit{MeshFilter} y \textit{MeshRenderer}. Además comprueba los materiales de dicha malla y se asegura de esa manera de que las submallas no sean nulas. Por último llama a el método que realiza toda la lógica de corte.
+
+Lo primero que comprueba el método \textit{Slice()} es si la malla proporcionada es nula, si no obtiene de ella datos que contienen las posiciones de los vértices, coordenadas UV, normales y tangentes de la malla. Se determina a continuación el número  de submallas usando una clase de Unity llamada \textit{subMeshCount()} y se añaden a un array. Posteriormente se itera una a una dichas submallas. Los vértices e índices son compartidos dentro de cada submalla. Para cada submalla, se obtienen los índices de los triángulos mediante el método \textit{sharedMesh.GetTriangles(submesh)}. También se crea un objeto SlicedSubmesh y se recorren los triángulos de la submalla actual y se crea un objeto Triangle con los vértices correspondientes.
+
+Si hay generación de coordenadas UV, normales o tangentes, se asignan al triángulo actual. El triángulo se divide con el plano proporcionado utilizando el método \textit{Split} del objeto Triangle. Si la división es exitosa, se agregan los puntos de intersección y los triángulos resultantes a los arrays de upperHull, lowerHull y crossHull, respectivamente.
+
+Si la división no es exitosa, se determina el lado del plano en el que se encuentra cada vértice del triángulo y se agrega el triángulo correspondiente a upperHull o lowerHull según corresponda, basándose en la posición con respecto al plano. Finalmente, se agrega la nueva malla a el array de \textit{SlicedSubmesh} mencionado anteriormente y se procede a recorrer dicho array para comprobar si al menos una se cortó, si esto es así se llama a la función \textit{CreateFrom} para crear el objeto de tipo \textit{SlicedHull}, que es la malla cortada que que se instanciará para hacer el efecto visual de corte.
+
+Dentro del método se generan las mallas que hay por encima y por debajo del punto de corte de la malla proporcionada. Finalmente se devuelve un objeto de tipo \textit{SlicedHull} el cual está compuesto de la malla superior e inferior anteriormente creadas. Este componente es el que luego vamos a usar para instanciar la malla superior e inferior, pero antes de seguir por ahí hay que explicar el algoritmo usado para realizar la construcción de los triangulos que forman las mallas superior e inferior mencionadas.
+
+\subsubsection{Algoritmo de cadena monotona de Andrew} 
+
+El algoritmo de la \textit{Cadena Monótona de Andrew} \cite{MonotoneChain}, se trata de un algoritmo utilizado para encontrar la envolvente o malla convexa de un conjunto de puntos en el plano. La envolvente convexa es el polígono más pequeño que contiene todos los puntos del conjunto dado. Aplicado a nuestro caso, el conjunto de puntos son aquellos que se obtienen con el plano de corte.
+
+El algoritmo de la Cadena Monótona de Andrew se basa en el concepto de ordenar los puntos en función de sus coordenadas angulares con respecto a un punto de referencia. El algoritmo sigue los siguientes pasos:
+
+\begin{enumerate}
+    \item Selecciona un punto de referencia. Puede ser el punto más a la izquierda, el más a la derecha, el más arriba o el más abajo, dependiendo de las preferencias. En el caso del framework, usa el punto más arriba para hacer la malla superior y el de más abajo para la inferior.
+    
+    \item Se ordenan los puntos en función de su ángulo polar con respecto al punto de referencia elegido previamente.
+    
+    \item Se recorren los puntos ordenados y, para cada punto, se verifica si forma una curva hacia la derecha o hacia la izquierda con los dos puntos anteriores en la cadena.
+    
+    \item Si el punto forma una curva hacia la derecha, se descarta porque no puede estar en la envolvente convexa. Si forma una curva hacia la izquierda, se agrega a la cadena.
+    
+    \item Al finalizar el recorrido, la cadena obtenida representa la envolvente convexa del conjunto de puntos.
+    
+\end{enumerate}
+
+El algoritmo de la Cadena Monótona de Andrew tiene una complejidad de $O(n \log n)$, donde n es el número de puntos en el conjunto, por lo que es un algoritmo eficiente y no afectará negativamente a el rendimiento del videojuego.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm, height=8cm]{UpperAndLowerConvexHulls.png}
+    \caption{Mallas superior e inferior obtenidas con la aplicación del Algoritmo de cadena monótona de Andrew, extraído de \cite{MonotoneChain}}
+\end{figure}
+
+Volviendo a el punto en el que usamos el método \textit{Slice}, simplemente queda crear los \textit{GameObjects} a partir de las mallas superior e inferior obtenidas previamente, como se ha explicado, y se le agregan una serie de componentes para que tengan las propiedades necesarias para ser cortados de forma recursiva, les afecte la física y se autodestruyan pasados 2 segundos desde el corte, para mejorar el rendimiento del juego. Y con esto finaliza el proceso de corte, pasamos a continuación con el algoritmo de generación procedural del mapa.
+
+\subsubsection{Algoritmo de partición binaria del espacio}
+
+\textit{Binary space partitioning} o \textit{Partición Binaria del Espacio} (BSP) \cite{BSP}, es una algoritmo utilizado para dividir recursivamente un espacio dado en otros 2 espacios. Esta subdivisión da lugar a representación mediante estructuras de datos de tipo árbol binario.
+
+Entonces, para aplicar este algoritmo a lo que se quiere conseguir para el videojuego, se parte de un espacio de dimensiones dadas y se va a proceder a la división recursiva de ambas partes hasta que no haya más espacio que se pueda dividir. Se va a construir además la estructura en forma de árbol con las relaciones de nodo padre e hijo que esa estructura conlleva. Por tanto los pasos que va a realizar el algoritmos son los siguientes:
+
+\begin{enumerate}
+    \item Se define un espacio inicial, con unos valores de altura y de anchura indicados como parámetros. Además se establecerá también las dimensiones mínimas que pueden tener las habitaciones, para que en base a ello el algoritmo pueda seguir dividiendo el espacio o no.
+    
+    \item El espacio se irá dividiendo con una línea vertical u horiontal en un punto aleatorio, teniendo en cuenta, como se ha dicho antes las dimensiones establecidas para las habitaciones. Además se irá añadiendo a la estructura de árbol, el espacio inicial como nodo padre, y los 2 espacios resultantes como nodos hijo.
+    
+    \item En el caso de que los nuevos espacios divididos, se puedan seguir dividiendo se repetirá el paso anterior y se volverá a comprobar.
+    
+    \item La división parará cuando ya no haya más espacio disponible.
+    
+    \item Para cada uno de los espacios, se crea una habitación en su interior, escogiendo puntos aleatorios de las esquinas, normalmente la esquina inferior izquierda y la superior derecha, de esta manera se consiguen habitaciones de forma rectangular. 
+    
+    \item Partiendo de la rama más joven de la estructura del árbol, es decir, aquella que es la más ''baja'' y que por tanto no tiene hijos, y contruimos el pasillo para unir a los 2 hijos del mismo nodo padre. Conforme el algoritmo llega a las capas superiores del árbol, nos encontramos con el problema de que los nodos hijos ya se encuentran conectados con pasillos a otras habitaciones. Por lo que la solución será poner de condición que sólo se conecten por pasillos nodos muy cercanos en el espacio.  
+    
+\end{enumerate}
+
+Para entender mejor el algortimo, a continuación se mostrará una imagen con lo realizado en cada paso de forma gráfica.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=8cm]{BSP1.jpg}
+    \caption{Figura que muestra de forma gráfica algunos de los pasos realizados por el BSP}
+\end{figure}
+
+En la figura se muestra claramente como, partiendo de un espacio o nodo padre, conforme se va diviendo el espacio se agregan los nodos hijos correspondientes a la estructura del árbol, y se para la división si además de no haber espacio suficiente, ya ha hecho el número de iteraciones que se había indicado. Una vez finaliza la división, la creación de las habitaciones mencionada anteriormente, podría dar lugar a una estructura como esta:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=6cm]{BSP2.jpg}
+    \caption{Figura que muestra de forma gráfica como podría quedarse la estructura de habitaciones generadas aleatoriamente}
+\end{figure}
+
+Finalmente, para mostrar como se realiaría la unión de las habitaciones mediante pasillos, se mostrará en la imagen a continuación.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=6cm]{BSP3.jpg}
+    \caption{Figura que muestra de forma gráfica se van uniendo las habitaciones mediante pasillos, siguiendo la lógica explicada anteriormente}
+\end{figure}
+
+Como se puede ver en la imagen, cuando hay dos posibles habitaciones para realizar la unión con los pasillos, se escoge aquella que esté más cerca y se empieza por las hojas del árbol, es decir los nodos de máxima profundidad. Con esto finaliza la explicación de los algoritmos usados.
+
+\section{Implementación}
+
+En este apartado se comentará la implementación  de las distintas funcionalidades del videojuego. Se mostrarán extractos de código de ciertos métodos si con ello ayuda a entender el método explicado.
+
+\subsection{Ciclo de vida de un Script en Unity}
+
+Para poder entender el funcionamiento de \textit{Unity}, es necesario entender primeramente como funcionan los Scripts dentro de Unity.
+
+Dentro de estos Scripts, como ya se ha mencionado en otras secciones de la memoria, las funciones \textbf{Start()} y \textbf{Update()} son clave dentro del ciclo de vida de estos, tanto que al crear un script nuevo simpre viene con ambas funciones escritas. \textbf{Start()} es llamada antes de la actualización del primer frame, pero sí y solo sí el objeto al que esté asociado dicho script esté activado. El método \textbf{Update()} se llama una vez por cada fotograma.
+
+El ciclo de vida de un Script se divide en doce etapas las cuales son: etapa de editor, inicialización, etapa de actualización de las físicas, eventos de entrada (inputs), lógica del juego, renderizado de la escena, renderizado \textit{gizmo}, la renderización de la interfaz de usuario, la etapa de finalización del frame, pausa, activación/desactivación y etapa de cierre. 
+
+Los primeros métodos o funciones que son llamados son en el porpio editor de la herramienta, normalmente se llama a \textbf{Reset()} la cual es llamada para inicializar las propiedades del Script cuando se adjunta por primera vez a un objeto.
+
+Después de eso se invocan a las funciones de inicialización, las cuales son llamadas una única vez por cada Script. Durante la anteriormente mencionada etapa de inicialización de las físicas, las funciones se pueden llamar más de una vez por cada fotograma si el intervalo de tiempo fijado es aún menor que el tiempo real del juego. 
+
+A continuación se siguen ejecutando el resto de etapas mencionadas como la entrada de acciones por parte del jugador y posteriormente la lógica del juego, que conlleva las animaciones. Finalmente se pasa a todas las etapas de renderización, pausa y finalización de la vida del script.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm, height=10cm]{CicloDeVidaScript.png}
+    \caption{Ciclo de vida de un Script en Unity, extraído de \url{Uhttps://docs.unity3d.com/Manual/ExecutionOrder.htmlRL}}
+\end{figure}
+
+\subsection{Cámara}
+
+Como ya se mencionó, se usará el paquete \textit{Cinemachine} porque los objetos tipo cámara que aporta serán muy útiles y facilitarán el trabajo relacionado con la gestión de la cámara. Pues lo primero que se realizó, además de importar dicho paquete, fue ajustar en el editor los parámetros de la cámara. 
+
+La \textit{FreeLook Camera} usada para la cámara normal hubo que ajustar parámetros como, establecer a que transform iba a mirar y cual iba a seguir. Un transform en Unity es la propiedad de los objetos que tienen información como la posición, rotación y escala del objeto, por lo que hay que indicarle eso a la cámara para que mire a la posición correcta del objeto jugador y además le siga automáticamente. También hay que establecer el FOV o campo de visión de la cámara, que es el ángulo que puede ver el jugador, se estableció en 49 grados.
+
+Posteriormente tocaba establecer el movimiento vertical y horizontal de la cámara y ajustando los valores de sensibilidad, velocidad y inputs por parte del jugador para saber con qué botones se tienen que mover el eje X o eje Y de la cámara. Se establecieron la tecla \textit{Mouse Y} para el movimiento vertical de la cámara y la tecla \textit{Mouse X} para la horizontal. Esas teclas corresponden con el movimiento vertical u horizontal del ratón o Joystick en caso de usar un controlador. Como último apunte, estos movimientos están invertidos, es decir, si movemos el ratón hacia arriba, la cámara descenderá en la escena. Se eligió esto debido a que en la mayoría de videojuegos se usa y por tanto, mejoraría la experiencia para jugadores acostumbrados a este tipo de controles.
+
+Además, las cámaras \textit{FreeLook} en \textit{Cinemachine} cuentan con ajustes de posición y rango de la cámara para poder establecer 3 estados distintos los cuales son \textit{Top Rig} para cámara situada por encima del jugador, \textit{Middle Rig} para cuando la cámara esté a la misma altura del jugador y \textit{Bottom Rig} para cámara por debajo de la cintura del jugador. Estos tres estados son como anillos invisibles situados alrededor del personaje y hay que establecer el radio y la altura de cada uno. 
+
+Antes de mostrar imágenes de la configuración mencionada y ejemplos de los ''Rigs'', es necesario explicar cómo se ha organizado el personaje principal dentro de la jerarquía de la escena. Todos los objetos son hijos de un objeto vacío llamado \textit{FinalPlayer}. Los objetos hijos tienen posiciones relativas al padre, es decir, no son coordenadas globales de la escena, esto resulta muy útil para gestionar a los objetos hijos. En el primer nivel dentro del objeto padre, hay 3 objetos que corresponden a las cámaras que son \textit{PlayerCamera} que es el objeto con la configuración de la cámara \textit{FreeLook}, \textit{PlayerUltraModeCamera}, lo mismo que la anterior pero para la cámara del modo Ultrasónico, \textit{CameraHolder} es un objeto vacío que tendrá como hijos a el objeto cámara llamado \textit{PlayerCam} (que es el que adopta la configuración de las cámaras \textit{Cinemachine}). Para entender mejor esta jerarquía observar la imagen a continuación: 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=6cm]{JerarquiaCamara.jpg}
+    \caption{Jerarquía de cámaras en el editor de Unity, en azul los objetos relacionados}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm, height=8cm]{FreeLookRigs.png}
+    \caption{Ejemplo de representación de los 3 niveles o Rigs de la cámara FreeLook extraida de \url{https://docs.unity3d.com/Packages/com.unity.cinemachine@2.3/manual/CinemachineFreeLook.html}}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=15cm]{FreeLookConfig.jpg}
+    \caption{Propiedades de la cámara FreeLook usada}
+\end{figure}
+
+Ahora se explicará la otra cámara que se utiliza en el videojuego, la \textit{PlayerUltraModeCamera}. Al igual que la \textit{FreeLook Camera}, existe la \textit{VirtualCamera} la cual ya fue explicada, pero a pesar de ser diferente, es muy parecida de configurar, pero más fácil ya que esta por ejemplo no contempla los giros de cámara como la FreeLook ni tiene los ''Rigs'' porque es una cámara estática que mira al jugador. Los únicos parámetros ajustados han sido el establecimiento del objeto al que mirar y seguir, el ángulo de visión y la posición de la cámara. 
+
+% \begin{figure}[H]
+%     \centering
+
+%     \begin{subfigure}{0.45\textwidth}
+%         \centering
+%         \includegraphics[width=8cm, height=8cm]{VirtualCameraConfig.jpg}
+%         \caption{Propiedades de la cámara Virtual usada}
+%         \label{fig: Fiegure}
+%     \end{subfigure}
+%     \begin{subfigure}{0.45\textwidth}
+%         \centering
+%         \includegraphics[width=8cm, height=8cm]{VirtualCameraExample.jpg}
+%         \caption{Ejemplo del resultado de la cámara Virtual usada}
+%         \label{fig: Figure}
+%     \end{subfigure}
+   
+%     \caption{Configuración y ejemplo de la cámara Virtual}
+%     \label{fig: two Figure}
+% \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm, height=8cm]{VirtualCameraConfig.jpg}
+    \caption{Propiedades de la cámara Virtual usada}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm, height=8cm]{VirtualCameraExample.jpg}
+    \caption{Ejemplo del resultado de la cámara Virtual usada}
+\end{figure}
+
+Por último, la tansición entre una cámara y otra se hace en el script \textit{ThirPersonCam.cs} donde se obtiene por atributo público ambas cámaras con tipo \textit{GameObject} and dicho tipo tiene un método para habilitar o desabilitar el objeto que es el método \textit{SetActive(bool)}. Se activa o desactiva una cámara u otra si el jugador entra en modo ultra o no, lo cual se comprueba fotograma a fotograma en la función \textit{Update()} del script. Gracias a \textit{Cinemachine} la implementación de la cámara fue bastante sencilla.
+
+\subsection{Personaje principal, movimiento y animación} 
+
+Una ve preparada la cámara es momento de enfocarnos en el personaje principal. Primeramente vamos a tratar su lugar en la escena y su jerarquía. Como se ha mostrado anteriormente, el jugador es hijo del objeto \textit{FinalPlayer} y dentro de este se encuentra el prefabricado del personaje importado desde \textit{Mixamo}. Estos prefabricados ''rigged'' tienen una estructura bastante compleja la cual se resume en que el cuerpo se va dividiendo por secciones y cada sección en otras más especificas hasta acabar en partes como cada uno de los dedos de una mano. Para visualizar mejor esto observar la imagen a continuación: 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=11cm]{JerarquiaJugador.jpg}
+    \caption{Jerarquía de un modelo Rigged}
+\end{figure}
+
+Lo bueno de que esté así organizado es que es más fácil acoplar ciertos elementos a alguna parte específica del cuerpo del jugador. En el caso del personaje de este videojuego, se ha hecho objeto hijo de la mano derecha a el modelo 3D de la katana que portará, así como los adornos que tiene el modelo. Al ser hijos de un componente tan específico como es la mano, va a seguir a la perfección los movimientos de ésta y va a quedar muy bien a ojos del jugador.
+
+Una vez establecido el modelo del jugador podemos empezar a explicar cómo se le ha dotado de un set de movimientos al mismo. Para conseguir que el modelo se mueva por el escenario ha sido necesario dotar de ciertos componentes a el personaje, los componentes han sido \textit{Rigidbody} y \textit{Colliders}. El componente \textit{Rigidbody} sirve para dotar de físicas a el objeto que está adjunto, algo que es clave para hacer el movimiento. Los scripts que realizan el movimiento del jugador son \textit{PlayerMovement.cs} y \textit{ThirdPersonCam.cs}. 
+
+En \textit{PlayerMovement} se han creado una serie de atributos públicos para poder ser modificados desde el editor, algo muy útil porque permite que durante el tiempo de ejecución se pueden ir alterando para poder personaliar y perfeccionar al máximo la experiencia de juego. Los atributos que se han creado son (ver figura):
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm, height=6cm]{PlayerMovementAtributes.jpg}
+    \caption{Atributos del Script PlayerMovement}
+\end{figure}
+
+Para el movimiento del personaje, dentro del script se ha definido un método llamado \textit{MovePlayer()} el cual es llamado en la función \textit{FixedUpdate()} que a diferencia de \textit{Update} presenta intervalos regulares entre fotograma y fotograma. Dentro de ese método se calcula la dirección de movimiento, tomando los vectores de dirección X y Z del objeto y se multiplican por el valor del inpur horizontal y vertical, y finalmente se suman dichos vectores y se obtiene un vector de dirección. Posteriormente se comprueba si el personaje está en el suelo, es decir que no está en el aire. Para ello se crea un \textit{Raycast} que es un rayo invisible finito hacia una dirección, el cual devuelve verdadero o falso si ha entrado en contacto con algún elemento con el \textit{layer} ''whatIsGround'' asociado al objeto suelo. De esta forma sabemos si el personaje está \textit{grounded} o no.
+
+Si está en el suelo, se aplica una fuerza al objeto del personaje, en la dirección calculada y multiplicada por el valor del atributo velocidad de movimiento. Si está en el aire se aplica la misma fuerza pero además multiplicada por el multiplicador en el aire. A continuación el código correspondiente a esta función. 
+
+\begin{lstlisting}
+    private void MovePlayer()
+    {
+        // Calculate movement direction
+        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+
+
+        // on ground 
+        if (grounded) 
+        { 
+            rb.AddForce(moveDirection.normalized * MoveSpeed * 10f, ForceMode.Force);
+
+        }
+        else if (!grounded) // in air
+            rb.AddForce(moveDirection.normalized * MoveSpeed * 10f * airMultiplier, ForceMode.Force);
+
+    }
+    \end{lstlisting}
+
+    Además del movimiento en sí, hay que hacer que el personaje mire hacia donde se está dirigiendo y se puede acompañar dicha funcionalidad con que el movimiento lo haga con respecto a donde mira con la cámara. Para ello en el Script de \textit{ThirPersonCam} se obtienen también el valor de orientación de la cámara y se establece que la orientación del objeto sea la misma que la que se ha calculado para el movimiento, de esta manera el personaje siempre se moverá hacia la dirección a la que está ''mirando''.
+
+    Además de el simple movimiento el personaje ha sido dotado de más acciones, a continuación trataremos los ataques y los saltos del personaje.
