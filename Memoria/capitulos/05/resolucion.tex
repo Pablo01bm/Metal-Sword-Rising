@@ -943,3 +943,225 @@ Si está en el suelo, se aplica una fuerza al objeto del personaje, en la direcc
     Además del movimiento en sí, hay que hacer que el personaje mire hacia donde se está dirigiendo y se puede acompañar dicha funcionalidad con que el movimiento lo haga con respecto a donde mira con la cámara. Para ello en el Script de \textit{ThirPersonCam} se obtienen también el valor de orientación de la cámara y se establece que la orientación del objeto sea la misma que la que se ha calculado para el movimiento, de esta manera el personaje siempre se moverá hacia la dirección a la que está ''mirando''.
 
     Además de el simple movimiento el personaje ha sido dotado de más acciones, a continuación trataremos los ataques y los saltos del personaje.
+
+    El personaje además podrá realiar movimientos de ataque y saltar, estas acciones son imprescindibles para dotar al personaje de capacidad de enfrentamiento contra los enemigos y el salto para poder moverse con otro grado de libertad, es decir de forma vertical.
+
+    Para realizar la acción de salto se ha hecho muy parecido a la del movimiento ya que en el método \textit{Jump()} dentro de \textit{PlayerMovement} se vuelve a aplicar sobre el objeto del personaje una fuera pero esta vez hacia arriba, produciendo el efecto de salto. El código correspondiente es: 
+    
+\begin{lstlisting}
+    private void Jump()
+    {
+
+        
+        //reset y velocity
+        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+       
+    }
+\end{lstlisting}
+
+Los movimientos de ataque se han propuesto en forma de combo de hasta 4 ataques, cada uno con una animación diferente, y con una pausa de 1 segundo entra cada una, para evitar que el jugador produca algún fallo en la lógica. Los ataques se accionan al pulsar una tecla concreta y se comprobará si el jugador la ha presionado fotograma a fotograma con la función \textit{Update()}. Se comprueba que ha pasado 1 segundo desde el último ataque, y si es así además comprueba que no sea más de 2 segundos, porque en ese caso tiene que reestablecer el combo para empear de nuevo por el primer ataque. Si todo esto se cumple se realiza el ataque entrando a la función \textit{attack()}. En dicha función se realiza un simple incremento del contador de combo, se comprueba por qué ataque va y en funcion de eso activa la animación correspondiente. Si ha llegado al fin de combo se llama al método \textit{resetAttack()} para reestablecer las animaciones y los contadores de combo. Aquí el código correspondiente:
+
+\begin{lstlisting}
+    private void attack()
+    {
+            // Increment the attack index
+            currentAttackIndex++;
+            FindObjectOfType<AudioManager>().Play("AttackAir");
+    
+            // Reset attack index if it exceeds the maximum combo attacks
+            if (currentAttackIndex > 4)
+            {
+                currentAttackIndex = 1;
+            }
+    
+            // Set the corresponding attack bool in the animator
+            animator.SetBool("IsAttackingM" + currentAttackIndex, true);
+    
+            // Reset attack bools immediately if it's the final attack combo
+            if (currentAttackIndex > 4)
+            {
+                resetAttack();
+            }
+            else
+            {
+                // Delay the reset of attack bools after the attack animation finishes
+                float delay = animator.GetCurrentAnimatorStateInfo(0).length;
+                Invoke("resetAttack", delay);
+            }
+        }
+\end{lstlisting}
+
+Para finalizar con la implementación del personaje, es necesario tratar cómo se han hecho las animaciones correspondientes a los movimientos y acciones explicados. No se va a tratar en detalle cada una de las animaciones sino que se tratará una y lo explicado es aplicable a todas las animaciones por igual.
+
+Pues como ya se mencionó unos cuantos apartados antes, para poder realizar las animaciones, el objeto del personaje es necesario dotarlo con un componente tipo \textit{Animator}, el cual se encarga de gestionar las animaciones para el objeto al que se le ata. Para configurar el \textit{Animator} es necesario agragarle un \textit{Animator Controller} el cual es el objeto que lleva toda la estructura de estados de las animaciones. Como ya se explicó, dentro de este controlador se ha dividido el cuerpo del personaje en dos secciones para poder dividir las animaciones, y que en el tronco superior ocurran unas y a la vez en el tronco inferior del personaje otras.
+
+La forma de gestionar las distintas animaciones es mediante un grafo de estados el cual facilita en gran parte éste aspecto, ya que al ser tan visual la ayuda es muy grande. Lo primero es crear un estado por defecto que suele corresponderse con una animación tipo \textit{Idle}. Luego, se pueden crear tantos estados como se necesiten, cada uno tendrá una animación asociada distinta. La forma de transicionar entre unas animaciones y otras se hace con el elemento \textit{Transition} y se representa con flechas dentro de el grafo de estados. Cada transición tiene una serie de parámetros ajustables, el que usaremos en la mayoría es el parámetro \textit{hasExitTime} el cual deshabilitaremos, ya que si no, cuando queramos cambiar entre una animación u otra tendría que esperar a que la animación actual terminase por completo para transicionar a la siguiente. A continuación un ejemplo de el grafo de estados del tronco superior del personaje.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=10cm]{AnimatorPlayer.jpg}
+    \caption{Animator Controller del personaje principal}
+\end{figure}
+
+La transición entre animaciones, para que ocurran, se les establece un accionador que suele ser variables tipo booleano. Para asignarles valores a dichas variables es necesario hacerlo mediante código en un Script, y es tan sencillo como instanciar un objeto animator en el fichero, y ralizar el método \textit{setBool(nombreVariable, bool)}. Es muy recomendable que cada vez que se cambie de estado, se tenga en cuenta en reestablecer a falso la variable del estado anterior, para evitar problemas.
+
+Y con esto finaliza la explicación de lo relacionado con el personaje principal. 
+
+\subsection{Modo Ultrasónico}
+
+Para la implementación del modo ultrasónico ha sido necesario crear varios objetos dentro de la jerarquía ya mencionada del jugador. 
+
+Entro estos objetos ha sido necesaria la creación de una cámara distinta a la normal, un plano que servirá para guiar al jugador y realizar el corte en la dirección que desee, configuración de animaciones y efectos visuales durante este modo así como la importación del framework ya mencionado \textit{Ezy-Slice}. Empezando por la jerarquía establecida para los objetos nuevos, han sido incluidos tanto el plano como los efectos especiales, como hijos del objeto cámara del jugador, ya que estos dependerán directamente de ella.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm, height=8cm]{JerarquiaUltraMode.jpg}
+    \caption{Jerarquía establecida para los objetos usados en el modo Ultrasónico}
+\end{figure}
+
+La cámara ya fue explicada en el apartado de cámara, por lo que vamos a seguir con la lógica del plano. El plano ha sido creado a la altura de la cintura del personaje y se le ha dotado de un material semi transparente de color azul, para ayudar al jugador a situal el plano en la sección del objeto que quiera. Además el plano sólo aparecerá durante el modo Ultra, por lo que por defecto estará deshabilitado y sólo se activará durante éste modo. Por último el plano estará dotado de movimiento de giro sobre sí mismo que será establecido por el input del eje vertical que haga el jugador. Ésto se hace desde el Script \textit{ThirdPersonCam} en el método \textit{Update()} en el cual, se gestiona la lógica de cambio entre el modo normal y el modo ultra y las acciones en cada uno de estos modos. Cuando se activa el modo Ultra, se habilitan los GameObject mencionados y se dota de movimiento al plano llamando al método \textit{rotatePlane()}. Éste sencillo método tan solo establece la rotación del plano en función del input del jugador.
+
+\begin{lstlisting}
+    public void rotatePlane()
+    {
+        plane.transform.eulerAngles += new Vector3(0, 0, -Input.GetAxis("Mouse Y") / 2);
+    }
+\end{lstlisting}
+
+Por último hay que tratar el cómo se ha usado el Framework de corte dentro de éste mismo Script. Lo primero es que se ha creado el método \textit{Slice()} el cual realiza la lógica de identificar los puntos de colisión del plano con el objeto a cortar. Luego, itera en cada uno de estos puntos e intenta realizar el corte llamando al método \textit{SliceObject()} el cual llama al método de corte del framework. El código de dicho método es: 
+
+\begin{lstlisting}
+    public SlicedHull SliceObject(GameObject obj, Material crossSectionMaterial = null)
+    {
+        // slice the provided object using the transforms of this object
+        if (obj.GetComponent<MeshFilter>() == null)
+            return null;
+
+        return obj.Slice(plane.transform.position, plane.transform.up, crossSectionMaterial);
+    }
+\end{lstlisting}
+
+Volviendo al método \textit{Slice()} si ocurre el corte, se procede a crear los sub objetos superior e inferior del corte, y por tanto, añadirles a cada uno de ellos las propiedades necesarias para que se puedan seguir cortando. Para ello se llama al último método creado, que es \textit{AddHullComponents()} el cual se encarga de añadirle esos componentes a los objetos.
+
+Los objetos añadidos son un \textit{Rigidbody}, un \textit{MeshCollider} y se le añade un Script llamado \textit{destroyEnemies} el cual elimina el objeto tras el transcurso de un tiempo establecido, para evitar problemas de rendimiento, ya que si se realizan muchos cortes en poco tiempo se crean gran cantidad de objetos en la escena y eso repercute negativamente en el rendimiento. El código del método es:
+
+\begin{lstlisting}
+    public void AddHullComponents(GameObject go)
+    {
+        go.layer = 9;
+        Rigidbody rb = go.AddComponent<Rigidbody>();
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
+        MeshCollider collider = go.AddComponent<MeshCollider>();
+        collider.convex = true;
+        go.layer = 8;
+        go.AddComponent<destroyEnemies>();
+        rb.AddExplosionForce(100, go.transform.position, 20);
+    }
+\end{lstlisting}
+
+Y el código implementado de la función prncipal \textit{Slice()} es: 
+
+\begin{lstlisting}
+    public void Slice()
+    {
+        FindObjectOfType<AudioManager>().Play("KatanaSlice");
+
+        Collider[] hits = Physics.OverlapBox(plane.transform.position, new Vector3(3, 0.1f, 3), plane.transform.rotation, layerMask);
+
+        if (hits.Length <= 0)
+            return;
+
+        for (int i = 0; i < hits.Length; i++)
+        {
+            SlicedHull hull = SliceObject(hits[i].gameObject, crossMaterial);
+            if (hull != null)
+            {
+                GameObject bottom = hull.CreateLowerHull(hits[i].gameObject, crossMaterial);
+                GameObject top = hull.CreateUpperHull(hits[i].gameObject, crossMaterial);
+                AddHullComponents(bottom);
+                AddHullComponents(top);
+                Destroy(hits[i].gameObject);
+            }
+        }
+    }
+\end{lstlisting}
+
+Tras esto, se obtiene el resultado de la mecánica de corte esperado, además de que junto con los efectos visuales harán que la experiencia de usuario sea ideal.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=8cm]{UltraModeExample.jpg}
+    \caption{Ejemplo del resultado final de la mecánica de corte}
+\end{figure}
+
+\subsection{Enemigos}
+
+Para los enemigos, se importó el modelo mostrado en secciones anteriores y se le dotó de animación y otros componentes como colisiones. Como se observa a continuación la jerarquía es muy sencilla, todos los objetos del enemigo son hijos del objeto vacío \textit{PA Warrior (1)} incluida la interfaz de la barra de vida del enemigo.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6cm, height=2cm]{JerarquiaEnemigo.jpg}
+    \caption{Jerarquía dentro del editor de los objetos tipo enemigo}
+\end{figure}
+
+Para dotar al enemigo de comportamiento y la lógica y gestión de sus atributos, se creó el Script \textit{MeleeEnemy} y se adjuntó a los objetos enemigo. Empezando por los atributos del enemigo, tanto el daño como su vida son leídas de la clase \textit{AttributesControler} en el método \textit{Start()} que recordemos que es aquel que se llama antes del primer fotograma de juego. Una vez establecidos los atributos del enemigo toca dotarlo de comportamiento.
+
+Para ello se creó la función \textit{enemyBehaviour()} la cual es llamada en cada fotograma en el método \textit{Update()} si el enemigo no ha sido derrotado. La lógica para pasar de un estado a otro ya fue explicada en secciones anteriores, por lo que ahora se explicará simplemente la implementación. Lo que se hace dentro del método descrito es igualar a una variable el objeto del jugador para definirlo como objetivo. Después se va estableciendo la distancia con respecto a él usando el método de la clase vector que es \textit{Distance(position, position2)}, la cual establece la distancia entre dos puntos dados y se comprueba su valor. 
+
+Si su valor es mayor de 7 se pasa a los ya mencionados estados pasivos, los cuales se eligen de forma aleatoria generando un \textit{Random} entre 0 y 2, y mediante un \textit{switch-case} se aplica lo necesario para cada rutina. Recalcar que cada rutina existe durante 4 segundos antes de cambiar de nuevo, para evitar que cambie con cada fotograma el comportamiento. Para los comportamientos de ataque se ha aplicado la misma lógica pero estableciendo diferentes animaciones. Ejemplo de parte del código de este método es el siguiente:
+
+\begin{lstlisting}
+    public void enemyBehaviour()
+    {
+        target = GameObject.FindGameObjectWithTag("Player");
+        if (Vector3.Distance(transform.position, target.transform.position) > 7)
+        {
+            ani.SetBool("run", false);
+            chronometer += 1 * Time.deltaTime;
+            if (chronometer >= 4)
+            {
+                routine = Random.Range(0, 2);
+                chronometer = 0;
+            }
+            switch (routine)
+            {
+                case 0:
+                    ani.SetBool("walk", false);
+                    break;
+
+                case 1:
+                    grade = Random.Range(0, 360);
+                    angle = Quaternion.Euler(0f, grade, 0f);
+                    routine++;
+                    break;
+
+                case 2:
+                    transform.rotation = Quaternion.RotateTowards(transform.rotation, angle, 0.5f);
+                    transform.Translate(Vector3.forward * 1 * Time.deltaTime);
+                    ani.SetBool("walk", true);
+                    break;
+            }
+        }
+\end{lstlisting}
+
+Para reducir la vida del enemigo, se utiliza la función \textit{OnTriggerEnter(collider)} la cual es una función del framework de Unity la cual es llamada únicamente la primera vez que algo entra en el Collider adjunto al objeto. Por lo que cuando la espada del jugador entra en el collider se llama a dicha función la cual lo primero que hace es comprobar que efectivamente lo que ha colisionado con él ha sido la espada, mediante el tag del objeto. Una vez colisiona, se reduce la vida del enemigo y se establece visualmente en la barra de vida del mismo. Además en el punto exacto de colisión se instancia efectos visuales de chispas para dar mayor feedback al usuario de que ha realizado con éxito el ataque. Aquí el código de dicha función: 
+
+\begin{lstlisting}
+    private void OnTriggerEnter(Collider coll)
+    {
+        if (coll.CompareTag("Sword"))
+        {
+            health = health - atributesScript.playerDamage;
+            healthBar.setHealth(health);
+            Instantiate(sparks, coll.ClosestPointOnBounds(transform.position), Quaternion.identity);
+            Destroy(sparks, 1f);
+        }
+
+    }
+\end{lstlisting}
+
+Las animaciones y su lógica de los enemigos han sido realizadas de la misma manera que para el personaje principal, por lo que no se considera necesario repetir la explicación para éste caso. Se continuará con la creación de los menús y cómo se ha implementado su lógica.
+
+\subsection{Menús e Interfaz de Usuario}

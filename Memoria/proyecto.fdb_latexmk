@@ -1,19 +1,19 @@
 # Fdb version 4
-["bibtex proyecto"] 1687636293 "proyecto.aux" "proyecto.bbl" "proyecto" 1687637024 0
+["bibtex proyecto"] 1687694729 "proyecto.aux" "proyecto.bbl" "proyecto" 1687694734 0
   "./bibliografia/bibliografia.bib" 1687614335 6008 7742e866fd05926f3044b24615d15415 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291868336 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "proyecto.aux" 1687637022 17968 d6ec3406637cc796e25c9366bb9b55ad "pdflatex"
+  "proyecto.aux" 1687694733 19103 3a261b6e17e8d7b238d011ba641eb368 "pdflatex"
   (generated)
   "proyecto.bbl"
   "proyecto.blg"
   (rewritten before read)
-["makeindex proyecto.idx"] 1687629242 "proyecto.idx" "proyecto.ind" "proyecto" 1687637024 0
-  "proyecto.idx" 1687637020 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex proyecto.idx"] 1687693099 "proyecto.idx" "proyecto.ind" "proyecto" 1687694734 0
+  "proyecto.idx" 1687694730 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "proyecto.ilg"
   "proyecto.ind"
   (rewritten before read)
-["pdflatex"] 1687637018 "c:/Users/pablo/Desktop/Pablo/TFG-Metal-Sword-Rising/Metal-Sword-Rising/Memoria/proyecto.tex" "proyecto.pdf" "proyecto" 1687637024 0
+["pdflatex"] 1687694729 "c:/Users/pablo/Desktop/Pablo/TFG-Metal-Sword-Rising/Metal-Sword-Rising/Memoria/proyecto.tex" "proyecto.pdf" "proyecto" 1687694734 0
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1687085386 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx1095.pk" 1681839936 13580 6abe2f17d78e3d3f2378a3dd99321520 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1681841187 12668 0a98e39c4ab4111af1bd63a2e6b40d31 ""
@@ -134,11 +134,12 @@
   "capitulos/02/abstract.tex" 1681227504 193 4de9a285e3be53a253a4e648f59e58ee ""
   "capitulos/03/introduccion.tex" 1681227402 197 527f30873d034fe42aeff8a6812d001f ""
   "capitulos/04/objetivos.tex" 1681228268 194 9c7ae4e32d0d5aa6710426cabf0760f9 ""
-  "capitulos/05/resolucion.tex" 1687637018 94396 04ae51ab328861567fe5630f16c54333 ""
+  "capitulos/05/resolucion.tex" 1687694723 110430 179774bf9e0dcbd468c9127d1607556e ""
   "imagenes/etsiit_logo.png" 1379672160 15686 96fbb972320ee192b868b64d57775747 ""
   "imagenes/logo_ugr.jpg" 1228354992 85532 25866cc28cc667a1cdd972180571e7be ""
   "images//AOE2ejemplo.jpg" 1681841165 255562 f5cd27b6f20274062dff06fd0b00ce14 ""
   "images//AnimatorControllerExample.png" 1687286744 40658 84320bfa55407f58a89ccd0e07e4cda7 ""
+  "images//AnimatorPlayer.jpg" 1687686564 192858 4941123c177b1f22833ef418cc7d2f38 ""
   "images//BOTWejemplo.jpg" 1681840556 79123 73b6fa0e416beb91cfd5720e9731244d ""
   "images//BSP1.jpg" 1687616876 95494 46d9a00c325b6ebe2104e796f5d104e7 ""
   "images//BSP2.jpg" 1687617513 44418 e8d352c5d88806df9514d6136304264c ""
@@ -162,12 +163,15 @@
   "images//FreeLookConfig.jpg" 1687626973 134256 2c66b3781a66f40aef53a1116be91a11 ""
   "images//FreeLookRigs.png" 1687627373 37391 a484a269b7a7d32578bcb52d5335138f ""
   "images//JerarquiaCamara.jpg" 1687626379 21799 91129fb75caa68c1eeadf8e3942f9f52 ""
+  "images//JerarquiaEnemigo.jpg" 1687692924 6540 7b2dc8bfa02fb607889ce47658e50dcf ""
   "images//JerarquiaJugador.jpg" 1687633158 94875 5bf55d9d532845a969b952f7ca71595a ""
+  "images//JerarquiaUltraMode.jpg" 1687688878 26880 f94549affbcc8b5bdd3ca4af99302929 ""
   "images//LowerBodyMask.jpg" 1687288320 28124 fd1c0402871bdf64fc6f29fc080954e5 ""
   "images//MeleeEnemy.jpg" 1687086722 1066442 4694846d74c9864b212cd4391a1f431a ""
   "images//OverlapSphere.jpg" 1687361205 26140 7e731d9c63057f1b8040790c0762643b ""
   "images//PlayerMovementAtributes.jpg" 1687634967 58233 3a5c6156f8aad1f3cfeb1c9893e9674a ""
   "images//PostProcessingEffectConfig.jpg" 1687290861 108438 4b2ea6ca36d8417a9fe03fc0a11485f6 ""
+  "images//UltraModeExample.jpg" 1687692170 172025 637643474aaae1625e8afad13a3acc89 ""
   "images//UpperAndLowerConvexHulls.png" 1687608123 5422 aef09cdbef5d78609a8a328e6b794fb5 ""
   "images//UpperBodyMask.jpg" 1687288252 27688 17d2888807b794fb3a9c2aaaa45cb253 ""
   "images//VirtualCamera.jpg" 1687283713 125381 1068923dc7ad89d907c3794564d7ef21 ""
@@ -191,13 +195,13 @@
   "images//skybox.jpg" 1686481234 2513397 78ec930e0a1c83617fe100f8d196ab18 ""
   "portada/portada.tex" 1681148510 1062 75bc369473f3b18e1bdd1b48907ab54e ""
   "prefacios/prefacio.tex" 1681148782 2588 cf9cbcefb15b4ffd1492b9986052932f ""
-  "proyecto.aux" 1687637022 17968 d6ec3406637cc796e25c9366bb9b55ad "pdflatex"
-  "proyecto.bbl" 1687636293 5185 24023332515751921cb978f0861f351a "bibtex proyecto"
-  "proyecto.ind" 1687629242 0 d41d8cd98f00b204e9800998ecf8427e "makeindex proyecto.idx"
-  "proyecto.lof" 1687637022 8019 6e66c3905a27f1deb3f02cea60cb7681 "pdflatex"
-  "proyecto.out" 1687637022 3547 0a3014990f6ea73bcb42cf90f77b8f9c "pdflatex"
+  "proyecto.aux" 1687694733 19103 3a261b6e17e8d7b238d011ba641eb368 "pdflatex"
+  "proyecto.bbl" 1687694729 5185 24023332515751921cb978f0861f351a "bibtex proyecto"
+  "proyecto.ind" 1687693099 0 d41d8cd98f00b204e9800998ecf8427e "makeindex proyecto.idx"
+  "proyecto.lof" 1687694733 8600 6ea1441f2ca8937ee565016d84c17689 "pdflatex"
+  "proyecto.out" 1687694733 4009 56eeb5a34b52c1976f119c6376e03163 "pdflatex"
   "proyecto.tex" 1687636286 6059 f10cec5920825afbaeda1120166798b7 ""
-  "proyecto.toc" 1687637022 3410 6eb23023ebb308d5b92a799d80f7db88 "pdflatex"
+  "proyecto.toc" 1687694733 3676 0b9585d38ff257a82bc4f3634470a13b "pdflatex"
   (generated)
   "proyecto.aux"
   "proyecto.glo"
