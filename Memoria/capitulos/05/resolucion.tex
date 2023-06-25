@@ -1165,3 +1165,256 @@ Para reducir la vida del enemigo, se utiliza la función \textit{OnTriggerEnter(
 Las animaciones y su lógica de los enemigos han sido realizadas de la misma manera que para el personaje principal, por lo que no se considera necesario repetir la explicación para éste caso. Se continuará con la creación de los menús y cómo se ha implementado su lógica.
 
 \subsection{Menús e Interfaz de Usuario}
+
+La interfaz de usuario dentro de Unity se trata como objetos, al igual que todo los demás, pero hay una diferencia en cuanto a cómo se configuran, ya que requiere algunos pasos previos. Lo primero será habilitar un objeto tipo \textit{Canvas} el cual tiene las propiedades necesarias para identificar los clicks de ratón u otros movimientos a lo largo de la pantalla. Como objetos hijos del \textit{Canvas} tenemos distintos elementos categorizados por Unity como UI, y existen varios tipos, en el caso de todos los menús e interfaz creada en este proyecto, solo hemos usado 3 tipos, \textit{Buttom}, \textit{Text} y \textit{Image}. Cada uno de ellos tienen diferentes parámetros configurables pero son muy fáciles de usar ya que este apartado de Unity, se parece bastante a un procesador de textos convencional.
+
+Para crear los menús se ha seguido en todos la misma estructura y lógica, la única diferencia entre ellos es la acción que realizan sus botones pero en esencia es lo mismo, por lo que se explicara de forma generalizada y se ejemplificará con 1 de los menús. Para crear elementos 2D de interfaz de usuario basta con ir agregando los elementos del tipo que sea necesario a la jerarquía del objeto \textit{Canvas} y una vez agregados a la jerarquía, para poder trabajar correctamente con estos elementos es necesario alctivar el modo de visualización 2D del editor, para facilar el trabajo. 
+
+Una vez preparado todo, los distintos elementos como son los textos o botones que se han añadido, se podrán mover por el \textit{Canvas} para situarlos en los lugares que mejor convengan. Los textos permiten modificar el alineamiento, tamaño, fuente y colores de las letras. Las imágenes será necesario importar imágenes para poder usarlas ya que el objeto image es solo un \textit{PlaceHolder}, y los elementos \textit{buttom} se pueden configurar para activar métodos concretos de los scripts, algo que será clave para poder hacer la lógica de cambio de vista entre escenas o menús. Como conclusión, salvo los botones, los demás elementos no tienen mayor complejidad que simplemente situarlos en la pantalla y personalizarlos.
+
+Para los textos que cambian dinámicamente según el valor que cambie en el juego, por ejemplo el multiplicador de daño del jugador o el contador de puntos, será necesario instanciar dicho componente \textit{Text} en el Script que sea necesario y igualarle el contenido del texto a la variable string que se desee. Por ejemplo, para el contador de puntos, se realiza de la siguiente manera en el script llamado \textit{ScoreManager}:
+
+
+\begin{lstlisting}
+    void Update()
+    {
+        score = atributesScript.score;
+        scoreText.text = score.ToString() + " POINTS";
+
+        highscore = atributesScript.highscore;
+        highscoreText.text = "HIGHSCORE: " + highscore.ToString();
+    }
+\end{lstlisting}
+
+Para los botones, primero es necesario establecer desde el editor, además de personalizar efectos como el \textit{hovering} para mejorar la UX, también hay que indicar el evento que ocurrirá al clickar en el botón. Esto se realiza adjuntando al objeto canvas el script que haga la lógica de estas acciones, y luego adjuntando ese objeto al botón, de esta manera se reconocerán los métodos del Script deseado. A continuación un ejemplo de esto:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=8cm]{BotonRestart.jpg}
+    \caption{Ejemplo de lógia del botón restart }
+\end{figure}
+
+Y para conseguir que el botón cambie de escena hay que establecer un orden en las escenas creadas, esto se realiza desde la configuración de Unity, y consiste en asignar un índice a cada una de las escenas del juego. La iteración entre ellas es realmente simple. Por ejemplo para cambiar del menú principal a la escena de juego, se realiza el siguiente código dentro del Script \textit{MainMenu} al pulsar el botón Play se hace la función \textit{playGame()} la cual simplemente, haciendo el método \textit{LoadScene(index)} de Unity, carga la escena con el índice que se ha adjuntado:
+
+\begin{lstlisting}
+    public void playGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+\end{lstlisting}
+
+Por último trataremos las barras de indicador de salud del personaje y enemigos. El objeto que se usa para esto es un  \textit{Slider} el cual tiene la propiedad de llenar o vaciar entre dos parámetros enteros establecidos, el espacio dado con una imagen. Por lo que para lograr el efecto de reducción de vida al ser golpeado resulta muy útil. Para ello, se ha creado el script \textit{HealthBar} el cual gestiona este comportamiento. Se le pasan referencias de los elementos \textit{Slider} y la imagen de relleno además del efecto de gradiente, el cual no entraremos mucho en detalle pero sirve para que un elemento tenga un color u otro dependiendo del valor asociado. Para establecer tanto la cantidad de barra de vida máxima como su color se llama a la función \textit{setMaxHealth()} y para modificarla cada vez que se recive un golpe a la función \textit{setHealth} y realizan un trabajo tam simple como establecer el valor del \textit{Slider} y del \textit{Gradient} y se refrescará en pantalla dicho valor. Ejemplo del código: 
+
+\begin{lstlisting}
+    public void setHealth(float health)
+    {
+        slider.value = health;
+
+        fill.color = gradient.Evaluate(slider.normalizedValue);
+    }
+\end{lstlisting}
+
+\subsection{Sonidos}
+
+Los sonidos de un videojuego son algo muy importante sobre todo con el propósito de mejorar la experiencia del jugador. En el caso de este proyecto no es algo que tuviera mucha prioridad pero se ha tenido en cuenta. 
+
+Para que en el juego haya sonidos ha sido necesario crear un objeto vacío llamado \textit{AudioManager} el cual tiene un script creado para facilitar la gestión de sonidos llamado también \textit{AudioManager}. Este script funciona a modo de meclador de Audio pero muy simplificado, ya que solo iniciará pistas de audio cuando se llame a la función \textit{Play(name)} pero esto es algo que Unity no trae por defecto.
+
+Desde el editor hay que añadir las pistas de audio a un vector y ajustarles una serie de parámetros como el volument o el ''Pitch''. El tipo \textit{Sound} tampoco viene por defecto en Unity, por lo que ha habido que crear dicha clase. Sound cuenta solamente con los parámetros de nombre, volument, ''Pitch'' y la propia pista de Audio, que es el tipo \textit{AudioClip}. Una vez creado el tipo ya se pueden agregar desde el editor los sonidos que se deseen. A continuación se muestra una imágen con dicho Script y los elementos de audio agregados.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=14cm]{AudioManagerParams.jpg}
+    \caption{Pistas de audio añadidas el Audio Manager}
+\end{figure}
+
+Para reproducir un sonido basta que cuando ocurra la acción que deba provocarlo, se llame al método \textit{Play(name)} pasando el nombre exacto de la pista. Luego en el propio método se realiza lo siguiente, se comprueba si el sonido es el correspondiente al sonido de corte de katana del modo ultra, ya que en ese caso es una excepción. Si no lo es, simplemente busca en el Array de sonidos aquel que tiene el nombre pasado por parámetro y lo reproduce. Sin embargo si es el sonido de katana, para recrear que por cada click haya una instancia diferente del efecto, se crean componentes \textit{AudioSource} uno por cada click en ese modo y se elimina cuando acaba la pista. El código mencionado es el siguiente: 
+
+\begin{lstlisting}
+    public void Play(string name)
+    {
+        if (name != "KatanaSlice")
+        {
+            Sound s = Array.Find(sounds, sound => sound.name == name);
+            s.source.Play();
+        }
+        else
+        {
+            // If the sound name is "KatanaSlice", create a new AudioSource for each sound instance
+            Sound s = Array.Find(sounds, sound => sound.name == name);
+            if (s == null)
+            {
+                Debug.LogWarning("Sound " + name + " not found!");
+                return;
+            }
+
+            // Create a new AudioSource for this sound instance
+            AudioSource newSource = gameObject.AddComponent<AudioSource>();
+            newSource.clip = s.clip;
+            newSource.volume = s.volume;
+            newSource.pitch = s.pitch;
+
+            newSource.Play();
+
+            // Clean up the AudioSource after the sound finishes playing
+            StartCoroutine(DestroyAfterPlaying(newSource, s.clip.length*0.4f));
+        }
+    }
+\end{lstlisting}
+
+\subsection{Creación del mapa y sus elementos}
+
+En este apartado trataremos el script responsable de la generación procedural del mapa y los elementos que lo componen. Hay que aclarar que no se va a entrar en detalle de la implementación de los Scripts auxiliares o clases que componen esta funcionalidad, ya que se tratan de un framework de código abierto del usuario \textit{Sunny Valley Studio}. El único Script que se ha adaptado a el proyecto ha sido \textit{DungeonCreator}.
+
+Empezando por los atributos que usará ese script, el cual en la jerarquía está atado a un objeto vacío. La gran mayoría de estos parámetros son ajustables desde el editor, ya que son públicos, y esto, ya se ha mencionado anteriormente, presenta una gran ventaja a la hora de depurar el código y el comportamiento del videojuego ya que permite ver en tiempo de ejecución el valor de las distintas variables. En la siguiente imagen se muestran los distintos atributos editables desde el editor de Unity: 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=13cm]{DungeonCreatorAtributes.jpg}
+    \caption{Atributos del script DungeonCreator}
+\end{figure}
+
+Al comenzar la ejecución, en el método \textit{Start()} se llama a la función \textit{CreateDungeon}, que como su nombre indica se va a encargar de la creación del mapa. Lo primero que realiza dicha función es borrar todos los objetos hijos del objeto actual, para que ninguno interfiera en la lógica del algoritmo de partición binaria, ocupando espacios del entorno. 
+
+Seguido, se genera la mazmorra instanciando a una variable de tipo \textit{DungeonGenerator} a la cual, a su constructor hay que adjuntarle los atributos de ancho y largo de la mamorra. Seguido de la creación de esa variable, se crea la lista de habitaciones, llamando al método \textit{CalculateDungeon} de la clase \textit{DungeonGenerator} y pasándole todos los parámetros necesarios para ello. Dentro de dicho método se raliza el algoritmo de partición binaria (explicado anteriormente), se obtienen los espacios disponibles para las habitaciones, se generan dichas habitaciones en los espacios obtenidos así como la creación de los pasillos que unen las habitaciones. Finalmente se devuelve una lista conjunta con las habitaciones y los pasillos. El código de esta función es:
+
+\begin{lstlisting}
+    public List<Node> CalculateDungeon(int maxIterations, int roomWidthMin, int roomlengthMin, float roomBottomCornerModifier, float roomTopCornerModifier, int roomOffset, int corridorWidth)
+    {
+        BinarySpacePartitioner bsp = new BinarySpacePartitioner(dungeonWidth, dungeonLength);
+        allNodesCollection = bsp.PrepareNodesCollection(maxIterations, roomWidthMin, roomlengthMin);
+        List<Node> roomSpaces = StructureHelper.TraverseGraphToExtractLowestLeafes(bsp.RootNode);
+
+        RoomGenerator roomGenerator = new RoomGenerator(maxIterations, roomlengthMin, roomWidthMin);
+        List<RoomNode> roomList = roomGenerator.GenerateRoomsInGivenSpaces(roomSpaces,  roomBottomCornerModifier,  roomTopCornerModifier,  roomOffset);
+
+        CorridorsGenerator corridorGenerator = new CorridorsGenerator();
+        var corridorList = corridorGenerator.CreateCorridor(allNodesCollection, corridorWidth);
+
+        return new List<Node>(roomList).Concat(corridorList).ToList();
+    }
+\end{lstlisting}
+
+Volviendo a la clase \textit{DungeonCreator}, una vez obtenida la lista con los nodos de cada habitación y pasillo, se crea un objeto llamado \textit{WallParent} cuya función será ser el objeto padre de todas las paredes de la mazmorra, organizando así mejor la estructura.
+
+Después se inicializan algunas variables privadas que servirán para establecer las posibles posiciones de las paredes y las puertas de las mismas. En el método, después se itera por la lista de habitaciones creada anteriormente y se procede a la creación en sí de las mallas de cada habitación y sus objetos de decoración y enemigos. Antes de entrar en ese método, que es el que más contenido tiene, vamos a acabar el método \textit{CreateDungeon}, el cual tras crear todas las habitaciones, pasillos y objetos e instanciar al jugador, instancia al objeto con el que se acaba la partida y se crean las paredes llamando al método \textit{createWalls}. El código de éste método se muestra a continuación: 
+
+\begin{lstlisting}
+    public void CreateDungeon()
+    {
+        DestroyAllChildren();
+        DungeonGenerator generator = new DungeonGenerator(dungeonWidth, dungeonLength);
+        var listOfRooms = generator.CalculateDungeon(maxIterations, 
+            roomWidthMin, 
+            roomlengthMin, 
+            roomBottomCornerModifier, 
+            roomTopCornerModifier, 
+            roomOffset,
+            corridorWidth);
+
+        GameObject wallParent = new GameObject("WallParent");
+        wallParent.transform.parent = transform;
+        possibleDoorVerticalPosition = new List<Vector3Int>();
+        possibleDoorHorizontalPosition = new List<Vector3Int>();
+        possibleWallHorizontalPosition = new List<Vector3Int>();
+        possibleWallVerticalPosition = new List<Vector3Int>();
+
+        for (int i = 0; i < listOfRooms.Count; i++)
+        {
+            CreateMesh(listOfRooms[i].BottomLeftAreaCorner, listOfRooms[i].TopRightAreaCorner);
+        }
+        Instantiate(FinishGameObj, farPositionFromPlayer + new Vector3(0, 1f, 0), Quaternion.identity);
+        createWalls(wallParent);
+    }
+\end{lstlisting}
+
+Ahora vamos con el método \textit{CreateMesh}, el cual se va a engargar de crear las mallas del suelo de la mazmorra, e instanciar dentro de los pasillos y habitaciones los objetos y enemigos. El método comienza creando los lados del rectángulo a partir de las coordenadas pasadas como parámetro correspondientes a la esquina inferior iquierda de la habitación y la esquina superior derecha. Y acto seguido se establece el array de vertices. Acto seguido se crea otro array con las coordenadas 2D de los vertices UV, aquellos que confoman la malla, y tras definir el orden de los triángulos en un array de enteros, se crea el objeto Malla, se le asignan los vertices creados, los UV y los triangulos. Esta es la manera de crear mallas a través de Script en Unity. Código correspondiente a continuación:
+
+\begin{lstlisting}
+    private void CreateMesh(Vector2 bottomLeftCorner, Vector2 topRightCorner)
+    {
+        Vector3 bottomLeftV = new Vector3(bottomLeftCorner.x, 0, bottomLeftCorner.y);
+        Vector3 bottomRightV = new Vector3(topRightCorner.x, 0, bottomLeftCorner.y);
+        Vector3 topLeftV = new Vector3(bottomLeftCorner.x, 0, topRightCorner.y);
+        Vector3 topRightV = new Vector3(topRightCorner.x, 0, topRightCorner.y);
+
+        Vector3[] vertices = new Vector3[]
+        {
+            topLeftV,
+            topRightV,
+            bottomLeftV,
+            bottomRightV
+        };
+
+        Vector2[] uvs = new Vector2[vertices.Length];
+        for (int i = 0; i < uvs.Length; i++)
+        { 
+            uvs[i] = new Vector2(vertices[i].x, vertices[i].z);
+        }
+
+        int[] triangles = new int[]
+        {
+            0,
+            1,
+            2,
+            2,
+            1,
+            3
+        };
+
+        Mesh mesh = new Mesh();
+        mesh.vertices = vertices;
+        mesh.uv = uvs;
+        mesh.triangles = triangles;
+        .
+        .
+        .
+\end{lstlisting}
+
+Para dejar claro la manera de crear una malla en Unity a través de script, el proceso es establecer los puntos de coordenadas de los vértices, asignarles un orden en el array, y posteriormente crear los triángulos a partir de ellos. Para dibujar una malla rectangular, como es el caso, es tan sencillo como crear solo 2 triángulos y es importante tener en cuenta que el orden para asignar los vértices debe ser en el sentido de las agujas del reloj, ya que si no, Unity interpretará esa cara como invertida y no la mostrará visualmente. Para reforzar esta explicación se adjunta a continuación una imagen mostrando esto: 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm, height=8cm]{GenerateMeshUnity.jpg}
+    \caption{Creación de una malla en Unity}
+\end{figure}
+
+Tras esta breve explicación, continuamos con la creación del objeto que va a tener el suelo de la habitación, que se va a llamar \textit{dungeonFloor} y se le van a añadir varios componentes entre ellos los relacionados con las mallas y lo igualaremos a la malla que acabamos de crear, haciendo posible que se imprima visualmente en la escena. 
+
+\begin{lstlisting}
+    GameObject dungeonFloor = new GameObject("Mesh"+bottomLeftCorner, typeof(MeshFilter), typeof(MeshRenderer));
+
+        dungeonFloor.transform.position = Vector3.zero;
+        dungeonFloor.transform.localScale = Vector3.one;
+        dungeonFloor.GetComponent<MeshFilter>().mesh = mesh;
+        dungeonFloor.GetComponent<MeshRenderer>().material = material;
+        dungeonFloor.layer = LayerMask.NameToLayer("whatIsGround"); //Own
+        dungeonFloor.AddComponent<MeshCollider>().sharedMesh = mesh; //Own
+        dungeonFloor.transform.parent = transform;
+\end{lstlisting}
+
+Se prosigue con la creación de los arrays de posiciones de las paredes de cada uno de los lados de la habitación, que se usarán más adelante para instanciar las paredes en esas coordenadas. Tras eso se comprueba si es la primera iteración y por tanto la primera habitación, porque en ese caso se calculan las dimensiones de la habitación y son pasadas como parámetro a ua función llamada \textit{PlaceRespawnPoint} que su finalidad es establecer un punto de aparición para el jugador. 
+
+Si no es la primera habitación, se establecen también las dimensiones de la habitación pero esta ve para emplazar en su interior a los enemigos, con la función \textit{SpawnEnemies}. 
+
+Fuera de esos dos casos, sea la habitación que sea se le van a instanciar los objetos de decoración, los cuales son un límite de 10 por habitación. La lógica de emplazamiento de estos objetos es la misma que para los enemigos. Con esto, ya estaría hecha una habitación. Las demás habitaciones y pasillos siguen el mismo proceso y de esa manera se logra la generación de cada una de las habitaciones que siempre será diferente en cada partida.
+
+Ahora se mostrarán ejemplos en imágenes de una mazmorra generada vista desde arriba, y una habitación desde más cerca.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=8cm]{DungeonExample1.jpg}
+    \caption{Ejemplo de mazmorra generada con dimensiones pequeñas}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=8cm]{DungeonExample2.jpg}
+    \caption{Ejemplo de mazmorra generada con dimensiones grandes}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=8cm]{DungeonExample3.jpg}
+    \caption{Ejemplo de habitación concreta con enemigos y elementos de decoración situados aleatoriamente}
+\end{figure}

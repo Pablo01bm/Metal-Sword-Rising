@@ -45,4 +45,6 @@
 \contentsline {subsection}{\numberline {5.3.4}Modo Ultrasónico}{71}{subsection.5.3.4}%
 \contentsline {subsection}{\numberline {5.3.5}Enemigos}{74}{subsection.5.3.5}%
 \contentsline {subsection}{\numberline {5.3.6}Menús e Interfaz de Usuario}{77}{subsection.5.3.6}%
-\contentsline {chapter}{Bibliografía}{81}{chapter*.85}%
+\contentsline {subsection}{\numberline {5.3.7}Sonidos}{79}{subsection.5.3.7}%
+\contentsline {subsection}{\numberline {5.3.8}Creación del mapa y sus elementos}{81}{subsection.5.3.8}%
+\contentsline {chapter}{Bibliografía}{91}{chapter*.92}%
