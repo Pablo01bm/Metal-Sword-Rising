@@ -1418,3 +1418,133 @@ Ahora se mostrarán ejemplos en imágenes de una mazmorra generada vista desde a
     \includegraphics[width=10cm, height=8cm]{DungeonExample3.jpg}
     \caption{Ejemplo de habitación concreta con enemigos y elementos de decoración situados aleatoriamente}
 \end{figure}
+
+\subsection{Toon Shading}
+
+Como ya se mencionó algunas secciones antes, el \textit{Toon Shading} es un tipo de renderización gráfica no fotorealista, enfocada a realizar gráficos que parezcan estar dibujados a mano. Esta técnica es relativamente nueva y su principal uso está siendo para los videojuegos. Hay que aclarar que pese a que el resultado sean sombreados planos y simplista, resulta de un proceso un tanto complejo.
+
+El proceso de creación de este renderizado en Unity se ha realizado a través del paquete \textit{Shader Graph} el cual da las herramientas necesarias para que el proceso de creación de un \textit{Shader} sea lo más sencillo posible gracias a la estructura a modo de grafo y nodos que tiene.
+
+Antes de ir con la implementación del grafo de sombreado, hay que explicar el proceso teórico que se va a llevar a cabo en la implementación. Para ello hay que entender cómo la luz del entorno, afecta a un \textit{Shader} del tipo Toon. Como se ha explicado antes, toda superficie 3D está compuesta por vértices, éstos cuando se unen forman una cara, y un conjunto de caras forman una malla o un \textit{Mesh}. Cada cara tiene un vector normal el cual nos indica hacia qué dirección está apuntando cada una de las caras de la malla. Estos conceptos se pueden ver representados a continuación para ayudar a la comprensión: 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=8cm]{ExplicacionToon1.jpg}
+    \caption{Ejemplo de vértices, caras y malla con los vectores normales representados, extraído de \url{https://www.youtube.com/watch?v=gRLwk0rGCcc}}
+\end{figure}
+
+Para poder proyectar iluminación en una cara, es necesaria una fuente de luz, en este caso será una \textit{Directional light} la cual emite constantemente luz en una dirección, y dicha dirección, de forma interna está representada también por un vector. A partir de aquí, ocurre una operación llamada \textit{Dot Product}, producto punto o escalar.
+
+El producto punto de dos vectores es una operación algebraica la cual dá como resultado el ángulo entre los dos representado como valores entre -1 y 1. Básicamente, dependiendo de las posiciones de cada vector se tomarán valores distintos, algunos casos concretos son 1 cuando los dos vectores apuntan en la misma dirección, 0 si son direcciones perpendiculaes y números negativos si son ángulos opuestos. Con la imagen a continuación se puede observar de mejor manera ésto: 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=8cm]{ExplicaciónToon2.jpg}
+    \caption{Ejemplo de producto punto de dos vectores, extraído de \url{https://www.youtube.com/watch?v=gRLwk0rGCcc}}
+\end{figure}
+
+Lo importante a destacar de dicha operación es el hecho de que se pueden obtener valores entre 0 y 1 ya que, recordemos que cuando se habla de cómputo gráfico, el valor 1 está asociado al color blanco, y el 0 al color negro, y entre esos valores las distintas escalas de grises. Por lo que cuando una cara es iluminada, se toma el producto punto de el vector normal de la cara y el de la luz, y conforme al valor obtenido se ilumina en más cantidad o menos dicha cara. Una vez obtenida la información de la luz, los píxeles que componen las caras se encargan de realizar las transiciones de iluminación, para evitar cambios bruscos de una cara a otra.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=8cm]{ExplicaciónToon3.jpg}
+    \caption{Ejemplo de producto punto de dos vectores, extraído de \url{https://www.youtube.com/watch?v=gRLwk0rGCcc}}
+\end{figure}
+
+Por tanto, para crear un \textit{Toon Shader} será necesario tener acceso a la dirección del vector de la fuente de iluminación de la escena. Esto de primeras es un inconveniente ya que la herramienta que vamos a usar dentro de Unity (\textit{ShaderGraph}) no tiene ésta información por defecto. Por lo que será ncesario obtener ésta información a través de un archivo de tipo hlsl. Este tipo de archivos son usados para escribir los \textit{Shaders} dentro de Unity.
+
+Dicho fichero simplemente, comprobará si estamos usando el URP y obtendrá con la llamada a la función \textit{GetMainLight()} la información de la luz principal, asignándo los valores de dirección y color a variables. El fichero es el siguiente
+
+\begin{lstlisting}
+    #ifndef MAINLIGHT_INCLUDED
+#define MAINLIGHT_INCLUDED
+
+void GetMainLightData_float(out half3 direction, out half3 color)
+{
+#ifdef SHADERGRAPH_PREVIEW
+
+    direction = half3(-0.3, -0.8, 0.6);
+    color = half3(1, 1, 1);
+
+#else
+
+#if defined(UNIVERSAL_LIGHTING_INCLUDED)
+
+    Light mainLight = GetMainLight();
+    direction = mainLight.direction;
+    color = mainLight.color;
+
+    #endif
+
+#endif 
+}
+
+#endif
+\end{lstlisting}
+
+Con ésto ya tenemos lo necesario para poder desarrollar el \textit{Toon Shader}. Dentro del \textit{ShaderGraph} el funcionamiento es a modo de grafo y sus respectivos Nodos, cada nodo es una función la cual, puede ser encadenada con una entrada y una salida. Hay gran cantidad de tipos de nodos dentro de ésta herramienta, iremos viendo los más relevantes para la realización del sombreado esperado.
+
+Para poder usar la función que hemos escrito, será necesario añadir un nodo de tipo \textit{Custom Function} el cual permite usar código escrito por el usuario. A ese nodo ataremos la función que acabamos de escribir. A partir de este nodo empezará el proceso para obtener el sombreado Toon.
+
+Para obtener la información del vector normal, se crea un nodo tipo \textit{Normal Vector} y se normalizará el valor de ambos vectores (normal y dirección de la luz) usando otro nodo tipo \textit{Normalize}. Las salidas normalizadas las usaremos para calcular el producto punto de ambos, como han sido normalizados se obtendrán valores entre 0 y 1, que és lo que se necesita. Por lo que ambas salidas serán unidas en un nodo tipo \textit{Dot Product} que calculará el producto punto de estos. Luego se añade otro nodo tipo \textit{Maximun} el cual tiene como finalidad establecer un valor máximo de iluminación, que será el valor obtenido del producto punto, y el mínimo será el valor 0. Con esto conseguimos que, en el caso de que el producto punto devuelva un valor negativo, sea automáticamente igualado a 0. Imagen de los nodos descritos por ahora: 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=8cm]{ExplicaciónToon4.jpg}
+    \caption{Shader graph con los nodos descritos anteriormente}
+\end{figure}
+
+Para poder gestionar desde el editor la cantidad de luz que llega al objeto se ha creado una variable llamada range y dividirá el resultado del nodo \textit{Maximun} con el nodo \textit{Divide}. Ahora es necesario crear el efecto que caracteriza a los gráficos tipo Toon, que es marcar de forma más 'dura' las líneas de luces y sombras de dichos objetos.
+
+Para ello será necesario utilizar un nodo tipo \textit{floor} que realiza una operación con el mismo nombre, que consiste en redondear hacia abajo el resultado del producto punto, por lo que cualquier valor que no sea 1, será igualado a 0. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=8cm]{ExplicaciónToon5.jpg}
+    \caption{Operación floor, extraído de \url{https://www.youtube.com/watch?v=gRLwk0rGCcc}}
+\end{figure}
+
+Con esto ya tenemos el efecto casi conseguido ya que ahora se marcarán mucho las sombras y no habrá efecto de difuminado en los objetos.
+
+Para conseguir el efecto de brillo se creó otra variable llamada \textit{Brightness} la cual controlará desde el editor ésto, y se agregará a la salida del nodo \textit{Floor} mediante el nodo \textit{Add}. 
+
+Para conseguir que el color de la luz afecte al objeto, dentro del editor, tomando la variable color de la luz, basta con multiplicarla con el nodo \textit{Multiply} por la salida de antes, ésto aplicará el color de la luz direccional.
+
+Finalmente, para que nuestros objetos además puedan tener texturas, será necesario crear otra variable pero de tipo textura, y multiplicar el resultado de todos los nodos anteriores por el nodo de la textura, de tipo \textit{Texture}. Con esto, el \textit{Toon Shading} está terminado. Para que se aplique a los objetos de la escena bastará con indicar en los materiales de dichos objetos que use como \textit{Shader} el grafo que se acaba de explicar, indicando además la textura del objeto. A continuación imágenes del grafo final y de objetos con \textit{Toon Shading} aplicado.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=10cm]{ExplicaciónToon6.jpg}
+    \caption{Shader graph completo}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=8cm]{ExplicaciónToon7.jpg}
+    \caption{Objeto de la escena con Toon Shading aplicado}
+\end{figure}
+
+\subsection{Partículas}
+
+Dentro del videojuego, para recrear efectos especiales de chispas, se ha recurrido a el sistema de creación de partículas que incluye Unity. Lo primero es crear los objetos vacíos en la escena los cuales van a tener como hijos a los sistemas de partículas que usemos.
+
+Para que la partícula de chispa brille, ha sido necesaria la importación de un shader con dichas características. Tras establecerlo en el sistema de partículas, con objetivo de crear unas chispas realistas ha habido que ajustar algunos parámetros del sistema de partículas. Los más importantes han sido la velocidad de las particulas, la cual se ha establecido bastante alta, ya que ocurrirá cuando la espada del jugador impacte con los enemigos. También se les ha añadido la propiedad de que cada partícula aparezca con un tamaño distinto elegido entre un rango  de valores. También las partículas ha sido dotadas de físicas y de iluminación, por lo que al impactar con objetos rebotan en ellos e iluminan su superficie momentáneamente.
+
+Todos estos parámetros han sido ajustados desde el editor de Unity, y para cuadrar las acciones con la activación de éstos efectos, ha sido tan simple como o bien isntanciarlos o activarlos y desactivarlos en los momentos donde se deben mostar.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm, height=7cm]{Particle2.jpg}
+    \caption{Ejemplo de chispas}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height=11cm]{Particle1.jpg}
+    \caption{Parámetros del sistema de partículas}
+\end{figure}
+
+\section{Manual de instalación}
+
