@@ -1,19 +1,19 @@
 # Fdb version 4
-["bibtex proyecto"] 1687808375 "proyecto.aux" "proyecto.bbl" "proyecto" 1687809232 0
+["bibtex proyecto"] 1687987757 "proyecto.aux" "proyecto.bbl" "proyecto" 1687988194 0
   "./bibliografia/bibliografia.bib" 1687614335 6008 7742e866fd05926f3044b24615d15415 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291868336 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "proyecto.aux" 1687809231 22997 3cc6f6000e17b433b99b5dee4b806cf2 "pdflatex"
+  "proyecto.aux" 1687988193 24793 cb264bfc6b659d76a3622081ab32fc17 "pdflatex"
   (generated)
   "proyecto.bbl"
   "proyecto.blg"
   (rewritten before read)
-["makeindex proyecto.idx"] 1687693099 "proyecto.idx" "proyecto.ind" "proyecto" 1687809232 0
-  "proyecto.idx" 1687809228 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex proyecto.idx"] 1687981992 "proyecto.idx" "proyecto.ind" "proyecto" 1687988194 0
+  "proyecto.idx" 1687988190 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "proyecto.ilg"
   "proyecto.ind"
   (rewritten before read)
-["pdflatex"] 1687809226 "c:/Users/pablo/Desktop/Pablo/TFG-Metal-Sword-Rising/Metal-Sword-Rising/Memoria/proyecto.tex" "proyecto.pdf" "proyecto" 1687809232 0
+["pdflatex"] 1687988188 "c:/Users/pablo/Desktop/Pablo/TFG-Metal-Sword-Rising/Metal-Sword-Rising/Memoria/proyecto.tex" "proyecto.pdf" "proyecto" 1687988194 0
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1687085386 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx1095.pk" 1681839936 13580 6abe2f17d78e3d3f2378a3dd99321520 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1681841187 12668 0a98e39c4ab4111af1bd63a2e6b40d31 ""
@@ -129,13 +129,13 @@
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/tools/longtable.sty" 1654690828 12892 af5f5e872a6e322f3e5ba2c881288a56 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/tools/verbatim.sty" 1654690828 7392 6cb60c76983625ab7344d128dbcdd881 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388494052 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "c:/Users/pablo/Desktop/Pablo/TFG-Metal-Sword-Rising/Metal-Sword-Rising/Memoria/proyecto.tex" 1687806386 6094 81624a7aeeec9a78ce557c24ed5150b7 ""
-  "capitulos/01/resumen.tex" 1681227159 192 937aa26606d21759ca9eba53e8b2b4c1 ""
+  "c:/Users/pablo/Desktop/Pablo/TFG-Metal-Sword-Rising/Metal-Sword-Rising/Memoria/proyecto.tex" 1687878493 6231 b2657b44477c8dafcf539a8e696ae284 ""
+  "capitulos/01/resumen.tex" 1687882527 2162 3729f1e0f7be2675ac1079ba998ce393 ""
   "capitulos/02/abstract.tex" 1681227504 193 4de9a285e3be53a253a4e648f59e58ee ""
-  "capitulos/03/introduccion.tex" 1681227402 197 527f30873d034fe42aeff8a6812d001f ""
-  "capitulos/04/objetivos.tex" 1681228268 194 9c7ae4e32d0d5aa6710426cabf0760f9 ""
-  "capitulos/05/resolucion.tex" 1687803725 140938 28218afdfb6b0d365f3603fc776ab48f ""
-  "capitulos/06/conclusiones.tex" 1687809225 4269 85e40a9e8c193831110a1675aaddcce0 ""
+  "capitulos/03/introduccion.tex" 1687966881 15136 496942fd2ff690fe3ebb11254fd7b8a5 ""
+  "capitulos/04/objetivos.tex" 1687970876 4021 eab1882a3ff406a533a7d66846b81cdc ""
+  "capitulos/05/resolucion.tex" 1687988188 144520 ac25a9683476660b18e84b18b5deb96e ""
+  "capitulos/06/conclusiones.tex" 1687966753 4294 09247efa109a79dd29a65a8115269cda ""
   "imagenes/etsiit_logo.png" 1379672160 15686 96fbb972320ee192b868b64d57775747 ""
   "imagenes/logo_ugr.jpg" 1228354992 85532 25866cc28cc667a1cdd972180571e7be ""
   "images//AOE2ejemplo.jpg" 1681841165 255562 f5cd27b6f20274062dff06fd0b00ce14 ""
@@ -187,6 +187,7 @@
   "images//Particle1.jpg" 1687802812 91514 6589e2cf52ccd265bee07ae8363ca520 ""
   "images//Particle2.jpg" 1687803103 22535 6976a15f6b4c632adbaeded28836b639 ""
   "images//PlayerMovementAtributes.jpg" 1687634967 58233 3a5c6156f8aad1f3cfeb1c9893e9674a ""
+  "images//Pong.png" 1687885591 1808 e83bb56c113819e394724391708beac8 ""
   "images//PostProcessingEffectConfig.jpg" 1687290861 108438 4b2ea6ca36d8417a9fe03fc0a11485f6 ""
   "images//UltraModeExample.jpg" 1687692170 172025 637643474aaae1625e8afad13a3acc89 ""
   "images//UpperAndLowerConvexHulls.png" 1687608123 5422 aef09cdbef5d78609a8a328e6b794fb5 ""
@@ -210,15 +211,15 @@
   "images//phaseKatana.jpg" 1681583888 68306 1e3e6fb82a7b1e308a85d2cc7dcd7db9 ""
   "images//powerUps.jpg" 1687108970 72152 2410bc8e2493344c0d4016c38c5abc07 ""
   "images//skybox.jpg" 1686481234 2513397 78ec930e0a1c83617fe100f8d196ab18 ""
-  "portada/portada.tex" 1681148510 1062 75bc369473f3b18e1bdd1b48907ab54e ""
-  "prefacios/prefacio.tex" 1681148782 2588 cf9cbcefb15b4ffd1492b9986052932f ""
-  "proyecto.aux" 1687809231 22997 3cc6f6000e17b433b99b5dee4b806cf2 "pdflatex"
-  "proyecto.bbl" 1687808375 5185 24023332515751921cb978f0861f351a "bibtex proyecto"
-  "proyecto.ind" 1687693099 0 d41d8cd98f00b204e9800998ecf8427e "makeindex proyecto.idx"
-  "proyecto.lof" 1687809231 11012 052e78af09de6185799fa2aa84e1709e "pdflatex"
-  "proyecto.out" 1687809231 4953 f412dcd59ea1193a22ac9ae2ca377eaa "pdflatex"
-  "proyecto.tex" 1687806386 6094 81624a7aeeec9a78ce557c24ed5150b7 ""
-  "proyecto.toc" 1687809231 4196 b23e115f706eef0a56bd4d51cf091f96 "pdflatex"
+  "portada/portada.tex" 1687876396 1114 9b958d6312e1f4e3341315e44aff1d4f ""
+  "prefacios/prefacio.tex" 1687879742 2746 ce10ddecb9b78ad83c08cce83269ab3f ""
+  "proyecto.aux" 1687988193 24793 cb264bfc6b659d76a3622081ab32fc17 "pdflatex"
+  "proyecto.bbl" 1687987757 5185 24023332515751921cb978f0861f351a "bibtex proyecto"
+  "proyecto.ind" 1687981992 0 d41d8cd98f00b204e9800998ecf8427e "makeindex proyecto.idx"
+  "proyecto.lof" 1687988193 11172 9eec8ea9a140aafa03e5ba09d8fff56f "pdflatex"
+  "proyecto.out" 1687988193 6132 a9da88ae7c4c511e8e3572e618396c9f "pdflatex"
+  "proyecto.tex" 1687878493 6231 b2657b44477c8dafcf539a8e696ae284 ""
+  "proyecto.toc" 1687988193 4747 a4fa6291a5a2cc21da8f7ff8409f395f "pdflatex"
   (generated)
   "proyecto.aux"
   "proyecto.glo"

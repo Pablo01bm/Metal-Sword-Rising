@@ -1,54 +1,60 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{\numberline {1}Resumen}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Anstract}{3}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Introduccion}{5}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Objetivos}{7}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Resolución del trabajo}{9}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Planificación y presupuesto}{9}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Planificación inicial}{9}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Presupuesto}{9}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Análisis y diseño}{9}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Especificación de requisitos}{9}{subsection.5.2.1}%
-\contentsline {subsubsection}{Requisitos funcionales}{9}{section*.7}%
-\contentsline {subsubsection}{Requisitos no funcionales}{11}{section*.8}%
-\contentsline {subsection}{\numberline {5.2.2}Material importado}{11}{subsection.5.2.2}%
-\contentsline {subsubsection}{Personaje principal}{11}{section*.9}%
-\contentsline {subsubsection}{Armas}{12}{section*.11}%
-\contentsline {subsubsection}{Enemigos}{13}{section*.13}%
-\contentsline {subsubsection}{Decoración}{14}{section*.15}%
-\contentsline {subsubsection}{Coleccionables}{21}{section*.26}%
-\contentsline {subsubsection}{Sonidos}{22}{section*.28}%
-\contentsline {subsection}{\numberline {5.2.3}Descripción detallada del proyecto }{23}{subsection.5.2.3}%
-\contentsline {subsubsection}{Aspectos generales del proyecto}{23}{section*.29}%
-\contentsline {subsubsection}{Cámara del personaje principal}{24}{section*.30}%
-\contentsline {subsubsection}{Personaje principal}{29}{section*.36}%
-\contentsline {subsection}{\numberline {5.2.4}Enemigo}{33}{subsection.5.2.4}%
-\contentsline {subsubsection}{Modo Ultrasónico}{33}{section*.41}%
-\contentsline {subsubsection}{Generación procedural del mapa y sus elementos}{35}{section*.43}%
-\contentsline {subsection}{\numberline {5.2.5}Efectos especiales de partículas}{37}{subsection.5.2.5}%
-\contentsline {subsubsection}{ToonShading}{38}{section*.45}%
-\contentsline {subsection}{\numberline {5.2.6}Bocetos del diseño del proyecto}{40}{subsection.5.2.6}%
-\contentsline {subsection}{\numberline {5.2.7}Diagrama de clases}{44}{subsection.5.2.7}%
-\contentsline {subsubsection}{Cámara y personaje}{45}{section*.55}%
-\contentsline {subsubsection}{Lógica del juego}{47}{section*.57}%
-\contentsline {subsubsection}{Power Ups}{48}{section*.59}%
-\contentsline {subsubsection}{Menús}{49}{section*.61}%
-\contentsline {subsubsection}{Enemigos}{50}{section*.63}%
-\contentsline {subsubsection}{Mapa}{52}{section*.65}%
-\contentsline {subsection}{\numberline {5.2.8}Principales algoritmos}{54}{subsection.5.2.8}%
-\contentsline {subsubsection}{Algoritmo de cadena monotona de Andrew}{56}{section*.67}%
-\contentsline {subsubsection}{Algoritmo de partición binaria del espacio}{57}{section*.69}%
-\contentsline {section}{\numberline {5.3}Implementación}{60}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Ciclo de vida de un Script en Unity}{60}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Cámara}{62}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Personaje principal, movimiento y animación}{66}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}Modo Ultrasónico}{71}{subsection.5.3.4}%
-\contentsline {subsection}{\numberline {5.3.5}Enemigos}{74}{subsection.5.3.5}%
-\contentsline {subsection}{\numberline {5.3.6}Menús e Interfaz de Usuario}{77}{subsection.5.3.6}%
-\contentsline {subsection}{\numberline {5.3.7}Sonidos}{79}{subsection.5.3.7}%
-\contentsline {subsection}{\numberline {5.3.8}Creación del mapa y sus elementos}{81}{subsection.5.3.8}%
-\contentsline {subsection}{\numberline {5.3.9}Toon Shading}{88}{subsection.5.3.9}%
-\contentsline {subsection}{\numberline {5.3.10}Partículas}{96}{subsection.5.3.10}%
-\contentsline {section}{\numberline {5.4}Manual de instalación}{97}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Conclusiones y vías futuras}{99}{chapter.6}%
-\contentsline {chapter}{Bibliografía}{103}{chapter*.101}%
+\contentsline {chapter}{\numberline {3}Introducción y motivación}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Contexto}{5}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Origen de los videojuegos}{5}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Componentes de los videojuegos}{7}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Descripción del problema}{9}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Alcance de la memoria}{10}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Objetivos}{13}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Resolución del trabajo}{15}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Planificación y presupuesto}{15}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Planificación inicial}{15}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Presupuesto}{15}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Análisis y diseño}{15}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Especificación de requisitos}{15}{subsection.5.2.1}%
+\contentsline {subsubsection}{Requisitos funcionales}{15}{section*.7}%
+\contentsline {subsubsection}{Requisitos no funcionales}{17}{section*.8}%
+\contentsline {subsection}{\numberline {5.2.2}Historias de usuario y Product Backlog}{17}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Material importado}{18}{subsection.5.2.3}%
+\contentsline {subsubsection}{Personaje principal}{18}{section*.10}%
+\contentsline {subsubsection}{Armas}{19}{section*.12}%
+\contentsline {subsubsection}{Enemigos}{20}{section*.14}%
+\contentsline {subsubsection}{Decoración}{21}{section*.16}%
+\contentsline {subsubsection}{Coleccionables}{28}{section*.27}%
+\contentsline {subsubsection}{Sonidos}{29}{section*.29}%
+\contentsline {subsection}{\numberline {5.2.4}Descripción detallada del proyecto }{30}{subsection.5.2.4}%
+\contentsline {subsubsection}{Aspectos generales del proyecto}{30}{section*.30}%
+\contentsline {subsubsection}{Cámara del personaje principal}{31}{section*.31}%
+\contentsline {subsubsection}{Personaje principal}{36}{section*.37}%
+\contentsline {subsection}{\numberline {5.2.5}Enemigo}{40}{subsection.5.2.5}%
+\contentsline {subsubsection}{Modo Ultrasónico}{40}{section*.42}%
+\contentsline {subsubsection}{Generación procedural del mapa y sus elementos}{42}{section*.44}%
+\contentsline {subsection}{\numberline {5.2.6}Efectos especiales de partículas}{44}{subsection.5.2.6}%
+\contentsline {subsubsection}{ToonShading}{45}{section*.46}%
+\contentsline {subsection}{\numberline {5.2.7}Bocetos del diseño del proyecto}{47}{subsection.5.2.7}%
+\contentsline {subsection}{\numberline {5.2.8}Diagrama de clases}{51}{subsection.5.2.8}%
+\contentsline {subsubsection}{Cámara y personaje}{52}{section*.56}%
+\contentsline {subsubsection}{Lógica del juego}{54}{section*.58}%
+\contentsline {subsubsection}{Power Ups}{55}{section*.60}%
+\contentsline {subsubsection}{Menús}{56}{section*.62}%
+\contentsline {subsubsection}{Enemigos}{57}{section*.64}%
+\contentsline {subsubsection}{Mapa}{59}{section*.66}%
+\contentsline {subsection}{\numberline {5.2.9}Principales algoritmos}{61}{subsection.5.2.9}%
+\contentsline {subsubsection}{Algoritmo de cadena monotona de Andrew}{63}{section*.68}%
+\contentsline {subsubsection}{Algoritmo de partición binaria del espacio}{64}{section*.70}%
+\contentsline {section}{\numberline {5.3}Implementación}{67}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Ciclo de vida de un Script en Unity}{67}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Cámara}{69}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Personaje principal, movimiento y animación}{73}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Modo Ultrasónico}{78}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}Enemigos}{81}{subsection.5.3.5}%
+\contentsline {subsection}{\numberline {5.3.6}Menús e Interfaz de Usuario}{84}{subsection.5.3.6}%
+\contentsline {subsection}{\numberline {5.3.7}Sonidos}{86}{subsection.5.3.7}%
+\contentsline {subsection}{\numberline {5.3.8}Creación del mapa y sus elementos}{88}{subsection.5.3.8}%
+\contentsline {subsection}{\numberline {5.3.9}Toon Shading}{95}{subsection.5.3.9}%
+\contentsline {subsection}{\numberline {5.3.10}Partículas}{103}{subsection.5.3.10}%
+\contentsline {section}{\numberline {5.4}Manual de usuario}{104}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Conclusiones y vías futuras}{105}{chapter.6}%
+\contentsline {chapter}{Bibliografía}{109}{chapter*.102}%

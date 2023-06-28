@@ -1,19 +1,21 @@
 \chapter{Resolución del trabajo}
-
+\label{chap:resolucion}
 
 En este apartado se expondrán tanto los métodos utilizados para la planificación del 
 desarrollo del videojuego como la implementación del mismo.  
 
 \section{Planificación y presupuesto}
-WIP (AQUI PONER LAS HORAS ESTIMADAS)
+\label{sec:planificacion}
+Para el desarrollo del proyecto se estima que se requerirán  unas 400 horas de trabajo, teniendo en cuenta tiempo de aprendizaje, el tiempo empleado en el desarrollo y el tiempo dedicado a documentar el proyecto.
 
 \subsection{Planificación inicial}
-WIP
+
 
 \subsection{Presupuesto}
 WIP
 
 \section{Análisis y diseño}
+\label{sec:analisis}
 
 A continuación se va a tratar el análisis del proyecto planteado y su respectivo diseño.
 
@@ -40,42 +42,84 @@ A continuación se va a tratar el análisis del proyecto planteado y su respecti
         \item[\textbf{RF-2.1}] El sistema generará una partida completamente nueva y distinta a la anterior cada vez que se inicie un nuevo juego.
         \begin{enumerate}
             \item[\textbf{RF-2.1.1}] Las mazmorras se generarán de manera aleatoria para evitar que el videojuego se vuelva repetitivo.
-            \item[\textbf{RF-2.1.2}] Los enemigos de las mazmorras se generarán en patrones distintos y en salas distintas.
-            \item[\textbf{RF-2.1.3}] Las recompensas o mejoras para el jugador aparecerán en situaciones aleatorias.
+            \item[\textbf{RF-2.1.2}] Los enemigos de las mazmorras se generarán en posiciones y salas distintas.
+            \item[\textbf{RF-2.1.3}] Los objetos de las habitaciones se generarán en posiciones aleatorias.
+            \item[\textbf{RF-2.1.4}] Las recompensas o mejoras para el jugador aparecerán en situaciones aleatorias.
         \end{enumerate}
         \item[\textbf{RF-2.2}] El sistema generará a los enemigos que serán agentes reactivos.
-        \item[\textbf{RF-2.3}] El sistema generará a los enemigos serán de distintos tipos y cada tipo tendrá su propio comportamiento.
-        \item[\textbf{RF-2.4}] El sistema generará recompensas y mejoras para el jugador. 
+        \item[\textbf{RF-2.3}] El sistema generará recompensas y mejoras para el jugador. 
         \begin{enumerate}
             \item[\textbf{RF-2.4.1}] Las recompensas serán de varios tipos.
             \begin{enumerate}
                 \item[\textbf{RF-2.4.1.1}] El sistema generará recompensas que mejoren el daño provocado a los enemigos.
                 \item[\textbf{RF-2.4.1.2}] El sistema generará recompensas que mejoren la resistencia del jugador.
+                \item[\textbf{RF-2.4.1.3}] El sistema recompensará con puntos al jugador.
             \end{enumerate}
         \end{enumerate}
-        \item[\textbf{RF-2.5}]El sistema generará mazmorras que tendrán distintos tipos de salas.
-        \begin{enumerate}
-            \item[\textbf{RF-2.5.1}] El sistema generará salas con enemigos las cuales no se desbloquearán hasta derrotar a todos.
-            \item[\textbf{RF-2.5.2}] El sistema generará salas con recompensas. 
-            \item[\textbf{RF-2.5.3}] El sistema generará salas con un enemigo tipo jefe que presentará un mayor desafío para el jugador. 
-        \end{enumerate}
-        \item[\textbf{RF-2.6}] El sistema será capaz de reproducir sonidos acordes a lo sucedido en el videojuego.
+        \item[\textbf{RF-2.5}] El sistema será capaz de reproducir sonidos acordes a lo sucedido en el videojuego.
     \end{enumerate}
     \item[\textbf{RF-3}] Control sobre el sistema
     \begin{enumerate}
         \item[\textbf{RF-3.1}] El jugador podrá empezar una partida.
-        \item[\textbf{RF-3.2}] El jugador podrá guardar una partida.
-        \item[\textbf{RF-3.3}] El jugador podrá abandonar una partida.
-        \item[\textbf{RF-3.4}] El jugador podrá pausar la partida.
-        \item[\textbf{RF-3.5}] El jugador deberá ser capaz de cambiar distintos parámetros del sistema.
+        \item[\textbf{RF-3.2}] El jugador podrá abandonar una partida.
+        \item[\textbf{RF-3.3}] El jugador podrá pausar la partida.
+        \item[\textbf{RF-3.3}] El jugador podrá completar una partida.
+        \item[\textbf{RF-3.3}] El jugador podrá perder una partida.
+        \item[\textbf{RF-3.4}] El jugador deberá ser capaz de cambiar distintos parámetros del sistema.
         \begin{enumerate}
             \item[\textbf{RF-3.5}]  El jugador deberá ser capaz de ajustar el nivel de sonido.
             \item[\textbf{RF-3.6}]  El jugador deberá ser capaz de ajustar la resolución de pantalla.
         \end{enumerate} 
     \end{enumerate}
+    \item[\textbf{RF-4}] Efectos visuales.
+    \begin{enumerate}
+        \item[\textbf{RF-4.1}] El sistema generará efectos de partículas cuando el jugador golpee a un enemigo.
+        \item[\textbf{RF-4.2}] El sistema generará efecto de partículas de velocidad al desplazarse el jugador. 
+    \end{enumerate}
 \end{enumerate}
 
 \subsubsection{Requisitos no funcionales}
+
+\begin{enumerate}
+    \item[\textbf{RNF-1}]  La interfaz de usuario debe ser sencilla e intuitiva.
+    \item[\textbf{RNF-2}]  Los controles del juego deben sencillos.
+    \item[\textbf{RNF-3}]  El videojuego funcionará en sistemas operativos Windows.
+\end{enumerate} 
+
+\subsection{Historias de usuario y Product Backlog}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{10cm}|c|}
+      \hline
+      \textbf{Historias de Usuario} & \textbf{Puntos de historia} \\
+      \hline
+      \textbf{1.} Como usuario quiero poder visualizar el entorno  & 3 \\
+      \textbf{2.} Como usuario quiero poder desplazarme por el mapa & 3 \\
+      \textbf{3.} Como usuario quiero mi personaje realice animaciones  & 4 \\
+      \textbf{4.} Como usuario quiero poder cortar un objeto del entorno & 4 \\
+      \textbf{5.} Como usuario quiero aparecer cada nueva partida en un mapa distinto & 5 \\
+      \textbf{6.} Como usuario quiero enfrentarme y derrotar a enemigos & 3 \\
+      \textbf{7.} Como usuario quiero poder mejorar mis estadísticas con potenciadores & 3 \\
+      \textbf{8.} Como usuario quiero poder gestionar el comienzo y fin de la partida desde menús & 3 \\
+      \textbf{9.} Como usuario quiero que el estilo visual del entorno sea de dibujos animados & 5 \\
+      \textbf{10.} Como usuario quiero recibir feedback visual de las acciones que realice & 3 \\
+      \textbf{11.} Como usuario quiero recibir feedback auditivo de las acciones que realice & 2 \\
+      \hline
+                                     \textbf{Total} & 38 \\
+      \hline
+    \end{tabular}
+    \caption{Product Backlog}
+    \label{tab:historias}
+  \end{table}
+
+Debido a que el software usado para el desarrollo, no era conocido previamente, se ha optado por usar Metodologías de desarrollo Ágiles, las cuales están creadas para adaptar a imprevistos y contratiempos la organización de un proyecto. Se ha optado por \textit{Scrum} ya que la adaptación a los cambios de planes que iban a surgir durante el desarrollo era algo muy probable, con esta metodología sería posible sobrellevar esto de la mejor manera posible.
+
+Debido a que el equipo de desarrollo está compuesto por una única persona, para realizar la priorización de las historias de usuario así como la asignación de los puntos de historia no se realizó ningún método de consenso. En la tabala \ref{tab:historias} se puede observar el conjunto de historias de usuario priorizadas a modo de pila, con sus respectivos puntos de historia asociados. A ésto se le conoce como el \textit{Product Backlog}.
+
+El tiempo escogido para las iteraciones ha sido de 2 semanas por cada una. Cada iteración cuenta con 12 días de trabajo. Suponiendo que el tiempo de trabajo se aprovechará en un 75\% y que cada punto de historia es un día a continuación obtenemos la velocidad del equipo de desarrollo, 12 días/iteración * 0.75 =  9 puntos de historia por iteración. Entonces el proyecto se estima que se desarrollará en 38 PH/9 = 4'2222, que serían 4 iteraciones de dos semanas y una de 1 semana aproximadamente.
+
+La primera iteración abarcaría las historias de usuario 1-3, la segunda abarcaría las historias 4 y 5, la tercera iteración 5-7, la cuarta continuar con la 7 y seguir con las historias 8 y 9, y la última iteración de una semana las historias 10 y 11.
 
 
 \subsection{Material importado}
@@ -807,6 +851,7 @@ Finalmente, para mostrar como se realiaría la unión de las habitaciones median
 Como se puede ver en la imagen, cuando hay dos posibles habitaciones para realizar la unión con los pasillos, se escoge aquella que esté más cerca y se empieza por las hojas del árbol, es decir los nodos de máxima profundidad. Con esto finaliza la explicación de los algoritmos usados.
 
 \section{Implementación}
+\label{sec:implementacion}
 
 En este apartado se comentará la implementación  de las distintas funcionalidades del videojuego. Se mostrarán extractos de código de ciertos métodos si con ello ayuda a entender el método explicado.
 
@@ -1546,5 +1591,6 @@ Todos estos parámetros han sido ajustados desde el editor de Unity, y para cuad
     \caption{Parámetros del sistema de partículas}
 \end{figure}
 
-\section{Manual de instalación}
+\section{Manual de usuario}
+\label{sec:manual}
 
