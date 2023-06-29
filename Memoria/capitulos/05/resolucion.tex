@@ -10,9 +10,50 @@ Para el desarrollo del proyecto se estima que se requerirán  unas 400 horas de 
 
 \subsection{Planificación inicial}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height=6cm]{GANT.drawio.png}
+    \caption{Diagrama de Gantt}
+\end{figure}
+
+La planificación del proyecto se divide en 3 etapas las cuales se realizarán por orden. La primera etapa será de aprendizaje para usar el motor \textit{Unity}, ya que, al no haberse usado nunca antes, es necesario realizar éste periodo de aprendizaje para poder agiliar el desarrollo una vez comenzado. La manera de aprender a usar ésta herramienta ha sido mediante videoturiales y la propia documentación de \textit{Unity}. En ésta etapa se realizará también los diseños iniciales y análisis del videojuego. Como se explicará más adelante, se usará la metodología ágil \textit{Scrum} y se realizará en el orden de prioridad establecido en el \textit{Product Backlog} \ref{tab:historias}. Todo ésto se tratará en ésta etapa.
+
+Durante la etapa de desarrollo e implementación, se realizarán iteraciones de 2 semanas de duración aproximadamente, la última será un poco más corta según lo calculado. 
+
+La última etapa será de documentación de el programa, correspondiente a la creación de éste documento.
+
+En total se estiman unas 16 semanas de trabajo, cada semana serían aproximadamente 25 horas de trabajo. Por lo que se planea unas 4 semanas dedicadas al aprendizaje, 10 semanas para desarrollo, y 2 para documentación, pero ésta última puede comenzar antes si se realizan las últimas historias de usuario en una sola semana.
 
 \subsection{Presupuesto}
-WIP
+
+Se estimarán los presupuestos para éste desarrollo, cuyo total asciende a 6504 \texteuro.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{10cm}|c|c|}
+      \hline
+       & \textbf{Coste} & \textbf{Total} \\
+      \hline
+      Ordenador de torre con tarjeta gráfica externa  & 1000 \texteuro & 1000 \texteuro \\
+      Auriculares Sennheiser HD 660 S & 300 \texteuro & 300 \texteuro \\
+      Pantalla QHD de 24'' Lenovo (2 unidades) & 200 x 2 \texteuro & 400 \texteuro\\
+      Periféricos del PC & 50 \texteuro & 50 \texteuro \\
+      Animaciones de combate 3D & 10 \texteuro & 10 \texteuro \\
+      Oficina de co-working & 130 \texteuro /mes & 520 \texteuro \\
+      Programador Junior & 10'56 \texteuro /hora & 4224 \texteuro \\
+      \hline
+                                     \textbf{Total} & & 6504 \texteuro \\
+      \hline
+    \end{tabular}
+    \caption{Presupuesto del proyecto}
+    \label{tab:presupuesto1}
+  \end{table}
+
+Para poder realizar éste proyecto es necesario disponer de un ordenador capaz de ejecutar \textit{Unity} y trabajar en él de forma fluida. Para ello es necesario que tenga una tarjeta gráfica dedicada. Al ser un ordenador hecho por piezas y hace unos años, es difícil dar un precio actual de los componentes ya que no se comercializan, la terjeta gráfica usada será una \textit{Nvidia GTX 1660 Ti}. El total del ordenador ronda los 1000 \texteuro. Para poder gestionar el sonido es necesario disponer de unos auriculares, el modelo que se tiene es Sennheiser HD 660 S, auriculares de estudio cuyo valor es de 300 \texteuro. Para poder visualizar el contenido y con buena calidad se ha optado por 2 pantallas QHD de Lenovo con un valor de 200 \texteuro cada una. Se han elegido 2 pantallas ya que el trabajo es mucho más sencillo para poder organizar gran cantidad de ventanas abiertas. Para controlar el PC es necesario disponer de periféricos, cuyo valor total es de 50 \texteuro. Fue necesario adquirir un pack de animaciones para el personaje principal ya que eran ideales para el proyecto, el resto de elementos son de packs gratuitos. La licencia de \textit{Unity} no se ha incluido debido a que con el estatus de estudiante se puede obtener de forma gratuita una licencia que da muchas más ventajas que la licencia gratuita estándar. Toda bibliografía, webgrafía y documentación consultada son de fuentes totalmente gratuitas.
+
+En España el sueldo promedio de un programador Junior es de 10'56 \texteuro \cite{SueldoProgramador} la hora, como el proyecto se estima que se realice en 400 horas, el precio por el trabajo del programador será de 4224 \texteuro en total.
+
+Para el espacio de trabajo se opta por alquilar un espacio dentro de una oficina de \textit{co-working}, en Granada el promedio ronda los 100-180 \texteuro \cite{OficinaCoworking}, se ha fijado la cantidad en 130 \texteuro durante los 4 meses de desarrollo, en total 520 \texteuro.
 
 \section{Análisis y diseño}
 \label{sec:analisis}
@@ -121,6 +162,27 @@ El tiempo escogido para las iteraciones ha sido de 2 semanas por cada una. Cada 
 
 La primera iteración abarcaría las historias de usuario 1-3, la segunda abarcaría las historias 4 y 5, la tercera iteración 5-7, la cuarta continuar con la 7 y seguir con las historias 8 y 9, y la última iteración de una semana las historias 10 y 11.
 
+\subsection{Control de versiones}
+
+Para realizar el control de versiones del proyecto, se ha optado por la herramienta \textit{GitHub} \cite{Github} la cual es es una plataforma en línea que permite a los desarrolladores de software alojar, gestionar y colaborar en proyectos utilizando el sistema de control de versiones \textit{Git}. Para entender ésta herramienta se definirán a continuación brevemente algunos procesos y conceptos de ésta herramienta.
+
+\textbf{Rama de trabajo}: Una rama de trabajo es una copia independiente del código fuente en un repositorio. Se utiliza para desarrollar nuevas funcionalidades o realizar modificaciones sin afectar la rama principal del proyecto. De ésta forma, en caso de realizar de forma errónea alguna funcionalidad, se puede descartar sin afectar al código de la rama principal.
+
+\textbf{Commit}: Un commit es una acción que registra los cambios realizados en los archivos del repositorio en una rama específica. Es como tomar una foto del estado actual de los archivos en ese momento. Los commits suelen ir acompañados de un mensaje que describe los cambios realizados. Cada commit tiene un identificador único que permite rastrear y referirse a él en el futuro.
+
+\textbf{Push}: Después de realizar uno o varios commits en la rama de trabajo, se puede enviar esos cambios al repositorio remoto utilizando el comando ''push''. Esto sincroniza la rama de trabajo y sus commits con el repositorio en \textit{GitHub}.
+
+\textbf{Pull Request}: Un \textit{pull request} es una función de \textit{GitHub} que permite proponer cambios a la rama principal. Después de hacer push a la rama de trabajo actual en \textit{GitHub}, se puede iniciar un \textit{pull request} para solicitar que los cambios se fusionen con la rama principal o cualquier otra rama específica. Esto proporciona un mecanismo para revisar, discutir y aprobar los cambios antes de que se incorporen al proyecto principal.
+
+Gracias a ésto, y junto a la herramienta de \textit{GitHub Projects} se conseguirá organizar el desarrollo del código con la mayor seguridad posible.
+
+\textit{GitHub Projects} es una herramienta proporcionada por GitHub que permite organizar y dar seguimiento a los proyectos en forma de tableros \textit{kanban}. Estos tableros están compuestos por columnas que representan diferentes etapas o categorías de tareas, y las tarjetas que contienen las tareas o elementos del proyecto. De ésta forma la organización de subtareas se hace realmente sencilla y mucho más visual e intuitiva y ayuda a establecer los objetivos. Cada tarea se llama \textit{Issue} y por cada una se creará una rama para realizar la tarea. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=8cm]{kanban.jpg}
+    \caption{Tablero Kanban usado en GitHub Projects}
+\end{figure}
 
 \subsection{Material importado}
 
@@ -1576,7 +1638,7 @@ Dentro del videojuego, para recrear efectos especiales de chispas, se ha recurri
 
 Para que la partícula de chispa brille, ha sido necesaria la importación de un shader con dichas características. Tras establecerlo en el sistema de partículas, con objetivo de crear unas chispas realistas ha habido que ajustar algunos parámetros del sistema de partículas. Los más importantes han sido la velocidad de las particulas, la cual se ha establecido bastante alta, ya que ocurrirá cuando la espada del jugador impacte con los enemigos. También se les ha añadido la propiedad de que cada partícula aparezca con un tamaño distinto elegido entre un rango  de valores. También las partículas ha sido dotadas de físicas y de iluminación, por lo que al impactar con objetos rebotan en ellos e iluminan su superficie momentáneamente.
 
-Todos estos parámetros han sido ajustados desde el editor de Unity, y para cuadrar las acciones con la activación de éstos efectos, ha sido tan simple como o bien isntanciarlos o activarlos y desactivarlos en los momentos donde se deben mostar.
+Todos estos parámetros han sido ajustados desde el editor de Unity, y para cuadrar las acciones con la activación de éstos efectos, ha sido tan simple como o bien instanciarlos o activarlos y desactivarlos en los momentos donde se deben mostar.
 
 \begin{figure}[H]
     \centering
@@ -1591,6 +1653,66 @@ Todos estos parámetros han sido ajustados desde el editor de Unity, y para cuad
     \caption{Parámetros del sistema de partículas}
 \end{figure}
 
+\section{Pruebas}
+
+Las pruebas son algo clave para validar si el producto cumple con los objetivos propuestos. Se van a distinguir entre cómo se realizaron las pruebas durante el desarrollo del videojuego y las realiazadas ya una vez acabado el producto.
+
+Las pruebas qué se hicieron durante el desarrollo del videojuego consistían en pruebas de ejecución en el entorno de \textit{Unity} para comprobar si la funcionalidad implementada funciona como se espera. En entornos 3D la mejor manera de comprobarlo es la simple ejecución del juego y realizar las acciones que se quieran probar y el resultado se verá en el entorno, dónde se podrá comprobar si en efecto funciona o no lo implementado. Tendría alguna similitud con los tests que se suelen desarrollar en un proyecto de software normal, pero en videojuegos se comprueba mucho mejor así. 
+
+Para las pruebas que se realizaron una vez terminado el desarrollo, se hizo buscando una serie de personas que hicieran la labor de probar el videojuego y luego contar la experiencia y si ha ocurrido algún fallo o imprecisión durante la partida. Éste método es el más popular en la industria de los videojuegos para que los productos pasen un control de calidad previo al lanzamiento del mismo. Ésto se hace ya que para los desarrolladores del videojuego, cuando lo prueban, como saben el funcionamiento que tiene internamente, la mayoría de los casos no van a realizar acciones ni comportamientos que puedan ocasionar fallos. Por eso cuando una persona externa al desarrollo prueba a jugar al videojuego, suele encontrar muchos más fallos y por ello este método es tan común en la industria. Los que prueban el juego son llamados \textit{testers}.
+
+El grupo de \textit{testers} escogido era reducido ya que se correspondía con personas conocidas del entorno cercano, como algunos amigos y familiares. Tras la prueba que realizaron se detectaron algunos fallos. A continuación éstos errores y su solución
+
+Se detectó que las animaciones de ataque del personaje principal, cuando se ejecutaban ataques muy espaciados en el tiempo, no se realizaba niguna animación hasta pasado el tiempo programadao de \textit{reset} del combo. Ésto se solucionó añadiendo en el grafo de animaciones, las transiciones desde el estado \textit{idle} a cada uno de los ataques del combo.
+
+Se detectó también que en pocas ocasiones, el jugador aparecía en el mismo punto de la estrella para acabar el juego, por lo que la partida acababa instantáneamente al comenzarla. Ésto se solucionó haciendo que la estrella sólo apareciera en el centro de las habitaciones y el jugador nunca podría aparecer en el centro de ellas. Básicamente se hicieron casos excluyentes por lo que no volvió a ocurrir el problema.
+
+Otro problema detectado fue que a veces los enemigos, al impactar la espada del jugador con ellos, salían disparados hacia una dirección, y ésto empeoraba un poco la experiencia de juego. Para arreglarlo se añadieron a los componentes \textit{Rigidbody} de los enemigos, más masa y fuerza de arrastre. Cuando se hace ésto, se vuelve más difícil que a los objetos las físicas externas a ellos los muevan. Por decirlo así, se les puso un peso mayor a los objetos enemigos, por lo que ya no salían disparados.
+
+El último problema detectado fue que al realizar muchos cortes seguidos en los objetos cuando se realiza el modo ultrasónico, el rendimiento del videojuego empeoraba considerablemente sobre todo si el equipo en el que se estaba ejecutando no era muy bueno. La primera impresión era que podía estar ocurriendo debido a que se acumulaban muchos objetos en pantalla debido a que se generan de 2 en 2 conforme se van haciendo los cortes, pero ésto no era el problema. El problema estaba en que cada vez que se hace un corte suena el sonido de ello, que internamente crea un componente \textit{Audio Source} dentro del objeto de gestión de sonidos, y no se eliminaba, y en \textit{Unity} si en un objeto existen gran cantidad de componentes, el rendimiento se empieza a ver afectado. Se solucionó haciendo que esos sonidos de corte, al finalizar se destruyeran automáticamente, por lo que se arreglço de esa manera el problema.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Manual de usuario}
 \label{sec:manual}
 
+Ésta sección está enfocada a dar una serie de explicaciones y ayuda al usuario acerca de cómo usar el producto, para ayudar a que la experiencia del mismo sea la mejor posible.
+
+\subsection{Instalación}
+
+Para la instalación del sofware bastará con descomprimir el fichero \textbf{.ZIP} que se proporcionará al usuario y lanzar el ejecutable que habrá en la carpeta descomprimida. Se recuerda que el videojuego sólo es compatible para sistemas operativos Windows.
+
+\subsection{Controles}
+
+El jugador podrá usar para controlar el videojuego tanto teclado y ratón cómo un mando. Para cada uno se especificarán a continuación los botones que tienen una funcionalidad asociada dentro del videojuego.
+
+\subsubsection{Teclado y ratón}
+
+
+\begin{itemize}    
+    \item \textbf{Movimiento de la cámara}:  movimiento del ratón.
+    \item \textbf{Movimiento del personaje}:  teclas W para ir hacia delante, S para ir hacia atrás, A para ir hacia la izquierda y D para la derecha.
+    \item \textbf{Ataques}: Click izquierdo del ratón.
+    \item \textbf{Modo Ultrasónico}: Mantener pulsado click derecho del ratón.
+    \item \textbf{Ataques modo Ultrasónico}: Mantener click derecho y pulsar click iquierdo.
+    \item \textbf{Movimiento del plano en el Modo Ultrasónico}: Mantener click derecho y mover verticalmente el ratón.
+    \item \textbf{Pausa}: Tecla Esc.
+    \item \textbf{Salto}: Barra espaciadora.
+\end{itemize}
+
+\subsubsection{Mando}
+
+\begin{itemize}    
+    \item \textbf{Movimiento de la cámara}:  Joystick derecho.
+    \item \textbf{Movimiento del personaje}:  Joystick izquierdo.
+    \item \textbf{Ataques}: Botón X.
+    \item \textbf{Modo Ultrasónico}: Mantener pulsado botón LT, palanca inferior izquierda.
+    \item \textbf{Ataques modo Ultrasónico}: Mantener pulsado botón LT y pulsar botón A.
+    \item \textbf{Movimiento del plano en el Modo Ultrasónico}: Mantener pulsado botón LT y joystick derecho.
+    \item \textbf{Pausa}: Botón OPTIONS.
+    \item \textbf{Salto}: Botón A.
+\end{itemize}
+
+\subsection{Objetivos}
+
+Al comenzar la partida, el personaje aparecerá en una habitación de la mazmorra generada. Los objetivos del jugador serán 2. Éstos 2 objetivos son complementarios. El primero es obtener puntuación derrotando a los enemigos que hay por las salas y así intentar batir el récord anterior, el cual aparecerá en la pantalla del jugador. No solo deberá intentar batir el récord sino que además será necesario encontrar la estrella con la que se finaliza la partida. Hay que tener en cuenta que la estrella aparecerá en cualquier habitación, incluida la inicial, ésto no significa que se deba coger nada más empezar, interesa primero obtener la mayor puntuación posible y luego recoger la estrella.
+
+Tras recoger la estrella, se felicitará al jugador y se le devolverá al menú principal.
