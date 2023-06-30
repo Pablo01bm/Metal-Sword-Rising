@@ -206,8 +206,9 @@ public class DungeonCreator : MonoBehaviour
             // Check if the object position is valid
             if (IsValidPosition(objectPosition))
             {
-                Vector3 spawnPosition = objectPosition + new Vector3(0f, 2f, 0f); // Offset the position by 2 units above
-                GameObject instantiatedObject = Instantiate(dungeonObjects[i], spawnPosition, Quaternion.identity);
+
+                Vector3 spawnPosition = objectPosition + new Vector3(0f, 1f, 0f); // Offset the position by 2 units above
+                GameObject instantiatedObject = Instantiate(dungeonObjects[i], spawnPosition, Quaternion.Euler(-90f, 0f, 0f));
                 instantiatedObject.transform.parent = dungeonFloor.transform;
                 instantiatedObjects++;
 
