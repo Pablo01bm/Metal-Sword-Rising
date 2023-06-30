@@ -32,12 +32,12 @@
 \contentsline {subsection}{\numberline {5.2.6}Enemigo}{43}{subsection.5.2.6}%
 \contentsline {subsubsection}{Modo Ultrasónico}{43}{section*.46}%
 \contentsline {subsubsection}{Generación procedural del mapa y sus elementos}{45}{section*.48}%
-\contentsline {subsection}{\numberline {5.2.7}Efectos especiales de partículas}{47}{subsection.5.2.7}%
-\contentsline {subsubsection}{ToonShading}{48}{section*.50}%
-\contentsline {subsection}{\numberline {5.2.8}Bocetos del diseño del proyecto}{50}{subsection.5.2.8}%
+\contentsline {subsection}{\numberline {5.2.7}Efectos especiales de partículas}{46}{subsection.5.2.7}%
+\contentsline {subsubsection}{ToonShading}{47}{section*.50}%
+\contentsline {subsection}{\numberline {5.2.8}Bocetos del diseño del proyecto}{49}{subsection.5.2.8}%
 \contentsline {subsection}{\numberline {5.2.9}Diagrama de clases}{54}{subsection.5.2.9}%
-\contentsline {subsubsection}{Cámara y personaje}{55}{section*.60}%
-\contentsline {subsubsection}{Lógica del juego}{57}{section*.62}%
+\contentsline {subsubsection}{Cámara y personaje}{54}{section*.60}%
+\contentsline {subsubsection}{Lógica del juego}{56}{section*.62}%
 \contentsline {subsubsection}{Power Ups}{58}{section*.64}%
 \contentsline {subsubsection}{Menús}{59}{section*.66}%
 \contentsline {subsubsection}{Enemigos}{60}{section*.68}%

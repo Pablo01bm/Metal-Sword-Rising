@@ -402,6 +402,7 @@ Antes de hablar de cómo se ha desarrollado la cámara, se va a explicar muy bre
     en forma de espectador lo que le ocurre al personaje del videojuego, consiguiendo de esa manera que el usuario
     al jugar lo que está haciendo es interferir en la historia o acciones del personaje que controla. Ejemplo a continuación:
     \begin{figure}[H]
+        \centering
         \includegraphics[width=10cm, height=5cm]{BOTWejemplo.jpg}
         \caption{Videojuego The Legend Of Zelda: Breath of the Wild}
     \end{figure}
@@ -584,11 +585,11 @@ Una vez se generan las distintas habitaciones y son unidas por los pasillos, ten
     \item Comprobueba además de lo anterior que el elemento esté a una distancia razonable de otros elementos para evitar que haya muchos elementos concentrados en un lugar de la habitación y el resto esté muy vacío. Esto se consigue realizando lo mismo que antes pero con una esfera de mayor tamaño y realizando las mismas comprobaciones.
 \end{itemize}
 
-Por supuesto, las colisiones con el suelo no se tienen en cuenta ya que si no, la esfera generada simpre devolvería como punto inválido. A continuación un apoyo visual de como funciona la \textit{OverlapSphere}.
+Por supuesto, las colisiones con el suelo no se tienen en cuenta ya que si no, la esfera generada simpre devolvería como punto inválido.
 
-\begin{figure}[H]
+\begin{figure}
     \centering
-    \includegraphics[width=10cm, height=10cm]{OverlapSphere.jpg}
+    \includegraphics[width=8cm, height=8cm]{OverlapSphere.jpg}
     \caption{Gráfico donde se muestra el comportamiento de una OverlapSphere}
 \end{figure}
 
@@ -824,9 +825,9 @@ En esta última sección se explicará sin entrar en demasiado detalle los scrip
 
 A continuación se van a tratar en detalle los algoritmos utiliados en este proyecto para realizar las mecánicas de corte de mallas y el de generación procedural del mapa. El primer algoritmo del que vamos a hablar va a ser el de la mecánica de corte, el cual ha sido importado a través de un repositorio de libre uso en \textit{Github}. 
 
-El framework \textit{Ezy-Slice} del usuario \textit{David Arayan} es un framework de código abierto desarrollado para facilitar la creación de cortes a mallas en proyectos de Unity. Este framework utiliza varios algoritmos para poder conseguir este resultado. La obtención de las coordenadas de corte para poder realiarlo, se va a realizar gracias a un objeto de tipo ''Plano'' el cual va a colisionar con el objeto a cortar y va a determinar también la coordenada de corte. Para ello, cada ve que se presiona el botón de ataque durante el \textit{Modo Ultrasónico}, se invoca a un método sobreescrito del framework mencionado el cual, dados los datos de posición del plano, construye una caja de colisión con las proporciones del plano y comprueba si ha habido alguna colisión con él. Todas las colisiones detectadas se añaden a una lista de tipo \textit{Collider} llamada \textit{Hits}.
+El framework \textit{Ezy-Slice} del usuario \textit{David Arayan} es un framework de código abierto desarrollado para facilitar la creación de cortes a mallas en proyectos de Unity. Este framework utiliza varios algoritmos para poder conseguir este resultado. La obtención de las coordenadas de corte para poder realizarlo, se va a realizar gracias a un objeto de tipo ''Plano'' el cual va a colisionar con el objeto a cortar y va a determinar también la coordenada de corte. Para ello, cada ve que se presiona el botón de ataque durante el \textit{Modo Ultrasónico}, se invoca a un método sobreescrito del framework mencionado el cual, dados los datos de posición del plano, construye una caja de colisión con las proporciones del plano y comprueba si ha habido alguna colisión con él. Todas las colisiones detectadas se añaden a una lista de tipo \textit{Collider} llamada \textit{Hits}.
 
-Una vez detectadas colisiones con los objetos de la capa o ''layer'' correspondiente, se pasa a iterar mediante un bucle tipo \textit{for} el array mencionado. Dentro del bucle, se crea una variable de tipo \textit{slicedHull}, que es una clase definida en el framework y se iguala al método \textit{sliceObject}. Éste método llama a un método del framework usado, que es el método \textit{Slice}, el que va a realiar la lógica del corte en sí. Dentro de ese método se comprueba si el objeto proporcionado cuenta con los componentes necesarios para realizar el corte, los cuales son \textit{MeshFilter} y \textit{MeshRenderer}. Además comprueba los materiales de dicha malla y se asegura de esa manera de que las submallas no sean nulas. Por último llama a el método que realiza toda la lógica de corte.
+Una vez detectadas colisiones con los objetos de la capa o ''layer'' correspondiente, se pasa a iterar mediante un bucle tipo \textit{for} el array mencionado. Dentro del bucle, se crea una variable de tipo \textit{slicedHull}, que es una clase definida en el framework y se iguala al método \textit{sliceObject}. Éste método llama a un método del framework usado, que es el método \textit{Slice}, el que va a realizar la lógica del corte en sí. Dentro de ese método se comprueba si el objeto proporcionado cuenta con los componentes necesarios para realizar el corte, los cuales son \textit{MeshFilter} y \textit{MeshRenderer}. Además comprueba los materiales de dicha malla y se asegura de esa manera de que las submallas no sean nulas. Por último llama a el método que realiza toda la lógica de corte.
 
 Lo primero que comprueba el método \textit{Slice()} es si la malla proporcionada es nula, si no obtiene de ella datos que contienen las posiciones de los vértices, coordenadas UV, normales y tangentes de la malla. Se determina a continuación el número  de submallas usando una clase de Unity llamada \textit{subMeshCount()} y se añaden a un array. Posteriormente se itera una a una dichas submallas. Los vértices e índices son compartidos dentro de cada submalla. Para cada submalla, se obtienen los índices de los triángulos mediante el método \textit{sharedMesh.GetTriangles(submesh)}. También se crea un objeto SlicedSubmesh y se recorren los triángulos de la submalla actual y se crea un objeto Triangle con los vértices correspondientes.
 
@@ -902,7 +903,7 @@ En la figura se muestra claramente como, partiendo de un espacio o nodo padre, c
     \caption{Figura que muestra de forma gráfica como podría quedarse la estructura de habitaciones generadas aleatoriamente}
 \end{figure}
 
-Finalmente, para mostrar como se realiaría la unión de las habitaciones mediante pasillos, se mostrará en la imagen a continuación.
+Finalmente, para mostrar como se realizaría la unión de las habitaciones mediante pasillos, se mostrará en la imagen a continuación.
 
 \begin{figure}[H]
     \centering
@@ -1051,7 +1052,7 @@ Si está en el suelo, se aplica una fuerza al objeto del personaje, en la direcc
 
     Además de el simple movimiento el personaje ha sido dotado de más acciones, a continuación trataremos los ataques y los saltos del personaje.
 
-    El personaje además podrá realiar movimientos de ataque y saltar, estas acciones son imprescindibles para dotar al personaje de capacidad de enfrentamiento contra los enemigos y el salto para poder moverse con otro grado de libertad, es decir de forma vertical.
+    El personaje además podrá realizar movimientos de ataque y saltar, estas acciones son imprescindibles para dotar al personaje de capacidad de enfrentamiento contra los enemigos y el salto para poder moverse con otro grado de libertad, es decir de forma vertical.
 
     Para realizar la acción de salto se ha hecho muy parecido a la del movimiento ya que en el método \textit{Jump()} dentro de \textit{PlayerMovement} se vuelve a aplicar sobre el objeto del personaje una fuera pero esta vez hacia arriba, produciendo el efecto de salto. El código correspondiente es: 
     
