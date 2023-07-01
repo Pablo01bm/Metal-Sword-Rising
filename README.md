@@ -2,6 +2,18 @@
 
 This is the repo for The Final Project of my career. Please, use this code just for educational purpouses. Link to download: https://drive.google.com/drive/folders/1YuIDrEIXIX3GmUMwM-Wue6XuNii7KJ-Y?usp=sharing
 
+# V0.9.5 [NEW]
+
+New Features: 
+
+- Added Toon Shading graphics. Now the game looks like cartoon !
+
+Bugs fixed
+
+- Now the player correctly can attack without stopping the animations.
+
+- Now the issue related to the spawn of the player and the final star is fixed.
+
 # V0.9.0 [NEW]
 
 New Features: 
