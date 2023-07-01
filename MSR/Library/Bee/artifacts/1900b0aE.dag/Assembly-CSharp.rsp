@@ -438,6 +438,7 @@
 "Assets/Scripts/MenusScripts/GameOverScreen.cs"
 "Assets/Scripts/MenusScripts/MainMenu.cs"
 "Assets/Scripts/MenusScripts/PauseMenu.cs"
+"Assets/Scripts/MenusScripts/Rotate.cs"
 "Assets/Scripts/PowerUps/DmgPowerUp.cs"
 "Assets/Scripts/PowerUps/FinishGame.cs"
 "Assets/Scripts/PowerUps/HealPowerUp.cs"

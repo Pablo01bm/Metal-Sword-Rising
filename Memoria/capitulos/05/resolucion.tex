@@ -106,11 +106,6 @@ A continuación se va a tratar el análisis del proyecto planteado y su respecti
         \item[\textbf{RF-3.3}] El jugador podrá pausar la partida.
         \item[\textbf{RF-3.3}] El jugador podrá completar una partida.
         \item[\textbf{RF-3.3}] El jugador podrá perder una partida.
-        \item[\textbf{RF-3.4}] El jugador deberá ser capaz de cambiar distintos parámetros del sistema.
-        \begin{enumerate}
-            \item[\textbf{RF-3.5}]  El jugador deberá ser capaz de ajustar el nivel de sonido.
-            \item[\textbf{RF-3.6}]  El jugador deberá ser capaz de ajustar la resolución de pantalla.
-        \end{enumerate} 
     \end{enumerate}
     \item[\textbf{RF-4}] Efectos visuales.
     \begin{enumerate}
@@ -763,7 +758,7 @@ Los siguientes ficheros van a ser los encargados de gestionar los objetos colecc
 
 Los siguientes scripts son los que gestionan la interacción del usuario con la interfaz gráfica y menús del videojuego.
 
-\textbf{MainMenu} es el encargado de gestionar los 3 botones del menú principal del juego, el que se muestra al iniciarlo. Cuenta con 3 funciones, una para cada acción. Al clickar en el botón de PLAY se carga la escena de juego y de esa forma, comienza el juego. Otra función activa el menú de opciones y la última cierra la aplicación ya que se corresponde con el botón de EXIT.
+\textbf{MainMenu} es el encargado de gestionar los botones del menú principal del juego, el que se muestra al iniciarlo. Cuenta con una funcion para cada acción. Al clickar en el botón de PLAY se carga la escena y de esa forma, comienza el juego. La otra cierra la aplicación ya que se corresponde con el botón de QUIT.
 
 \textbf{PauseMenu} realiza varias acciones cuando el usuario entra al menú de pausa. Al accionar la tecla ESC se entra en este menú, se hace visible el cursor y se para por completo el tiempo del juego. Si se pulsa en el boton RESUME se quita la vista del menu y se vuelve al tiempo normal. Si se pulsa el boton QUIT, se cierra la aplicación.
 
@@ -1328,7 +1323,7 @@ Los sonidos de un videojuego son algo muy importante sobre todo con el propósit
 
 Para que en el juego haya sonidos ha sido necesario crear un objeto vacío llamado \textit{AudioManager} el cual tiene un script creado para facilitar la gestión de sonidos llamado también \textit{AudioManager}. Este script funciona a modo de meclador de Audio pero muy simplificado, ya que solo iniciará pistas de audio cuando se llame a la función \textit{Play(name)} pero esto es algo que Unity no trae por defecto.
 
-Desde el editor hay que añadir las pistas de audio a un vector y ajustarles una serie de parámetros como el volument o el ''Pitch''. El tipo \textit{Sound} tampoco viene por defecto en Unity, por lo que ha habido que crear dicha clase. Sound cuenta solamente con los parámetros de nombre, volument, ''Pitch'' y la propia pista de Audio, que es el tipo \textit{AudioClip}. Una vez creado el tipo ya se pueden agregar desde el editor los sonidos que se deseen. A continuación se muestra una imágen con dicho Script y los elementos de audio agregados.
+Desde el editor hay que añadir las pistas de audio a un vector y ajustarles una serie de parámetros como el volument o el ''Pitch''. El tipo \textit{Sound} tampoco viene por defecto en Unity, por lo que ha habido que crear dicha clase. Sound cuenta solamente con los parámetros de nombre, volumen, ''Pitch'' y la propia pista de Audio, que es el tipo \textit{AudioClip}. Una vez creado el tipo ya se pueden agregar desde el editor los sonidos que se deseen. A continuación se muestra una imágen con dicho Script y los elementos de audio agregados.
 
 \begin{figure}[H]
     \centering
