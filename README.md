@@ -2,7 +2,15 @@
 
 This is the repo for The Final Project of my career. Please, use this code just for educational purpouses. Link to download: https://drive.google.com/drive/folders/1YuIDrEIXIX3GmUMwM-Wue6XuNii7KJ-Y?usp=sharing
 
-# V0.9.5 [NEW]
+# V1.0.0 [NEW]
+
+New Features: 
+
+- Added main menu effects.
+
+- Added final adjustements to the final release.
+
+# V0.9.5 
 
 New Features: 
 
