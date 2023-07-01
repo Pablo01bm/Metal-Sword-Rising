@@ -14,7 +14,7 @@ Bugs fixed
 
 - Now the issue related to the spawn of the player and the final star is fixed.
 
-# V0.9.0 [NEW]
+# V0.9.0
 
 New Features: 
 
