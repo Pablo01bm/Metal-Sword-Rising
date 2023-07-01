@@ -12,12 +12,16 @@ public class PlayerMovement : MonoBehaviour
 
     public float jumpForce;
     public float jumpCooldown;
+    public float attackCooldown;
     public float airMultiplier;
     bool readyToJump = true;
+    bool readyToAttack = true;
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode jumpJoystick = KeyCode.Joystick1Button0;
+    public KeyCode attackMouse = KeyCode.Mouse0;
+    public KeyCode attackJoystick = KeyCode.Joystick1Button2;
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -37,14 +41,25 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
     GameObject Orient;
 
+    public GameObject speedParticles;
+
+    public float comboResetTime = 1.5f;
+    private float lastAttackTime;
+    private int currentAttackIndex;
+    private bool ultraMode = false;
+    private AttributesControler atributesScript;
+    private float AttackCooldown = 1.0f;
+
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
-        rb =  GameObject.Find("Player").GetComponent<Rigidbody>();
+        rb =  GameObject.Find("PlayerTest").GetComponent<Rigidbody>();
         rb.freezeRotation = true;
-
+        currentAttackIndex = 0;
+        GameObject aux = GameObject.Find("GameManager");
+        atributesScript = aux.GetComponent<AttributesControler>();
         
     }
 
@@ -52,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ultraMode = atributesScript.ultraMode;
         Orient = GameObject.Find("Orientation");
         grounded = Physics.Raycast(  Orient.transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 
@@ -59,35 +75,46 @@ public class PlayerMovement : MonoBehaviour
         //print("position: " + Orient.transform.position);
         //print("playerHeight: " + playerHeight);
         //print("vector del raycast: " + (playerHeight * 0.5f + 0.2f));
-         // print("ESTA EN EL SUELO: " + grounded);
+        //print("ESTA EN EL SUELO: " + grounded);
+
+
+
         Myinput();
         SpeedControl();
+        
 
-        if (moveDirection != Vector3.zero && grounded)
-        {
-            animator.SetBool("IsMoving", true);
-        }
-        else {
-            animator.SetBool("IsMoving", false);
-        }
-
-        // handle drag
-        if (grounded)
-        {
-            animator.SetBool("IsGrounded", true);
-            rb.drag = groundDrag;
-            animator.SetBool("IsJumping", false);
-            animator.SetBool("IsFalling", false);
-        }else {
-            
-            rb.drag = 0;
-            animator.SetBool("IsGrounded", false);
-
-            if (rb.velocity.y < 0) {
-                animator.SetBool("IsJumping", false);
-                animator.SetBool("IsFalling", true);
+            if (moveDirection != Vector3.zero )
+            {
+                animator.SetBool("IsMoving", true);
+                speedParticles.SetActive(true);
             }
-        }
+            else
+            {
+                animator.SetBool("IsMoving", false);
+                speedParticles.SetActive(false);
+            }
+
+            // handle drag
+            if (grounded)
+            {
+                animator.SetBool("IsGrounded", true);
+                rb.drag = groundDrag;
+                animator.SetBool("IsJumping", false);
+                animator.SetBool("IsFalling", false);
+            }
+            else
+            {
+
+                rb.drag = 0;
+                animator.SetBool("IsGrounded", false);
+                animator.SetBool("IsJumping", true);
+                if (rb.velocity.y < 0)
+                {
+                    animator.SetBool("IsJumping", false);
+                    animator.SetBool("IsFalling", true);
+                }
+            }
+        
 
         
     }
@@ -101,8 +128,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Myinput()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
+        if (animator.GetBool("IsAttackingM1") == false && animator.GetBool("IsAttackingM2") == false && animator.GetBool("IsAttackingM3") == false && animator.GetBool("IsAttackingM4") == false)
+        { 
+            horizontalInput = Input.GetAxisRaw("Horizontal");
+            verticalInput = Input.GetAxisRaw("Vertical");
+        }
 
         // when to jump 
         if ((Input.GetKey(jumpKey) || Input.GetKey(jumpJoystick)) && readyToJump && grounded)
@@ -114,6 +144,24 @@ public class PlayerMovement : MonoBehaviour
             Jump();
 
             Invoke(nameof(resetJump), jumpCooldown);
+        }
+
+        //when to attack
+        if ((Input.GetKeyDown(attackMouse) || Input.GetKeyDown(attackJoystick)) && grounded && readyToAttack && !ultraMode && animator.GetBool("IsMoving") == false)
+        {
+
+            if (Time.time - lastAttackTime >= attackCooldown)
+            {
+                if (Time.time - lastAttackTime > comboResetTime)
+                {
+                    // Reset combo if the time between attacks exceeds the combo reset time
+                    currentAttackIndex = 0;
+                }
+
+                lastAttackTime = Time.time;
+                attack();
+            }
+
         }
 
     }
@@ -164,5 +212,42 @@ public class PlayerMovement : MonoBehaviour
     private void resetJump()
     {
         readyToJump = true;
+    }
+
+   private void attack()
+{
+        // Increment the attack index
+        currentAttackIndex++;
+        FindObjectOfType<AudioManager>().Play("AttackAir");
+
+        // Reset attack index if it exceeds the maximum combo attacks
+        if (currentAttackIndex > 4)
+        {
+            currentAttackIndex = 1;
+        }
+
+        // Set the corresponding attack bool in the animator
+        animator.SetBool("IsAttackingM" + currentAttackIndex, true);
+
+        // Reset attack bools immediately if it's the final attack combo
+        if (currentAttackIndex > 4)
+        {
+            resetAttack();
+        }
+        else
+        {
+            // Delay the reset of attack bools after the attack animation finishes
+            float delay = animator.GetCurrentAnimatorStateInfo(0).length;
+            Invoke("resetAttack", delay);
+        }
+    }
+
+private void resetAttack()
+{
+        // Reset all attack bools to false
+        for (int i = 1; i <= 4; i++)
+        {
+            animator.SetBool("IsAttackingM" + i, false);
+        }
     }
 }

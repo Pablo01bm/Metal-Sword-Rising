@@ -1,0 +1,67 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1}Resumen}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Abstract}{3}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Introducción y motivación}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Contexto}{5}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Origen de los videojuegos}{5}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Componentes de los videojuegos}{7}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Descripción del problema}{9}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Alcance de la memoria}{10}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Objetivos}{13}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Resolución del trabajo}{15}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Planificación y presupuesto}{15}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Planificación inicial}{15}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Presupuesto}{16}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Análisis y diseño}{17}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Especificación de requisitos}{17}{subsection.5.2.1}%
+\contentsline {subsubsection}{Requisitos funcionales}{17}{section*.10}%
+\contentsline {subsubsection}{Requisitos no funcionales}{19}{section*.11}%
+\contentsline {subsection}{\numberline {5.2.2}Historias de usuario y Product Backlog}{19}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Control de versiones}{20}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Material importado}{21}{subsection.5.2.4}%
+\contentsline {subsubsection}{Personaje principal}{22}{section*.14}%
+\contentsline {subsubsection}{Armas}{22}{section*.16}%
+\contentsline {subsubsection}{Enemigos}{23}{section*.18}%
+\contentsline {subsubsection}{Decoración}{24}{section*.20}%
+\contentsline {subsubsection}{Coleccionables}{31}{section*.31}%
+\contentsline {subsubsection}{Sonidos}{32}{section*.33}%
+\contentsline {subsection}{\numberline {5.2.5}Descripción detallada del proyecto }{33}{subsection.5.2.5}%
+\contentsline {subsubsection}{Aspectos generales del proyecto}{33}{section*.34}%
+\contentsline {subsubsection}{Cámara del personaje principal}{34}{section*.35}%
+\contentsline {subsubsection}{Personaje principal}{39}{section*.41}%
+\contentsline {subsection}{\numberline {5.2.6}Enemigo}{43}{subsection.5.2.6}%
+\contentsline {subsubsection}{Modo Ultrasónico}{43}{section*.46}%
+\contentsline {subsubsection}{Generación procedural del mapa y sus elementos}{45}{section*.48}%
+\contentsline {subsection}{\numberline {5.2.7}Efectos especiales de partículas}{46}{subsection.5.2.7}%
+\contentsline {subsubsection}{ToonShading}{47}{section*.50}%
+\contentsline {subsection}{\numberline {5.2.8}Bocetos del diseño del proyecto}{49}{subsection.5.2.8}%
+\contentsline {subsection}{\numberline {5.2.9}Diagrama de clases}{54}{subsection.5.2.9}%
+\contentsline {subsubsection}{Cámara y personaje}{54}{section*.60}%
+\contentsline {subsubsection}{Lógica del juego}{56}{section*.62}%
+\contentsline {subsubsection}{Power Ups}{58}{section*.64}%
+\contentsline {subsubsection}{Menús}{59}{section*.66}%
+\contentsline {subsubsection}{Enemigos}{60}{section*.68}%
+\contentsline {subsubsection}{Mapa}{62}{section*.70}%
+\contentsline {subsection}{\numberline {5.2.10}Principales algoritmos}{64}{subsection.5.2.10}%
+\contentsline {subsubsection}{Algoritmo de cadena monotona de Andrew}{66}{section*.72}%
+\contentsline {subsubsection}{Algoritmo de partición binaria del espacio}{67}{section*.74}%
+\contentsline {section}{\numberline {5.3}Implementación}{70}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Ciclo de vida de un Script en Unity}{70}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Cámara}{72}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Personaje principal, movimiento y animación}{76}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Modo Ultrasónico}{81}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}Enemigos}{84}{subsection.5.3.5}%
+\contentsline {subsection}{\numberline {5.3.6}Menús e Interfaz de Usuario}{87}{subsection.5.3.6}%
+\contentsline {subsection}{\numberline {5.3.7}Sonidos}{89}{subsection.5.3.7}%
+\contentsline {subsection}{\numberline {5.3.8}Creación del mapa y sus elementos}{91}{subsection.5.3.8}%
+\contentsline {subsection}{\numberline {5.3.9}Toon Shading}{98}{subsection.5.3.9}%
+\contentsline {subsection}{\numberline {5.3.10}Partículas}{106}{subsection.5.3.10}%
+\contentsline {section}{\numberline {5.4}Pruebas}{107}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Manual de usuario}{109}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Instalación}{109}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Controles}{109}{subsection.5.5.2}%
+\contentsline {subsubsection}{Teclado y ratón}{109}{section*.106}%
+\contentsline {subsubsection}{Mando}{110}{section*.107}%
+\contentsline {subsection}{\numberline {5.5.3}Objetivos}{110}{subsection.5.5.3}%
+\contentsline {chapter}{\numberline {6}Conclusiones y vías futuras}{111}{chapter.6}%
+\contentsline {chapter}{Bibliografía}{115}{chapter*.108}%
