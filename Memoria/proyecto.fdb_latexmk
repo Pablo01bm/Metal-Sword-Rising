@@ -1,19 +1,19 @@
 # Fdb version 4
-["bibtex proyecto"] 1688147460 "proyecto.aux" "proyecto.bbl" "proyecto" 1688147466 0
+["bibtex proyecto"] 1688226238 "proyecto.aux" "proyecto.bbl" "proyecto" 1688227722 0
   "./bibliografia/bibliografia.bib" 1688056168 6797 4c063d9bd76ccb6b88f7c06680368721 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291868336 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "proyecto.aux" 1688147465 26377 9e8c49e7f0d6647e73e3870111df6bfc "pdflatex"
+  "proyecto.aux" 1688227721 26377 f0c03c79843d743b0b8e64a61dbb3404 "pdflatex"
   (generated)
   "proyecto.bbl"
   "proyecto.blg"
   (rewritten before read)
-["makeindex proyecto.idx"] 1688054510 "proyecto.idx" "proyecto.ind" "proyecto" 1688147466 0
-  "proyecto.idx" 1688147462 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex proyecto.idx"] 1688054510 "proyecto.idx" "proyecto.ind" "proyecto" 1688227722 0
+  "proyecto.idx" 1688227717 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "proyecto.ilg"
   "proyecto.ind"
   (rewritten before read)
-["pdflatex"] 1688147461 "c:/Users/pablo/Desktop/Pablo/TFG-Metal-Sword-Rising/Metal-Sword-Rising/Memoria/proyecto.tex" "proyecto.pdf" "proyecto" 1688147466 0
+["pdflatex"] 1688227716 "c:/Users/pablo/Desktop/Pablo/TFG-Metal-Sword-Rising/Metal-Sword-Rising/Memoria/proyecto.tex" "proyecto.pdf" "proyecto" 1688227722 0
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1687085386 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx1095.pk" 1681839936 13580 6abe2f17d78e3d3f2378a3dd99321520 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1681841187 12668 0a98e39c4ab4111af1bd63a2e6b40d31 ""
@@ -135,8 +135,8 @@
   "capitulos/02/abstract.tex" 1688070696 1885 ac88019363e67d2683f7d173db6c2339 ""
   "capitulos/03/introduccion.tex" 1687966881 15136 496942fd2ff690fe3ebb11254fd7b8a5 ""
   "capitulos/04/objetivos.tex" 1688146270 4021 daa4ce78e4915fd2ac1f04095a2a0217 ""
-  "capitulos/05/resolucion.tex" 1688147454 158946 442d9fcc27a322c50bd53a1dc6cdef2b ""
-  "capitulos/06/conclusiones.tex" 1687966753 4294 09247efa109a79dd29a65a8115269cda ""
+  "capitulos/05/resolucion.tex" 1688227715 158520 84bb12053897ae6cd4d88c723b2b5790 ""
+  "capitulos/06/conclusiones.tex" 1688227646 4488 a7f3cbaf60c6e10b5690d3e190c69053 ""
   "imagenes/etsiit_logo.png" 1379672160 15686 96fbb972320ee192b868b64d57775747 ""
   "imagenes/logo_ugr.jpg" 1228354992 85532 25866cc28cc667a1cdd972180571e7be ""
   "images//AOE2ejemplo.jpg" 1681841165 255562 f5cd27b6f20274062dff06fd0b00ce14 ""
@@ -216,14 +216,14 @@
   "images//skybox.jpg" 1686481234 2513397 78ec930e0a1c83617fe100f8d196ab18 ""
   "portada/portada.tex" 1687876396 1114 9b958d6312e1f4e3341315e44aff1d4f ""
   "prefacios/prefacio.tex" 1687879742 2746 ce10ddecb9b78ad83c08cce83269ab3f ""
-  "proyecto.aux" 1688147465 26377 9e8c49e7f0d6647e73e3870111df6bfc "pdflatex"
-  "proyecto.bbl" 1688147461 5858 9d7387cfdd78c89c9fd1d4d45833b062 "bibtex proyecto"
+  "proyecto.aux" 1688227721 26377 f0c03c79843d743b0b8e64a61dbb3404 "pdflatex"
+  "proyecto.bbl" 1688226239 5858 9d7387cfdd78c89c9fd1d4d45833b062 "bibtex proyecto"
   "proyecto.ind" 1688054510 0 d41d8cd98f00b204e9800998ecf8427e "makeindex proyecto.idx"
-  "proyecto.lof" 1688147465 11413 2ffa32f72d4030e8cddf6021192d6104 "pdflatex"
-  "proyecto.lot" 1688147465 362 630882a1c3f803cd2ddf8c5e1a58a952 "pdflatex"
-  "proyecto.out" 1688147465 6725 f7a0b6e878df0d6e3b30679284759c0d "pdflatex"
+  "proyecto.lof" 1688227721 11413 55a504349e26ff199c70af87112ee748 "pdflatex"
+  "proyecto.lot" 1688227721 362 630882a1c3f803cd2ddf8c5e1a58a952 "pdflatex"
+  "proyecto.out" 1688227721 6725 f7a0b6e878df0d6e3b30679284759c0d "pdflatex"
   "proyecto.tex" 1688070734 6249 501768c380859a099519ed2ad213d246 ""
-  "proyecto.toc" 1688147465 5282 2e37ccac3400f1898d14526c70e968f4 "pdflatex"
+  "proyecto.toc" 1688227721 5282 e953e4268c1d0d9f1e265bf3d0036056 "pdflatex"
   (generated)
   "proyecto.aux"
   "proyecto.glo"

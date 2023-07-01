@@ -20,9 +20,9 @@
 \contentsline {subsection}{\numberline {5.2.3}Control de versiones}{20}{subsection.5.2.3}%
 \contentsline {subsection}{\numberline {5.2.4}Material importado}{21}{subsection.5.2.4}%
 \contentsline {subsubsection}{Personaje principal}{22}{section*.14}%
-\contentsline {subsubsection}{Armas}{23}{section*.16}%
+\contentsline {subsubsection}{Armas}{22}{section*.16}%
 \contentsline {subsubsection}{Enemigos}{23}{section*.18}%
-\contentsline {subsubsection}{Decoración}{25}{section*.20}%
+\contentsline {subsubsection}{Decoración}{24}{section*.20}%
 \contentsline {subsubsection}{Coleccionables}{31}{section*.31}%
 \contentsline {subsubsection}{Sonidos}{32}{section*.33}%
 \contentsline {subsection}{\numberline {5.2.5}Descripción detallada del proyecto }{33}{subsection.5.2.5}%
