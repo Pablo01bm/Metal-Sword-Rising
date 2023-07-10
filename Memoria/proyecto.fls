@@ -195,6 +195,17 @@ INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\base\textcomp.sty
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\base\textcomp.sty
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\base\textcomp.sty
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\base\textcomp.sty
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\eurosym\eurosym.sty
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\eurosym\eurosym.sty
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\eurosym\eurosym.sty
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\eurosym\eurosym.sty
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\eurosym\eurosym.sty
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\eurosym\eurosym.sty
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\eurosym\eurosym.sty
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\eurosym\eurosym.sty
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\eurosym\eurosym.sty
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\eurosym\eurosym.sty
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\eurosym\eurosym.sty
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\tools\dcolumn.sty
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\tools\dcolumn.sty
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\tools\dcolumn.sty
@@ -886,7 +897,7 @@ INPUT .\images\\GANT.drawio.png
 INPUT .\images\\GANT.drawio.png
 INPUT .\images\\GANT.drawio.png
 INPUT .\images\\GANT.drawio.png
-INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095.tfm
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\tfm\public\eurosym\feymr10.tfm
 INPUT .\images\\kanban.jpg
 INPUT images\\kanban.jpg
 INPUT .\images\\kanban.jpg
@@ -990,6 +1001,7 @@ INPUT .\images\\BOTWejemplo.jpg
 INPUT .\images\\BOTWejemplo.jpg
 INPUT .\images\\BOTWejemplo.jpg
 INPUT .\images\\BOTWejemplo.jpg
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095.tfm
 INPUT .\images\\AOE2ejemplo.jpg
 INPUT images\\AOE2ejemplo.jpg
 INPUT .\images\\AOE2ejemplo.jpg
@@ -1341,10 +1353,10 @@ INPUT proyecto.bbl
 INPUT proyecto.aux
 INPUT .\proyecto.out
 INPUT .\proyecto.out
-INPUT C:\Users\pablo\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcbx1095.pk
-INPUT C:\Users\pablo\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcbx1095.pk
 INPUT C:\Users\pablo\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
 INPUT C:\Users\pablo\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
+INPUT C:\Users\pablo\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcbx1095.pk
+INPUT C:\Users\pablo\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcbx1095.pk
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
@@ -1369,3 +1381,5 @@ INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt8.pfb
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt8.pfb
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\type1\public\eurosym\feymr10.pfb
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\type1\public\eurosym\feymr10.pfb
