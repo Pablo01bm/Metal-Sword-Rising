@@ -1,25 +1,21 @@
 # Fdb version 4
-["bibtex proyecto"] 1689019530 "proyecto.aux" "proyecto.bbl" "proyecto" 1689019536 0
-  "./bibliografia/bibliografia.bib" 1688056168 6797 4c063d9bd76ccb6b88f7c06680368721 ""
+["bibtex proyecto"] 1689105838 "proyecto.aux" "proyecto.bbl" "proyecto" 1689105845 0
+  "./bibliografia/bibliografia.bib" 1689101191 9205 2ebe9f1ceb980e1cf4e69c93ae934fd2 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291868336 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "proyecto.aux" 1689019535 27055 28be3873f9a9029366a7e5518f2b6bd1 "pdflatex"
+  "proyecto.aux" 1689105844 28994 738107899a41d746e47c7bd3ebd14139 "pdflatex"
   (generated)
   "proyecto.bbl"
   "proyecto.blg"
   (rewritten before read)
-["makeindex proyecto.idx"] 1689009959 "proyecto.idx" "proyecto.ind" "proyecto" 1689019536 0
-  "proyecto.idx" 1689019532 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex proyecto.idx"] 1689099856 "proyecto.idx" "proyecto.ind" "proyecto" 1689105845 0
+  "proyecto.idx" 1689105840 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "proyecto.ilg"
   "proyecto.ind"
   (rewritten before read)
-["pdflatex"] 1689019531 "c:/Users/pablo/Desktop/Pablo/TFG-Metal-Sword-Rising/Metal-Sword-Rising/Memoria/proyecto.tex" "proyecto.pdf" "proyecto" 1689019536 0
-  "C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1689014324 81107 70b8516c68c2e617189c5e44bfd16b96 ""
-  "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx1095.pk" 1681839936 13580 6abe2f17d78e3d3f2378a3dd99321520 ""
-  "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1681841187 12668 0a98e39c4ab4111af1bd63a2e6b40d31 ""
+["pdflatex"] 1689105838 "c:/Users/pablo/Desktop/Pablo/TFG-Metal-Sword-Rising/Metal-Sword-Rising/Memoria/proyecto.tex" "proyecto.pdf" "proyecto" 1689105845 0
+  "C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1689095301 81107 70b8516c68c2e617189c5e44bfd16b96 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1680020384 10788010 54b3d2df6c6d8961309d8eb787063944 ""
-  "C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcbx1095.tfm" 993062478 1476 2703c7670cbf6ffef3763103a3aa859f ""
-  "C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1095.tfm" 993062508 1460 8005ce585ff351dff78998923504da5e ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx8.tfm" 1136768653 1332 1fde11373e221473104d6cc5993f046e ""
@@ -126,6 +122,7 @@
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/pdfpages/pppdftex.def" 1671490094 6591 7c9b26513263b04a3b43be6474a4ef4d ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/refcount/refcount.sty" 1576437552 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657800696 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
+  "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/titlesec/titlesec.sty" 1625497667 48833 3b7b4cfab1a3d15596bfd3772a77ab65 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/tools/afterpage.sty" 1654690828 4085 743fa8077af1f99a47e9d0c97d070258 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/tools/array.sty" 1654690828 12694 4770336659ba563be5de2e0739d61ddc ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/tools/calc.sty" 1654690828 10214 de3e21cfc0eccc98ca7f8dac0ef263d2 ""
@@ -133,12 +130,12 @@
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/tools/longtable.sty" 1654690828 12892 af5f5e872a6e322f3e5ba2c881288a56 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/tools/verbatim.sty" 1654690828 7392 6cb60c76983625ab7344d128dbcdd881 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388494052 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "c:/Users/pablo/Desktop/Pablo/TFG-Metal-Sword-Rising/Metal-Sword-Rising/Memoria/proyecto.tex" 1689014326 6270 cab4d67146b41122cda468b2b886bd35 ""
+  "c:/Users/pablo/Desktop/Pablo/TFG-Metal-Sword-Rising/Metal-Sword-Rising/Memoria/proyecto.tex" 1689103120 6339 c3fc29ac24d48924b1b6fbd049bcf8a5 ""
   "capitulos/01/resumen.tex" 1689002817 2259 461af04f18c919407f1bb12dc4739a03 ""
   "capitulos/02/abstract.tex" 1689011575 2055 c44b6049fd14974625c85fbf732295a3 ""
-  "capitulos/03/introduccion.tex" 1689011564 21244 947758420b26296ea9ef868079857f95 ""
+  "capitulos/03/introduccion.tex" 1689098240 23015 5be5186c64a5024cc85da476f08e97d4 ""
   "capitulos/04/objetivos.tex" 1689014054 4028 6ef50c92c8e2713de026d594a01679a8 ""
-  "capitulos/05/resolucion.tex" 1689019524 162032 923961dc6b0c8731b817572ff9da0850 ""
+  "capitulos/05/resolucion.tex" 1689105831 163681 1d99b8444ed59a861fff063985d8919c ""
   "capitulos/06/conclusiones.tex" 1688227646 4488 a7f3cbaf60c6e10b5690d3e190c69053 ""
   "imagenes/etsiit_logo.png" 1379672160 15686 96fbb972320ee192b868b64d57775747 ""
   "imagenes/logo_ugr.jpg" 1228354992 85532 25866cc28cc667a1cdd972180571e7be ""
@@ -219,14 +216,14 @@
   "images//skybox.jpg" 1686481234 2513397 78ec930e0a1c83617fe100f8d196ab18 ""
   "portada/portada.tex" 1687876396 1114 9b958d6312e1f4e3341315e44aff1d4f ""
   "prefacios/prefacio.tex" 1689016032 2584 be245df6e5fed0df04d90f241eb2dbd2 ""
-  "proyecto.aux" 1689019535 27055 28be3873f9a9029366a7e5518f2b6bd1 "pdflatex"
-  "proyecto.bbl" 1689019531 5858 9d7387cfdd78c89c9fd1d4d45833b062 "bibtex proyecto"
-  "proyecto.ind" 1689009959 0 d41d8cd98f00b204e9800998ecf8427e "makeindex proyecto.idx"
-  "proyecto.lof" 1689019535 11421 f8440309fb6459e326040d431913c50a "pdflatex"
-  "proyecto.lot" 1689019535 363 861f312d6197447c56cca84a63738f71 "pdflatex"
-  "proyecto.out" 1689019535 7237 bd257bc224d97560a09f793bf13feb51 "pdflatex"
-  "proyecto.tex" 1689014326 6270 cab4d67146b41122cda468b2b886bd35 ""
-  "proyecto.toc" 1689019535 5745 df84629b7a74c7362496db0a9168a0a0 "pdflatex"
+  "proyecto.aux" 1689105844 28994 738107899a41d746e47c7bd3ebd14139 "pdflatex"
+  "proyecto.bbl" 1689105838 7849 34cdc3851aa4b57708c9aa82c7620c44 "bibtex proyecto"
+  "proyecto.ind" 1689099856 0 d41d8cd98f00b204e9800998ecf8427e "makeindex proyecto.idx"
+  "proyecto.lof" 1689105844 11441 c32db6080f5be65db5eac579b440e79c "pdflatex"
+  "proyecto.lot" 1689105844 363 a210ac6076eca3185345becec8576ed4 "pdflatex"
+  "proyecto.out" 1689105844 12306 ef18a663d2f980259cdeb7ab58f5102e "pdflatex"
+  "proyecto.tex" 1689103120 6339 c3fc29ac24d48924b1b6fbd049bcf8a5 ""
+  "proyecto.toc" 1689105844 6721 9cec6a66ba14c84b92988ae40b7df025 "pdflatex"
   (generated)
   "proyecto.aux"
   "proyecto.glo"

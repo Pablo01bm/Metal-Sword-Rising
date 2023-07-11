@@ -210,18 +210,17 @@ Gracias a ésto, y junto a la herramienta de \textit{GitHub Projects} se consegu
 \subsection{Material importado}
 
 Como en este proyecto la intención ha sido desde el principio centrarse en la parte técnica del desarrollo
-del videojuego, los diseños y modelos utilizados en su mayoría han sido importados de webs las cuales
+del videojuego, los diseños y modelos utilizados en su mayoría han sido importados de webs que
 ofrecen modelos con licencia \textit{Creative Commons} para uso libre. A continuación se mostraran los modelos utilizados 
 y de donde se han obtenido.\\
-Para este proyecto serán necesarios bastantes elementos los cuales son:
+
 %Aqui tengo que poner también ademásd del personaje, los muebles, enemigos, armas y decorados que use.
 
 \subsubsection{Personaje principal}
 Este modelo ha sido importado desde la web de \textit{Adobe Mixamo} \cite{Mixamo} la cual ofrece una gran cantidad de modelos 3D
 y animaciones, la gran mayoría compatibles con \textit{Unity}. Debido a el contexto en el que se quiere situar
-el videojuego, el modelo elegido es una especie de androide humanoide futurista. Dado que es algo que no se va a tener en cuenta a la hora de
-jugar, el personaje principal no será personalizable, siempre tendrá este aspecto. \\
-A continuación imagen del modelo elegido: 
+el videojuego, el modelo elegido es una especie de androide humanoide futurista. Dado que la personalización no es una funcionalidad disponible en el proyecto, el personaje principal siempre tendrá el mismo aspecto. \\
+A continuación cemos la imagen del modelo elegido: 
 
 \begin{figure}[htbp]
 \centering
@@ -238,7 +237,7 @@ Para animar este modelo se han importado también una serie de animaciones, tamb
 \subsubsection{Armas}
 En esta sección se mostraran los modelos de armas utilizados por el personaje principal y enemigos del videojuego
 
-La espada del personaje principal, es una \textit{katana} la cual se importó desde la web de 
+La espada del personaje principal es una \textit{katana} la cual se importó desde la web de 
 \textit{Sketchfab} \cite{Sketchfab} que ofrece gran cantidad de Assets y modelos 3D tanto gratis como de pago.
 Este modelo seleccionado es gratuito y fue creado por el usuario shor.riot. \\
 
@@ -257,11 +256,11 @@ de dicha katana:
 
 \subsubsection{Enemigos}
 
-Los modelos de los enemigos han sido importados desde una página web la cual es la que más elementos ha proporcionado al proyecto, dicha página es \textit{Unity Asset Store} \cite{UnityAssetStore}. Según la propia página de documentación oficial proporcionada por Unity, la \textit{Unity Documentation} \cite{UnityDocumentation} este servicio es una plataforma en línea donde los desarrolladores de videojuegos pueden encontrar y adquirir una amplia variedad de activos, recursos y herramientas para usar en sus proyectos de Unity. Estos activos pueden incluir modelos 3D, texturas, scripts, paquetes de efectos visuales, música, sonidos, plantillas de interfaz de usuario y mucho más.
+Los modelos de los enemigos han sido importados desde una página web la cual es la que más elementos ha proporcionado al proyecto, dicha página es \textit{Unity Asset Store} \cite{UnityAssetStore}. Según la propia página de documentación oficial proporcionada por Unity, la \textit{Unity Documentation} \cite{UnityDocumentation} este servicio es una plataforma en línea donde los desarrolladores de videojuegos pueden encontrar y adquirir una amplia variedad de activos, recursos y herramientas para usar en sus proyectos de Unity. Estos activos pueden incluir modelos 3D, texturas, \textit{scripts}, paquetes de efectos visuales, música, sonidos, plantillas de interfaz de usuario y muchos más.
 
 Unity Asset Store proporciona a los desarrolladores una forma conveniente de expandir y mejorar sus juegos al ofrecer una amplia selección de contenido creado por otros desarrolladores. Los activos se pueden comprar o descargar de forma gratuita, dependiendo de las preferencias del creador del activo. Además, también existe la opción de adquirir paquetes completos que contienen varios activos relacionados, en este caso, este paquete es gratuito e incluye todo lo necesario para la funcionalidad que se quiere hacer.
 
-El paquete de modelos 3D, texturas y animaciones de los enemigos es \textit{SciFi Enemies and Vehicles} del usuario \textit{Popup Asylum}. Dicho paquete fue de gran utilidad y calidad pese a ser gratuito. El modelo 3D usado para el enemigo de tipo \textit{Melee} o ataque a corta distancia, es una especie de escorpión robótico, llamado por el autor como \textit{Warrior}. A continuación imagen de dicho modelo.
+El paquete de modelos 3D, texturas y animaciones de los enemigos es \textit{SciFi Enemies and Vehicles} del usuario \textit{Popup Asylum}. Dicho paquete fue de gran utilidad y calidad pese a ser gratuito. El modelo 3D usado para el enemigo de tipo \textit{Melee} o ataque a corta distancia es una especie de escorpión robótico, llamado por el autor como \textit{Warrior}. A continuación vemos una imagen de dicho modelo.
 
 \begin{figure}[H]
     \centering
@@ -278,7 +277,7 @@ el entorno o historia que se quiere transmitir. Para ello hay que diferenciar en
 
 Lo primero de lo que hablaremos será de la \textbf{Skybox} del entorno. De acuerdo con la \textit{Unity Documentation} una skybox es una envoltura alrededor de la escena que muestra cómo se ve el mundo más allá de su geometría. Es decir, es el paisaje de fondo que existe en el videojuego, además de los elementos 3D, es necesario una skybox para conseguir la sensación de estar dentro de un mundo inventado por el creador del videojuego.\\
 
-Para las skybox normalmente se usan  \textit{Cubemap} \cite{Cubemaps} las cuales son una representación especial de una textura en forma de cubo en tres dimensiones. Consiste en seis texturas 2D separadas que se unen para formar un cubo completo. Cada una de las seis caras del cubo representa una vista diferente del entorno y además cada una de las caras tienen las mismas dimensiones. A continuación un ejemplo de dicho tipo de imágenes.\\
+Para las skybox normalmente se usa el formato  \textit{Cubemap} \cite{Cubemaps} las cuales son una representación especial de una textura en forma de cubo en tres dimensiones. Consiste en seis texturas 2D separadas que se unen para formar un cubo completo. Cada una de las seis caras del cubo representa una vista diferente del entorno y además cada una de las caras tienen las mismas dimensiones. A continuación un ejemplo de dicho tipo de imágenes.\\
 
 \begin{figure}[H]
     \centering
@@ -286,8 +285,9 @@ Para las skybox normalmente se usan  \textit{Cubemap} \cite{Cubemaps} las cuales
     \caption{Ejemplo de Cubemap usado para una Skybox}
 \end{figure}
 
-Sin embargo en mi caso se ha utilizado otra variante también muy usada, la cual se trata de las \textit{Equirectangular Images} \cite{EquirectangularImages}. Se trata una imagen 2D que se envuelve alrededor de una esfera, proporcionando un campo de visión horizontal de 360 grados y un campo de visión vertical de 180 grados. Este tipo de proyección se utiliza comúnmente para imágenes panorámicas y ofrece una forma conveniente de capturar y mostrar una vista de gran angular de un entorno, como por ejemplo el típico mapa de La Tierra.
-Una vez explicado este concepto, pasamos a explicar la creación de la Skybox usada en el proyecto, puesto que es una imagen única producida por una inteligencia artifical generativa. Esta herramienta se encuentra en la web y está en desarrollo, se trata de \textit{Blockade Labs} \cite{BlockadeLabs}, una web que ofrece de forma gratuita una IA generativa, la cual, a partir de inputs de texto y opciones seleccionables, es capaz de generar Skyboxes ciñendose a dichos inputs. Pues de esta manera se generó la skybox para el proyecto, a continuación se muestra dicha imagen equirectangular.
+Sin embargo en mi caso se ha utilizado otra variante también muy usada, la cual se trata de las \textit{Equirectangular Images} \cite{EquirectangularImages} o \textit{Equirectangular Panoramas}. Se trata una imagen 2D que se envuelve alrededor de una esfera, proporcionando un campo de visión horizontal de 360 grados y un campo de visión vertical de 180 grados. Este tipo de proyección se utiliza comúnmente para imágenes panorámicas y ofrece una forma conveniente de capturar y mostrar una vista de gran angular de un entorno, como por ejemplo el típico mapa de La Tierra.
+
+Una vez explicado este concepto, pasamos a explicar la creación de la Skybox usada en el proyecto, puesto que es una imagen única producida por una inteligencia artifical generativa. Esta herramienta se encuentra en la web y está en desarrollo, se trata de \textit{Blockade Labs} \cite{BlockadeLabs}, una web que ofrece de forma gratuita una IA generativa, la cual, a partir de textos de entrada y opciones seleccionables, es capaz de generar Skyboxes ciñéndose a dichos textos de entrada. Pues de esta manera se generó la skybox para el proyecto, a continuación se muestra dicha imagen equirectangular.
 
 \begin{figure}[H]
     \centering
@@ -297,7 +297,7 @@ Una vez explicado este concepto, pasamos a explicar la creación de la Skybox us
 
 Como se puede observar, se eligió un concepto futurista y en entorno nocturno para generar dicha imagen, ya que se ajusta bien a el objetivo y contexto del videojuego.\\
 
-Siguiendo con el decorado de los escenarios, se buscaron elementos que pudieran encajar en la temática. Se decidió buscar en la ya mencionada \textit{Unity Asset Store} y se encontró un paquete con una gran cantidad de modelos de decorado 3D, y que además encajaban con la temática \textit{SciFi}. Este paquete es \textbf{Low Poly Sci Fi Set} del usuario \textbf{Walter Palladino}. De este paquete se han usado 6 elementos de decoración, como son cajas de distinto tamaño y forma, así como de 2 cápsulas de cristal, una rota y otra en buen estado. Estos elementos están escogidos para que además el jugador pueda cortarlos con la mecánica del \textbf{Modo Ultrasónico} ya que a veces estos elementos bloquearán el camino y el jugador deberá abrirse paso cortándolos.
+Siguiendo con el decorado de los escenarios, se buscaron elementos que pudieran encajar en la temática. Se decidió buscar en la ya mencionada \textit{Unity Asset Store} y se encontró un paquete con una gran cantidad de modelos de decorado 3D, y que además encajaban con la temática \textit{SciFi}. Este paquete es \textit{Low Poly Sci Fi Set} del usuario \textit{Walter Palladino}. De este paquete se han usado 6 elementos de decoración, como son cajas de distinto tamaño y forma, así como de 2 cápsulas de cristal, una rota y otra en buen estado. Estos elementos están escogidos para que además el jugador pueda cortarlos con la mecánica del \textit{Modo Ultrasónico} ya que a veces estos elementos bloquearán el camino y el jugador deberá abrirse paso cortándolos.
 Estos elementos se muestran a continuación.
 
 \begin{figure}[H]
@@ -330,7 +330,7 @@ Estos elementos se muestran a continuación.
     \caption{Modelos 3D de capsulas de cristal, una rota y otra en buen estado}
 \end{figure}
 
-Se importaron de otro paquete otros 2 elementos más de decoración, ampliando hasta 8, el total de elementos que conforman el decorado del videojuego. El paquete se llama \textbf{LowPoly Server Room Props} del usuario \textbf{iPoly3D}.
+Se importaron de otro paquete otros 2 elementos más de decoración, ampliando hasta 8, el total de elementos que conforman el decorado del videojuego. El paquete se llama \textit{LowPoly Server Room Props} del usuario \textit{iPoly3D}.
 
 A continuación imagenes de los 2 modelos seleccionados.
 
@@ -346,7 +346,7 @@ A continuación imagenes de los 2 modelos seleccionados.
     \caption{Modelo 3D de panel de mandos}
 \end{figure}
 
-Por último, también se ha añadido decorado para el propio personaje, se trata de otro modelo de katana distinto al mencionado anteriormente, y se va a incluir en esta sección ya que su uso va a ser puramente estético, no va a ser un arma funcional dentro del videojuego. Este modelo también ha sido descargado e importado desde \textit{Unity Assets Store}, se trata de un modelo de katana 3D junto con la funda de la misma. El paquete se llama \textbf{Free Katana and Scabbard} de el usuario \textbf{Hideout Studio}.\\
+Por último, también se ha añadido decorado para el propio personaje, se trata de otro modelo de katana distinto al mencionado anteriormente, y se va a incluir en esta sección ya que su uso va a ser puramente estético, no va a ser un arma funcional dentro del videojuego. Este modelo también ha sido descargado e importado desde \textit{Unity Assets Store}, se trata de un modelo de katana 3D junto con la funda de la misma. El paquete se llama \textit{Free Katana and Scabbard} de el usuario \textit{Hideout Studio}.\\
 
 Dicha funda y katana se han añadido en la cintura del personaje, el proceso seguido para conseguir que la katana esté ceñida a la cintura del personaje será explicado más adelante en la sección de Implementacion. A continuación el modelo mencionado:
 
@@ -356,14 +356,14 @@ Dicha funda y katana se han añadido en la cintura del personaje, el proceso seg
     \caption{Katana y funda 3D importada para mejorar el aspecto del personaje principal}
 \end{figure}
 
-\subsubsection{Coleccionables}
+\subsubsection{Mejoras}
 
-Para los objetos coleccionables que el jugador podrá recoger por el escenario, se han importado también de \textit{Unity Asset Store}. El paquete es \textbf{Ten Power-Ups} del usuario \textbf{TeKniKo}, y dicho paquete incluye numerosos iconos y modelos prefabricados de coleccionables, además de un Script que produce el efecto de flotar en el aire. Los coleccionables usados de dicho paquete han sido, una estrella la cual al recogerla se acaba la partida y el jugador gana, unas flechas verdes apuntando hacia arriba indicando mejora de daño, y un icono de una cruz roja para curar la salud del jugador.
+Para los objetos de mejora que el jugador podrá recoger por el escenario, se han importado también de \textit{Unity Asset Store}. El paquete es \textit{Ten Power-Ups} del usuario \textit{TeKniKo}, y dicho paquete incluye numerosos iconos y modelos prefabricados de objetos, además de un \textit{script} que produce el efecto de flotar en el aire. Los potenciadores o mejoras usados de dicho paquete han sido, una estrella la cual al recogerla se acaba la partida y el jugador gana, unas flechas verdes apuntando hacia arriba indicando mejora de daño, y un icono de una cruz roja para curar la salud del jugador.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm, height=8cm]{powerUps.jpg}
-    \caption{Coleccionables usados en el proyecto, estrella, flechas verdes y cruz roja}
+    \caption{Objetos de mejora usados en el proyecto, estrella, flechas verdes y cruz roja}
 \end{figure}
 
 
@@ -371,16 +371,16 @@ Para los objetos coleccionables que el jugador podrá recoger por el escenario, 
 
 Los sonidos usados en el proyecto, han sido obtenidos de la plataforma \textit{YouTube} \cite{YouTube}. Todos los sonidos y la música obtenida es de uso libre y no tienen licencias de \textit{Copyright}.\\
 
-De sonidos de efectos especiales se han importado los siguientes: 
+De sonidos de efectos especiales se han importado los siguientes. Para acceder directamente a los sonidos se pueden consultar los enlaces en la bibliografía: 
 \begin{itemize}
-    \item[\textbf{Correr}] Este sonido se ha obtenido del vídeo llamado \textbf{RUN / RUNNING SOUND EFFECT | FOOTSTEPS SOUND [High Quality]} del usuario \textbf{LISTEN}, y este sonido se ha usado para el efecto especial del personaje cuando realiza la acción de correr.
-    \item[\textbf{Corte de Katana}] Sonido conseguido del vídeo \textbf{Katana Swing Cut - Sound Effect for editing} del usuario textbf{Sound library}, usado cuando el jugador realiza un corte con la katana a un objeto.
-    \item[\textbf{Espadazo}] El vídeo de donde se ha sacado se llama \textbf{sword slash (sound effects) || mani creation ||} del usuario \textbf{Become a better you}. Para este sonido he tenido que recortarlo ya que en la misma pista de audio había muchos más efectos.
-    \item[\textbf{Cámara lenta}] Sonido usado para indicar al jugador, además de forma visual, de forma auditiva que ha entrado en \textit{Modo Ultrasónico}. El vídeo de donde se ha obtenido el efecto es \textbf{Slow Motion Sound Effect} del usuario \textbf{SFX Sounds}. Este efecto también ha habido que recortarlo ya que vienen juntos en la misma pista varios efectos.
-    \item[\textbf{Power Up}] Efecto de recoger un power up o coleccionable. Vídeo \textbf{Power-Up - Sound Effect (HD)} del usuario \textbf{House Of Sound Effects}.
-    \item[\textbf{Música partida}] Esta canción suena de fondo mientras transcurre la partida, como ya se ha mencionado antes es música sin licencias de \textit{Copyright}. \textbf{Sci Fi Cyberpunk - VHS [Synthwave/Electro]} del usuario \textbf{The Neon World}.
-    \item[\textbf{Música Menú }] Canción que suena durante el tiempo que el jugador esté en el menú principal, se ha obtenido del vídeo \textbf{Synthwave Game Boy by Infraction [No Copyright Music] / Cassette} y el usuario que lo proporciona es \textbf{Infraction - No Copyright Music}
-    \item[\textbf{Música victoria}] Esta música sonará cuando el jugador recoja el coleccionable con el que se acaba la partida, se ha descargado desde el vídeo \textbf{Edge of Tomorrow - Synthwave - Royalty Free Music} del usuario \textbf{TeknoAXE's Royalty Free Music}.  
+    \item \textbf{Correr} \cite{correr} Este sonido se ha usado para el efecto especial del personaje cuando realiza la acción de correr.
+    \item \textbf{Corte de Katana} \cite{CorteKatana} Sonido utilizado cuando el jugador realiza un corte con la katana a un objeto.
+    \item \textbf{Espadazo} \cite{Espadazo} Este sonido ha requerido el recorte de la pista de audio ya que en la misma pista de audio había muchos más efectos.
+    \item \textbf{Cámara lenta} \cite{CamaraLenta} Sonido usado para indicar al jugador, además de forma visual, de forma auditiva que ha entrado en \textit{Modo Ultrasónico}. 
+    \item \textbf{Power Up} \cite{PowerUp} Efecto de recoger un power up o mejora. 
+    \item \textbf{Música partida} \cite{musicaGame} Esta canción suena de fondo mientras transcurre la partida, como ya se ha mencionado antes es música sin licencias de \textit{Copyright}.
+    \item \textbf{Música Menú } \cite{musicaMenu} Canción que suena durante el tiempo que el jugador esté en el menú principal.
+    \item \textbf{Música victoria} \cite{musicaWin} Esta música sonará cuando el jugador recoja el coleccionable con el que se acaba la partida.   
 \end{itemize}
 
 \subsection{Descripción detallada del proyecto }
@@ -389,7 +389,7 @@ A la hora de hablar del desarrollo del proyecto, es posible realizar una distinc
  distintas partes del proyecto y pasar a su explicación de forma separada, ya que cada una de estas 
  partes abarca herramientas y enfoques distintos. Más adelante en la sección de implementación se abarcarán los detalles técnicos de cada sección.
 
-\subsubsection{Aspectos generales del proyecto}
+\subsubsection{Render Pipelines en Unity}
 
 El proyecto ha sido desarrollado en la versión 2021.3.2f1 \cite{UnityLTS} del editor de Unity, que además es una versión \textit{Long Time Support}, por lo que este ha sido el motivo de usar esta versión.\\
 
@@ -405,23 +405,23 @@ Además de estos sistemas principales, Unity también ofrece el \textbf{High Def
 
 Finalmente, debido a las facilidades y la alta capacidad de personalización y rendimiento que ofrece el URP, se valoró como el más adecuado para el proyecto, sobre todo en el aspecto de diseño de un estilo visual diferenciado.
 
-\subsubsection{Cámara del personaje principal} 
+\subsubsection{Tipos de cámara} 
 
 Quizás este es uno de los aspectos más importantes de los videojuegos, la \textbf{cámara} es algo
 que puede marcar la diferencia entre un videojuego y otro y por supuesto influye en aspectos como
 el tipo de videojuego que se va a realizar o la experiencia del jugador/usuario.\\
 
 Antes de hablar de cómo se ha desarrollado la cámara, se va a explicar muy brevemente los distintos tipos de cámara más usados en los videojuegos a día de hoy: 
-\begin{enumerate}
-    \item[\textbf{1º persona}] Este tipo de cámara es de los más usados actualmente, consiste en recrear con la cámara 
-    que el jugador está viendo lo mismo que el personaje que controla dentro del mismo. Este tipo de cámara sobre todo se plantea en videojuegos realizados en entornos 3D .Esta cámara se suele usar sobretodo en 
+\begin{itemize}
+    \item \textbf{Primera persona} Este tipo de cámara es de los más usados actualmente, consiste en recrear con la cámara 
+    que el jugador verá lo mismo que vería el personaje que controla. Este tipo de cámara sobre todo se plantea en videojuegos realizados en entornos 3D .Esta cámara se suele usar sobretodo en 
     videojuegos tipo \textit{shooter} o de miedo, para conseguir esta inmmersion para el jugador. A continuación un ejemplo de dicho tipo de cámara:
     \begin{figure}[H]
         \centering
         \includegraphics[width=10cm, height=5cm]{doomEjemplo.jpg}
         \caption{Videojuego Doom}
     \end{figure}
-    \item[\textbf{3º persona}] Este tipo de cámara pretende dar la sensación al jugador de que está presenciando
+    \item \textbf{Tercera persona} Este tipo de cámara pretende dar la sensación al jugador de que está presenciando
     en forma de espectador lo que le ocurre al personaje del videojuego, consiguiendo de esa manera que el usuario
     al jugar lo que está haciendo es interferir en la historia o acciones del personaje que controla. Ejemplo a continuación:
     \begin{figure}[H]
@@ -429,19 +429,20 @@ Antes de hablar de cómo se ha desarrollado la cámara, se va a explicar muy bre
         \includegraphics[width=10cm, height=5cm]{BOTWejemplo.jpg}
         \caption{Videojuego The Legend Of Zelda: Breath of the Wild}
     \end{figure}
-    \item[\textbf{Isométrica}] Este tipo de cámara, como su nombre indica, se situa en perspectiva 
-    Isométrica con respecto a la escena de forma que se ve como si el usuario estuviera situado en el cielo de la escena presenciandola.
-    Este tipo de cámara puede ser parecida a la de 3º persona pero con ella se pueden realizar videojuegos totalmente distintos como por ejemplo videojuegos de estrategia o de construcción de ciudades.
+\end{itemize}
+
+    Además de la cámara, el tipo de proyección en ocasiones se cambia para videojuegos de un tipo específico. La proyección \textbf{isométrica} suele ser la alternativa más popular a la proyección perspectiva. La diferencia entre ambos tipos de proyecciones es que en la isométrica los objetos más lejanos no aparecen más pequeños que los más cercanos, eso sí ocurre en la perspectiva.
+
+    Este tipo de perspectiva se usa sobretodo en videojuegos de estrategia o de construcción de ciudades.
     Ejemplo : 
     \begin{figure}[H]
         \centering
         \includegraphics[width=10cm, height=5cm]{AOE2ejemplo.jpg}
         \caption{Videojuego Age Of Empires II}
     \end{figure}
-\end{enumerate}
 
-En el proyecto, se va a implementar una cámara en \textbf{tercera persona}. Una vez vistos los principales tipos de cámara que se usan a día de hoy en los videojuegos, proseguiremos con la explicación
-del desarrollo de la cámara de el videojuego que se está tratando.
+En el proyecto, se va a implementar una cámara perspectiva en \textbf{tercera persona}. Una vez vistos los principales tipos de cámara que se usan a día de hoy en los videojuegos, proseguiremos con la explicación
+del desarrollo de la cámara del videojuego que se está tratando.
 
 Para la cámara se ha decidido importar un paquete de \textit{Unity} llamado \textit{Cinemachine} \cite{UnityCinemachine} %Referenciar
 el cual proporciona una serie de herramientas para facilitar la creación, la lógica y los parámetros de la cámara 
@@ -496,9 +497,7 @@ Podemos concluir que la diferencia entre ambas es que la Cinemachine FreeLook ca
     \includegraphics[width=12cm, height=8cm]{VirtualCamera.jpg}
     \caption{Ejemplo de Virtual camera configurada para simular que tanto el jugador como el personaje estén mirando al centro de la pantalla}
 \end{figure}
-
-El Script en Unity
-que controla ésta cámara se llama \textit{ThirdPersonCam.cs}, más adelante se verá en detalle el código de dicho script. 
+ 
 Una vez explicada la cámara y la herramienta utilizada para su desarrollo se procederá a la explicación del siguiente elemento del proyecto.
 
 \subsubsection{Personaje principal}
@@ -507,55 +506,43 @@ A la hora de definir los distintos movimientos del personaje principal se han se
 de animaciones las cuales están sincronizadas con el desplazamiento del personaje, pero vamos a entrar más en detalle para hablar de como se 
 ha planteado y desarrollado. Hay que recalcar que las animaciones son un aspecto clave en el desarrollo de videojuegos, pese a que no es el objetivo de este proyecto, se ha cuidado este aspecto todo lo posible durante el desarrollo del proyecto.\\
 
-Lo primero es que se ha hecho es elegir de la web \textit{Unity Asset Store} animaciones de \textit{samurai} japonés, ya que encajaban perfectamente con el planteamiento y las inspiraciones para realizar el proyecto.
+Lo primero es que se ha hecho es elegir de la web \textit{Unity Asset Store} animaciones de \textit{samurai} japonés, ya que encajaban perfectamente con el planteamiento y las inspiraciones para realizar el proyecto.  
 
- Antes de seguir vamos a definir de forma breve algunos conceptos como el de animación y explicaremos las herramientas con las que se ha realizado este apartado del proyecto. La animación es el proceso de crear la ilusión de movimiento a partir de una secuencia de imágenes estáticas. Se logra mostrando una serie de imágenes en rápida sucesión, cada una ligeramente diferente de la anterior, lo que crea la ilusión de movimiento continuo. Pueden ser dibujos, imágenes generadas por computadora o incluso objetos reales que se mueven cuadro a cuadro. 
-
- La animación \cite{Animacion} tal y como la conocemos hoy día comenzó cuando los animadores de \textbf{Disney}, \textbf{Ollie Johnston} y \textbf{Frank Thomas}, recogieron en su libro \textit{The Illusion of life} los "Doce principios básicos de la animación" \cite{TheIllusionOfLife}. El objetivo de estos principios era intentar crear la ilusión de que los personajes se apegaban a las leyes de la física aunque se abarcaron también temas como el tiempo emocional y atractivo de los personajes. 
-
- \begin{figure}[H]
-    \centering
-    \includegraphics[width=8cm, height=8cm]{pelotaRebotando.png}
-    \caption{Bola roja rebotando desglosada en 6 fotogramas. Extraido de https://es.wikipedia.org/wiki/Archivo:Animexample3edit.png }
-\end{figure}
-
- Aunque inicialmente se pretendía que estos principios se aplicaran principalmente a la animación tradicional o animación dibujada a mano, siguen siendo de gran relevancia en la actualidad, especialmente en el contexto de la animación por ordenador que prevalece hoy en día.
-
-Una vez repasado el concepto de animación, ahora se da paso a cómo se puede trabajar con las animaciones en Unity. Recalcar que ninguna de las animaciones usadas ha sido creada de cero para este proyecto, todas han sido creadas por otros usuarios. Lo que sí se ha hecho ha sido modificar la velocidas o algunos fotogramas de determinadas animaciones. 
+Ninguna de las animaciones usadas ha sido creada de cero para este proyecto, todas han sido creadas por otros usuarios. Lo que sí se ha hecho ha sido modificar la velocidad o algunos fotogramas de determinadas animaciones. 
 
 Para aplicar animaciones en Unity es necesario usar el elemento ''Animator'' \cite{AnimatorUnity} el cual es una herramienta que permite controlar y programar animaciones en un objeto 3D. Funciona mediante la creación de ''animators controllers'', que son conjuntos de reglas y estados que controlan la reproducción de animaciones.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm, height=8cm]{AnimatorControllerExample.png}
-    \caption{Ejemplo de Animator formando un esquema de animator controllers junto a las reglas que los confroman. Imagen extraida de https://docs.unity3d.com/es/530/Manual/class-AnimatorController.html }
+    \caption{Ejemplo de Animator formando un esquema de animator controllers junto a las reglas que los confroman. Imagen extraida de \url{https://docs.unity3d.com/es/530/Manual/class-AnimatorController.html}}
 \end{figure}
 
-Primero hablaremos de las animaciones del personaje principal, dicho personaje es de tipo ''rigged''. Cuando se habla de un modelo rigged en el contexto de elementos 3D, se refiere a un modelo tridimensional que ha sido equipado con un esqueleto virtual, también conocido como rig. El rig es una estructura interna compuesta por huesos, articulaciones y controladores que simula el sistema musculoesquelético de un personaje o modelo.
+Primero hablaremos de las animaciones del personaje principal, dicho personaje es de tipo \textit{rigged}. Cuando se habla de un modelo \textit{rigged} en el contexto de elementos 3D, se refiere a un modelo tridimensional que ha sido equipado con un esqueleto virtual, también conocido como \textit{rig}. El esqueleto es una estructura interna compuesta por huesos, articulaciones y controladores que simula el sistema musculoesquelético de un personaje o modelo.
 
-Para que haya animaciones distintas y concurrentes en distintas partes del cuerpo, se puede lograr mediante la creación de ''mecanim animations'' \cite{MecanimAnimation}. Este proceso implica la creación de varios animators controllers que controlan diferentes partes del modelo, y luego combinarlos para crear una animación completa y coherente. En el caso del personaje principal se decidió separar el modelo el tren superior e inferior del cuerpo. A continuación imagen de cada máscara creada para indicar que músculos del modelos responderán a las animaciones. 
+Se puede lograr que haya animaciones distintas y concurrentes en diferentes partes del cuerpo mediante la creación de ''mecanim animations'' \cite{MecanimAnimation}. Este proceso implica la creación de varios \textit{animators controllers} que controlan diferentes partes del modelo, y luego combinarlos para crear una animación completa y coherente. En el caso del personaje principal se decidió separar el modelo el tren superior e inferior del cuerpo. A continuación imagen de cada máscara creada para indicar qué músculos del modelo responderán a las animaciones. 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=8cm, height=8cm]{UpperBodyMask.jpg}
-    \caption{Animator mask correspondiente a el tren superior del cuerpo del personaje, en verde los músculos que se moverán en cada animación}
+    \caption{Animator mask correspondiente al tren superior del cuerpo del personaje, en verde los músculos que se moverán en cada animación}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=8cm, height=8cm]{LowerBodyMask.jpg}
-    \caption{Animator mask correspondiente a el tren inferior del cuerpo del personaje, en verde los músculos que se moverán en cada animación}
+    \caption{Animator mask correspondiente al tren inferior del cuerpo del personaje, en verde los músculos que se moverán en cada animación}
 \end{figure}
 
-Para poder acceder a cada una de estas máscaras, dentro del Animator hay que crear tantas ''Layers'' o capas como se deseen, en este caso se crearpn 2 layers, una para cada máscara. En cada layer se presenta un diagrama de estados vacío, de forma que se pueden personalizar cada una de las layers al punto que se desee. En el apartado de la implementación se detallarán los diagramas de estados así como la lógica de transición entre ellos.
+Para poder acceder a cada una de estas máscaras, dentro del Animator hay que crear tantas \textit{Layers} o capas como se deseen, en este caso se crearon 2 \textit{layers}, una para cada máscara. En cada layer se presenta un diagrama de estados vacío, de forma que se pueden personalizar cada una de las \textit{layers} al punto que se desee. En el apartado de la implementación se detallarán los diagramas de estados así como la lógica de transición entre ellos.
 
-El movimiento en sí del personaje está creado vía Script y responde a los inputs del jugador a través de teclas o botones de un controlador.
+El movimiento en sí del personaje está creado vía \textit{script} y responde a los inputs del jugador a través de teclas o botones de un controlador. Un \textit{script} en \textit{Unity} es un conjunto de instrucciones escritas en un lenguaje de programación que se utilizan para controlar el comportamiento y la interacción de los objetos en un proyecto de Unity. Los \textit{scripts} permiten definir cómo se mueven, se comportan y responden los objetos en el entorno de juego, así como también gestionar la lógica del juego, la física, la inteligencia artificial y otras funcionalidades.
 
-El personaje principal tiene asociado unos parámetros de Salud y de Daño los cuales se gestionan a través de Scripts según se den las condiciones que los activen o no. Por ejemplo al jugador se le bajará la salud cuando reciba un golpe por parte de un enemigo. Todo esto será posible gracias a los \textit{Colliders} que ofrece Unity, con los cuales se puede gestionar cómo interactúan de forma física los distintos elementos de la escena. Así como se ha dotado al personaje de colliders, a los demás elementos también, ya que sin ellos no se podrá conseguir el comportamiento esperado.
+El personaje principal tiene asociado unos parámetros de Salud y de Daño los cuales se gestionan a través de \textit{scripts} según se den las condiciones que los activen o no. Por ejemplo al jugador se le bajará la salud cuando reciba un golpe por parte de un enemigo. Todo esto será posible gracias a los \textit{Colliders} que ofrece Unity, con los cuales se puede gestionar cómo interactúan de forma física los distintos elementos de la escena. Así como se ha dotado al personaje de colliders, a los demás elementos también, ya que sin ellos no se podrá conseguir el comportamiento esperado.
 
 Por último, el personaje también interactuará con una serie de elementos coleccionables los cuales, al colisionar con ellos afectarán a los parámetros de Salud y daño del jugador, incrementándolos. Además de un elemento coleccionable encargado de que cuando el juagdor lo recoja, en ese momento se de por finalizada la partida.
 
-\subsection{Enemigo}
+\subsubsection{Enemigo}
 
 El enemigo que el personaje debe derrotar durante el juego tiene una serie de animaciones asociadas y un comportamiento guiado por una máquina de estados sencilla, la cual contempla 4 estados distintos que son, patrulla, vigilancia, aproximación al jugador y ataque al jugador. La lógica de transición entre animaciones o comportamientos se trata a través de parámetros ''Trigger''. 
 
@@ -563,23 +550,23 @@ Las animaciones de estos enemigos no son de tipo rigged ya que los modelos no so
 
 \subsubsection{Modo Ultrasónico}
 
-El Modo Ultrasónico consiste en un modo al cual podrá acceder el jugador al mantener pulsada Cierta tecla o botón, y durante el cual, el personaje será capaz de cortar los elementos estáticos del entorno, exceptuando enemicos, paredes y suelo. 
+El Modo Ultrasónico consiste en un modo al cual podrá acceder el jugador al mantener pulsada cierta tecla o botón, y durante el cual, el personaje será capaz de cortar los elementos estáticos del entorno, exceptuando enemigos, paredes y suelo. Se accede a dicho modo manteniendo pulsado el botón derecho del ratón.
 
-Se ha logrado que solo se corte a cierto tipo de elementos del entorno mediante las 'layers' que ofrece Unity, las cuales se pueden crear para indicar a el editor el layer de cada elemento. Hay muchas layers default, pero se ha creado la layer \textit{Enemy} para esto, y se les ha asociado a cada uno de los elementos cortables esta layer. De esta manera, cuando el script con la lógica de corte interactúa con los colliders de elementos en la capa Enemy, corta dichos elementos.
+Se ha logrado que solo se corte a cierto tipo de elementos del entorno mediante las \textit{layers} que ofrece Unity y que se pueden crear para indicar al editor el layer de cada elemento. Si bien Unity proporciona muchas capas ya creadas por defecto, se ha insertado una capa adicional, llamada \textit{Enemy} para esto, y se les ha asociado a cada uno de los elementos cortables esta layer. De esta manera, cuando el \textit{script} con la lógica de corte interactúa con los colliders de elementos en la capa Enemy, corta dichos elementos.
 
 Para limitar la distancia y la orientación de los cortes, se proporciona al jugador durante este modo, de un plano el cual sólo verá cuando esté activado el modo Ultrasónico, y el cual podrá girar para ajustar los cortes como guste el usuario. 
 
-Durante este modo además se han añadido \textbf{efectos especiales} como son el \textit{Postprocesamiento} y la cámara lenta. Para poder conseguir el efecto de postprocesamiento era necesario aplicar el renderizador URP anteriormente mencionado. Los efectos aplicados son los motrados en la imagen siguiente.
+Durante este modo además se han añadido \textbf{efectos especiales} como son el postprocesamiento y la cámara lenta. Para poder conseguir el efecto de postprocesamiento era necesario aplicar el renderizador URP anteriormente mencionado. Los efectos aplicados son los mostrados en la imagen siguiente.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=8cm, height=12cm]{PostProcessingEffectConfig.jpg}
+    \includegraphics[width=8cm, height=8cm]{PostProcessingEffectConfig.jpg}
     \caption{Parámetros de postprocesamiento usados para efectos visuales durante el modo Ultrasónico}
 \end{figure}
 
 Con estos efectos visuales se pretende dar la sensación al jugador de que ha entrado en un modo de comportamiento distinto al normal y de esa forma indicar sin que haya texto que puede ser capaz de realizar la acción de corte.
 
-Para conseguir el efecto de cámara lenta, se realiza mediante Script con la propiedad de Unity \textit{Time} \cite{Time}. Time es una clase incorporada que proporciona información sobre el tiempo transcurrido en el juego. Permite a los desarrolladores acceder y controlar el tiempo en su juego, lo que resulta útil para la animación, la física, las transiciones y otros aspectos relacionados con el tiempo.
+Para conseguir el efecto de cámara lenta, se realiza mediante \textit{script} con la propiedad de Unity \textit{Time} \cite{Time}. Time es una clase incorporada que proporciona información sobre el tiempo transcurrido en el juego. Permite a los desarrolladores acceder y controlar el tiempo en su juego, lo que resulta útil para la animación, la física, las transiciones y otros aspectos relacionados con el tiempo.
 
 Algunas de las propiedades y métodos más utilizados de la clase "Time" son:
  
@@ -588,7 +575,7 @@ Algunas de las propiedades y métodos más utilizados de la clase "Time" son:
    
     \item \textbf{Time.fixedDeltaTime}  Es similar a Time.deltaTime, pero se utiliza en el contexto de las actualizaciones físicas y es constante en cada fotograma.
 
-    \item \textbf{Time.timeScale}  Permite ajustar la velocidad del tiempo en el juego. Un valor de 1.0 significa tiempo normal, mientras que un valor menor ralentiza el tiempo y un valor mayor lo acelera.
+    \item \textbf{Time.timeScale}  Permite ajustar la velocidad del tiempo en el juego. Un valor de 1.0 significa tiempo normal, mientras que un valor menor disminuye de manera uniforme la velocidad de movimiento de todos los objetos animados del videojuego , mutiplicando todas esas velocidades por el factor indicado y un valor mayor lo acelera.
 
     \item \textbf{Time.time} Representa el tiempo transcurrido en segundos desde que se inició el juego. Se utiliza para realizar cálculos basados en el tiempo, como animaciones o temporizadores.
 \end{itemize}
@@ -597,26 +584,27 @@ Por tanto, la propiedad usada para hacer el efecto de cámara lenta es usar \tex
 
 \subsubsection{Generación procedural del mapa y sus elementos}
 
-Como ya se ha mencionado anteriormente en la introducción del proyecto, este videojuego va a tener una particularidad que no suelen tener otros, el cual es la generación procedural de los escenarios y de los elementos que los conforman. Se ha decidido plantear los escenarios a modo de mazmorra con diferentes habitaciones y pasillos que unen unas habitaciones con otras. Las habitaciones, serán rectangulares y los pasillos también.
+Como ya se ha mencionado anteriormente en la introducción del proyecto, este videojuego va a tener una particularidad que no suelen tener otros, que es la generación procedural de los escenarios y de los elementos que los conforman. Se ha decidido plantear los escenarios a modo de mazmorra con diferentes habitaciones y pasillos que unen unas habitaciones con otras. Las habitaciones, serán rectangulares y los pasillos también.
 
-Para poder realizar este apartado del proyecto ha sido necesario buscar por la web maneras de plantear la generación del mapa. Finalmente se encontraron una serie de vídeos a modo de tutorial de un usuario en los que explicaba con detalle un algoritmo en el cual se iba a basar a la hora de realizar la implementación. Estos vídeos se llaman \textbf{Procedural dungeon in Unity 3D Tutorial} del usuario \textbf{Sunny Valley Studio}. El algoritmo se explicará unas secciones más adelante, por ahora sólo trataremos este especto de forma generalizada.
+Para poder realizar este apartado del proyecto ha sido necesario hacer una revisión de la bibliografía sobre las técnicas descritas para la generación del mapa. Finalmente se encontraron una serie de vídeos a modo de tutorial de un usuario en los que explicaba con detalle un algoritmo en el cual se iba a basar a la hora de realizar la implementación \cite{videosGeneracionProce}. El algoritmo se explicará más en detalle en la sección \ref{subsubsec:particionbinaria}, por ahora sólo trataremos este especto de forma generalizada.
 
-Una vez se generan las distintas habitaciones y son unidas por los pasillos, tenemos como resultado una mazmorra la cual siempre que se inicie una partida cambiará. Además los elementos de decoración y los enemigos serán generados en puntos aleatorios dentro de cada habitación. Para calcular esto, como se tienen las esquinas de cada habitación, es posible calcular puntos aleatorios dentro de ellas, procurando que no aparezcan elementos atravesados unos con otros. Esto se ha logrado a los ya mencionados \textit{Colliders}. A la hora de instanciar estos objetos se genera un punto aleatorio dentro de la habitación por la que vaya el algoritmo y se llama a una función llamada \textit{IsValidPosition} la cual realiza lo siguiente: 
+Una vez se generan las distintas habitaciones y son unidas por los pasillos, tenemos como resultado una mazmorra la cual siempre que se inicie una partida cambiará. Además los elementos de decoración y los enemigos serán generados en puntos aleatorios dentro de cada habitación. Para calcular esto, como se tienen las esquinas de cada habitación, es posible calcular puntos aleatorios dentro de ellas, procurando que no aparezcan elementos atravesados unos con otros. Esto se ha logrado usando los ya mencionados \textit{Colliders}. A la hora de instanciar estos objetos se genera un punto aleatorio dentro de la habitación por la que vaya el algoritmo y se llama a una función que realiza lo siguiente: 
 
 \begin{itemize}    
-    \item Comprueba que en la posición dada no hay ningún elemento ya emplazado. Esto se realiza mediante una propiedad de la clase \textit{Physics} la cual es generar dado un punto (el que es candidato) una esfera de radio personalizable (en este caso 1) la cual es un \textit{Collider} y comprueba que con esa esfera no haya ninguna colisión, ya que esto indicará que el espacio está libre.
-    \item Comprobueba además de lo anterior que el elemento esté a una distancia razonable de otros elementos para evitar que haya muchos elementos concentrados en un lugar de la habitación y el resto esté muy vacío. Esto se consigue realizando lo mismo que antes pero con una esfera de mayor tamaño y realizando las mismas comprobaciones.
+    \item Comprueba que en la posición dada no hay ningún elemento ya emplazado. Esto se realiza mediante métodos de la clase \textit{Physics} los cuales permiten generar dado un punto (el que es candidato) una esfera de radio personalizable (en este caso 1) la cual es un \textit{Collider} y comprueba que con esa esfera no haya ninguna colisión, ya que esto indicará que el espacio está libre.
+    \item Comprueba además de lo anterior que el elemento esté a una distancia razonable de otros elementos para evitar que haya muchos elementos concentrados en un lugar de la habitación y el resto esté muy vacío. Esto se consigue realizando lo mismo que antes pero con una esfera de mayor tamaño y realizando las mismas comprobaciones.
 \end{itemize}
 
-Por supuesto, las colisiones con el suelo no se tienen en cuenta ya que si no, la esfera generada simpre devolvería como punto inválido.
+Por supuesto, las colisiones con el suelo no se tienen en cuenta ya que si no, la esfera generada simpre devolvería como punto inválido. El comportamiento se dicho método se puede visualizar gráficamente en la figura \ref{fig:OverlapSphere}
 
 \begin{figure}
     \centering
     \includegraphics[width=8cm, height=8cm]{OverlapSphere.jpg}
     \caption{Gráfico donde se muestra el comportamiento de una OverlapSphere}
+    \label{fig:OverlapSphere}
 \end{figure}
 
-Para los enemigos se ha aplicado exactamente esta misma lógica. Más delante, en la sección de implementación se entrará en detalle de los distintos componentes y la propia implementación de este algoritmo.
+Para los enemigos se ha aplicado exactamente esta misma lógica. En la sección de implementación \ref{subsec:mapaYelementos} se entrará en detalle de los distintos componentes y la propia implementación de este algoritmo.
 
 \subsection{Efectos especiales de partículas}
 
@@ -626,9 +614,9 @@ Los efectos que se han creado en este proyecto han sido tres, efectos de chispas
 
 Para conseguir un mayor efecto visual además, a las chispas se las ha dotado de un comportamiento parecido al de la realidad, ya que cuentan con físicas y rebotan contra elementos del entorno, así como la reducción del tamaño y de la velocidad conforme pasa el tiempo así como el cambio del color de las chispas, para simular el ''ciclo de vida'' de una de ellas. Los demás efectos no cuentan con estas propiedades ya que se ha decidido que no es necesario.
 
-Con el conjunto de estos efectos especiales se busca dar feedback al usuario de forma visual e integrada en el propio entorno del videojuego sin necesidad de utilizar cuadros de texto o indicadores, mejorando la experiencia e inmersión del jugador.
+Con el conjunto de estos efectos especiales se busca dar información de estado como retroalimentación al usuario de forma visual e integrada en el propio entorno del videojuego sin necesidad de utilizar cuadros de texto o indicadores, mejorando la experiencia e inmersión del jugador.
 
-\subsubsection{ToonShading}
+\subsubsection{Sombreado con estulo de dibujos animados (Toonshading)}
 
 Dentro de los videojuegos, además de las mecánicas y diseño de mapas, es muy importante tener un estilo visual o gráfico propio de ese videojuego. Los gráficos de los videojuegos hoy día son algo que se tienen muy en cuenta para poder diferenciar claramente unos de otros. En muchas ocasiones los juegos comparten aspectos mecánicos con otros, pero la gente no los asocia como iguales al tener estilos visuales diferentes. 
 
@@ -637,7 +625,7 @@ Existen varios estilos visuales los cuales son muy populares como el estilo real
 Hay que distinguir entre \textit{Shader}, \textit{Material} y \textit{Textura} para comprender exactamente qué es lo que se ha realizado. De acuerdo con la documentación de Unity:
 
 \begin{itemize}    
-    \item \textbf{Shader} Son Scripts que contienen los cálculos matemáticos y algoritmos para calcular el color de cada pixel renderizado, basándose en el input de iluminación y la configuración del Material, algo clave para poder conseguir el efecto ''Toon''.
+    \item \textbf{Shader} Son trozos de código (funciones y declaraciones) que contienen los que contienen los cálculos matemáticos y algoritmos para calcular el color de cada pixel renderizado, basándose en el input de iluminación y la configuración del Material, algo clave para poder conseguir el efecto ''Toon''.
    
     \item \textbf{Material} Un material es una configuración que se aplica a los objetos 3D para determinar su apariencia visual. Un material define cómo interactúa la luz con la superficie de un objeto y cómo se reflejan, refractan o absorben los diferentes componentes de la luz.
 
@@ -646,11 +634,11 @@ Hay que distinguir entre \textit{Shader}, \textit{Material} y \textit{Textura} p
 
 Para conseguir el efecto deseado, por tanto era necesario actuar sobre los shaders, y para ello además de usar el URP, hay que configurar un \textit{Shader Graph} \cite{ShaderGraph} de Unity. Un Shader Graph en Unity es una herramienta visual que permite crear shaders de manera interactiva y sin necesidad de programación.
 
-El Shader Graph proporciona una interfaz gráfica de nodos, donde los nodos representan diferentes operaciones y efectos visuales, y las conexiones entre ellos definen cómo se combinan y se aplican esos efectos. Al conectar nodos en el Shader Graph, se crea una representación visual del shader que define cómo se procesa la luz y los materiales en un objeto. A continuación ejemplo de shader graph:
+El Shader Graph proporciona una interfaz gráfica de nodos, donde los nodos representan diferentes operaciones y efectos visuales, y las conexiones entre ellos definen cómo se combinan y se aplican esos efectos. Al conectar nodos en el Shader Graph, se crea una representación visual del shader que define cómo se procesa la luz y los materiales en un objeto. A continuación vemos un ejemplo de shader graph:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=10cm, height=8cm]{ejemploShaderGraph.jpg}
+    \includegraphics[width=12cm, height=8cm]{ejemploShaderGraph.jpg}
     \caption{Nodos usados en el shader graph del proyecto}
 \end{figure}
 
@@ -658,7 +646,9 @@ Los nodos son los distintos rectángulos que se pueden observar en la figura ant
 
 \subsection{Bocetos del diseño del proyecto}
 
-En este apartado se mostrarán los distintos bocetos que se generaron acerca del diseño del videojuego y los modelos. Además, hay algunos bocetos de la interfaz de usuario y la navegación entre ellos, la cual está marcada con un número que indica al boceto al que se dirige en el caso de accionar o pulsar ese icono.
+En este apartado se mostrarán los distintos bocetos que se generaron acerca del diseño del videojuego y los modelos. Además, hay algunos bocetos de la interfaz de usuario y la navegación entre ellos, la cual está marcada con un un número (en color rojo) que indica al boceto al que se dirige en el caso de accionar o pulsar ese icono.
+
+Boceto correspondiente al menú principal del videojuego y las posibles posiciones de los botones.
 
 \begin{figure}[H]
     \centering
@@ -666,11 +656,15 @@ En este apartado se mostrarán los distintos bocetos que se generaron acerca del
     \caption{Boceto 1}
 \end{figure}
 
+Boceto de la distribución de los elementos durante una partida.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm, height=8cm]{Bocetoo2.png}
     \caption{Boceto 2}
 \end{figure}
+
+Boceto de una posible página de opciones en caso de que se incluyera.
 
 \begin{figure}[H]
     \centering
@@ -678,11 +672,15 @@ En este apartado se mostrarán los distintos bocetos que se generaron acerca del
     \caption{Boceto 3}
 \end{figure}
 
+Menú de pausa de la partida y las posibles opciones.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm, height=8cm]{Bocetoo4.png}
     \caption{Boceto 4}
 \end{figure}
+
+Boceto de la distribución de los elementos visuales durante el \textit{Modo Ultrasónico}.
 
 \begin{figure}[H]
     \centering
@@ -690,17 +688,23 @@ En este apartado se mostrarán los distintos bocetos que se generaron acerca del
     \caption{Boceto 5}
 \end{figure}
 
+Esquema del comportamiento que tendrá el corte que realizará el jugador a los elementos del entorno.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm, height=8cm]{Bocetoo6.png}
     \caption{Boceto 6}
 \end{figure}
 
+Boceto de enemigo y la interfaz asociada que tendrá.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm, height=8cm]{Bocetoo7.png}
     \caption{Boceto 7}
 \end{figure}
+
+Esquema que muestra que tras eliminar a un enemigo (representado por calaveras) en su lugar aparecerá una mejora y se indica que las mejoras tendrán movimientos verticales y rotatorios sobre sí mismas.
 
 \begin{figure}[H]
     \centering
@@ -710,55 +714,63 @@ En este apartado se mostrarán los distintos bocetos que se generaron acerca del
 
 \subsection{Diagrama de clases}
 
-Para poder realizar este proyecto ha sido necesario la implementación de varias clases las cuales no pertenecen a Unity. Hay una gran cantidad de Scripts en el proyecto (casi 40) pero no todos podrían considerarse clases como tal, ya que algunos solo actúan como scripts. A continuación, se van a dividir por apartados cada clase y se explicara la función de cada uno y posteriormente se expondrá un diagrama de clases donde se podrá visualizar de forma gráfica. Se va a explicar cada script siguiendo más o menos el orden en el que se desarrollaron.
+Para poder realizar este proyecto ha sido necesario la implementación de varias clases las cuales no pertenecen a Unity. Hay una gran cantidad de ficheros de C\# en el proyecto (casi 40) pero no todos podrían considerarse clases como tal, ya que algunos solo actúan como \textit{scripts}. A continuación, se van a dividir por apartados cada clase y se explicara la función de cada uno y posteriormente se expondrá un diagrama de clases donde se podrá visualizar de forma gráfica. Se va a explicar cada \textit{script} siguiendo más o menos el orden en el que se desarrollaron.
 
-Hay que nombrar primero que la gran mayoria de estas clases van a heredar de la clase \textit{MonoBehaviour}, la cual es una clase base que se utiliza para crear scripts que pueden adjuntarse a objetos en la escena de Unity y controlar su comportamiento. Tiene como métodos imprescindibles los métodos:
+Hay que nombrar primero que la gran mayoria de estas clases van a heredar de la clase \textit{MonoBehaviour}, la cual es una clase base que se utiliza para crear \textit{scripts} que pueden adjuntarse a objetos en la escena de Unity y controlar su comportamiento. Tiene como métodos básicos:
 
 \begin{itemize}    
     \item \textbf{Start()} Este método se llama antes de que se actualice el primer fotograma del juego. Se utiliza para inicializar variables y configuraciones adicionales.
    
     \item \textbf{Update()} Este método se llama en cada fotograma del juego. Se utiliza para realizar actualizaciones continuas en el objeto de juego, como movimientos, animaciones o lógica del juego.
 
-    \item \textbf{Awake()}  Este método se llama cuando se instancia el objeto que contiene el script. Se utiliza para inicializar cualquier estado o configuración necesaria antes de que comience el juego.
+    \item \textbf{Awake()}  Este método se llama cuando se instancia el objeto que contiene el \textit{script}. Se utiliza para inicializar cualquier estado o configuración necesaria antes de que comience el juego.
 \end{itemize}
 
 \subsubsection{Cámara y personaje}
 
-Estos Scripts y clases que se explicarán a continuación son aquellos relacionados directamente con el comportamiento del personaje, sus movimientos, acciones y cámara.
+Es muy importante aclarar antes de dar paso a esta sección que en \textit{Unity} se trata a los \textit{scripts} y las clases como iguales y la explicación es la siguiente, porque siguen la estructura y la sintaxis de \textbf{programación orientada a objetos} (POO). En la POO, una clase es un bloque de código que encapsula datos y funciones relacionadas. En Unity, un \textit{script} de C\# define el comportamiento de un objeto o componente en el juego.
 
-\textbf{ThirdPersonCam} es de los ficheros más importates del proyecto, ya que desde él se gestionan gran cantidad de funcionalidades. Desde dicho script se gestiona el movimiento de la cámara del jugador, el cual se realiza mediante los inputs de movimiento de ratón o de Joystick que realiza el usuario. También gestiona la lógica de transición entre modo ''normal'' del jugador y el modo ''Ultrasónico'', además de gestionar el movimiento del plano generado en pantalla para guiar los cortes y la propia gestión de los cortes. Tiene gran cantidad de referencias de los objetos de los que toma propiedades necesarias, por ejemplo para la dirección de la cámara se toman los valores de rotación y posición del objeto del jugador. Además tiene varios atributos de personalización por ejemplo un atributo para asignar un material a los cortes realizados. Este fichero está asignado a un objeto tipo cámara llamado \textit{PlayerCam}.
+Al tratar los \textit{scripts} de C\# como clases, se pueden crear instancias de estos \textit{scripts} para representar objetos individuales en el juego. Cada instancia de la clase (es decir, cada objeto) tiene su propio conjunto de propiedades y métodos que definen su comportamiento y estado.
 
-\textbf{PlayerMovement} como su nombre indica, está encargado de realizar los movimientos del jugador. Tiene gran cantidad de parámetros de ajuste como la fuerza de salto o la velocidad de movimiento, además de parámetros de asignación de teclas y referencias al Animator del personaje, para poder gestionar las animaciones desde él. Este script, va comprobando fotograma a fotograma (método Update()) que input por parte del usuario recibe, y según la tecla pulsada realiza una acción u otra. Algunas de las acciones que realiza es, correr, atacar haciendo hasta un combo de 4 golpes consecutivos y salto. Por supuesto también realiza la lógica de transición de una animación a otra.
+Por ejemplo, si se tiene un \textit{script} llamado ''PlayerController'' en Unity, se puede crear una instancia de esa clase para representar al jugador en el juego. La instancia del \textit{script} (la clase) contendrá variables para almacenar la posición, velocidad, etc., del jugador, y métodos para controlar su movimiento, interacciones con el entorno, etc.
 
-\textbf{ultraModeAttacks} es un script auxiliar para ayudar a gestionar el modo Ultrasónico ya que durante este modo algunas de las funcionalidades del jugador quedan deshabilitadas y para evitar problemas, se creó este Script. En este script se gestiona la cámara lenta y los inputs del usuario para que la animación de corte quede lo más precisa posible.
+Por estas razones, a continuación se tratará  como equivalentes los términos clases y \textit{script}. Además hay que comprender que cada uno de los nombres a continuación corresponden con un fichero de C\# como tal.
 
-\textbf{Ragdoll} este fichero tiene una función muy específica y que solo puede ocurrir una vez durante la partida, la cual es la ''muerte'' del jugador, durante la cual, el personaje adquiere las propiedades de una muñeca de trapo y se desploma siguiendo las físicas implementadas hasta impactar con el suelo. Pues este fichero se encarga de activar las propiedades que gestionan este comportamiento cuando el personaje se queda sin salud. Para ello, de forma recursiva, activa todos los colliders del personaje y se le despoja del componente Animator.
+Estos \textit{scripts} y clases que se explicarán a continuación son aquellos relacionados directamente con el comportamiento del personaje, sus movimientos, acciones y cámara.
 
-\textbf{PlayerAttributes} esta clase es de las más importantes ya que gestiona todos los parámetros del jugador, como son la salud y el daño que éste produce. Recibe la información del script más importante llamado \textit{AttributesController}, del que hablaremos más adelante. Este script gestiona cuando el personaje recoje un coleccionable que potencia su daño o su salud, y también cuando el personaje recibe un golpe por parte de un enemigo. Si la salud llega a 0 establece el modo ''Ragdoll''.
+\textbf{ThirdPersonCam.cs} es de los ficheros más importates del proyecto, ya que desde él se gestionan gran cantidad de funcionalidades. Desde dicho \textit{script} se gestiona el movimiento de la cámara del jugador, el cual se realiza mediante los inputs de movimiento de ratón o de Joystick que realiza el usuario. También gestiona la lógica de transición entre modo ''normal'' del jugador y el modo ''Ultrasónico'', además de gestionar el movimiento del plano generado en pantalla para guiar los cortes y la propia gestión de los cortes. Tiene gran cantidad de referencias de los objetos de los que toma propiedades necesarias, por ejemplo para la dirección de la cámara se toman los valores de rotación y posición del objeto del jugador. Además tiene varios atributos de personalización por ejemplo un atributo para asignar un material a los cortes realizados. Este fichero está asignado a un objeto tipo cámara llamado \textit{PlayerCam}.
 
-\textbf{PowerUpsUI} Script muy sencillo que simplemente se encarga de gestionar el multiplicador del daño en la interfaz de usuario. Este fichero vuelve a leer del script AttributesController.
+\textbf{PlayerMovement.cs} como su nombre indica, está encargado de realizar los movimientos del jugador. Tiene gran cantidad de parámetros de ajuste como la fuerza de salto o la velocidad de movimiento, además de parámetros de asignación de teclas y referencias al Animator del personaje, para poder gestionar las animaciones desde él. Este \textit{script}, va comprobando fotograma a fotograma (método Update()) que input por parte del usuario recibe, y según la tecla pulsada realiza una acción u otra. Algunas de las acciones que realiza es, correr, atacar haciendo hasta una combinación de 4 golpes consecutivos y salto. Por supuesto también realiza la lógica de transición de una animación a otra.
 
-\textbf{HealthBar} este fichero es muy parecido al anterior y se encarga de gestionar la visualización de la barra de vida del usuario. 
+\textbf{ultraModeAttacks.cs} es un \textit{script} auxiliar para ayudar a gestionar el modo Ultrasónico ya que durante este modo algunas de las funcionalidades del jugador quedan deshabilitadas y para evitar problemas, se creó este \textit{script}. En este \textit{script} se gestiona la cámara lenta y los inputs del usuario para que la animación de corte quede lo más precisa posible.
+
+\textbf{Ragdoll.cs} este fichero tiene una función muy específica y que solo se puede ejecutar una vez durante la partida, la cual es la ''muerte'' del jugador, durante la cual, el personaje adquiere las propiedades de una muñeca de trapo y se desploma siguiendo las físicas implementadas hasta impactar con el suelo. Pues este fichero se encarga de activar las propiedades que gestionan este comportamiento cuando el personaje se queda sin salud. Para ello, de forma recursiva se recorren cada uno de los ''músculos'' del personaje en forma de árbol hasta llegar a las hojas o músculos finales y más pequeños, activando a su paso todos los colliders del personaje para recrear de forma realista el desplome al suelo y se le despoja del componente Animator.
+
+\textbf{PlayerAttributes.cs} esta clase es de las más importantes ya que gestiona todos los parámetros del jugador, como son la salud y el daño que éste produce. Recibe la información del \textit{script} más importante llamado \textit{AttributesController}, del que hablaremos más adelante. Este \textit{script} gestiona cuando el personaje recoje un coleccionable que potencia su daño o su salud, y también cuando el personaje recibe un golpe por parte de un enemigo. Si la salud llega a 0 establece el modo ''Ragdoll''.
+
+\textbf{PowerUpsUI.cs} \textit{script} muy sencillo que simplemente se encarga de gestionar el multiplicador del daño en la interfaz de usuario. Este fichero vuelve a leer del \textit{script} \textit{AttributesController}.
+
+\textbf{HealthBar.cs} este fichero es muy parecido al anterior y se encarga de gestionar la visualización de la barra de vida del usuario. 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=13cm, height=12cm]{DiagramaClases1.png}
+    \includegraphics[width=13cm, height=11cm]{DiagramaClases1.png}
     \caption{Diagrama de clases correspondiente al personaje y la cámara}
 \end{figure}
 
 \subsubsection{Lógica del juego}
 
-A continuación se explicarán los scripts encargados de gestionar la lógica de juego, la cual es, los sonidos, los atributos de enemigos y personaje principal, y la puntuación.
+A continuación se explicarán los \textit{scripts} encargados de gestionar la lógica de juego, la cual es, los sonidos, los atributos de enemigos y personaje principal, y la puntuación.
 
-\textbf{AtributesControler} se trata de la clase más importante del proyecto, a pesar de ser más sencilla que otras, ya que casi todas las clases necesitan consultar los atributos de esta clase para realizar acciones determinadas. En esta clase se lleva el seguimiento de parámetros como atributos del jugador y de los enemigos, los multiplicadores de daño, realiza la gestión de la interfaz de usuario, haciendo aparecer o desaparecer pantallas de victoria o derrota y por último, la modificación de parámetros como curación del jugador o aumento del daño producido del mismo. Este fichero esta adjunto a un objeto invisible dentro de la escena, de esta manera es posible que la alteración de los distintos parámetros que posee se realice con el transcurso de la partida. Esta clase además está dotada de varios métodos públicos ya que los demás scripts que necesiten modificar un parámetro, puedan acceder fácilmente a la clase.
+\textbf{AtributesControler.cs} se trata de la clase más importante del proyecto, a pesar de ser más sencilla que otras, ya que casi todas las clases necesitan consultar los atributos de esta clase para realizar acciones determinadas. En esta clase se lleva el seguimiento de parámetros como atributos del jugador y de los enemigos, los multiplicadores de daño, realiza la gestión de la interfaz de usuario, haciendo aparecer o desaparecer pantallas de victoria o derrota y por último, la modificación de parámetros como curación del jugador o aumento del daño producido del mismo. Este fichero esta adjunto a un objeto invisible dentro de la escena, de esta manera es posible que la alteración de los distintos parámetros que posee se realice con el transcurso de la partida. Esta clase además está dotada de varios métodos públicos ya que los demás \textit{scripts} que necesiten modificar un parámetro, puedan acceder fácilmente a la clase.
 
-\textbf{AudioManager} al igual que la clase anterior, existe también en el proyecto un fichero para gestionar el sonido del videojuego. Este fichero tiene un único atributo el cual es una lista de sonidos. Este fichero también está adjunto a un objeto vacío de la escena. Dicha lista de sonidos ha sido creada a través de la interfaz de Unity a modo de ir añadiendolos uno a uno seleccionando las pistas .mp3 de audio y un nombre. El tipo del array es \textit{Sound} y es una clase creada para tener un tipo con una serie de características que Unity no trae por defecto para los sonidos. El funcionamiento de este fichero es que cuando se invoca a el método \textit{Play(nombre)} busca en la lista de sonidos uno que tenga el nombre proporcionado y crea un componente \textit{AudioSource} el cual emite el sonido que se le adjunte. Este sonido además es 2D por lo que la distancia del personaje no afecta a el volumen del mismo.
+\textbf{AudioManager.cs} al igual que la clase anterior, existe también en el proyecto un fichero para gestionar el sonido del videojuego. Este fichero tiene un único atributo el cual es una lista de sonidos. Este fichero también está adjunto a un objeto vacío de la escena. Dicha lista de sonidos ha sido creada a través de la interfaz de Unity a modo de ir añadiendolos uno a uno seleccionando las pistas .mp3 de audio y un nombre. El tipo del array es \textit{Sound} y es una clase creada para tener un tipo con una serie de características que Unity no trae por defecto para los sonidos. El funcionamiento de este fichero es que cuando se invoca a el método \textit{Play(nombre)} busca en la lista de sonidos uno que tenga el nombre proporcionado y crea un componente \textit{AudioSource} el cual emite el sonido que se le adjunte. Este sonido además es 2D por lo que la distancia del personaje no afecta a el volumen del mismo.
 
-\textbf{Sound} es una clase muy sencilla la cual solo contiene atributos como el nombre del sonido, el volument y el pitch, además estos últimos tienen un rango de valores establecido por lo que no será posible asignarles un valor fuera de ese rango (de 0 a 1 por ejemplo).
+\textbf{Sound.cs} es una clase muy sencilla la cual solo contiene atributos como el nombre del sonido, el volument y el pitch, además estos últimos tienen un rango de valores establecido por lo que no será posible asignarles un valor fuera de ese rango (de 0 a 1 por ejemplo).
 
-\textbf{PlayerRespawn} este fichero solo realiza la acción de hacer aparecer el objeto del jugador en el punto que se le pase al método \textit{SpawnPlayer}.
+\textbf{PlayerRespawn.cs} este fichero solo realiza la acción de hacer aparecer el objeto del jugador en el punto que se le pase al método \textit{SpawnPlayer}.
 
-\textbf{ScoreManager} este script realiza la tarea de actualizar visualmente la puntuación del jugador y muestra también el récord actual. Dichos datos son consultados, una vez más, al \textit{AttributesControler}.
+\textbf{ScoreManager.cs} este \textit{script} realiza la tarea de actualizar visualmente la puntuación del jugador y muestra también el récord actual. Dichos datos son consultados, una vez más, al \textit{AttributesControler}.
 
 \begin{figure}[H]
     \centering
@@ -770,11 +782,11 @@ A continuación se explicarán los scripts encargados de gestionar la lógica de
 
 Los siguientes ficheros van a ser los encargados de gestionar los objetos coleccionables del videojuego.
 
-\textbf{HealPowerUp} realiza la gestión de el coleccionable que cura la salud del personaje principal al recogerlo del escenario. Este método se encarga de llamar al controlador de atributos y realiza la acción de sumar en 20 puntos a la vida que tiene el jugador en ese momento. Para ello comprueba que el objeto que colisiona con el es el tag jugador. Además, instancia un efecto especial de recogida el cual da la sensacion de que el jugador absorbe dicho potenciador.
+\textbf{HealPowerUp.cs} realiza la gestión de el coleccionable que cura la salud del personaje principal al recogerlo del escenario. Este método se encarga de llamar al controlador de atributos y realiza la acción de sumar en 20 puntos a la vida que tiene el jugador en ese momento. Para ello comprueba que el objeto que colisiona con el es el tag jugador. Además, instancia un efecto especial de recogida el cual da la sensacion de que el jugador absorbe dicho potenciador.
 
-\textbf{DmgPowerUp} hace lo mismo que el script anterior, pero aumentando el multiplicador de daño del jugador, haciendo que éste inflija más daño a los enemigos con cada ataque. Para conseguir esto se vuelve a llamar al controlador de atributos y también cuenta con efectos especiales de recogida.
+\textbf{DmgPowerUp.cs} hace lo mismo que el \textit{script} anterior, pero aumentando el multiplicador de daño del jugador, haciendo que éste inflija más daño a los enemigos con cada ataque. Para conseguir esto se vuelve a llamar al controlador de atributos y también cuenta con efectos especiales de recogida.
 
-\textbf{FinishGame} es algo distinto a los demás, ya que cuando es recogido, debe entrar en modo ''partida finalizada''el cual implica, llamar al gestor de sonidos y quitar toda la música y poner la pista de música de victoria. Las acciones de fin del juego se realizan al llamar a la función \textit{EndGame()} del controlador de atributos. 
+\textbf{FinishGame.cs} es algo distinto a los demás, ya que cuando es recogido, debe entrar en modo ''partida finalizada''el cual implica, llamar al gestor de sonidos y quitar toda la música y poner la pista de música de victoria. Las acciones de fin del juego se realizan al llamar a la función \textit{EndGame()} del controlador de atributos. 
 
 \begin{figure}[H]
     \centering
@@ -784,15 +796,15 @@ Los siguientes ficheros van a ser los encargados de gestionar los objetos colecc
 
 \subsubsection{Menús}
 
-Los siguientes scripts son los que gestionan la interacción del usuario con la interfaz gráfica y menús del videojuego.
+Los siguientes \textit{scripts} son los que gestionan la interacción del usuario con la interfaz gráfica y menús del videojuego.
 
-\textbf{MainMenu} es el encargado de gestionar los botones del menú principal del juego, el que se muestra al iniciarlo. Cuenta con una funcion para cada acción. Al clickar en el botón de PLAY se carga la escena y de esa forma, comienza el juego. La otra cierra la aplicación ya que se corresponde con el botón de QUIT.
+\textbf{MainMenu.cs} es el encargado de gestionar los botones del menú principal del juego, el que se muestra al iniciarlo. Cuenta con una funcion para cada acción. Al clickar en el botón de PLAY se carga la escena y de esa forma, comienza el juego. La otra cierra la aplicación ya que se corresponde con el botón de QUIT.
 
-\textbf{PauseMenu} realiza varias acciones cuando el usuario entra al menú de pausa. Al accionar la tecla ESC se entra en este menú, se hace visible el cursor y se para por completo el tiempo del juego. Si se pulsa en el boton RESUME se quita la vista del menu y se vuelve al tiempo normal. Si se pulsa el boton QUIT, se cierra la aplicación.
+\textbf{PauseMenu.cs} realiza varias acciones cuando el usuario entra al menú de pausa. Al accionar la tecla ESC se entra en este menú, se hace visible el cursor y se para por completo el tiempo del juego. Si se pulsa en el boton RESUME se quita la vista del menu y se vuelve al tiempo normal. Si se pulsa el boton QUIT, se cierra la aplicación.
 
-\textbf{GameOverScreen} aparece automáticamente cuando el jugador muere, ya que es llamado por el gestor de atributos. Cuenta con 2 botones y 2 funciones. El boton RESTART al ser accionado, recarga la escena actual dando lugar a una partida nueva. El otro botón devuelve al jugador al menú principal. 
+\textbf{GameOverScreen.cs} aparece automáticamente cuando el jugador muere, ya que es llamado por el gestor de atributos. Cuenta con 2 botones y 2 funciones. El boton RESTART al ser accionado, recarga la escena actual dando lugar a una partida nueva. El otro botón devuelve al jugador al menú principal. 
 
-\textbf{FinishGameMenu} es muy parecido al script anterior, ya que también aparece automática por orden del controlador de atributos. Éste menú cuenta con un solo botón de salida al menú principal. Como se puede ver, son scripts muy sencillos, sin embargo se ha decidido separar en varios para mejor organización y modulariación.
+\textbf{FinishGameMenu.cs} es muy parecido al \textit{script} anterior, ya que también aparece automática por orden del controlador de atributos. Éste menú cuenta con un solo botón de salida al menú principal. Como se puede ver, son \textit{scripts} muy sencillos, sin embargo se ha decidido separar en varios para mejor organización y modulariación.
 
 \begin{figure}[H]
     \centering
@@ -804,9 +816,9 @@ Los siguientes scripts son los que gestionan la interacción del usuario con la 
 
 Ficheros de control de los enemigos, así como el control de la vida y barra de vida de los mismos.
 
-\textbf{MeleeEnemy} realiza varias acciones. Lo primero que hace es establecer los atributos del enemigo antes del primer frame de juego, dichos atributos los obtiene de la clase \textit{AttributesControler}. Durante el juego, si el enemigo tiene más de 0 de salud, entrará en la función \textit{enemyBehaviour} la cual definirá el comportamiento del enemigo. Se trata de una máquina de estados la cual va cambiando la rutina del enemigo según el tiempo que se haya establecido con un cronómetro. Si está a mas de 7 unidades de distancia del jugador, el enemigo podrá entrar de forma aleatoria en uno de los 2 estados pasivos, o bien mantener la posición a modo de vigilancia, o bien andar para patrullar. Sin embargo, si el jugador se encuentra a menos de 7 unidades de distancia, entra en modo combate, el cual tiene otros 2 estados. El primero de ellos es correr en direccion al jugador, este estado no para o bien hasta que se aleje el jugador o bien llegue a menos de 1 unidad de distancia al jugador. Si ocurre lo segundo, el estado cambiará a ataque, realizando la animación de ataque al jugador. Si la vida del enemigo llega a menos de 0, morirá y realizará la animación correspondiente. Al morir, se generará un número aleatorio comprendido entre 0 y 1, si el valor está en el rango 0 a 5 incluido, aparecerá en el lugar del enemigo eliminado un potenciador  de daño. Si sale un valor mayor de 0.5 saldrá una curación. De esta manera se ha dotado de un comportamiento autónomo a los enemigos y se ha logrado un sistema de recompensas para el jugador en forma de obtención de puntos y potenciadores al eliminar enemigos, motivándolo a seguir adelante.
+\textbf{MeleeEnemy.cs} realiza varias acciones. Lo primero que hace es establecer los atributos del enemigo antes del primer frame de juego, dichos atributos los obtiene de la clase \textit{AttributesControler}. Durante el juego, si el enemigo tiene más de 0 de salud, entrará en la función \textit{enemyBehaviour} la cual definirá el comportamiento del enemigo. Se trata de una máquina de estados la cual va cambiando la rutina del enemigo según el tiempo que se haya establecido con un cronómetro. Si está a mas de 7 unidades de distancia del jugador, el enemigo podrá entrar de forma aleatoria en uno de los 2 estados pasivos, o bien mantener la posición a modo de vigilancia, o bien andar para patrullar. Sin embargo, si el jugador se encuentra a menos de 7 unidades de distancia, entra en modo combate, el cual tiene otros 2 estados. El primero de ellos es correr en direccion al jugador, este estado no para o bien hasta que se aleje el jugador o bien llegue a menos de 1 unidad de distancia al jugador. Si ocurre lo segundo, el estado cambiará a ataque, realizando la animación de ataque al jugador. Si la vida del enemigo llega a menos de 0, morirá y realizará la animación correspondiente. Al morir, se generará un número aleatorio comprendido entre 0 y 1, si el valor está en el rango 0 a 5 incluido, aparecerá en el lugar del enemigo eliminado un potenciador  de daño. Si sale un valor mayor de 0.5 saldrá una curación. De esta manera se ha dotado de un comportamiento autónomo a los enemigos y se ha logrado un sistema de recompensas para el jugador en forma de obtención de puntos y potenciadores al eliminar enemigos, motivándolo a seguir adelante.
 
-\textbf{Billboard} hace que un objeto siempre mire hacia la cámara . El objeto tiene una referencia a la cámara principal y a su transformación. En el método \textit{Start()}, se obtiene la referencia a la cámara principal y se guarda su transformación, que tiene parámetros de posición y de rotación. Luego, en el método \textit{LateUpdate()}, se actualiza la rotación del objeto para que siempre esté orientado hacia la dirección de la cámara principal. De esta manera conseguimos que la barra de vida situada encima de los enemigos, siempre sea visible y el jugador pueda ver fácilmente la vida restante de sus oponentes.
+\textbf{Billboard.cs} hace que un objeto siempre mire hacia la cámara . El objeto tiene una referencia a la cámara principal y a su transformación. En el método \textit{Start()}, se obtiene la referencia a la cámara principal y se guarda su transformación, que tiene parámetros de posición y de rotación. Luego, en el método \textit{LateUpdate()}, se actualiza la rotación del objeto para que siempre esté orientado hacia la dirección de la cámara principal. De esta manera conseguimos que la barra de vida situada encima de los enemigos, siempre sea visible y el jugador pueda ver fácilmente la vida restante de sus oponentes.
 
 \begin{figure}[H]
     \centering
@@ -816,27 +828,27 @@ Ficheros de control de los enemigos, así como el control de la vida y barra de 
 
 \subsubsection{Mapa}
 
-En esta última sección se explicará sin entrar en demasiado detalle los scripts realizados para la generación procedural del mapa. En el apartado de implementación se explicará con más detenimiento.
+En esta última sección se explicará sin entrar en demasiado detalle los \textit{scripts} realizados para la generación procedural del mapa. En el apartado de implementación se explicará con más detenimiento.
 
-\textbf{DungeonCreator} es el script principal de lo que corresponde a la generación del mapa o mazmorra ya que es el script que gestiona todos los parámetros de creación de la mazmorra y la que instancia todas las Mallas y objetos que la conforman. Es el único script que va atado a un objeto de la escena, que es invisible, y además es el único método que hereda de la clase \textit{MonoBehaviour}. En este fichero se gestiona también la lógica ya comentada de comprobación cuando se va a instanciar a un objeto, estar seguros de que no va a instanciarse dentro de otro objeto o muy cerca.
+\textbf{DungeonCreator.cs} es el \textit{script} principal de lo que corresponde a la generación del mapa o mazmorra ya que es el \textit{script} que gestiona todos los parámetros de creación de la mazmorra y la que instancia todas las Mallas y objetos que la conforman. Es el único \textit{script} que va atado a un objeto de la escena, que es invisible, y además es el único método que hereda de la clase \textit{MonoBehaviour}. En este fichero se gestiona también la lógica ya comentada de comprobación cuando se va a instanciar a un objeto, estar seguros de que no va a instanciarse dentro de otro objeto o muy cerca.
 
-\textbf{DungeonGenerator} es un fichero sencillo que es llamado por el anterior para comenzar a realizar el algoritmo de Partición binaria al llamar a su método \textit{CalculateDungeon} el cual devuelve una lista de nodos correspondientes a las habitaciones y a los pasillos que las unen. Todo el proceso del algoritmo se ha dividido en el resto de ficheros.
+\textbf{DungeonGenerator.cs} es un fichero sencillo que es llamado por el anterior para comenzar a realizar el algoritmo de Partición binaria al llamar a su método \textit{CalculateDungeon} el cual devuelve una lista de nodos correspondientes a las habitaciones y a los pasillos que las unen. Todo el proceso del algoritmo se ha dividido en el resto de ficheros.
 
-\textbf{BinarySpacePartitioner}, la primera clase que es llamada en el método de crear los nodos de la mamorra. Se toman los parámetros de ancho y largo de la mazmorra y el número de iteraciones, y establece un nodo central con dichos parámetros, para que a raíz de él se puedan ir haciendo las divisiones del espacio y creando nodos hijos.
+\textbf{BinarySpacePartitioner.cs}, la primera clase que es llamada en el método de crear los nodos de la mamorra. Se toman los parámetros de ancho y largo de la mazmorra y el número de iteraciones, y establece un nodo central con dichos parámetros, para que a raíz de él se puedan ir haciendo las divisiones del espacio y creando nodos hijos.
 
-\textbf{StructureHelper}. Una vez obtenida la lista de nodos se llama a StructureHelper para poder obtener los nodos ''hoja'' de la lista obtenida, los cuales corresponden con los posibles nodos de las habitaciones. Además dispone de métodos que calculan las esquinas y el punto medio del nodo dado.
+\textbf{StructureHelper.cs}. Una vez obtenida la lista de nodos se llama a StructureHelper para poder obtener los nodos ''hoja'' de la lista obtenida, los cuales corresponden con los posibles nodos de las habitaciones. Además dispone de métodos que calculan las esquinas y el punto medio del nodo dado.
 
-\textbf{Node} es una clase creada para poder recrear lo que es un Nodo de un árbol, ya que en Unity no existe dicha clase por defecto. Tiene gran cantidad de parámetros incluyendo referencia al nodo padre, profundidad del nodo e información del mismo, como las coordenadas. Además cuenta con métodos para añadir los nodos hijos a al nodo padre que represente en ese momento. 
+\textbf{Node.cs} es una clase creada para poder recrear lo que es un Nodo de un árbol, ya que en Unity no existe dicha clase por defecto. Tiene gran cantidad de parámetros incluyendo referencia al nodo padre, profundidad del nodo e información del mismo, como las coordenadas. Además cuenta con métodos para añadir los nodos hijos a al nodo padre que represente en ese momento. 
 
-\textbf{RoomNode} clase sencilla que hereda de \textit{Node} y cuenta solamente con un constructor y atributos como el largo y ancho de una habitación, ya que esta clase se ha creado para representar ese tipo de nodos. En el constructor se establecen atributos como el nodo padre, las esquinas de dicha habitación y la profundidad del nodo.
+\textbf{RoomNode.cs} clase sencilla que hereda de \textit{Node} y cuenta solamente con un constructor y atributos como el largo y ancho de una habitación, ya que esta clase se ha creado para representar ese tipo de nodos. En el constructor se establecen atributos como el nodo padre, las esquinas de dicha habitación y la profundidad del nodo.
 
-\textbf{RoomGenerator} es la clase encargada de crear los objetos \textit{RoomNode} y devolverlos, cada objeto de ese tipo se crea sí y solo sí, dado el array de espacios libres dados, en cada espacio dado cabe una habitación. Si se da este caso se crea el nodo de habitación y se añade a la lista que se va a devolver.
+\textbf{RoomGenerator.cs} es la clase encargada de crear los objetos \textit{RoomNode} y devolverlos, cada objeto de ese tipo se crea sí y solo sí, dado el array de espacios libres dados, en cada espacio dado cabe una habitación. Si se da este caso se crea el nodo de habitación y se añade a la lista que se va a devolver.
 
-\textbf{CorridorNode}. Al igual que los nodos de habitación, los nodos de los pasillos también heredan de la clase Node. Cuentan con unos parámetros algo distintos a las habitaciones además de muchos métodos para obtener la relación en el espacio de las habitaciones contiguas, es decir, si una habitación está a la derecha, izquierda, arriba o abajo de otra, y según esa información se puede crear el nodo de pasillo o no.
+\textbf{CorridorNode.cs}. Al igual que los nodos de habitación, los nodos de los pasillos también heredan de la clase Node. Cuentan con unos parámetros algo distintos a las habitaciones además de muchos métodos para obtener la relación en el espacio de las habitaciones contiguas, es decir, si una habitación está a la derecha, izquierda, arriba o abajo de otra, y según esa información se puede crear el nodo de pasillo o no.
 
-\textbf{CorridorsGenerator} es muy parecida a \textit{roomGenerator} ya que su única funcion es crear los nodos de pasillo uno a uno y añadirlos al array que se devolverá finalmente tras ese proceso.
+\textbf{CorridorsGenerator.cs} es muy parecida a \textit{roomGenerator} ya que su única funcion es crear los nodos de pasillo uno a uno y añadirlos al array que se devolverá finalmente tras ese proceso.
 
-\textbf{line} define una clase que representa una línea en un espacio bidimensional. La línea tiene una orientación y coordenadas asociadas y un ENUM que define dos posibles orientaciones de la línea, vertical u horizontal. Esta línea es aquella que divide los espacios en 2 en el algoritmo de partición binaria. Es su único pero muy importante uso.
+\textbf{line.cs} define una clase que representa una línea en un espacio bidimensional. La línea tiene una orientación y coordenadas asociadas y un ENUM que define dos posibles orientaciones de la línea, vertical u horizontal. Esta línea es aquella que divide los espacios en 2 en el algoritmo de partición binaria. Es su único pero muy importante uso.
 
 \begin{figure}[H]
     \centering
@@ -889,7 +901,9 @@ El algoritmo de la Cadena Monótona de Andrew tiene una complejidad de $O(n \log
 
 Volviendo a el punto en el que usamos el método \textit{Slice}, simplemente queda crear los \textit{GameObjects} a partir de las mallas superior e inferior obtenidas previamente, como se ha explicado, y se le agregan una serie de componentes para que tengan las propiedades necesarias para ser cortados de forma recursiva, les afecte la física y se autodestruyan pasados 2 segundos desde el corte, para mejorar el rendimiento del juego. Y con esto finaliza el proceso de corte, pasamos a continuación con el algoritmo de generación procedural del mapa.
 
-\subsubsection{Algoritmo de partición binaria del espacio}
+
+\subsubsection{Algoritmo de partición binaria del espacio} 
+\label{subsubsec:particionbinaria}
 
 \textit{Binary space partitioning} o \textit{Partición Binaria del Espacio} (BSP) \cite{BSP}, es una algoritmo utilizado para dividir recursivamente un espacio dado en otros 2 espacios. Esta subdivisión da lugar a representación mediante estructuras de datos de tipo árbol binario.
 
@@ -941,24 +955,24 @@ Como se puede ver en la imagen, cuando hay dos posibles habitaciones para realiz
 
 En este apartado se comentará la implementación  de las distintas funcionalidades del videojuego. Se mostrarán extractos de código de ciertos métodos si con ello ayuda a entender el método explicado.
 
-\subsection{Ciclo de vida de un Script en Unity}
+\subsection{Ciclo de vida de un \textit{script} en Unity}
 
-Para poder entender el funcionamiento de \textit{Unity}, es necesario entender primeramente como funcionan los Scripts dentro de Unity.
+Para poder entender el funcionamiento de \textit{Unity}, es necesario entender primeramente como funcionan los \textit{scripts} dentro de Unity.
 
-Dentro de estos Scripts, como ya se ha mencionado en otras secciones de la memoria, las funciones \textbf{Start()} y \textbf{Update()} son clave dentro del ciclo de vida de estos, tanto que al crear un script nuevo simpre viene con ambas funciones escritas. \textbf{Start()} es llamada antes de la actualización del primer frame, pero sí y solo sí el objeto al que esté asociado dicho script esté activado. El método \textbf{Update()} se llama una vez por cada fotograma.
+Dentro de estos \textit{scripts}, como ya se ha mencionado en otras secciones de la memoria, las funciones \textbf{Start()} y \textbf{Update()} son clave dentro del ciclo de vida de estos, tanto que al crear un \textit{script} nuevo simpre viene con ambas funciones escritas. \textbf{Start()} es llamada antes de la actualización del primer frame, pero sí y solo sí el objeto al que esté asociado dicho \textit{script} esté activado. El método \textbf{Update()} se llama una vez por cada fotograma.
 
-El ciclo de vida de un Script se divide en doce etapas las cuales son: etapa de editor, inicialización, etapa de actualización de las físicas, eventos de entrada (inputs), lógica del juego, renderizado de la escena, renderizado \textit{gizmo}, la renderización de la interfaz de usuario, la etapa de finalización del frame, pausa, activación/desactivación y etapa de cierre. 
+El ciclo de vida de un \textit{script} se divide en doce etapas las cuales son: etapa de editor, inicialización, etapa de actualización de las físicas, eventos de entrada (inputs), lógica del juego, renderizado de la escena, renderizado \textit{gizmo}, la renderización de la interfaz de usuario, la etapa de finalización del frame, pausa, activación/desactivación y etapa de cierre. 
 
-Los primeros métodos o funciones que son llamados son en el porpio editor de la herramienta, normalmente se llama a \textbf{Reset()} la cual es llamada para inicializar las propiedades del Script cuando se adjunta por primera vez a un objeto.
+Los primeros métodos o funciones que son llamados son en el porpio editor de la herramienta, normalmente se llama a \textbf{Reset()} la cual es llamada para inicializar las propiedades del \textit{script} cuando se adjunta por primera vez a un objeto.
 
-Después de eso se invocan a las funciones de inicialización, las cuales son llamadas una única vez por cada Script. Durante la anteriormente mencionada etapa de inicialización de las físicas, las funciones se pueden llamar más de una vez por cada fotograma si el intervalo de tiempo fijado es aún menor que el tiempo real del juego. 
+Después de eso se invocan a las funciones de inicialización, las cuales son llamadas una única vez por cada \textit{script}. Durante la anteriormente mencionada etapa de inicialización de las físicas, las funciones se pueden llamar más de una vez por cada fotograma si el intervalo de tiempo fijado es aún menor que el tiempo real del juego. 
 
-A continuación se siguen ejecutando el resto de etapas mencionadas como la entrada de acciones por parte del jugador y posteriormente la lógica del juego, que conlleva las animaciones. Finalmente se pasa a todas las etapas de renderización, pausa y finalización de la vida del script.
+A continuación se siguen ejecutando el resto de etapas mencionadas como la entrada de acciones por parte del jugador y posteriormente la lógica del juego, que conlleva las animaciones. Finalmente se pasa a todas las etapas de renderización, pausa y finalización de la vida del \textit{script}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=8cm, height=10cm]{CicloDeVidaScript.png}
-    \caption{Ciclo de vida de un Script en Unity, extraído de \url{Uhttps://docs.unity3d.com/Manual/ExecutionOrder.htmlRL}}
+    \caption{Ciclo de vida de un \textit{script} en Unity, extraído de \url{Uhttps://docs.unity3d.com/Manual/ExecutionOrder.htmlRL}}
 \end{figure}
 
 \subsection{Cámara}
@@ -1024,7 +1038,7 @@ Ahora se explicará la otra cámara que se utiliza en el videojuego, la \textit{
     \caption{Ejemplo del resultado de la cámara Virtual usada}
 \end{figure}
 
-Por último, la tansición entre una cámara y otra se hace en el script \textit{ThirPersonCam.cs} donde se obtiene por atributo público ambas cámaras con tipo \textit{GameObject} and dicho tipo tiene un método para habilitar o desabilitar el objeto que es el método \textit{SetActive(bool)}. Se activa o desactiva una cámara u otra si el jugador entra en modo ultra o no, lo cual se comprueba fotograma a fotograma en la función \textit{Update()} del script. Gracias a \textit{Cinemachine} la implementación de la cámara fue bastante sencilla.
+Por último, la tansición entre una cámara y otra se hace en el \textit{script} \textit{ThirPersonCam.cs} donde se obtiene por atributo público ambas cámaras con tipo \textit{GameObject} and dicho tipo tiene un método para habilitar o desabilitar el objeto que es el método \textit{SetActive(bool)}. Se activa o desactiva una cámara u otra si el jugador entra en modo ultra o no, lo cual se comprueba fotograma a fotograma en la función \textit{Update()} del \textit{script}. Gracias a \textit{Cinemachine} la implementación de la cámara fue bastante sencilla.
 
 \subsection{Personaje principal, movimiento y animación} 
 
@@ -1038,17 +1052,17 @@ Una ve preparada la cámara es momento de enfocarnos en el personaje principal. 
 
 Lo bueno de que esté así organizado es que es más fácil acoplar ciertos elementos a alguna parte específica del cuerpo del jugador. En el caso del personaje de este videojuego, se ha hecho objeto hijo de la mano derecha a el modelo 3D de la katana que portará, así como los adornos que tiene el modelo. Al ser hijos de un componente tan específico como es la mano, va a seguir a la perfección los movimientos de ésta y va a quedar muy bien a ojos del jugador.
 
-Una vez establecido el modelo del jugador podemos empezar a explicar cómo se le ha dotado de un set de movimientos al mismo. Para conseguir que el modelo se mueva por el escenario ha sido necesario dotar de ciertos componentes a el personaje, los componentes han sido \textit{Rigidbody} y \textit{Colliders}. El componente \textit{Rigidbody} sirve para dotar de físicas a el objeto que está adjunto, algo que es clave para hacer el movimiento. Los scripts que realizan el movimiento del jugador son \textit{PlayerMovement.cs} y \textit{ThirdPersonCam.cs}. 
+Una vez establecido el modelo del jugador podemos empezar a explicar cómo se le ha dotado de un set de movimientos al mismo. Para conseguir que el modelo se mueva por el escenario ha sido necesario dotar de ciertos componentes a el personaje, los componentes han sido \textit{Rigidbody} y \textit{Colliders}. El componente \textit{Rigidbody} sirve para dotar de físicas a el objeto que está adjunto, algo que es clave para hacer el movimiento. Los \textit{scripts} que realizan el movimiento del jugador son \textit{PlayerMovement.cs} y \textit{ThirdPersonCam.cs}. 
 
 En \textit{PlayerMovement} se han creado una serie de atributos públicos para poder ser modificados desde el editor, algo muy útil porque permite que durante el tiempo de ejecución se pueden ir alterando para poder personaliar y perfeccionar al máximo la experiencia de juego. Los atributos que se han creado son (ver figura):
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=8cm, height=6cm]{PlayerMovementAtributes.jpg}
-    \caption{Atributos del Script PlayerMovement}
+    \caption{Atributos del \textit{script} PlayerMovement}
 \end{figure}
 
-Para el movimiento del personaje, dentro del script se ha definido un método llamado \textit{MovePlayer()} el cual es llamado en la función \textit{FixedUpdate()} que a diferencia de \textit{Update} presenta intervalos regulares entre fotograma y fotograma. Dentro de ese método se calcula la dirección de movimiento, tomando los vectores de dirección X y Z del objeto y se multiplican por el valor del inpur horizontal y vertical, y finalmente se suman dichos vectores y se obtiene un vector de dirección. Posteriormente se comprueba si el personaje está en el suelo, es decir que no está en el aire. Para ello se crea un \textit{Raycast} que es un rayo invisible finito hacia una dirección, el cual devuelve verdadero o falso si ha entrado en contacto con algún elemento con el \textit{layer} ''whatIsGround'' asociado al objeto suelo. De esta forma sabemos si el personaje está \textit{grounded} o no.
+Para el movimiento del personaje, dentro del \textit{script} se ha definido un método llamado \textit{MovePlayer()} el cual es llamado en la función \textit{FixedUpdate()} que a diferencia de \textit{Update} presenta intervalos regulares entre fotograma y fotograma. Dentro de ese método se calcula la dirección de movimiento, tomando los vectores de dirección X y Z del objeto y se multiplican por el valor del inpur horizontal y vertical, y finalmente se suman dichos vectores y se obtiene un vector de dirección. Posteriormente se comprueba si el personaje está en el suelo, es decir que no está en el aire. Para ello se crea un \textit{Raycast} que es un rayo invisible finito hacia una dirección, el cual devuelve verdadero o falso si ha entrado en contacto con algún elemento con el \textit{layer} ''whatIsGround'' asociado al objeto suelo. De esta forma sabemos si el personaje está \textit{grounded} o no.
 
 Si está en el suelo, se aplica una fuerza al objeto del personaje, en la dirección calculada y multiplicada por el valor del atributo velocidad de movimiento. Si está en el aire se aplica la misma fuerza pero además multiplicada por el multiplicador en el aire. A continuación el código correspondiente a esta función. 
 
@@ -1071,7 +1085,7 @@ Si está en el suelo, se aplica una fuerza al objeto del personaje, en la direcc
     }
     \end{lstlisting}
 
-    Además del movimiento en sí, hay que hacer que el personaje mire hacia donde se está dirigiendo y se puede acompañar dicha funcionalidad con que el movimiento lo haga con respecto a donde mira con la cámara. Para ello en el Script de \textit{ThirPersonCam} se obtienen también el valor de orientación de la cámara y se establece que la orientación del objeto sea la misma que la que se ha calculado para el movimiento, de esta manera el personaje siempre se moverá hacia la dirección a la que está ''mirando''.
+    Además del movimiento en sí, hay que hacer que el personaje mire hacia donde se está dirigiendo y se puede acompañar dicha funcionalidad con que el movimiento lo haga con respecto a donde mira con la cámara. Para ello en el \textit{script} de \textit{ThirPersonCam} se obtienen también el valor de orientación de la cámara y se establece que la orientación del objeto sea la misma que la que se ha calculado para el movimiento, de esta manera el personaje siempre se moverá hacia la dirección a la que está ''mirando''.
 
     Además de el simple movimiento el personaje ha sido dotado de más acciones, a continuación trataremos los ataques y los saltos del personaje.
 
@@ -1136,7 +1150,7 @@ La forma de gestionar las distintas animaciones es mediante un grafo de estados 
     \caption{Animator Controller del personaje principal}
 \end{figure}
 
-La transición entre animaciones, para que ocurran, se les establece un accionador que suele ser variables tipo booleano. Para asignarles valores a dichas variables es necesario hacerlo mediante código en un Script, y es tan sencillo como instanciar un objeto animator en el fichero, y ralizar el método \textit{setBool(nombreVariable, bool)}. Es muy recomendable que cada vez que se cambie de estado, se tenga en cuenta en reestablecer a falso la variable del estado anterior, para evitar problemas.
+La transición entre animaciones, para que ocurran, se les establece un accionador que suele ser variables tipo booleano. Para asignarles valores a dichas variables es necesario hacerlo mediante código en un \textit{script}, y es tan sencillo como instanciar un objeto animator en el fichero, y ralizar el método \textit{setBool(nombreVariable, bool)}. Es muy recomendable que cada vez que se cambie de estado, se tenga en cuenta en reestablecer a falso la variable del estado anterior, para evitar problemas.
 
 Y con esto finaliza la explicación de lo relacionado con el personaje principal. 
 
@@ -1152,7 +1166,7 @@ Entro estos objetos ha sido necesaria la creación de una cámara distinta a la 
     \caption{Jerarquía establecida para los objetos usados en el modo Ultrasónico}
 \end{figure}
 
-La cámara ya fue explicada en el apartado de cámara, por lo que vamos a seguir con la lógica del plano. El plano ha sido creado a la altura de la cintura del personaje y se le ha dotado de un material semi transparente de color azul, para ayudar al jugador a situal el plano en la sección del objeto que quiera. Además el plano sólo aparecerá durante el modo Ultra, por lo que por defecto estará deshabilitado y sólo se activará durante éste modo. Por último el plano estará dotado de movimiento de giro sobre sí mismo que será establecido por el input del eje vertical que haga el jugador. Ésto se hace desde el Script \textit{ThirdPersonCam} en el método \textit{Update()} en el cual, se gestiona la lógica de cambio entre el modo normal y el modo ultra y las acciones en cada uno de estos modos. Cuando se activa el modo Ultra, se habilitan los GameObject mencionados y se dota de movimiento al plano llamando al método \textit{rotatePlane()}. Éste sencillo método tan solo establece la rotación del plano en función del input del jugador.
+La cámara ya fue explicada en el apartado de cámara, por lo que vamos a seguir con la lógica del plano. El plano ha sido creado a la altura de la cintura del personaje y se le ha dotado de un material semi transparente de color azul, para ayudar al jugador a situal el plano en la sección del objeto que quiera. Además el plano sólo aparecerá durante el modo Ultra, por lo que por defecto estará deshabilitado y sólo se activará durante éste modo. Por último el plano estará dotado de movimiento de giro sobre sí mismo que será establecido por el input del eje vertical que haga el jugador. Ésto se hace desde el \textit{script} \textit{ThirdPersonCam} en el método \textit{Update()} en el cual, se gestiona la lógica de cambio entre el modo normal y el modo ultra y las acciones en cada uno de estos modos. Cuando se activa el modo Ultra, se habilitan los GameObject mencionados y se dota de movimiento al plano llamando al método \textit{rotatePlane()}. Éste sencillo método tan solo establece la rotación del plano en función del input del jugador.
 
 \begin{lstlisting}
     public void rotatePlane()
@@ -1161,7 +1175,7 @@ La cámara ya fue explicada en el apartado de cámara, por lo que vamos a seguir
     }
 \end{lstlisting}
 
-Por último hay que tratar el cómo se ha usado el Framework de corte dentro de éste mismo Script. Lo primero es que se ha creado el método \textit{Slice()} el cual realiza la lógica de identificar los puntos de colisión del plano con el objeto a cortar. Luego, itera en cada uno de estos puntos e intenta realizar el corte llamando al método \textit{SliceObject()} el cual llama al método de corte del framework. El código de dicho método es: 
+Por último hay que tratar el cómo se ha usado el Framework de corte dentro de éste mismo \textit{script}. Lo primero es que se ha creado el método \textit{Slice()} el cual realiza la lógica de identificar los puntos de colisión del plano con el objeto a cortar. Luego, itera en cada uno de estos puntos e intenta realizar el corte llamando al método \textit{SliceObject()} el cual llama al método de corte del framework. El código de dicho método es: 
 
 \begin{lstlisting}
     public SlicedHull SliceObject(GameObject obj, Material crossSectionMaterial = null)
@@ -1176,7 +1190,7 @@ Por último hay que tratar el cómo se ha usado el Framework de corte dentro de 
 
 Volviendo al método \textit{Slice()} si ocurre el corte, se procede a crear los sub objetos superior e inferior del corte, y por tanto, añadirles a cada uno de ellos las propiedades necesarias para que se puedan seguir cortando. Para ello se llama al último método creado, que es \textit{AddHullComponents()} el cual se encarga de añadirle esos componentes a los objetos.
 
-Los objetos añadidos son un \textit{Rigidbody}, un \textit{MeshCollider} y se le añade un Script llamado \textit{destroyEnemies} el cual elimina el objeto tras el transcurso de un tiempo establecido, para evitar problemas de rendimiento, ya que si se realizan muchos cortes en poco tiempo se crean gran cantidad de objetos en la escena y eso repercute negativamente en el rendimiento. El código del método es:
+Los objetos añadidos son un \textit{Rigidbody}, un \textit{MeshCollider} y se le añade un \textit{script} llamado \textit{destroyEnemies} el cual elimina el objeto tras el transcurso de un tiempo establecido, para evitar problemas de rendimiento, ya que si se realizan muchos cortes en poco tiempo se crean gran cantidad de objetos en la escena y eso repercute negativamente en el rendimiento. El código del método es:
 
 \begin{lstlisting}
     public void AddHullComponents(GameObject go)
@@ -1237,7 +1251,7 @@ Para los enemigos, se importó el modelo mostrado en secciones anteriores y se l
     \caption{Jerarquía dentro del editor de los objetos tipo enemigo}
 \end{figure}
 
-Para dotar al enemigo de comportamiento y la lógica y gestión de sus atributos, se creó el Script \textit{MeleeEnemy} y se adjuntó a los objetos enemigo. Empezando por los atributos del enemigo, tanto el daño como su vida son leídas de la clase \textit{AttributesControler} en el método \textit{Start()} que recordemos que es aquel que se llama antes del primer fotograma de juego. Una vez establecidos los atributos del enemigo toca dotarlo de comportamiento.
+Para dotar al enemigo de comportamiento y la lógica y gestión de sus atributos, se creó el \textit{script} \textit{MeleeEnemy} y se adjuntó a los objetos enemigo. Empezando por los atributos del enemigo, tanto el daño como su vida son leídas de la clase \textit{AttributesControler} en el método \textit{Start()} que recordemos que es aquel que se llama antes del primer fotograma de juego. Una vez establecidos los atributos del enemigo toca dotarlo de comportamiento.
 
 Para ello se creó la función \textit{enemyBehaviour()} la cual es llamada en cada fotograma en el método \textit{Update()} si el enemigo no ha sido derrotado. La lógica para pasar de un estado a otro ya fue explicada en secciones anteriores, por lo que ahora se explicará simplemente la implementación. Lo que se hace dentro del método descrito es igualar a una variable el objeto del jugador para definirlo como objetivo. Después se va estableciendo la distancia con respecto a él usando el método de la clase vector que es \textit{Distance(position, position2)}, la cual establece la distancia entre dos puntos dados y se comprueba su valor. 
 
@@ -1301,9 +1315,9 @@ La interfaz de usuario dentro de Unity se trata como objetos, al igual que todo 
 
 Para crear los menús se ha seguido en todos la misma estructura y lógica, la única diferencia entre ellos es la acción que realizan sus botones pero en esencia es lo mismo, por lo que se explicara de forma generalizada y se ejemplificará con 1 de los menús. Para crear elementos 2D de interfaz de usuario basta con ir agregando los elementos del tipo que sea necesario a la jerarquía del objeto \textit{Canvas} y una vez agregados a la jerarquía, para poder trabajar correctamente con estos elementos es necesario alctivar el modo de visualización 2D del editor, para facilar el trabajo. 
 
-Una vez preparado todo, los distintos elementos como son los textos o botones que se han añadido, se podrán mover por el \textit{Canvas} para situarlos en los lugares que mejor convengan. Los textos permiten modificar el alineamiento, tamaño, fuente y colores de las letras. Las imágenes será necesario importar imágenes para poder usarlas ya que el objeto image es solo un \textit{PlaceHolder}, y los elementos \textit{buttom} se pueden configurar para activar métodos concretos de los scripts, algo que será clave para poder hacer la lógica de cambio de vista entre escenas o menús. Como conclusión, salvo los botones, los demás elementos no tienen mayor complejidad que simplemente situarlos en la pantalla y personalizarlos.
+Una vez preparado todo, los distintos elementos como son los textos o botones que se han añadido, se podrán mover por el \textit{Canvas} para situarlos en los lugares que mejor convengan. Los textos permiten modificar el alineamiento, tamaño, fuente y colores de las letras. Las imágenes será necesario importar imágenes para poder usarlas ya que el objeto image es solo un \textit{PlaceHolder}, y los elementos \textit{buttom} se pueden configurar para activar métodos concretos de los \textit{scripts}, algo que será clave para poder hacer la lógica de cambio de vista entre escenas o menús. Como conclusión, salvo los botones, los demás elementos no tienen mayor complejidad que simplemente situarlos en la pantalla y personalizarlos.
 
-Para los textos que cambian dinámicamente según el valor que cambie en el juego, por ejemplo el multiplicador de daño del jugador o el contador de puntos, será necesario instanciar dicho componente \textit{Text} en el Script que sea necesario y igualarle el contenido del texto a la variable string que se desee. Por ejemplo, para el contador de puntos, se realiza de la siguiente manera en el script llamado \textit{ScoreManager}:
+Para los textos que cambian dinámicamente según el valor que cambie en el juego, por ejemplo el multiplicador de daño del jugador o el contador de puntos, será necesario instanciar dicho componente \textit{Text} en el \textit{script} que sea necesario y igualarle el contenido del texto a la variable string que se desee. Por ejemplo, para el contador de puntos, se realiza de la siguiente manera en el \textit{script} llamado \textit{ScoreManager}:
 
 
 \begin{lstlisting}
@@ -1317,7 +1331,7 @@ Para los textos que cambian dinámicamente según el valor que cambie en el jueg
     }
 \end{lstlisting}
 
-Para los botones, primero es necesario establecer desde el editor, además de personalizar efectos como el \textit{hovering} para mejorar la UX, también hay que indicar el evento que ocurrirá al clickar en el botón. Esto se realiza adjuntando al objeto canvas el script que haga la lógica de estas acciones, y luego adjuntando ese objeto al botón, de esta manera se reconocerán los métodos del Script deseado. A continuación un ejemplo de esto:
+Para los botones, primero es necesario establecer desde el editor, además de personalizar efectos como el \textit{hovering} para mejorar la UX, también hay que indicar el evento que ocurrirá al clickar en el botón. Esto se realiza adjuntando al objeto canvas el \textit{script} que haga la lógica de estas acciones, y luego adjuntando ese objeto al botón, de esta manera se reconocerán los métodos del \textit{script} deseado. A continuación un ejemplo de esto:
 
 \begin{figure}[H]
     \centering
@@ -1325,7 +1339,7 @@ Para los botones, primero es necesario establecer desde el editor, además de pe
     \caption{Ejemplo de lógia del botón restart }
 \end{figure}
 
-Y para conseguir que el botón cambie de escena hay que establecer un orden en las escenas creadas, esto se realiza desde la configuración de Unity, y consiste en asignar un índice a cada una de las escenas del juego. La iteración entre ellas es realmente simple. Por ejemplo para cambiar del menú principal a la escena de juego, se realiza el siguiente código dentro del Script \textit{MainMenu} al pulsar el botón Play se hace la función \textit{playGame()} la cual simplemente, haciendo el método \textit{LoadScene(index)} de Unity, carga la escena con el índice que se ha adjuntado:
+Y para conseguir que el botón cambie de escena hay que establecer un orden en las escenas creadas, esto se realiza desde la configuración de Unity, y consiste en asignar un índice a cada una de las escenas del juego. La iteración entre ellas es realmente simple. Por ejemplo para cambiar del menú principal a la escena de juego, se realiza el siguiente código dentro del \textit{script} \textit{MainMenu} al pulsar el botón Play se hace la función \textit{playGame()} la cual simplemente, haciendo el método \textit{LoadScene(index)} de Unity, carga la escena con el índice que se ha adjuntado:
 
 \begin{lstlisting}
     public void playGame()
@@ -1334,7 +1348,7 @@ Y para conseguir que el botón cambie de escena hay que establecer un orden en l
     }
 \end{lstlisting}
 
-Por último trataremos las barras de indicador de salud del personaje y enemigos. El objeto que se usa para esto es un  \textit{Slider} el cual tiene la propiedad de llenar o vaciar entre dos parámetros enteros establecidos, el espacio dado con una imagen. Por lo que para lograr el efecto de reducción de vida al ser golpeado resulta muy útil. Para ello, se ha creado el script \textit{HealthBar} el cual gestiona este comportamiento. Se le pasan referencias de los elementos \textit{Slider} y la imagen de relleno además del efecto de gradiente, el cual no entraremos mucho en detalle pero sirve para que un elemento tenga un color u otro dependiendo del valor asociado. Para establecer tanto la cantidad de barra de vida máxima como su color se llama a la función \textit{setMaxHealth()} y para modificarla cada vez que se recive un golpe a la función \textit{setHealth} y realizan un trabajo tam simple como establecer el valor del \textit{Slider} y del \textit{Gradient} y se refrescará en pantalla dicho valor. Ejemplo del código: 
+Por último trataremos las barras de indicador de salud del personaje y enemigos. El objeto que se usa para esto es un  \textit{Slider} el cual tiene la propiedad de llenar o vaciar entre dos parámetros enteros establecidos, el espacio dado con una imagen. Por lo que para lograr el efecto de reducción de vida al ser golpeado resulta muy útil. Para ello, se ha creado el \textit{script} \textit{HealthBar} el cual gestiona este comportamiento. Se le pasan referencias de los elementos \textit{Slider} y la imagen de relleno además del efecto de gradiente, el cual no entraremos mucho en detalle pero sirve para que un elemento tenga un color u otro dependiendo del valor asociado. Para establecer tanto la cantidad de barra de vida máxima como su color se llama a la función \textit{setMaxHealth()} y para modificarla cada vez que se recive un golpe a la función \textit{setHealth} y realizan un trabajo tam simple como establecer el valor del \textit{Slider} y del \textit{Gradient} y se refrescará en pantalla dicho valor. Ejemplo del código: 
 
 \begin{lstlisting}
     public void setHealth(float health)
@@ -1349,9 +1363,9 @@ Por último trataremos las barras de indicador de salud del personaje y enemigos
 
 Los sonidos de un videojuego son algo muy importante sobre todo con el propósito de mejorar la experiencia del jugador. En el caso de este proyecto no es algo que tuviera mucha prioridad pero se ha tenido en cuenta. 
 
-Para que en el juego haya sonidos ha sido necesario crear un objeto vacío llamado \textit{AudioManager} el cual tiene un script creado para facilitar la gestión de sonidos llamado también \textit{AudioManager}. Este script funciona a modo de meclador de Audio pero muy simplificado, ya que solo iniciará pistas de audio cuando se llame a la función \textit{Play(name)} pero esto es algo que Unity no trae por defecto.
+Para que en el juego haya sonidos ha sido necesario crear un objeto vacío llamado \textit{AudioManager} el cual tiene un \textit{script} creado para facilitar la gestión de sonidos llamado también \textit{AudioManager}. Este \textit{script} funciona a modo de meclador de Audio pero muy simplificado, ya que solo iniciará pistas de audio cuando se llame a la función \textit{Play(name)} pero esto es algo que Unity no trae por defecto.
 
-Desde el editor hay que añadir las pistas de audio a un vector y ajustarles una serie de parámetros como el volument o el ''Pitch''. El tipo \textit{Sound} tampoco viene por defecto en Unity, por lo que ha habido que crear dicha clase. Sound cuenta solamente con los parámetros de nombre, volumen, ''Pitch'' y la propia pista de Audio, que es el tipo \textit{AudioClip}. Una vez creado el tipo ya se pueden agregar desde el editor los sonidos que se deseen. A continuación se muestra una imágen con dicho Script y los elementos de audio agregados.
+Desde el editor hay que añadir las pistas de audio a un vector y ajustarles una serie de parámetros como el volument o el ''Pitch''. El tipo \textit{Sound} tampoco viene por defecto en Unity, por lo que ha habido que crear dicha clase. Sound cuenta solamente con los parámetros de nombre, volumen, ''Pitch'' y la propia pista de Audio, que es el tipo \textit{AudioClip}. Una vez creado el tipo ya se pueden agregar desde el editor los sonidos que se deseen. A continuación se muestra una imágen con dicho \textit{script} y los elementos de audio agregados.
 
 \begin{figure}[H]
     \centering
@@ -1394,15 +1408,16 @@ Para reproducir un sonido basta que cuando ocurra la acción que deba provocarlo
 \end{lstlisting}
 
 \subsection{Creación del mapa y sus elementos}
+\label{subsec:mapaYelementos}
 
-En este apartado trataremos el script responsable de la generación procedural del mapa y los elementos que lo componen. Hay que aclarar que no se va a entrar en detalle de la implementación de los Scripts auxiliares o clases que componen esta funcionalidad, ya que se tratan de un framework de código abierto del usuario \textit{Sunny Valley Studio}. El único Script que se ha adaptado a el proyecto ha sido \textit{DungeonCreator}.
+En este apartado trataremos el \textit{script} responsable de la generación procedural del mapa y los elementos que lo componen. Hay que aclarar que no se va a entrar en detalle de la implementación de los \textit{scripts} auxiliares o clases que componen esta funcionalidad, ya que se tratan de un framework de código abierto del usuario \textit{Sunny Valley Studio}. El único \textit{script} que se ha adaptado a el proyecto ha sido \textit{DungeonCreator}.
 
-Empezando por los atributos que usará ese script, el cual en la jerarquía está atado a un objeto vacío. La gran mayoría de estos parámetros son ajustables desde el editor, ya que son públicos, y esto, ya se ha mencionado anteriormente, presenta una gran ventaja a la hora de depurar el código y el comportamiento del videojuego ya que permite ver en tiempo de ejecución el valor de las distintas variables. En la siguiente imagen se muestran los distintos atributos editables desde el editor de Unity: 
+Empezando por los atributos que usará ese \textit{script}, el cual en la jerarquía está atado a un objeto vacío. La gran mayoría de estos parámetros son ajustables desde el editor, ya que son públicos, y esto, ya se ha mencionado anteriormente, presenta una gran ventaja a la hora de depurar el código y el comportamiento del videojuego ya que permite ver en tiempo de ejecución el valor de las distintas variables. En la siguiente imagen se muestran los distintos atributos editables desde el editor de Unity: 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=10cm, height=13cm]{DungeonCreatorAtributes.jpg}
-    \caption{Atributos del script DungeonCreator}
+    \caption{Atributos del \textit{script} DungeonCreator}
 \end{figure}
 
 Al comenzar la ejecución, en el método \textit{Start()} se llama a la función \textit{CreateDungeon}, que como su nombre indica se va a encargar de la creación del mapa. Lo primero que realiza dicha función es borrar todos los objetos hijos del objeto actual, para que ninguno interfiera en la lógica del algoritmo de partición binaria, ocupando espacios del entorno. 
@@ -1459,7 +1474,7 @@ Después se inicializan algunas variables privadas que servirán para establecer
     }
 \end{lstlisting}
 
-Ahora vamos con el método \textit{CreateMesh}, el cual se va a engargar de crear las mallas del suelo de la mazmorra, e instanciar dentro de los pasillos y habitaciones los objetos y enemigos. El método comienza creando los lados del rectángulo a partir de las coordenadas pasadas como parámetro correspondientes a la esquina inferior iquierda de la habitación y la esquina superior derecha. Y acto seguido se establece el array de vertices. Acto seguido se crea otro array con las coordenadas 2D de los vertices UV, aquellos que confoman la malla, y tras definir el orden de los triángulos en un array de enteros, se crea el objeto Malla, se le asignan los vertices creados, los UV y los triangulos. Esta es la manera de crear mallas a través de Script en Unity. Código correspondiente a continuación:
+Ahora vamos con el método \textit{CreateMesh}, el cual se va a engargar de crear las mallas del suelo de la mazmorra, e instanciar dentro de los pasillos y habitaciones los objetos y enemigos. El método comienza creando los lados del rectángulo a partir de las coordenadas pasadas como parámetro correspondientes a la esquina inferior iquierda de la habitación y la esquina superior derecha. Y acto seguido se establece el array de vertices. Acto seguido se crea otro array con las coordenadas 2D de los vertices UV, aquellos que confoman la malla, y tras definir el orden de los triángulos en un array de enteros, se crea el objeto Malla, se le asignan los vertices creados, los UV y los triangulos. Esta es la manera de crear mallas a través de \textit{script} en Unity. Código correspondiente a continuación:
 
 \begin{lstlisting}
     private void CreateMesh(Vector2 bottomLeftCorner, Vector2 topRightCorner)
@@ -1502,7 +1517,7 @@ Ahora vamos con el método \textit{CreateMesh}, el cual se va a engargar de crea
         .
 \end{lstlisting}
 
-Para dejar claro la manera de crear una malla en Unity a través de script, el proceso es establecer los puntos de coordenadas de los vértices, asignarles un orden en el array, y posteriormente crear los triángulos a partir de ellos. Para dibujar una malla rectangular, como es el caso, es tan sencillo como crear solo 2 triángulos y es importante tener en cuenta que el orden para asignar los vértices debe ser en el sentido de las agujas del reloj, ya que si no, Unity interpretará esa cara como invertida y no la mostrará visualmente. Para reforzar esta explicación se adjunta a continuación una imagen mostrando esto: 
+Para dejar claro la manera de crear una malla en Unity a través de \textit{script}, el proceso es establecer los puntos de coordenadas de los vértices, asignarles un orden en el array, y posteriormente crear los triángulos a partir de ellos. Para dibujar una malla rectangular, como es el caso, es tan sencillo como crear solo 2 triángulos y es importante tener en cuenta que el orden para asignar los vértices debe ser en el sentido de las agujas del reloj, ya que si no, Unity interpretará esa cara como invertida y no la mostrará visualmente. Para reforzar esta explicación se adjunta a continuación una imagen mostrando esto: 
 
 \begin{figure}[H]
     \centering
@@ -1744,6 +1759,8 @@ La otra mejora posible se trata de un potenciador del daño realizado por parte 
 \subsection{Objetivos}
 
 Al comenzar la partida, el personaje aparecerá en una habitación de la mazmorra generada. Los objetivos del jugador serán 2. Éstos 2 objetivos son complementarios. El primero es obtener puntuación derrotando a los enemigos que hay por las salas y así intentar batir el récord anterior, el cual aparecerá en la pantalla del jugador. No solo deberá intentar batir el récord sino que además será necesario encontrar la estrella con la que se finaliza la partida. Hay que tener en cuenta que la estrella aparecerá en cualquier habitación, incluida la inicial, ésto no significa que se deba coger nada más empezar, interesa primero obtener la mayor puntuación posible y luego recoger la estrella.
+
+Durante la partida el jugador podrá encontrar que en los pasillos hay objetos que bloquean el paso, se podrá optar por cortarlos usando el \textit{Modo Ultrasónico} o bien empujándolos con el propio movimiento del personaje.
 
 Tras recoger la estrella, se felicitará al jugador y se le devolverá al menú principal.
 
