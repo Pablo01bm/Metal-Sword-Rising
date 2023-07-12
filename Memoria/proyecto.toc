@@ -41,33 +41,34 @@
 \contentsline {subsubsection}{\numberline {5.2.6.1}Sombreado con estulo de dibujos animados (Toonshading)}{50}{subsubsection.5.2.6.1}%
 \contentsline {subsection}{\numberline {5.2.7}Bocetos del diseño del proyecto}{51}{subsection.5.2.7}%
 \contentsline {subsection}{\numberline {5.2.8}Diagrama de clases}{56}{subsection.5.2.8}%
-\contentsline {subsubsection}{\numberline {5.2.8.1}Cámara y personaje}{56}{subsubsection.5.2.8.1}%
-\contentsline {subsubsection}{\numberline {5.2.8.2}Lógica del juego}{59}{subsubsection.5.2.8.2}%
-\contentsline {subsubsection}{\numberline {5.2.8.3}Power Ups}{60}{subsubsection.5.2.8.3}%
-\contentsline {subsubsection}{\numberline {5.2.8.4}Menús}{61}{subsubsection.5.2.8.4}%
-\contentsline {subsubsection}{\numberline {5.2.8.5}Enemigos}{62}{subsubsection.5.2.8.5}%
-\contentsline {subsubsection}{\numberline {5.2.8.6}Mapa}{64}{subsubsection.5.2.8.6}%
-\contentsline {subsection}{\numberline {5.2.9}Principales algoritmos}{66}{subsection.5.2.9}%
-\contentsline {subsubsection}{\numberline {5.2.9.1}Algoritmo de cadena monotona de Andrew}{68}{subsubsection.5.2.9.1}%
-\contentsline {subsubsection}{\numberline {5.2.9.2}Algoritmo de partición binaria del espacio}{69}{subsubsection.5.2.9.2}%
-\contentsline {section}{\numberline {5.3}Implementación}{72}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Ciclo de vida de un \textit {script} en Unity}{72}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Cámara}{74}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Personaje principal, movimiento y animación}{78}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}Modo Ultrasónico}{83}{subsection.5.3.4}%
-\contentsline {subsection}{\numberline {5.3.5}Enemigos}{86}{subsection.5.3.5}%
-\contentsline {subsection}{\numberline {5.3.6}Menús e Interfaz de Usuario}{89}{subsection.5.3.6}%
-\contentsline {subsection}{\numberline {5.3.7}Sonidos}{91}{subsection.5.3.7}%
-\contentsline {subsection}{\numberline {5.3.8}Creación del mapa y sus elementos}{93}{subsection.5.3.8}%
-\contentsline {subsection}{\numberline {5.3.9}Toon Shading}{100}{subsection.5.3.9}%
-\contentsline {subsection}{\numberline {5.3.10}Partículas}{108}{subsection.5.3.10}%
-\contentsline {section}{\numberline {5.4}Pruebas}{109}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Manual de usuario}{111}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Instalación}{111}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Controles}{111}{subsection.5.5.2}%
-\contentsline {subsubsection}{\numberline {5.5.2.1}Teclado y ratón}{111}{subsubsection.5.5.2.1}%
-\contentsline {subsubsection}{\numberline {5.5.2.2}Mando}{112}{subsubsection.5.5.2.2}%
-\contentsline {subsection}{\numberline {5.5.3}Mejoras del jugador}{112}{subsection.5.5.3}%
-\contentsline {subsection}{\numberline {5.5.4}Objetivos}{112}{subsection.5.5.4}%
-\contentsline {chapter}{\numberline {6}Conclusiones y vías futuras}{115}{chapter.6}%
-\contentsline {chapter}{Bibliografía}{120}{chapter*.84}%
+\contentsline {subsubsection}{\numberline {5.2.8.1}Ciclo de vida de un \textit {script} en Unity}{56}{subsubsection.5.2.8.1}%
+\contentsline {subsubsection}{\numberline {5.2.8.2}Clase GameObject}{58}{subsubsection.5.2.8.2}%
+\contentsline {subsubsection}{\numberline {5.2.8.3}Cámara y personaje}{59}{subsubsection.5.2.8.3}%
+\contentsline {subsubsection}{\numberline {5.2.8.4}Lógica del juego}{61}{subsubsection.5.2.8.4}%
+\contentsline {subsubsection}{\numberline {5.2.8.5}Power Ups}{63}{subsubsection.5.2.8.5}%
+\contentsline {subsubsection}{\numberline {5.2.8.6}Menús}{64}{subsubsection.5.2.8.6}%
+\contentsline {subsubsection}{\numberline {5.2.8.7}Enemigos}{65}{subsubsection.5.2.8.7}%
+\contentsline {subsubsection}{\numberline {5.2.8.8}Mapa}{67}{subsubsection.5.2.8.8}%
+\contentsline {subsection}{\numberline {5.2.9}Principales algoritmos}{69}{subsection.5.2.9}%
+\contentsline {subsubsection}{\numberline {5.2.9.1}Algoritmo de cadena monótona de Andrew}{71}{subsubsection.5.2.9.1}%
+\contentsline {subsubsection}{\numberline {5.2.9.2}Algoritmo de partición binaria del espacio}{73}{subsubsection.5.2.9.2}%
+\contentsline {section}{\numberline {5.3}Implementación}{76}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Cámara}{76}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Personaje principal, movimiento y animación}{80}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Modo Ultrasónico}{85}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Enemigos}{89}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}Menús e Interfaz de Usuario}{91}{subsection.5.3.5}%
+\contentsline {subsection}{\numberline {5.3.6}Sonidos}{93}{subsection.5.3.6}%
+\contentsline {subsection}{\numberline {5.3.7}Creación del mapa y sus elementos}{95}{subsection.5.3.7}%
+\contentsline {subsection}{\numberline {5.3.8}Toon Shading}{103}{subsection.5.3.8}%
+\contentsline {subsection}{\numberline {5.3.9}Partículas}{110}{subsection.5.3.9}%
+\contentsline {section}{\numberline {5.4}Pruebas}{111}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Manual de usuario}{113}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Instalación}{113}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Controles}{113}{subsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.2.1}Teclado y ratón}{113}{subsubsection.5.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.5.2.2}Mando}{114}{subsubsection.5.5.2.2}%
+\contentsline {subsection}{\numberline {5.5.3}Mejoras del jugador}{114}{subsection.5.5.3}%
+\contentsline {subsection}{\numberline {5.5.4}Objetivos}{114}{subsection.5.5.4}%
+\contentsline {chapter}{\numberline {6}Conclusiones y vías futuras}{117}{chapter.6}%
+\contentsline {chapter}{Bibliografía}{124}{chapter*.84}%
