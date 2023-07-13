@@ -1,19 +1,19 @@
 # Fdb version 4
-["bibtex proyecto"] 1689193683 "proyecto.aux" "proyecto.bbl" "proyecto" 1689193684 0
+["bibtex proyecto"] 1689259510 "proyecto.aux" "proyecto.bbl" "proyecto" 1689260124 0
   "./bibliografia/bibliografia.bib" 1689193683 10563 618289659e434ac49687e95d46323c25 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291868336 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "proyecto.aux" 1689193581 29777 a4fe4bd7e0484494b4b9256a6a317600 "pdflatex"
+  "proyecto.aux" 1689260122 29854 e8cca1dc717acdbe211408cc96f89f1a "pdflatex"
   (generated)
   "proyecto.bbl"
   "proyecto.blg"
   (rewritten before read)
-["makeindex proyecto.idx"] 1689099856 "proyecto.idx" "proyecto.ind" "proyecto" 1689193684 0
-  "proyecto.idx" 1689193577 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex proyecto.idx"] 1689099856 "proyecto.idx" "proyecto.ind" "proyecto" 1689260124 0
+  "proyecto.idx" 1689260119 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "proyecto.ilg"
   "proyecto.ind"
   (rewritten before read)
-["pdflatex"] 1689193576 "c:/Users/pablo/Desktop/Pablo/TFG-Metal-Sword-Rising/Metal-Sword-Rising/Memoria/proyecto.tex" "proyecto.pdf" "proyecto" 1689193684 0
+["pdflatex"] 1689260118 "c:/Users/pablo/Desktop/Pablo/TFG-Metal-Sword-Rising/Metal-Sword-Rising/Memoria/proyecto.tex" "proyecto.pdf" "proyecto" 1689260124 0
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1689095301 81107 70b8516c68c2e617189c5e44bfd16b96 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1680020384 10788010 54b3d2df6c6d8961309d8eb787063944 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -131,8 +131,8 @@
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/tools/verbatim.sty" 1654690828 7392 6cb60c76983625ab7344d128dbcdd881 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388494052 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "c:/Users/pablo/Desktop/Pablo/TFG-Metal-Sword-Rising/Metal-Sword-Rising/Memoria/proyecto.tex" 1689103120 6339 c3fc29ac24d48924b1b6fbd049bcf8a5 ""
-  "capitulos/01/resumen.tex" 1689189703 2261 23b2246368fa51d74643940bf5cf4df0 ""
-  "capitulos/02/abstract.tex" 1689011575 2055 c44b6049fd14974625c85fbf732295a3 ""
+  "capitulos/01/resumen.tex" 1689259505 2541 3ce3c4784b106329da030c3412fb73ca ""
+  "capitulos/02/abstract.tex" 1689260117 2290 fc985f4fad0a89403d40e99d698ccf82 ""
   "capitulos/03/introduccion.tex" 1689098240 23015 5be5186c64a5024cc85da476f08e97d4 ""
   "capitulos/04/objetivos.tex" 1689014054 4028 6ef50c92c8e2713de026d594a01679a8 ""
   "capitulos/05/resolucion.tex" 1689191885 169157 028d6c09396a49540b3682a342e80cf2 ""
@@ -214,16 +214,16 @@
   "images//phaseKatana.jpg" 1681583888 68306 1e3e6fb82a7b1e308a85d2cc7dcd7db9 ""
   "images//powerUps.jpg" 1687108970 72152 2410bc8e2493344c0d4016c38c5abc07 ""
   "images//skybox.jpg" 1686481234 2513397 78ec930e0a1c83617fe100f8d196ab18 ""
-  "portada/portada.tex" 1687876396 1114 9b958d6312e1f4e3341315e44aff1d4f ""
+  "portada/portada.tex" 1689258438 1112 6b860dd2d2b12908c45943fbe4f8cb32 ""
   "prefacios/prefacio.tex" 1689016032 2584 be245df6e5fed0df04d90f241eb2dbd2 ""
-  "proyecto.aux" 1689193581 29777 a4fe4bd7e0484494b4b9256a6a317600 "pdflatex"
-  "proyecto.bbl" 1689193683 8699 7e77dbc4c02d124e598a013e07a43e54 "bibtex proyecto"
+  "proyecto.aux" 1689260122 29854 e8cca1dc717acdbe211408cc96f89f1a "pdflatex"
+  "proyecto.bbl" 1689259510 8924 dd4d3bb5e7411abe1a6a9a920bbd6c10 "bibtex proyecto"
   "proyecto.ind" 1689099856 0 d41d8cd98f00b204e9800998ecf8427e "makeindex proyecto.idx"
-  "proyecto.lof" 1689193581 11448 c2872bae0301b8b56d4111409f47c442 "pdflatex"
-  "proyecto.lot" 1689193581 363 a210ac6076eca3185345becec8576ed4 "pdflatex"
-  "proyecto.out" 1689193581 12473 8f7831e25be93750ca4fcefcc412a764 "pdflatex"
+  "proyecto.lof" 1689260122 11448 c2872bae0301b8b56d4111409f47c442 "pdflatex"
+  "proyecto.lot" 1689260122 363 a210ac6076eca3185345becec8576ed4 "pdflatex"
+  "proyecto.out" 1689260122 12473 8f7831e25be93750ca4fcefcc412a764 "pdflatex"
   "proyecto.tex" 1689103120 6339 c3fc29ac24d48924b1b6fbd049bcf8a5 ""
-  "proyecto.toc" 1689193581 6827 4631fc8f349b760ddaac46711b70064c "pdflatex"
+  "proyecto.toc" 1689260122 6827 4631fc8f349b760ddaac46711b70064c "pdflatex"
   (generated)
   "proyecto.aux"
   "proyecto.glo"
